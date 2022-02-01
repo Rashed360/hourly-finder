@@ -1,4 +1,5 @@
 import React from 'react'
+import {FaAngleDoubleRight} from 'react-icons/fa'
 
 const SectionTitle = ({title='Title', subTitle='All Links', subLink='#'}) => {
   return (
@@ -10,7 +11,7 @@ const SectionTitle = ({title='Title', subTitle='All Links', subLink='#'}) => {
         </div>
         <div class='col-lg-6'>
             <div class='link-title'>
-                <a href={subLink}>{subTitle}</a>
+                <a href={subLink}>{subTitle} <FaAngleDoubleRight/></a>
             </div>
         </div>
     </div>
