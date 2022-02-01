@@ -4,8 +4,10 @@ import JobBlock from './jobblock/JobBlock'
 import CategoryBlock from './categoryblock/CategoryBlock'
 import CityBlock from './cityBlock/CityBlock'
 import BlogBlock from './blogblock/BlogBlock'
+import FeedbackBlock from './feedbackBlock/Feedback'
 
 const Home = () => {
+
 	document.title = 'HourlyFinder | Home'
 	return (
 		<div>
@@ -135,57 +137,7 @@ const Home = () => {
 			</div>
 
 			{/* <!-- ==================== User Feedback Area Start ==================== --> */}
-			<div class='user-feedback-area section-padding'>
-				<div class='container'>
-					<SectionTitle title="User Feedback" subtitle="See more" link="#" />
-					<div class='row pt-40'>
-						<div class='col-lg-4 user-feedback owl-carousel'>
-							<div class='feedback-wrapper'>
-								<div class='user-info'>
-									<div class='user-avatar'>
-										<img src='/images/homepage/users/user-1.jpg' alt='User' />
-									</div>
-									<h4>Sajeeb Debnath</h4>
-									<p>Full Stack Developer</p>
-								</div>
-								<div class='user-feedback'>
-									<blockquote>
-										“..user friendly and very easy to find jobs that suits me..”
-									</blockquote>
-								</div>
-							</div>
-							<div class='feedback-wrapper'>
-								<div class='user-info'>
-									<div class='user-avatar'>
-										<img src='/images/homepage/users/user-3.jpg' alt='User' />
-									</div>
-									<h4>Saimul Siddque Shakil</h4>
-									<p>Full Stack Developer</p>
-								</div>
-								<div class='user-feedback'>
-									<blockquote>
-										“..user friendly and very easy to find jobs that suits me..”
-									</blockquote>
-								</div>
-							</div>
-							<div class='feedback-wrapper'>
-								<div class='user-info'>
-									<div class='user-avatar'>
-										<img src='/images/homepage/users/user-2.jpg' alt='User' />
-									</div>
-									<h4>Rashed Ahmed</h4>
-									<p>Web Developer</p>
-								</div>
-								<div class='user-feedback'>
-									<blockquote>
-										“..user friendly and very easy to find jobs that suits me..”
-									</blockquote>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<FeedbackBlock />
 
 			{/* <!-- ==================== Latest Blog Post Area Start ==================== --> */}
 			<div class='latest-blog-area section-padding'>
