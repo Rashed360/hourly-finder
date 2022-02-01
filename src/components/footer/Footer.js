@@ -1,104 +1,107 @@
 import './Footer.css'
-import { Link } from 'react-router-dom'
+import FooterMenu from './menu/FooterMenu'
 
 const Footer = () => {
+
+	const footer_menuList = [
+
+		{
+			title: "Useful Links",
+			lists : [
+				{
+					name : "Home",
+					link : "/"
+				},
+				{
+					name : "All Jobs",
+					link : "/jobs"
+				},
+				{
+					name : "Blogs",
+					link : "/blogs"
+				},
+				{
+					name : "About us",
+					link : "/about"
+				}
+			]
+		},
+		{
+			title: "Support",
+			lists : [
+				{
+					name : "FAQ",
+					link : "/"
+				},
+				{
+					name : "How it Works",
+					link : "/"
+				},
+				{
+					name : "Featurs",
+					link : "/"
+				},
+				{
+					name : "Contact",
+					link : "/contact"
+				}
+			]
+		},
+		{
+			title: "Follow US",
+			lists : [
+				{
+					name : "Facebook",
+					link : "/"
+				},
+				{
+					name : "Twitter",
+					link : "/"
+				},
+				{
+					name : "Linkedin",
+					link : "/"
+				},
+				{
+					name : "Twitter",
+					link : "/"
+				}
+			]
+		},
+		{
+			title: "Contact US",
+			lists : [
+				{
+					name : "+880 12345678",
+					link : "#"
+				},
+				{
+					name : "support@hourlyfinder.com",
+					link : "#"
+				},
+				{
+					name : "37/B, Lake Circus Road",
+					link : "#"
+				},
+				{
+					name : "Kalabagan, Dhaka-1207",
+					link : "#"
+				}
+			]
+		}
+	] 
+
+	const menu = footer_menuList.map(menu => {
+		return (
+			<FooterMenu menu={menu}></FooterMenu>
+		);
+	})
 	return (
 		<footer>
 			<div className='footer-menu-area section-padding'>
 				<div className='container'>
 					<div className='row'>
-						<div className='col-lg-3'>
-							<div className='footer-menu-wrapper'>
-								<div className='section-title'>
-									<h3>Useful Links</h3>
-								</div>
-								<div className='footer-menu'>
-									<nav>
-										<ul>
-											<li>
-												<Link to='/'>Home</Link>
-											</li>
-											<li>
-												<Link to='/jobs'>All Jobs</Link>
-											</li>
-											<li>
-												<Link to='/blogs'>Blogs</Link>
-											</li>
-											<li>
-												<Link to='/about'>About Us</Link>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='footer-menu-wrapper'>
-								<div className='section-title'>
-									<h3>Support</h3>
-								</div>
-								<div className='footer-menu'>
-									<nav>
-										<ul>
-											<li>
-												<Link to='/'>FAQs</Link>
-											</li>
-											<li>
-												<Link to='/'>How it works</Link>
-											</li>
-											<li>
-												<Link to='/'>Features</Link>
-											</li>
-											<li>
-												<Link to='/contact'>Contact</Link>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='footer-menu-wrapper'>
-								<div className='section-title'>
-									<h3>Follow Us</h3>
-								</div>
-								<div className='footer-menu'>
-									<nav>
-										<ul>
-											<li>
-												<Link to='/'>Facebook</Link>
-											</li>
-											<li>
-												<Link to='/'>Twitter</Link>
-											</li>
-											<li>
-												<Link to='/'>Linkedin</Link>
-											</li>
-											<li>
-												<Link to='/'>YouTube</Link>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='footer-menu-wrapper'>
-								<div className='section-title'>
-									<h3>Contact Us</h3>
-								</div>
-								<div className='footer-menu'>
-									<nav>
-										<ul>
-											<li>+880 12345678</li>
-											<li>support@hourlyfinder.com</li>
-											<li>37/B, Lake Circus Road</li>
-											<li>Kalabagan, Dhaka-1207</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
+						{menu}
 					</div>
 				</div>
 			</div>

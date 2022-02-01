@@ -19,7 +19,7 @@ function App() {
 					<Route path='/blogs' exact component={Blogs} />
 					<Route path='/contact' exact component={Contact} />
 					<Route path='/login' exact component={Login} />
-					<Route component={PageNotFound} />
+					<Route path='/*' component={PageNotFound} />
 				</Switch>
 				<Footer />
 			</Router>
