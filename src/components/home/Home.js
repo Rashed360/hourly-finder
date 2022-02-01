@@ -1,4 +1,5 @@
 import './Home.css'
+import SectionTitle from './sectionTitle/SectionTitle'
 import JobBlock from './jobblock/JobBlock'
 import CategoryBlock from './categoryblock/CategoryBlock'
 import CityBlock from './cityBlock/CityBlock'
@@ -53,23 +54,11 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== Hero Area End ==================== --> */}
 
 			{/* <!-- ==================== Most Recent Job Area Start ==================== --> */}
 			<div class='most-recent-jobs section-padding'>
 				<div class='container'>
-					<div class='row'>
-						<div class='col-lg-6'>
-							<div class='section-title'>
-								<h3>Most Recent Jobs</h3>
-							</div>
-						</div>
-						<div class='col-lg-6'>
-							<div class='link-title'>
-								<a href=''>All Jobs</a>
-							</div>
-						</div>
-					</div>
+					<SectionTitle title="Most Recent Jobs" subTitle="All Jobs" subLink="#" />
 					<div class='row pt-40'>
 						<JobBlock
 							name='Complete House Paintings Services'
@@ -83,23 +72,11 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== Most Recent Job Area End ==================== --> */}
 
 			{/* <!-- ==================== Browse Jobs  by Location Job Area Start ==================== --> */}
 			<div class='browse-jobs-categories section-padding'>
 				<div class='container'>
-					<div class='row'>
-						<div class='col-lg-6'>
-							<div class='section-title'>
-								<h3>Browse Job Categories</h3>
-							</div>
-						</div>
-						<div class='col-lg-6'>
-							<div class='link-title'>
-								<a href=''>More Category</a>
-							</div>
-						</div>
-					</div>
+				    <SectionTitle title="Browse Job Categories" subTitle="More Category" subLink="#" />
 					<div class='row pt-40'>
 						<CategoryBlock name='Grocery Store Helper' />
 						<CategoryBlock name='Resturant Service &amp; Hospitlity' />
@@ -108,23 +85,11 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== Browse Jobs  by Location Job Area End ==================== --> */}
 
 			{/* <!-- ==================== Browse Jobs  by Cities Job Area Start ==================== --> */}
 			<div class='browse-jobs-location section-padding'>
 				<div class='container'>
-					<div class='row'>
-						<div class='col-lg-6'>
-							<div class='section-title'>
-								<h3>Browse Jobs by Cities</h3>
-							</div>
-						</div>
-						<div class='col-lg-6'>
-							<div class='link-title'>
-								<a href=''>More Cities</a>
-							</div>
-						</div>
-					</div>
+					<SectionTitle title="Browse Jobs by Cities" subTitle="More Cities" subLink="#" />
 					<div class='row pt-40'>
 						<CityBlock name='Dhaka' />
 						<CityBlock name='Chittagong' />
@@ -133,7 +98,6 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== Browse Jobs  by Cities Job Area End ==================== --> */}
 
 			{/* <!-- ==================== How Works Job Area Start ==================== --> */}
 			<div class='how-works-site section-padding'>
@@ -169,23 +133,11 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== How Works Job Area End ==================== --> */}
 
 			{/* <!-- ==================== User Feedback Area Start ==================== --> */}
 			<div class='user-feedback-area section-padding'>
 				<div class='container'>
-					<div class='row'>
-						<div class='col-lg-6'>
-							<div class='section-title'>
-								<h3>User Feedback</h3>
-							</div>
-						</div>
-						<div class='col-lg-6'>
-							<div class='link-title'>
-								<a href=''>See more</a>
-							</div>
-						</div>
-					</div>
+					<SectionTitle title="User Feedback" subtitle="See more" link="#" />
 					<div class='row pt-40'>
 						<div class='col-lg-4 user-feedback owl-carousel'>
 							<div class='feedback-wrapper'>
@@ -234,23 +186,11 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== User Feedback Area End ==================== --> */}
 
 			{/* <!-- ==================== Latest Blog Post Area Start ==================== --> */}
 			<div class='latest-blog-area section-padding'>
 				<div class='container'>
-					<div class='row'>
-						<div class='col-lg-6'>
-							<div class='section-title'>
-								<h3>Latest Blog Posts</h3>
-							</div>
-						</div>
-						<div class='col-lg-6'>
-							<div class='link-title'>
-								<a href=''>All Blogs</a>
-							</div>
-						</div>
-					</div>
+					<SectionTitle title="Latest Blog Posts" subtitle="All Blogs" link="#" />
 					<div class='row pt-40'>
 						<BlogBlock />
 						<BlogBlock />
@@ -259,7 +199,6 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== Latest Blog Post Area End ==================== --> */}
 
 			{/* <!-- ==================== Newsletter Area Start ==================== --> */}
 			<div class='newsletter-area section-padding'>
@@ -281,7 +220,7 @@ const Home = () => {
 										class='btn newsletter'
 									/>
 								</form>
-								<p>Don’t worry we dont spam!</p>
+								<p>Dont worry we dont spam!</p>
 							</div>
 						</div>
 					</div>
