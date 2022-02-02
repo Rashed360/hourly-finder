@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CityBlock = ({name}) => {
 	return (
@@ -7,7 +8,7 @@ const CityBlock = ({name}) => {
 				<div class='location-name'>
 					<p>Find hourly jobs on</p>
 					<h4>
-						<a href=''>{name}</a>
+						<Link to=''>{name}</Link>
 					</h4>
 				</div>
 			</div>

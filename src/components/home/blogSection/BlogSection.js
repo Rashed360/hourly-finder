@@ -76,14 +76,14 @@ const BlogSection = () => {
         }
     ]
 
+    const blogs = blogContents.map(blog => <BlogBlock blog={blog} /> )
+
     return (
         <div class='latest-blog-area section-padding'>
             <div class='container'>
                 <SectionTitle title="Latest Blog Posts" subTitle="All Blogs" subLink="#" />
                 <div class='row pt-40'>
-                    {
-                        blogContents.map(blog => <BlogBlock blog={blog} /> )
-                    }
+                    {blogs}
                 </div>
             </div>
         </div>

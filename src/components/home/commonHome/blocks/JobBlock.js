@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Tags from '../../../commonComponents/tagElement/Tags'
 
 const JobBlock = ({ job }) => {
@@ -5,26 +6,26 @@ const JobBlock = ({ job }) => {
 	<div class='col-lg-3'>
 		<div class='job-card'>
 			<div class='about-recruiter d-flex align-items-center'>
-				<a href=''>
+				<Link to=''>
 					<img
 						src={job.image}
 						alt='logo'
 						class='recruiter-logo'
 					/>
-				</a>
+				</Link>
 				<h5 class='recruiter-title'>
-					<a href=''>{job.company}, </a>
+					<Link to=''>{job.company}, </Link>
 					<span class='post_time'>{job.time}</span>
 				</h5>
 			</div>
 			<div class='job-content'>
 				<h3 class='job-title'>
-					<a href=''>{job.name}</a>
+					<Link to=''>{job.name}</Link>
 				</h3>
 				<div class='job-status'>
 					<span class='job-type'>{job.type}</span> in
 					<span class='job-location'>
-						<a href=''> {job.location}</a>
+						<Link to=''> {job.location}</Link>
 					</span>
 				</div>
 				<Tags tags={job.keyword} />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
 	document.title = 'HourlyFinder | Contact Us'
@@ -244,40 +245,40 @@ const Contact = () => {
 									<nav>
 										<ul>
 											<li>
-												<a href=''>
+												<Link to=''>
 													<span
 														className='iconify'
 														data-icon='logos:facebook'
 													></span>
 													Facebook
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a href=''>
+												<Link to=''>
 													<span
 														className='iconify'
 														data-icon='logos:twitter'
 													></span>
 													Twitter
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a href=''>
+												<Link to=''>
 													<span
 														className='iconify'
 														data-icon='logos:linkedin-icon'
 													></span>
 													Linkedin
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a href=''>
+												<Link to=''>
 													<span
 														className='iconify'
 														data-icon='logos:youtube-icon'
 													></span>
 													YouTube
-												</a>
+												</Link>
 											</li>
 										</ul>
 									</nav>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import React from 'react'
 
 const CategoryBlock = ({name}) => {
@@ -11,9 +12,9 @@ const CategoryBlock = ({name}) => {
 					></span>
 				</div>
 				<div class='category-name'>
-					<a href=''>
+					<Link to=''>
 						<h3>{name}</h3>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</div>

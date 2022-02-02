@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 	return (
@@ -16,9 +17,9 @@ const Login = () => {
 							</p>
 						</div>
 						<div className='registration-status-info'>
-							<p>Don’t have an account?</p>
+							<p>Dont have an account?</p>
 							<h4>
-								<a href=''>Sign Up</a>
+								<Link to=''>Sign Up</Link>
 							</h4>
 						</div>
 					</div>

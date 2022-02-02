@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import MemberCard from './memberCard/MemberCard'
 import RoadmapCard from './roadmapCard/RoadmapCard'
 import IntroBg from '../../svgs/intro-bg.svg'

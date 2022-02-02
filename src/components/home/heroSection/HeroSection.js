@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import {FaMapMarkerAlt} from 'react-icons/fa'
 
 const HeroSection = () => {
@@ -38,9 +39,7 @@ const HeroSection = () => {
                                     placeholder='Where do you live ?'
                                     class='search-field'
                                 />
-                                <a href=''>
-                                    <FaMapMarkerAlt/>
-                                </a>
+                                <FaMapMarkerAlt/>
                                 <input
                                     type='submit'
                                     value='Get Started'
@@ -49,10 +48,10 @@ const HeroSection = () => {
                             </form>
                             <div class='tag'>
                                 <span>
-                                    <a href=''>Job on your location</a>
+                                    <Link to=''>Job on your location</Link>
                                 </span>
                                 <span>
-                                    <a href=''>How it works?</a>
+                                    <Link to=''>How it works?</Link>
                                 </span>
                             </div>
                         </div>
