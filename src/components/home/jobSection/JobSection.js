@@ -5,8 +5,10 @@ const JobSection = () => {
 
   const jobList = [
     {
+      id : 1,
       name: 'aaaaaaa a aaa aaaaa aaaa aa aaa aaaa aaa',
       company: 'aaaaaaaaaaaaaaa',
+      company_id : 2,
       image: '/images/homepage/recruiter-logo.png',
       time: '8h ago',
       type: 'aaaaaaaaaa',
@@ -23,8 +25,10 @@ const JobSection = () => {
       ]
     },
     {
+      id :2,
       name: 'Complete House Color Painting Services ssss ssssss ssss sssssssss sssssssssssssssssssssssssss',
       company: 'Foundersssssssssssssssss',
+      company_id : 2,
       image: '/images/homepage/recruiter-logo.png',
       time: '8h agoooooooooooooooo',
       type: 'Hourlyyyyy yyyyyyyyyyyyyyyy',
@@ -37,8 +41,10 @@ const JobSection = () => {
       ]
     },
     {
+      id : 3,
       name: 'Catering Supervisor',
       company: 'Radhey Recruiter',
+      company_id : 2,
       image: '/images/homepage/recruiter-logo.png',
       time: '3 days ago',
       type: 'Full-time',
@@ -55,8 +61,10 @@ const JobSection = () => {
       ]
     },
     {
+      id : 4,
       name: 'Complete House Paintings Services',
       company: 'Founders',
+      company_id : 2,
       image: '/images/homepage/recruiter-logo.png',
       time: '8h ago',
       type: 'Hourly',

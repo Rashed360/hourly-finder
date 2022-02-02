@@ -6,7 +6,7 @@ const JobBlock = ({ job }) => {
 	<div class='col-lg-3'>
 		<div class='job-card'>
 			<div class='about-recruiter d-flex align-items-center'>
-				<Link to=''>
+				<Link to={`/company/${job.company_id}`}>
 					<img
 						src={job.image}
 						alt='logo'
@@ -14,18 +14,18 @@ const JobBlock = ({ job }) => {
 					/>
 				</Link>
 				<h5 class='recruiter-title'>
-					<Link to=''>{job.company}, </Link><br/>
+					<Link to={`/company/${job.company_id}`}>{job.company}, </Link><br/>
 					<span class='post_time'>{job.time}</span>
 				</h5>
 			</div>
 			<div class='job-content'>
 				<h3 class='job-title'>
-					<Link to=''>{job.name}</Link>
+					<Link to={`/jobs/${job.id}`}>{job.name}</Link>
 				</h3>
 				<div class='job-status'>
 					<span class='job-type'>{job.type}</span> in
 					<span class='job-location'>
-						<Link to=''> {job.location}</Link>
+						<Link to={`/jobs/location/${job.location}`}> {job.location}</Link>
 					</span>
 				</div>
 				<Tags tags={job.keyword} />
