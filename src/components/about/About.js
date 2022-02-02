@@ -1,6 +1,5 @@
 import MemberCard from './memberCard/MemberCard'
 import RoadmapCard from './roadmapCard/RoadmapCard'
-import IntroBg from '../../svgs/intro-bg.svg'
 import StoryBg from '../../svgs/story-bg.svg'
 import FutureBg from '../../svgs/future-bg.svg'
 
@@ -71,9 +70,7 @@ const About = () => {
 	return (
 		<div>
 			<div
-				className='intro-area center-flex mt-70'
-				style={{ backgroundImage: IntroBg }}
-			>
+				className='intro-area center-flex mt-70'>
 				<div className='intro-text'>
 					<h1 className='intro-heading'>Hourly Finder</h1>
 					<p>
