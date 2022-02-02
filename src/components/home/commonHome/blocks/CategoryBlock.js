@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
+import {BsShopWindow} from "react-icons/bs"
 
-const CategoryBlock = ({name}) => {
+const CategoryBlock = ({category}) => {
+	const {id, name, icon} = category
 	return (
 		<div class='col-lg-3'>
 			<div class='category-item'>
 				<div class='category-icon'>
-					<span
-						class='iconify'
-						data-icon='fluent:service-bell-24-filled'
-					></span>
+				{
+					icon === "" ? <BsShopWindow /> : ""
+				}
 				</div>
 				<div class='category-name'>
-					<Link to=''>
+					<Link to={`category/${id}`}>
 						<h3>{name}</h3>
 					</Link>
 				</div>
