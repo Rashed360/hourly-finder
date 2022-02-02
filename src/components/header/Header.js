@@ -1,4 +1,3 @@
-import './Header.css'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import { Link, NavLink } from 'react-router-dom'

@@ -1,4 +1,3 @@
-import './Footer.css'
 import FooterMenu from './menu/FooterMenu'
 
 const Footer = () => {

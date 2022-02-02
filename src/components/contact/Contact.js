@@ -1,4 +1,3 @@
-import './Contact.css'
 
 const Contact = () => {
 	document.title = 'HourlyFinder | Contact Us'

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import {FaMapMarkerAlt,FaEnvelope} from 'react-icons/fa'
-import './Home.css'
 import SectionTitle from './sectionTitle/SectionTitle'
 import JobBlock from './jobblock/JobBlock'
 import CategoryBlock from './categoryblock/CategoryBlock'
