@@ -94,13 +94,18 @@ a{
 
 .btn{
     text-decoration: none;
-    padding: 7px 15px;
+    padding: 9px 15px;
     font-size: var(--smallFont);
     font-family: var(--fontFamily);
-    font-weight: 600;
     color: #F4FFE1;
     background-color: var(--bgColor);
+    border: 1px solid var(--bgColor);
     display: inline-block;
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: white;
+    color: #16395f;
 }
 .section-padding{
     padding: var(--sectionPadding);
