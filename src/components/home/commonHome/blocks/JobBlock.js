@@ -14,7 +14,7 @@ const JobBlock = ({ job }) => {
 					/>
 				</Link>
 				<h5 class='recruiter-title'>
-					<Link to=''>{job.company}, </Link>
+					<Link to=''>{job.company}, </Link><br/>
 					<span class='post_time'>{job.time}</span>
 				</h5>
 			</div>

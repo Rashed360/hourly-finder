@@ -182,7 +182,7 @@ form.search-form svg {
 }
 
 .job-title {
-	font-size: 22px;
+	font-size: var(--normalFont);
 	margin: 10px 0px;
 }
 

@@ -26,7 +26,7 @@ const HeroSection = () => {
                             Find the most exciting <br/><span>{currentTagLine}</span> jobs nearby
                         </h1>
                         <p>
-                            Hourly Finder is a platform to find hourly jobs nearby from
+                            A platform to find hourly jobs nearby from
                             your location and make some extra cash along side your
                             study/job.
                         </p>

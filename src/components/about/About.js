@@ -74,7 +74,7 @@ const About = () => {
 				<div className='intro-text'>
 					<h1 className='intro-heading'>Hourly Finder</h1>
 					<p>
-						A project by team CodeDamn and a platform to find hourly-based jobs
+						A project by team CodeDamn and <br/>a platform to find hourly-based jobs
 						nearby via live location.
 					</p>
 				</div>

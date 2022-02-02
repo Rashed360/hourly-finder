@@ -115,7 +115,7 @@ a{
 }
 
 .section-title h3 {
-    font-size: var(--mediumFont);
+    font-size: var(--normalFont);
     color: var(--textColor);
     font-weight: 600;
 }
@@ -134,7 +134,7 @@ a{
 }
 
 .link-title a {
-    font-size: var(--mediumFont);
+    font-size: var(--normalFont);
     color: var(--textColor);
     font-weight: 600;
     text-decoration: none;
