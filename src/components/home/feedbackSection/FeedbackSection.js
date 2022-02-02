@@ -1,10 +1,10 @@
-import React from 'react';
-import { Slide } from 'react-slideshow-image';
+import React from 'react'
+import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
-import SectionTitle from '../sectionTitle/SectionTitle';
-import FeedbackDetails from './feedbackDetails/FeedbackDetails';
+import SectionTitle from '../common/sectionTitle/SectionTitle'
+import FeedbackDetails from './feedbackDetails/FeedbackDetails'
 
-const FeedbackBlock = () => {
+const FeedbackSection = () => {
 
     // Feedback Component Data Start
 	const user_feedbacks = [
@@ -38,7 +38,7 @@ const FeedbackBlock = () => {
         indicators: true,
         arrows: false,
         onChange: (oldIndex, newIndex) => {
-          console.log(`slide transition from ${oldIndex} to ${newIndex}`);
+          console.log(`slide transition from ${oldIndex} to ${newIndex}`)
         }
     }
 
@@ -62,7 +62,7 @@ const FeedbackBlock = () => {
 					</div>
 				</div>
 			</div>
-    );
-};
+    )
+}
 
-export default FeedbackBlock;
+export default FeedbackSection

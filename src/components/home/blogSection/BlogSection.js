@@ -1,8 +1,8 @@
 import React from 'react';
 import BlogBlock from '../../common/commonBlock/blogBlock/BlogBlock';
-import SectionTitle from '../sectionTitle/SectionTitle';
+import SectionTitle from '../common/sectionTitle/SectionTitle';
 
-const BlockSection = () => {
+const BlogSection = () => {
 
     const blogContents = [
         {
@@ -93,4 +93,4 @@ const BlockSection = () => {
     );
 };
 
-export default BlockSection;
+export default BlogSection;
