@@ -5,8 +5,8 @@ import SectionTitle from './sectionTitle/SectionTitle'
 import JobBlock from './jobblock/JobBlock'
 import CategoryBlock from './categoryblock/CategoryBlock'
 import CityBlock from './cityBlock/CityBlock'
-import BlogBlock from './blogblock/BlogBlock'
 import FeedbackBlock from './feedbackBlock/Feedback'
+import BlockSection from './blogSection/BlockSection'
 
 const Home = () => {
 	const [currentTagLine, setCurrentTagLine] = useState('hourly-based')
@@ -152,18 +152,7 @@ const Home = () => {
 			<FeedbackBlock />
 
 			{/* <!-- ==================== Latest Blog Post Area Start ==================== --> */}
-			<div class='latest-blog-area section-padding'>
-				<div class='container'>
-					<SectionTitle title="Latest Blog Posts" subTitle="All Blogs" subLink="#" />
-					<div class='row pt-40'>
-						<BlogBlock />
-						<BlogBlock />
-						<BlogBlock />
-						<BlogBlock />
-					</div>
-				</div>
-			</div>
-
+			<BlockSection></BlockSection>
 			{/* <!-- ==================== Newsletter Area Start ==================== --> */}
 			<div class='newsletter-area section-padding'>
 				<div class='container'>
