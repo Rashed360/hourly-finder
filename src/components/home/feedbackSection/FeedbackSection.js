@@ -1,7 +1,7 @@
 import React from 'react'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
-import SectionTitle from '../common/sectionTitle/SectionTitle'
+import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
 import FeedbackDetails from './feedbackDetails/FeedbackDetails'
 
 const FeedbackSection = () => {

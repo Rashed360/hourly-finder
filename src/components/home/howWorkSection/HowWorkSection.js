@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionTitle from '../common/sectionTitle/SectionTitle'
+import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
 
 const HowWorkSection = () => {
   return (

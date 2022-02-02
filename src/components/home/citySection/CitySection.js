@@ -1,6 +1,6 @@
 import React from 'react'
-import SectionTitle from '../common/sectionTitle/SectionTitle'
-import CityBlock from '../common/blocks/CityBlock'
+import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
+import CityBlock from '../commonHome/blocks/CityBlock'
 
 
 const CitySection = () => {

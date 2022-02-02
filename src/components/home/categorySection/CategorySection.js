@@ -1,6 +1,6 @@
 import React from 'react'
-import SectionTitle from '../common/sectionTitle/SectionTitle'
-import CategoryBlock from '../common/blocks/CategoryBlock'
+import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
+import CategoryBlock from '../commonHome/blocks/CategoryBlock'
 
 const CategorySection = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import BlogBlock from '../../common/commonBlock/blogBlock/BlogBlock';
-import SectionTitle from '../common/sectionTitle/SectionTitle';
+import BlogBlock from '../../commonComponents/commonBlock/blogBlock/BlogBlock'
+import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
 
 const BlogSection = () => {
 
@@ -37,8 +37,7 @@ const BlogSection = () => {
                 {
                     name : "Painting",
                     color : "painting"
-                },
-
+                }
             ]
         },
         {
@@ -55,8 +54,7 @@ const BlogSection = () => {
                 {
                     name : "Painting",
                     color : "painting"
-                },
-
+                }
             ]
         },
         {
@@ -73,10 +71,9 @@ const BlogSection = () => {
                 {
                     name : "Painting",
                     color : "painting"
-                },
-
+                }
             ]
-        },
+        }
     ]
 
     return (
