@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import {FaMapMarkerAlt,FaEnvelope} from 'react-icons/fa'
 import './Home.css'
 import SectionTitle from './sectionTitle/SectionTitle'
 import JobBlock from './jobblock/JobBlock'
@@ -7,6 +9,16 @@ import BlogBlock from './blogblock/BlogBlock'
 import FeedbackBlock from './feedbackBlock/Feedback'
 
 const Home = () => {
+	const [currentTagLine, setCurrentTagLine] = useState('hourly-based')
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			const tagLines = ['hourly-based','part-time','full-time','remote','project-based']
+			const randomTag = tagLines[Math.floor(Math.random() * tagLines.length)]
+			setCurrentTagLine(randomTag)
+		}, 3000)
+		return () => clearInterval(timer)
+	  },[currentTagLine])
 
 	document.title = 'HourlyFinder | Home'
 	return (
@@ -17,7 +29,7 @@ const Home = () => {
 						<div class='hero-content'>
 							<div class='hero-text'>
 								<h1>
-									Find the most exciting <span>hourly-based</span> jobs nearby{' '}
+									Find the most exciting <br/><span>{currentTagLine}</span> jobs nearby
 								</h1>
 								<p>
 									Hourly Finder is a platform to find hourly jobs nearby from
@@ -34,7 +46,7 @@ const Home = () => {
 											class='search-field'
 										/>
 										<a href=''>
-											<span class='iconify' data-icon='ci:location'></span>
+											<FaMapMarkerAlt/>
 										</a>
 										<input
 											type='submit'
@@ -142,7 +154,7 @@ const Home = () => {
 			{/* <!-- ==================== Latest Blog Post Area Start ==================== --> */}
 			<div class='latest-blog-area section-padding'>
 				<div class='container'>
-					<SectionTitle title="Latest Blog Posts" subtitle="All Blogs" link="#" />
+					<SectionTitle title="Latest Blog Posts" subTitle="All Blogs" subLink="#" />
 					<div class='row pt-40'>
 						<BlogBlock />
 						<BlogBlock />
@@ -165,7 +177,7 @@ const Home = () => {
 										placeholder='Your Email Address'
 										class='newsletter-email'
 									/>
-									<span class='iconify' data-icon='codicon:mail'></span>
+									<FaEnvelope/>
 									<input
 										type='submit'
 										value='Subscribe'
