@@ -1,10 +1,40 @@
 import { useState, useEffect } from 'react'
+import MemberCard from './memberCard/MemberCard'
 import IntroBg from '../../svgs/intro-bg.svg'
 import StoryBg from '../../svgs/story-bg.svg'
 import FutureBg from '../../svgs/future-bg.svg'
 
 const About = () => {
 	document.title = 'HourlyFinder | About'
+
+	const teamMembersInfo = [
+		{
+			name: 'Sajeeb Debnath',
+			designation: 'Founder & CEO',
+			image: '/images/aboutPage/team-1.jpg'
+		},
+		{
+			name: 'Rashed Ahmed',
+			designation: 'Co-Founder & LD',
+			image: '/images/aboutPage/team-2.jpg'
+		},
+		{
+			name: 'Samiul Siddique',
+			designation: 'CTO & BM',
+			image: '/images/aboutPage/team-3.jpg'
+		}
+	]
+
+	const teamMembers = teamMembersInfo.map(member => {
+		return (
+			<MemberCard 
+				name={member.name}
+				designation={member.designation}
+				image={member.image}
+			/>
+		)
+	})
+
 	return (
 		<div>
 			<div
@@ -46,28 +76,7 @@ const About = () => {
 				<div className='team-content'>
 					<h3 className='team-heading'>Our Team</h3>
 					<div className='team-cards'>
-						<div className='team-card'>
-							<img src='/images/aboutPage/team-1.jpg' alt='' />
-							<div className='team-card-title'>
-								<h4>Sajeeb Debnath</h4>
-								<small>Founder &amp; CEO</small>
-							</div>
-						</div>
-
-						<div className='team-card'>
-							<img src='/images/aboutPage/team-2.jpg' alt='' />
-							<div className='team-card-title'>
-								<h4>Rashed Ahmed</h4>
-								<small>Co-Founder &amp; LD</small>
-							</div>
-						</div>
-						<div className='team-card'>
-							<img src='/images/aboutPage/team-3.jpg' alt='' />
-							<div className='team-card-title'>
-								<h4>Samiul Siddique</h4>
-								<small>CTO &amp; BM</small>
-							</div>
-						</div>
+						{teamMembers}
 					</div>
 				</div>
 			</div>
