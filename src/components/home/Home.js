@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
-import {FaMapMarkerAlt,FaEnvelope} from 'react-icons/fa'
+import {FaMapMarkerAlt} from 'react-icons/fa'
 import SectionTitle from './sectionTitle/SectionTitle'
 import JobBlock from './jobblock/JobBlock'
 import CategoryBlock from './categoryblock/CategoryBlock'
 import CityBlock from './cityBlock/CityBlock'
 import FeedbackBlock from './feedbackBlock/Feedback'
 import BlockSection from './blogSection/BlockSection'
+import NewsLetter from './newsletterSection/NewsLetter'
 
 const Home = () => {
 	const [currentTagLine, setCurrentTagLine] = useState('hourly-based')
@@ -151,33 +152,9 @@ const Home = () => {
 			<FeedbackBlock />
 
 			{/* <!-- ==================== Latest Blog Post Area Start ==================== --> */}
-			<BlockSection></BlockSection>
+			<BlockSection />
 			{/* <!-- ==================== Newsletter Area Start ==================== --> */}
-			<div class='newsletter-area section-padding'>
-				<div class='container'>
-					<div class='row'>
-						<div class='col-lg-6 offset-lg-3'>
-							<div class='newsletter-content'>
-								<h4>Subscribe to receive our weekly blog</h4>
-								<form action='' class='newsletter-form'>
-									<input
-										type='text'
-										placeholder='Your Email Address'
-										class='newsletter-email'
-									/>
-									<FaEnvelope/>
-									<input
-										type='submit'
-										value='Subscribe'
-										class='btn newsletter'
-									/>
-								</form>
-								<p>Dont worry we dont spam!</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<NewsLetter />
 			{/* End 001 */}
 		</div>
 	)
