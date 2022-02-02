@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import './About.css'
 import IntroBg from '../../svgs/intro-bg.svg'
 import StoryBg from '../../svgs/story-bg.svg'
