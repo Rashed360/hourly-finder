@@ -6,7 +6,7 @@ import CategoryBlock from './categoryblock/CategoryBlock'
 import CityBlock from './cityBlock/CityBlock'
 import FeedbackBlock from './feedbackBlock/Feedback'
 import BlockSection from './blogSection/BlockSection'
-import NewsLetter from './newsletterSection/NewsLetter'
+import NewsLetterSection from './newsletterSection/NewsLetterSection'
 
 const Home = () => {
 	const [currentTagLine, setCurrentTagLine] = useState('hourly-based')
@@ -154,7 +154,7 @@ const Home = () => {
 			{/* <!-- ==================== Latest Blog Post Area Start ==================== --> */}
 			<BlockSection />
 			{/* <!-- ==================== Newsletter Area Start ==================== --> */}
-			<NewsLetter />
+			<NewsLetterSection />
 			{/* End 001 */}
 		</div>
 	)

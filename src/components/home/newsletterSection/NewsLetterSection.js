@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaEnvelope} from 'react-icons/fa'
 
-const NewsLetter = () => {
+const NewsLetterSection = () => {
 
     const newletterContent = {
         textContent : {
@@ -43,4 +43,4 @@ const NewsLetter = () => {
     );
 };
 
-export default NewsLetter;
+export default NewsLetterSection;
