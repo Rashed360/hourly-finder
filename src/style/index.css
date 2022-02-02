@@ -161,8 +161,8 @@ form.search-form svg {
 	box-shadow: 2px 3px 0px 2px var(--bgColor3);
 	border-radius: 10px;
 	padding: 20px;
-	height: 230px;
 	margin-bottom: 30px;
+	height: auto;
 }
 .about-recruiter a .recruiter-logo {
 	width: 50px;
@@ -175,6 +175,7 @@ form.search-form svg {
 	margin-left: 25px;
 	font-weight: 400;
 	margin-bottom: 0;
+	word-break: break-word;
 }
 
 .post_time {
@@ -192,29 +193,35 @@ form.search-form svg {
 
 .job-content {
 	margin-top: 15px;
+	word-break: break-word;
 }
 .job-keyword .job-tag,
 .blog-keyword .blog-tag {
 	background: #e3e3e3;
-	display: inline-block;
-	font-size: var(--smallFont);
-	padding: 5px 10px;
-	border-radius: 10px;
-	margin-right: 5px;
+    display: flex;
+	align-items: center;
+    font-size: var(--smallFont);
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+	word-break: initial;
 }
 .job-tag div,
 .blog-tag div {
 	background: #bbbaba;
-	width: 12px;
-	height: 12px;
-	display: inline-block;
-	border-radius: 50%;
-	margin-right: 5px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 .job-keyword,
 .blog-keyword {
 	margin-top: 10px;
+	display: flex;
 }
 .job-tag div.creative,
 .blog-tag div.house {
