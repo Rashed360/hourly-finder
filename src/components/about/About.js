@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import MemberCard from './memberCard/MemberCard'
+import RoadmapCard from './roadmapCard/RoadmapCard'
 import IntroBg from '../../svgs/intro-bg.svg'
 import StoryBg from '../../svgs/story-bg.svg'
 import FutureBg from '../../svgs/future-bg.svg'
@@ -31,6 +32,39 @@ const About = () => {
 				name={member.name}
 				designation={member.designation}
 				image={member.image}
+			/>
+		)
+	})
+
+	const roadmapInfo = [
+		{
+			month: 'Apr',
+			day: '20',
+			title: 'Initial Plannings'
+		},
+		{
+			month: 'Jun',
+			day: '12',
+			title: 'UI/UX &amp; Brainstorming'
+		},
+		{
+			month: 'Aug',
+			day: '23',
+			title: 'Front End'
+		},
+		{
+			month: 'Oct',
+			day: '04',
+			title: 'Back End'
+		}
+	]
+
+	const roadmap = roadmapInfo.map(info => {
+		return (
+			<RoadmapCard
+				month={info.month}
+				day={info.day}
+				title={info.title}
 			/>
 		)
 	})
@@ -108,26 +142,7 @@ const About = () => {
 					<h3 className='roadmap-heading'>Road Map</h3>
 
 					<div className='roadmap-cards'>
-						<div className='roadmap-card'>
-							<small>Apr</small>
-							<h3>20</h3>
-							<p>Initial Plannings</p>
-						</div>
-						<div className='roadmap-card'>
-							<small>Jun</small>
-							<h3>12</h3>
-							<p>UI/UX &amp; Brainstorming</p>
-						</div>
-						<div className='roadmap-card'>
-							<small>Aug</small>
-							<h3>23</h3>
-							<p>Front End</p>
-						</div>
-						<div className='roadmap-card'>
-							<small>Oct</small>
-							<h3>04</h3>
-							<p>Back End</p>
-						</div>
+					{roadmap}
 					</div>
 					<div className='roadmap-road'>
 						<div className='roadmap-progress'></div>

@@ -95,6 +95,7 @@ const Footer = () => {
 			<FooterMenu menu={menu}></FooterMenu>
 		);
 	})
+	
 	return (
 		<footer>
 			<div className='footer-menu-area section-padding'>
