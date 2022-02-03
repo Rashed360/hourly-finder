@@ -2,6 +2,7 @@ import MemberCard from './memberCard/MemberCard'
 import RoadmapCard from './roadmapCard/RoadmapCard'
 import StoryBg from '../../svgs/story-bg.svg'
 import FutureBg from '../../svgs/future-bg.svg'
+import StoryPlan from './storyPlan/StoryPlan'
 
 const About = () => {
 	document.title = 'HourlyFinder | About'
@@ -67,6 +68,20 @@ const About = () => {
 		)
 	})
 
+
+	const stories_plan = {
+		our_story : {
+			title : "Our Story",
+			description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit vel, urna imperdiet aliquet platea sodales. Faucibus congue vulputate nunc, facilisi diam volutpat augue. Luctus dui a mauris, diam eget nisl, vel vel. Etiam in ullamcorper neque aliquet malesuada pharetra est neque.",
+			img : StoryBg
+		},
+		future_plan : {
+			title : "Future Plans",
+			description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit vel, urna imperdiet aliquet platea sodales. Faucibus congue vulputate nunc, facilisi diam volutpat augue. Luctus dui a mauris, diam eget nisl, vel vel. Etiam in ullamcorper neque aliquet malesuada pharetra est neque.",
+			img : FutureBg
+		}
+	}
+
 	return (
 		<div>
 			<div
@@ -82,23 +97,7 @@ const About = () => {
 			{/* <!-- ==================== Intro Area End ==================== --> */}
 
 			{/* <!-- ==================== Story Area Start ==================== --> */}
-			<div className='story-area'>
-				<div className='story-image'>
-					<img src={StoryBg} alt='' />
-				</div>
-				<div className='story-content'>
-					<div className='story-text'>
-						<h3 className='story-heading'>Our Story</h3>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
-							vel, urna imperdiet aliquet platea sodales. Faucibus congue
-							vulputate nunc, facilisi diam volutpat augue. Luctus dui a mauris,
-							diam eget nisl, vel vel. Etiam in ullamcorper neque aliquet
-							malesuada pharetra est neque.
-						</p>
-					</div>
-				</div>
-			</div>
+			<StoryPlan story={stories_plan.our_story} order="" />
 			{/* <!-- ==================== Story Area End ==================== --> */}
 
 			{/* <!-- ==================== Team Area Start ==================== --> */}
@@ -113,23 +112,7 @@ const About = () => {
 			{/* <!-- ==================== Team Area End ==================== --> */}
 
 			{/* <!-- ==================== Future Area Start ==================== --> */}
-			<div className='future-area'>
-				<div className='future-content'>
-					<div className='future-text'>
-						<h3 className='future-heading'>Future Plans</h3>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
-							vel, urna imperdiet aliquet platea sodales. Faucibus congue
-							vulputate nunc, facilisi diam volutpat augue. Luctus dui a mauris,
-							diam eget nisl, vel vel. Etiam in ullamcorper neque aliquet
-							malesuada pharetra est neque.
-						</p>
-					</div>
-					<div className='future-image'>
-						<img src={FutureBg} alt='' />
-					</div>
-				</div>
-			</div>
+			<StoryPlan story={stories_plan.future_plan} order="order-first" />
 			{/* <!-- ==================== Future Area End ==================== --> */}
 
 			{/* <!-- ==================== Roadmap Area Start ==================== --> */}
