@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaEnvelope} from 'react-icons/fa'
+import {FaEnvelope,FaSmile} from 'react-icons/fa'
 
 const NewsLetterSection = () => {
 
@@ -34,7 +34,7 @@ const NewsLetterSection = () => {
 										class='btn newsletter'
 									/>
 								</form>
-								<p>{newletterContent.textContent.title}</p>
+								<p>{newletterContent.textContent.bottomText} <FaSmile/></p>
 							</div>
 						</div>
 					</div>

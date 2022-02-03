@@ -5,7 +5,7 @@ import Home from './home/Home'
 import About from './about/About'
 import Blogs from './blogs/Blogs'
 import Contact from './contact/Contact'
-import Login from './login/Login'
+import Account from './account/Account'
 import PageNotFound from './notFound/PageNotFound'
 
 // temporary
@@ -21,7 +21,7 @@ function App() {
 		<Route path='/about' exact component={About} />
 		<Route path='/blogs' exact component={Blogs} />
 		<Route path='/contact' exact component={Contact} />
-		<Route path='/login' exact component={Login} />
+		<Route path='/account' exact component={Account} />
 		{/* temporary */}
 		<Route path='/blog' exact component={SingleBlog} />
 		<Route path='/job' exact component={SingleJob} />

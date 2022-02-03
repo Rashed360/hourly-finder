@@ -48,7 +48,7 @@ const Header = () => {
 									</li>
 								</ul>
 							</nav>
-							<Link to='/login' className='btn join-us'>Join Us</Link>
+							<Link to='/account' className='btn join-us'>Join Us</Link>
 						</div>
 					</div>
 				</div>

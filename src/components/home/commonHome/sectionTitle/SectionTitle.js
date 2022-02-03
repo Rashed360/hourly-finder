@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {FaAngleDoubleRight} from 'react-icons/fa'
 
 const SectionTitle = ({title='Title', subTitle='All Links', subLink='#'}) => {
@@ -11,7 +12,7 @@ const SectionTitle = ({title='Title', subTitle='All Links', subLink='#'}) => {
         </div>
         <div class='col-lg-6'>
             <div class='link-title'>
-                <a href={subLink}>{subTitle} <FaAngleDoubleRight/></a>
+                <Link to={subLink}>{subTitle} <FaAngleDoubleRight/></Link>
             </div>
         </div>
     </div>
