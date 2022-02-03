@@ -397,7 +397,7 @@ form.search-form svg {
 	height: 180px;
 	left: 0;
 	top: 0;
-	/* background-image: url("%PUBLIC_URL%/images/homepage/blogimage/image1.jpg"); */
+	background-color: #bbb; /* temporary */
 	background-size: cover;
 	background-position: center;
 	border-radius: 9px 9px 0px 0px;
@@ -1175,3 +1175,480 @@ form.search-form svg {
 	border-bottom: 0.5px solid #dfdfdf;
 }
 /* -------------------------All Blog Page CSS  End--------------------- */
+
+
+
+/* -------------------------Single Job Page CSS  Start--------------------- */
+.apply-area{
+	margin-top: 70px;
+ }
+ .recruiter-company-cover {
+	background-color: #ccc; /* temporary */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 190px;
+	position: relative;
+	margin-bottom: 70px;
+	border-radius: 10px 10px 0px 0px;
+ }
+ .recruiter-company-cover .company-profile {
+	position: absolute;
+	bottom: 0;
+	height: 80px;
+	width: 90px;
+	left: 50%;
+	margin-left: -45px;
+	margin-bottom: -40px;
+	border-radius: 10px;
+	background-color: #aaa; /* temporary */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+ }
+ .jobs-details-information {
+	padding: 10px 25px;
+ }
+ 
+ .single-job-title h2 {
+	font-size: 30px;
+	font-weight: 600;
+ }
+ 
+ .single-job-title p {
+	font-size: 22px;
+	margin-top: 5px;
+ }
+ 
+ .single-job-title {
+	margin-bottom: 25px;
+ }
+ 
+ .apply-left {
+	padding-top: 30px;
+ }
+ .basic-info p {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #434343;
+ }
+ 
+ .basic-info h5 {
+	font-size: 16px;
+	margin-top: 5px;
+ }
+ 
+ .basic-info {
+	margin-bottom: 20px;
+ }
+ 
+ .single-job-details h3 {
+	font-size: var(--mediumFont);
+	margin-bottom: 8px;
+ }
+ 
+ .single-job-details p {
+	font-size: 16px;
+	text-align: justify;
+ }
+ 
+ .single-job-details {
+	margin-bottom: 25px;
+ }
+ .require-skills ul {
+	list-style: disc;
+	padding-left: 30px;
+ }
+ 
+ /* -------Apply Sidebar CSS------ */
+ .apply-sidebar {
+	background: var(--sectionBg);
+	height: 100%;
+ }
+ .sidebar-padding{
+	padding: 25px 30px;
+ }
+ .application-budget-information{
+	border-bottom: 1px solid #DEE0E3;
+ }
+ .application-budget-information p {
+	font-weight: 400;
+ }
+ 
+ .application-budget-information h4.budget {
+	font-size: 30px;
+	margin: 10px 0;
+	margin-bottom: 25px;
+ }
+ 
+ .application-budget-information .btn {
+	display: block;
+	margin-bottom: 10px;
+ }
+ 
+ .application-budget-information .btn.apply-now {
+	background: #16395F;
+ }
+ 
+ .application-budget-information .btn.add-to-wishlist {
+	border: 1px solid #C1C1C1;
+	background: #DEE0E3;
+	color: #8A8A8A;
+ }
+ .recruiter-profile-name .profile-info img {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	margin-right: 20px;
+ }
+ 
+ .recruiter-profile-name {
+	margin: 20px 0;
+ }
+ 
+ .recruiter-profile-name .profile-name p {
+	font-size: 16px;
+	font-weight: 400;
+	margin-top: -5px;
+ }
+ 
+ .contact-details nav ul li {
+	margin-bottom: 15px;
+	color: #111111;
+	font-size: 17px;
+ }
+ 
+ .contact-details nav ul li svg {
+	color: #3F3F3F;
+	margin-right: 15px;
+ }
+ 
+ .profile-gallery p {
+	font-size: 17px;
+	text-align: justify;
+ }
+ 
+ .profile-gallery a {
+	color: var(--bgColor);
+	margin-top: 5px;
+	display: inline-block;
+	font-weight: 600;
+ }
+ .profile-gallery .gallery img {
+	height: 180px;
+	width: 100%;
+	margin: 10px 0;
+	border-radius: 10px;
+ }
+ 
+ /* -------------------------Single Job Page CSS  End--------------------- */
+ 
+ /* -------------------------Apply Page CSS  Start--------------------- */
+ .apply-form{
+	float: left;
+ }
+ .form-field.agree label{
+	font-size: 14px;
+ }
+ .job-application-info {
+	background: #EEEEEE;
+	border-radius: 0px 30px 30px 0px;
+ }
+ .job-application-info .normal-logo h3 {
+	font-size: 20px;
+	color: #F2ECDC;
+	font-weight: 600;
+ }
+ 
+ .job-application-info .normal-logo {
+	background: #16395FB2;
+	display: inline-block;
+	padding: 10px 25px;
+ }
+ .job-application-title h2 {
+	font-size: 25px;
+	font-weight: 600;
+ }
+ 
+ .job-application-title p {
+	font-size: 18px;
+	font-weight: 400;
+ }
+ 
+ .job-application-title p span {
+	font-weight: 500;
+ }
+ .application-company-profile img {
+	border-radius: 10px;
+	height: 65px;
+	width: 70px;
+	margin-right: 20px;
+ }
+ 
+ .application-company-name h5 {
+	font-size: 18px;
+	margin-bottom: 0;
+ }
+ 
+ .application-company-name p {
+	font-size: 14px;
+	font-weight: 400;
+ }
+ 
+ .job-application-info p.job-overview {
+	background: white;
+	padding: 15px;
+	font-size: 14px;
+	border-radius: 10px;
+	text-align: justify;
+	font-weight: 400;
+	margin: 15px 0;
+ }
+ .job-application-info .job-budget-time h3 {
+	font-size: 22px;
+	font-weight: 600;
+ }
+ 
+ .job-application-info .job-budget-time p {
+	font-size: 16px;
+	font-weight: 400;
+	color: #737171;
+ }
+ .job-application-title {
+	margin: 15px 0;
+ }
+ /* -------------------------Apply Page CSS  End--------------------- */
+ 
+ /* -------------------------Single Blog Page CSS  Start--------------------- */
+ .single-blog-title h2 {
+	font-size: 30px;
+	font-weight: 600;
+ }
+ 
+ .single-blog-title h4 {
+	font-size: 22px;
+	margin: 10px 0;
+	margin-bottom: 25px;
+ }
+ 
+ .single-blog-author-time p {
+	font-size: 16px;
+	font-weight: 400;
+ }
+ 
+ .blog-main-bg,.blog-sub-bg {
+	height: 350px;
+	border-radius: 10px;
+	background-color: #bbb; /* temporary */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 15px 0;
+ }
+ 
+ .single-blog-details p.blog-text {
+	font-size: 16px;
+	text-align: justify;
+ }
+ 
+ .blog-sub-bg {
+	height: 290px;
+ }
+ .single-blog-content-wrapper {
+	padding: 25px 0;
+ }
+ 
+ .single-blog-details {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #dfdfdf;
+	margin-bottom: 20px;
+ }
+ /* -------------------------Single Blog Page CSS  End--------------------- */
+ 
+ /* -------------------------Job Seeker Profile Page CSS  start--------------------- */
+ .profile-view-bar {
+	padding: 50px 30px;
+	background: #F4F4F4;
+	height: 100%;
+ }
+ 
+ .profile-bg {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: auto;
+ }
+ .profile-view-bar .profile-name-title {
+	text-align: center;
+ }
+ 
+ .profile-view-bar .profile-name-title h3 {
+	font-size: 28px;
+	margin-top: 20px;
+ }
+ 
+ .profile-view-bar .profile-name-title p {
+	font-size: 18px;
+	font-weight: 300;
+	margin-top: 5px;
+ }
+ 
+ .profile-view-bar .contact-details li {
+	font-size: 16px;
+ }
+ 
+ .profile-view-bar .contact-details {
+	margin: 30px 0;
+ }
+ 
+ .important-links .btn {
+	display: block;
+	margin-bottom: 15px;
+	font-weight: 400;
+	border-radius: 10px;
+ }
+ 
+ .important-links .btn.message {
+	background: #DCDCDC;
+	color: #464646;
+	border: 1px solid #C0C0C0;
+ }
+ .profile-view-information {
+	background: #F4F4F4;
+	padding: 30px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+ }
+ 
+ .profile-view-information .profile-category {
+	font-weight: 300;
+ }
+ 
+ .profile-view-information .overall-rating {
+	text-align: right;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+ }
+ 
+ 
+ .profile-view-information .overall-rating h4 {
+	font-size: 18px;
+	font-weight: 300;
+	margin-right: 10px;
+ }
+ 
+ .profile-view-information .overall-rating .rating svg {
+	color: gray;
+ }
+ .profile-view-information .overall-rating .rating svg.iconify.checked {
+	color: black;
+ }
+ 
+ .profile-view-information .profile-title h5 {
+	font-size: 20px;
+	font-weight: 600;
+	position: relative;
+	display: inline-block;
+ }
+ 
+ 
+ .profile-view-information .profile-title h5::after {
+	position: absolute;
+	content: "";
+	width: 2008%;
+	height: 2px;
+	background: #C4C4C4;
+	top: 50%;
+	left: 110%;
+ }
+ .profile-view-information .profile-title{
+	overflow: hidden;
+	margin-top: 25px;
+	margin-bottom: 10px;
+ }
+ .profile-view-information .profile-bio, .profile-view-information .skills-tag, .profile-view-information .previous-works-list,.profile-view-information .review-list {
+	background: white;
+	border-radius: 10px;
+	padding: 20px 30px;
+ }
+ 
+ .profile-view-information .profile-bio h5 {
+	font-size: 18px;
+ }
+ 
+ .profile-view-information .profile-bio p {
+	font-size: 16px;
+	font-weight: 300;
+ }
+ 
+ .skills-tag span {
+	background: #E3E3E3;
+	font-size: 16px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	color: #565454;
+	margin-right: 15px;
+ }
+ .work-title p {
+	display: inline-block;
+ }
+ 
+ .previous-work-item {
+	background: #f4f4f4;
+	padding: 15px 20px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+ }
+ 
+ .previous-work-item h5 {
+	font-size: 18px;
+	margin-bottom: 0;
+ }
+ 
+ .previous-work-item .work-title p {
+	font-size: 14px;
+	font-weight: 300;
+	margin-right: 10px;
+ }
+ 
+ .previous-work-item .work-title p svg {
+	color: #737171;
+ }
+ 
+ .previous-work-item .rating svg {
+	font-size: 20px;
+ }
+ 
+ .previous-work-item .location-date p {
+	font-size: 14px;
+ }
+ 
+ .previous-work-item .location-date p svg {
+	color: #737171;
+	margin-right: 5px;
+	font-size: 15px;
+ }
+ .review-item .reviewer-profile h5 {
+	font-size: 14px;
+	margin: 0;
+ }
+ 
+ .review-item .reviewer-profile p {
+	font-size: 11px;
+	color: gray;
+	font-weight: 300;
+ }
+ 
+ .review-item .review-text {
+	font-size: 11px;
+	text-align: justify;
+ }
+ 
+ .review-item .rating {
+	margin: 7px 0;
+ }
+ /* -------------------------Job Seeker Profile Page CSS  End--------------------- */

@@ -81,7 +81,7 @@ const BlogSection = () => {
     return (
         <div class='latest-blog-area section-padding'>
             <div class='container'>
-                <SectionTitle title="Latest Blog Posts" subTitle="All Blogs" subLink="#" />
+                <SectionTitle title="Latest Blog Posts" subTitle="All Blogs" subLink="/blogs" />
                 <div class='row pt-40'>
                     {blogs}
                 </div>

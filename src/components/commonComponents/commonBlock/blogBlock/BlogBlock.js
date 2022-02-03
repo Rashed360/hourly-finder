@@ -20,7 +20,7 @@ const BlogBlock = ({blog}) => {
 					</div>
 					<div class='blog-text'>
 						<h3>
-						<Link to="/">{title}</Link>
+						<Link to="/blog">{title}</Link>
 						</h3>
 						<p>{description}</p>
 					</div>

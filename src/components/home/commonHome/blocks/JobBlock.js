@@ -20,7 +20,7 @@ const JobBlock = ({ job }) => {
 			</div>
 			<div class='job-content'>
 				<h3 class='job-title'>
-					<Link to={`/jobs/${job.id}`}>{job.name}</Link>
+					<Link to={`/job/${job.id}`}>{job.name}</Link>
 				</h3>
 				<div class='job-status'>
 					<span class='job-type'>{job.type}</span> in
