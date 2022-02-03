@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import BlogSidebarSection from '../blogs/blogSidebarSection/BlogSidebarSection'
 
 const SingleBlog = () => {
   return (
@@ -106,81 +107,8 @@ const SingleBlog = () => {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="side-bar-right">
-                        <div class="section-title mb-30">
-                            <h3>Most Recent Jobs</h3>
-                        </div>
-                        <div class="job-cards">
-                            <div class="job-card">
-                                <div class="about-recruiter d-flex align-items-center">
-                                    <Link to=""><img src="/images/homepage/recruiter-logo.png" alt="logo" class="recruiter-logo"/></Link>
-                                    <h5 class="recruiter-title">
-                                        <Link to="">Founders,</Link>
-                                        <span class="post_time">8h ago</span>
-                                    </h5>
-                                </div>
-                                <div class="job-content">
-                                    <h3 class="job-title">
-                                        <Link to="">Complete House Paintings Services</Link>
-                                    </h3>
-                                    <div class="job-status">
-                                        <span class="job-type">Hourly</span> in
-                                        <span class="job-location"><Link to="">Banani</Link></span>
-                                    </div>
-                                    <div class="job-keyword">
-                                        <Link to="" class="job-tag"><div class="creative"></div> Creative</Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="job-card">
-                                <div class="about-recruiter d-flex align-items-center">
-                                    <Link to=""><img src="/images/homepage/recruiter-logo.png" alt="logo" class="recruiter-logo"/></Link>
-                                    <h5 class="recruiter-title">
-                                        <Link to="">Founders,</Link>
-                                        <span class="post_time">8h ago</span>
-                                    </h5>
-                                </div>
-                                <div class="job-content">
-                                    <h3 class="job-title">
-                                        <Link to="">Complete House Paintings Services</Link>
-                                    </h3>
-                                    <div class="job-status">
-                                        <span class="job-type">Hourly</span> in
-                                        <span class="job-location"><Link to="">Banani</Link></span>
-                                    </div>
-                                    <div class="job-keyword">
-                                        <Link to="" class="job-tag"><div class="creative"></div> Creative</Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="job-card">
-                                <div class="about-recruiter d-flex align-items-center">
-                                    <Link to=""><img src="/images/homepage/recruiter-logo.png" alt="logo" class="recruiter-logo"/></Link>
-                                    <h5 class="recruiter-title">
-                                        <Link to="">Founders,</Link>
-                                        <span class="post_time">8h ago</span>
-                                    </h5>
-                                </div>
-                                <div class="job-content">
-                                    <h3 class="job-title">
-                                        <Link to="">Complete House Paintings Services</Link>
-                                    </h3>
-                                    <div class="job-status">
-                                        <span class="job-type">Hourly</span> in
-                                        <span class="job-location"><Link to="">Banani</Link></span>
-                                    </div>
-                                    <div class="job-keyword">
-                                        <Link to="" class="job-tag"><div class="creative"></div> Creative</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-title mb-30">
-                            <h3>Advertizement</h3>
-                        </div>
-                        <div class="advertizement-bg"></div>
-                    </div>
+                <div className='col-lg-3'>
+                    <BlogSidebarSection></BlogSidebarSection>
                 </div>
             </div>
         </div>

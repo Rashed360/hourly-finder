@@ -3,7 +3,6 @@ import Tags from '../../../commonComponents/tagElement/Tags'
 
 const JobBlock = ({ job }) => {
   return (
-	<div class='col-lg-3'>
 		<div class='job-card'>
 			<div class='about-recruiter d-flex align-items-center'>
 				<Link to={`/company/${job.company_id}`}>
@@ -31,7 +30,6 @@ const JobBlock = ({ job }) => {
 				<Tags tags={job.keyword} />
 			</div>
 		</div>
-	</div>
   )
 }
 

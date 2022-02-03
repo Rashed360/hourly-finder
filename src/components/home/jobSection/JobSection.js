@@ -1,5 +1,5 @@
 import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
-import JobBlock from '../commonHome/blocks/JobBlock'
+import JobBlock from '../../commonComponents/commonBlock/jobBlock/JobBlock'
 
 const JobSection = () => {
 
@@ -84,7 +84,9 @@ const JobSection = () => {
 
   const jobs = jobList.map(job => {
 		return (
-			<JobBlock job={job} />
+			<div class='col-lg-3'>
+        <JobBlock job={job} />
+      </div>
 		)
 	})
 

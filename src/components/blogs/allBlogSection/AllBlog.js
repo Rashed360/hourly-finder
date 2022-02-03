@@ -3,6 +3,7 @@ import 'react-pagination-bar/dist/index.css'
 import BlogSlider from "../blogSliderSection/BlogSlider"
 import BlogBlock from '../../commonComponents/commonBlock/blogBlock/BlogBlock';
 import BlogPagination from '../pagination/BlogPagination';
+import SubTitle from '../../commonComponents/subTitle/SubTitle';
 
 const AllBlog = () => {
 
@@ -244,13 +245,8 @@ const AllBlog = () => {
     return (
         <div className='col-lg-9'>
             <div className='blog-contents'>
-                <div className='row mb-40'>
-                    <div className='col-lg-12'>
-                        <div className='section-title'>
-                            <h3>Weekly Blogs for you</h3>
-                        </div>
-                    </div>
-                </div>
+                
+                <SubTitle sub_title="Weekly Blog For You" />
 
 {/* <!-- ====================Blog Slider Start ==================== --> */}
                 <BlogSlider></BlogSlider>
