@@ -135,8 +135,8 @@ const SingleJob = () => {
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem ad delectus minima voluptatum ea dolorum fugiat possimus minus in pariatur!...</p>
                                 <Link to="" className="more-info">More info</Link>
                                 <div className="gallery">
-                                    <img src="/images/singlejobpage/photo-gallery/31917962768_c979352217_b.jpg" alt="photo gallery" className="img-fluid"/>
-                                    <img src="/images/singlejobpage/photo-gallery/cover-1.jpg" alt="photo gallery" className="img-fluid"/>
+                                    <img src="/images/singlejobpage/photo-gallery/31917962768_c979352217_b.jpg" alt="gallery" className="img-fluid"/>
+                                    <img src="/images/singlejobpage/photo-gallery/cover-1.jpg" alt="gallery" className="img-fluid"/>
                                 </div>
                             </div>
                         </div>
