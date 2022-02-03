@@ -483,27 +483,48 @@ form.search-form svg {
 /* -------------------------Newsletter Section CSS End --------------------- */
 
 /* -------------------------Footer Section CSS Start --------------------- */
-.footer-menu-area{
-    background-color: var(--sectionBg);
+.footer-menu-area {
+    background-color: var(--bgColor5);
  }
- .footer-menu nav ul li {
-    font-size: 20px;
-    margin-bottom: 5px;
- }
- 
- .footer-menu {
-    margin-top: 20px;
- }
- .footer-copyright-area {
-    background: #323232;
+.footer-menu-title {
+    display: inline-block;
+    position: relative;
+}
+.footer-menu-title h3 {
+	font-size: var(--normalFont);
     color: white;
-    padding: 20px;
- }
- 
- .copyright-text {
-    text-align: right;
-    font-weight: 300;
- }
+    font-weight: 600;
+}
+.footer-menu-title::after {
+    position: absolute;
+    content: "";
+    background-color: var(--bgColor);
+    width: 100%;
+    height: 2px;
+}
+.footer-menu nav ul li {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.footer-menu nav ul li a {
+	color: white;
+}
+.footer-menu nav ul li a:hover {
+	color: var(--bgColor)
+}
+.footer-menu {
+	margin-top: 20px;
+}
+.footer-copyright-area {
+	background: var(--bgColor4);
+	color: white;
+	padding: 20px;
+}
+
+.copyright-text {
+	text-align: right;
+	font-weight: 300;
+}
 /* -------------------------Footer Section CSS End --------------------- */
 /* ------------------------- Home End --------------------- */
 
