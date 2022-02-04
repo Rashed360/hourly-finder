@@ -147,18 +147,14 @@ const SingleBlog = () => {
         <div className='container'>
             <div className="row">
                 <div className='col-lg-9'>
-                    {/* Blog Details Information Start */}
                     <BlogDetailsSection blog={single_blog}></BlogDetailsSection>
-                    {/* Blog Details Information End*/}
-
-                    {/* Related Blog Section Start */}
-                    <RelatedBlogSection></RelatedBlogSection>
-                    {/* Related Blog Section End  */}
                 </div>
                 <div className='col-lg-3'>
                     <BlogSidebarSection></BlogSidebarSection>
                 </div>
             </div>
+            
+            <RelatedBlogSection></RelatedBlogSection>
         </div>
     </div>
   );
