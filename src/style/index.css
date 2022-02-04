@@ -813,7 +813,8 @@ form.search-form svg {
     font-size: 22px;
     font-weight: 500;
     margin: 0;
-    display: block;
+    display: flex;
+	justify-content: space-between;
     width: 100%;
     position: relative;
     text-align: left;
@@ -822,33 +823,15 @@ form.search-form svg {
     margin-left: -6px;
  }
  
+ .faq-indicator {
+	border: 2px solid #181717;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+ }
  
- .question-button.collapsed:after {
-    position: absolute;
-    content: "+";
-    top: 0;
-    right: 0;
-    width: 25px;
-    height: 25px;
-    border: 2px solid black;
-    font-size: 20px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 23px;
- }
- .question-button:after{
-    position: absolute;
-    content: "-";
-    top: 0;
-    right: 0;
-    width: 25px;
-    height: 25px;
-    border: 2px solid black;
-    font-size: 20px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 23px;
- }
  .answers-body {
     padding: 10px 0;
     text-align: justify;
