@@ -23,7 +23,7 @@ function App() {
 		<Route path='/contact' exact component={Contact} />
 		<Route path='/account' exact component={Account} />
 		{/* temporary */}
-		<Route path='/blog' exact component={SingleBlog} />
+		<Route path='/blog/:blog_id' exact component={SingleBlog} />
 		<Route path='/job' exact component={SingleJob} />
 		{/* page not found */}
 		<Route path='/*' component={PageNotFound} />

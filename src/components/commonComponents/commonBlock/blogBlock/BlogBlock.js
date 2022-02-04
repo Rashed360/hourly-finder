@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Tags from '../../tagElement/Tags'
 
 const BlogBlock = ({blog}) => {
-	const {author, title, description, time, tags, author_id} = blog
+	const {author, title, description, time, tags, author_id, id} = blog
 	return (
 		<div class='blog-item'>
 			<div class='blog-bg'></div>
@@ -19,7 +19,7 @@ const BlogBlock = ({blog}) => {
 				</div>
 				<div class='blog-text'>
 					<h3>
-					<Link to="/">{title}</Link>
+					<Link to={`/blog/${id}`}>{title}</Link>
 					</h3>
 					<p>{description}</p>
 				</div>

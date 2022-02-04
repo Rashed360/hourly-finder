@@ -1,8 +1,8 @@
 import React from 'react';
-import BlogBlock from '../../commonComponents/commonBlock/blogBlock/BlogBlock'
-import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
+import BlogBlock from '../../commonComponents/commonBlock/blogBlock/BlogBlock';
+import SubTitle from '../../commonComponents/subTitle/SubTitle';
 
-const BlogSection = () => {
+const RelatedBlogSection = () => {
 
     const blogContents = [
         {
@@ -27,7 +27,7 @@ const BlogSection = () => {
         {
             id : 1,
             author : "Sajeeb Debnath",
-            author_id : "2",
+            author_id : "1",
             title : "How House Painting Services Works...",
             description : "House pantings? Learn from professionals...",
             time :"25 min ago",
@@ -39,13 +39,14 @@ const BlogSection = () => {
                 {
                     name : "Painting",
                     color : "painting"
-                }
+                },
+
             ]
         },
         {
             id : 1,
             author : "Sajeeb Debnath",
-            author_id : "3",
+            author_id : "1",
             title : "How House Painting Services Works...",
             description : "House pantings? Learn from professionals...",
             time :"25 min ago",
@@ -57,50 +58,28 @@ const BlogSection = () => {
                 {
                     name : "Painting",
                     color : "painting"
-                }
-            ]
-        },
-        {
-            id : 1,
-            author : "Sajeeb Debnath",
-            author_id : "4",
-            title : "How House Painting Services Works...",
-            description : "House pantings? Learn from professionals...",
-            time :"25 min ago",
-            tags : [
-                {
-                    name : "House",
-                    color : "house"
                 },
-                {
-                    name : "Painting",
-                    color : "painting"
-                }
+
             ]
         }
-    ]
-
-
+    ];
 
     return (
-        <div class='latest-blog-area section-padding'>
-            <div class='container'>
-                <SectionTitle title="Latest Blog Posts" subTitle="All Blogs" subLink="/blogs" />
-                <div class='row pt-40'>
-                    {
-                        blogContents.map(blog => {
-                            return(
-                                <div class='col-lg-3'>
-                                    <BlogBlock blog={blog} />
-                                </div>
-                            );
-                        } )
-                        
-                    }
-                </div>
+        <div class="related-blog">
+            <SubTitle sub_title="Related Blog For You"></SubTitle>
+            <div class="row">
+                {
+                    blogContents.map(blog => {
+                        return (
+                            <div class="col-lg-4">
+                                <BlogBlock key={blog.id} blog={blog}></BlogBlock>
+                            </div>
+                        );
+                    })
+                }
             </div>
         </div>
     );
 };
 
-export default BlogSection;
+export default RelatedBlogSection;

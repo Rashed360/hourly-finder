@@ -9,6 +9,7 @@ const AllBlog = () => {
 
     const blogContents = [
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -27,6 +28,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -45,6 +47,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -63,6 +66,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -81,6 +85,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -99,6 +104,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -117,6 +123,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -135,6 +142,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "1",
             title : "How House Painting Services Works...",
@@ -153,6 +161,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "2",
             title : "How House Painting Services Works...",
@@ -170,6 +179,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "3",
             title : "How House Painting Services Works...",
@@ -187,6 +197,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "3",
             title : "How House Painting Services Works...",
@@ -204,6 +215,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Sajeeb Debnath",
             author_id : "3",
             title : "How House Painting Services Works...",
@@ -221,6 +233,7 @@ const AllBlog = () => {
             ]
         },
         {
+            id : 1,
             author : "Rashed Ahmed",
             author_id : "4",
             title : "How House Painting Services Works...",
