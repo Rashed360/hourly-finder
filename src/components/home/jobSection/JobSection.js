@@ -30,8 +30,8 @@ const JobSection = () => {
       company: 'Foundersssssssssssssssss',
       company_id : 2,
       image: '/images/homepage/recruiter-logo.png',
-      time: '8h agoooooooooooooooo',
-      type: 'Hourlyyyyy yyyyyyyyyyyyyyyy',
+      time: '8h ago',
+      type: 'Hourly',
       location: 'Bananiiiiiii iiiiiiiiiiiiii',
       keyword: [
         {

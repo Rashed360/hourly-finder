@@ -13,18 +13,18 @@ const JobBlock = ({ job }) => {
 					/>
 				</Link>
 				<h5 class='recruiter-title'>
-					<Link to={`/company/${job.company_id}`}>{job.company}, </Link><br/>
+					<Link to={`/company/${job.company_id}`}>{job.company.slice(0,14)}, </Link><br/>
 					<span class='post_time'>{job.time}</span>
 				</h5>
 			</div>
 			<div class='job-content'>
 				<h3 class='job-title'>
-					<Link to={`/job/${job.id}`}>{job.name}</Link>
+					<Link to={`/job/${job.id}`}>{job.name.slice(0,40)}</Link>
 				</h3>
 				<div class='job-status'>
 					<span class='job-type'>{job.type}</span> in
 					<span class='job-location'>
-						<Link to={`/jobs/location/${job.location}`}> {job.location}</Link>
+						<Link to={`/jobs/location/${job.location}`}> {job.location.slice(0,15)}</Link>
 					</span>
 				</div>
 				<Tags tags={job.keyword} />

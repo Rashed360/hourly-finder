@@ -24,7 +24,7 @@ function App() {
 		<Route path='/account' exact component={Account} />
 		{/* temporary */}
 		<Route path='/blog/:blog_id' exact component={SingleBlog} />
-		<Route path='/job' exact component={SingleJob} />
+		<Route path='/job/:job_id' exact component={SingleJob} />
 		{/* page not found */}
 		<Route path='/*' component={PageNotFound} />
 	  </Switch>
