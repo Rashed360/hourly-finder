@@ -17,6 +17,39 @@ const ContactFormSection = () => {
                         message : "",
                     }}
 
+                    validate={values => {
+                        const errors = {};
+                        if(!values.first_name){
+                            errors.first_name = 'Required';
+                        }
+                        if(!values.last_name){
+                            errors.last_name = 'Required';
+                        }
+
+                        if (!values.email) {
+                          errors.email = 'Required';
+                        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email))
+                        {
+                          errors.email = 'Invalid email address';
+                        }
+                        if(!values.phone){
+                            errors.phone = 'Required';
+                        }else if (!/^(0|[1-9]\d*)$/.test(values.phone)){
+                            errors.phone = 'Invalid phone number';
+                        }else if (values.phone <= 11){
+                            errors.phone = "phone must be 11 digit"
+                        }
+
+                        if(!values.subject){
+                            errors.subject = 'Required';
+                        }
+                        if(!values.message){
+                            errors.message = 'Required';
+                        }
+
+                        return errors;
+                      }}
+
                     onSubmit={(values) => {
                         console.log(values)
                       }}
@@ -39,6 +72,7 @@ const ContactFormSection = () => {
                                             onChange={handleChange}
                                             value={values.first_name}
                                         />
+                                        <p className='text-danger'><small style={{fontSize : "12px"}}>{errors.first_name}</small></p>
                                     </div>
                                     <div className='last-name'>
                                         <label for=''>Last Name</label>
@@ -49,6 +83,7 @@ const ContactFormSection = () => {
                                             onChange={handleChange}
                                             value={values.last_name}
                                         />
+                                        <p className='text-danger'><small style={{fontSize : "12px"}}>{errors.last_name}</small></p>
                                     </div>
                                 </div>
                                 <div className='form-field email'>
@@ -60,6 +95,7 @@ const ContactFormSection = () => {
                                         onChange={handleChange}
                                         value={values.email}
                                     />
+                                    <p className='text-danger'><small style={{fontSize : "12px"}}>{errors.email}</small></p>
                                 </div>
                                 <div className='form-field'>
                                     <div className='contact-phone'>
@@ -71,6 +107,7 @@ const ContactFormSection = () => {
                                             onChange={handleChange}
                                             value={values.phone}
                                         />
+                                        <p className='text-danger'><small style={{fontSize : "12px"}}>{errors.phone}</small></p>
                                     </div>
                                     <div className='profile'>
                                         <label for=''>Profile</label>
@@ -92,6 +129,7 @@ const ContactFormSection = () => {
                                         onChange={handleChange}
                                         value={values.subject}
                                     />
+                                    <p className='text-danger'><small style={{fontSize : "12px"}}>{errors.subject}</small></p>
                                 </div>
                                 <div className='form-field message'>
                                     <label for=''>Message</label>
@@ -104,6 +142,7 @@ const ContactFormSection = () => {
                                         onChange={handleChange}
                                         value={values.message}
                                     ></textarea>
+                                    <p className='text-danger'><small style={{fontSize : "12px"}}>{errors.message}</small></p>
                                 </div>
                                 <div className='form-field'>
                                     <input

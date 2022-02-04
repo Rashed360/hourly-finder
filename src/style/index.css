@@ -770,6 +770,11 @@ form.search-form svg {
  h2.contact-title, .faq-title h2 {
     font-size: 28px;
  }
+ .form-field {
+    overflow: hidden;
+    display: block;
+	margin-bottom : 5px;
+}
  
  .form-field .contact-phone {
     width: 47%;
@@ -782,9 +787,6 @@ form.search-form svg {
     display: block;
  }
  
- .contact-form .form-field input {
-    margin-bottom: 10px;
- }
  .faq-title {
     position: relative;
     display: block;
@@ -977,7 +979,6 @@ form.search-form svg {
 	font-size: var(--smallFont);
 	padding: 7px 15px;
 	outline-color: var(--bgColor);
-	margin-bottom: 5px;
 }
 
 .registration-form h2,
