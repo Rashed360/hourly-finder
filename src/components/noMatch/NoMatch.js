@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-const PageNotFound = () => {
+const NoMatch = () => {
 	document.title = 'HourlyFinder | Page Not Found'
     return (
         <div className='intro-area center-flex'>
@@ -18,4 +18,4 @@ const PageNotFound = () => {
     )
 }
 
-export default PageNotFound
+export default NoMatch

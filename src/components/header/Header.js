@@ -35,10 +35,10 @@ const Header = () => {
 							<nav>
 								<ul>
 									<li>
-										<NavLink to='/' exact>Home</NavLink>
+										<NavLink to='/'>Home</NavLink>
 									</li>
 									<li>
-										<NavLink to='/blogs'>Blog</NavLink>
+										<NavLink to='/blog'>Blog</NavLink>
 									</li>
 									<li>
 										<NavLink to='/about'>About Us</NavLink>
@@ -48,7 +48,7 @@ const Header = () => {
 									</li>
 								</ul>
 							</nav>
-							<Link to='/account' className='btn join-us'>Join Us</Link>
+							<Link to='/login' className='btn join-us'>Join Us</Link>
 						</div>
 					</div>
 				</div>
