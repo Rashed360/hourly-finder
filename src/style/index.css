@@ -152,6 +152,10 @@ form.search-form svg {
 	position: absolute;
 	right: 0;
 }
+
+.not-found-content {
+	margin-left: 20%;
+}
 /* -------------------------Hero Section CSS End --------------------- */
 
 /* -------------------------Most Recent Job Section CSS Start --------------------- */
@@ -303,15 +307,6 @@ form.search-form svg {
 .how-works-site {
 	background: var(--sectionBg);
 }
-#jobMap {
-	height: 260px;
-	color: var(--bgColor2);
-	border: 2px solid var(--bgColor3);
-	border-radius: 10px;
-	background-color: white;
-	box-shadow: 2px 3px 0px 2px var(--bgColor3);
-	z-index: 90;
-}
 .how-works-content h2 {
 	font-size: 32px;
 	font-weight: 600;
@@ -327,7 +322,15 @@ form.search-form svg {
 	margin-top: 25px;
 	padding: 7px 25px;
 }
-
+.leaflet-map {
+	height: 260px;
+	color: var(--bgColor2);
+	border: 2px solid var(--bgColor3);
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 2px 3px 0px 2px var(--bgColor3);
+	z-index: 90;
+}
 /* -------------------------How Works it Section CSS End --------------------- */
 
 /* -------------------------User Feedback Section CSS Start --------------------- */

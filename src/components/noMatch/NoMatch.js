@@ -1,21 +1,21 @@
-import {Link} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const NoMatch = () => {
-	document.title = 'HourlyFinder | Page Not Found'
-    return (
-        <div className='intro-area center-flex'>
-            <div className='intro-text'>
-                <h1 className='intro-heading'>Error : 404</h1>
-                <p class='lead'>
-                    <b>Page Not Found</b><br/>
-                    The page you are looking for is not currently available!
-                </p>
-                <div>
-                    <Link to='/'>Go to Home</Link>
-                </div>              
-            </div>
-		</div>
-    )
+  const navigate = useNavigate()
+
+  document.title = 'HourlyFinder | Page Not Found'
+  return (
+    <div class="hero-area d-flex align-items-center text-center">
+      <div className="not-found-content">
+        <h2 class="f-100">404</h2>
+        <h1>We looked really hard</h1>
+        <p>But it appears the page you seek doesnt exist anymore.</p>
+        <button onClick={() => navigate(-1)} className="btn mt-20">
+          Go back to where you came from
+        </button>
+      </div>
+    </div>
+  )
 }
 
 export default NoMatch

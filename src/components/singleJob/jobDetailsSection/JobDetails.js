@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LeafletMap from '../../commonComponents/map/LeafletMap'
 
 const JobDetails = ({job, recruiter}) => {
     return (
@@ -89,7 +90,9 @@ const JobDetails = ({job, recruiter}) => {
                     <h3>Location & Maps</h3>
                     <p>1.2 Km away from your location.</p>
                 </div>
-                <div id="jobMap"></div>
+                <div className="leaflet-map">
+                    <LeafletMap />
+                </div>
             </div>
         </div>
     );
