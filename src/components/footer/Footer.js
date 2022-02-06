@@ -90,9 +90,9 @@ const Footer = () => {
 		}
 	] 
 
-	const menu = footer_menuList.map(menu => {
+	const menu = footer_menuList.map((menu,index) => {
 		return (
-			<FooterMenu menu={menu}></FooterMenu>
+			<FooterMenu menu={menu} key={index}></FooterMenu>
 		);
 	})
 	

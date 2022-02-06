@@ -82,19 +82,19 @@ const JobSection = () => {
     }
   ]
 
-  const jobs = jobList.map(job => {
+  const jobs = jobList.map((job,index) => {
 		return (
-			<div class='col-lg-3'>
+			<div className='col-lg-3' key={index}>
         <JobBlock job={job} />
       </div>
 		)
 	})
 
   return (
-    <div class='most-recent-jobs section-padding'>
-        <div class='container'>
+    <div className='most-recent-jobs section-padding'>
+        <div className='container'>
             <SectionTitle title="Most Recent Jobs" subTitle="All Jobs" subLink="#" />
-            <div class='row pt-40'>
+            <div className='row pt-40'>
                 {jobs}
             </div>
         </div>

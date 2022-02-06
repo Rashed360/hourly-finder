@@ -1,10 +1,10 @@
 import React from 'react'
 import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
-import LeafletMap from '../../commonComponents/map/LeafletMap'
+import MyMap from '../../commonComponents/map/MyMap'
 
 const HowWorkSection = () => {
   return (
-    <div class="how-works-site section-padding">
+    <div class="how-works-site section-padding" id='how-work'>
       <div class="container">
         <SectionTitle title="How it works?" subTitle="Learn more" subLink="#" />
         <div class="row pt-40">
@@ -22,7 +22,7 @@ const HowWorkSection = () => {
           </div>
           <div class="col-lg-5">
             <div className="leaflet-map">
-              <LeafletMap />
+              <MyMap />
             </div>
           </div>
         </div>

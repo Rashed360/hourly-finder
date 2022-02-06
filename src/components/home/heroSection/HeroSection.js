@@ -17,11 +17,11 @@ const HeroSection = () => {
   },[currentTagLine])
 
   return (
-    <div class='hero-area d-flex align-items-center'>
-        <div class='container'>
-            <div class='col-lg-6 offset-lg-1'>
-                <div class='hero-content'>
-                    <div class='hero-text'>
+    <div className='hero-area d-flex align-items-center'>
+        <div className='container'>
+            <div className='col-lg-6 offset-lg-1'>
+                <div className='hero-content'>
+                    <div className='hero-text'>
                         <h1>
                             Find the most exciting <br/><span>{currentTagLine}</span> jobs nearby
                         </h1>
@@ -31,27 +31,27 @@ const HeroSection = () => {
                             study/job.
                         </p>
                     </div>
-                    <div class='hero-search-bar'>
-                        <div class='search-bar'>
-                            <form action='' class='search-form'>
+                    <div className='hero-search-bar'>
+                        <div className='search-bar'>
+                            <form action='' className='search-form'>
                                 <input
                                     type='text'
                                     placeholder='Where do you live ?'
-                                    class='search-field'
+                                    className='search-field'
                                 />
                                 <FaMapMarkerAlt/>
                                 <input
                                     type='submit'
                                     value='Get Started'
-                                    class='btn get-started'
+                                    className='btn get-started'
                                 />
                             </form>
-                            <div class='tag'>
+                            <div className='tag'>
                                 <span>
-                                    <Link to=''>Job on your location</Link>
+                                    <Link to='/'>Job on your location</Link>
                                 </span>
                                 <span>
-                                    <Link to=''>How it works?</Link>
+                                    <Link to='/'>How it works?</Link>
                                 </span>
                             </div>
                         </div>

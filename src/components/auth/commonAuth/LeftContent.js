@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const LeftContent = ({ page }) => {
   const statusInfo = () => {
-    if (page == 'login') {
+    if (page === 'login') {
       return (
         <>
           <p>Dont have an account?</p>
@@ -11,7 +11,7 @@ const LeftContent = ({ page }) => {
           </h4>
         </>
       )
-    } else if (page == 'register') {
+    } else if (page === 'register') {
       return (
         <>
           <p>Already have an account?</p>

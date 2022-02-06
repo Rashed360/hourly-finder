@@ -2,7 +2,7 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { MapContainer, Circle, Marker, Popup, TileLayer } from 'react-leaflet'
 
-const accessToken = 'pk.eyJ1IjoicmFzaGVkMzYwIiwiYSI6ImNrdGx1ZWQ3ODAycnQycG41NHZ1Mm83ODUifQ.CeYLxxvKsjSnrlYpLiXb_Q'
+const accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN
 
 let DefaultIcon = L.icon({
   iconUrl: '/images/map/icon/user.png',
@@ -49,7 +49,7 @@ const LeafletMap = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       /> */}
       <TileLayer
-        attribution='Map Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+        attribution='<a href="https://www.mapbox.com/">Mapbox</a> | <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url={'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token='+accessToken} id='mapbox/streets-v11'
       />
       <Circle center={position} pathOptions={fillOptions} radius={800} />
