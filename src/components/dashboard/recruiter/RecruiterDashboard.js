@@ -1,6 +1,52 @@
 import React from 'react';
+import DashboardNavigation from '../common/DashboardNavigation';
 
 const RecruiterDashboard = () => {
+    const DashboardInformation = {
+        navigation : [
+            {
+                name : "Dashboard",
+                icon : "home",
+                link : "/recruiter"
+            },
+            {
+                name : "Edit Profile",
+                icon : "edit",
+                link : "/recruiter/edit-profile"
+            },
+            {
+                name : "Message",
+                icon : "message",
+                link : "/recruiter/message"
+            },
+            {
+                name : "Post Job",
+                icon : "post",
+                link : "/recruiter/post-job"
+            },
+            {
+                name : "Manage Job",
+                icon : "manage",
+                link : "/recruiter/manage-job"
+            },
+            {
+                name : "Ongoing Job",
+                icon : "running",
+                link : "/recruiter/ongoing-job"
+            },
+            {
+                name : "Logout",
+                icon : "logout",
+                link : "/recruiter/logout"
+            },
+        ],
+        userInfo : {
+            id : 1,
+            name : "Sajeeb Debnath",
+            type : "Recruiter",
+            photo : "https://placeimg.com/100/100/people?t=1640373129965"
+        }
+    }
     return (
         <div>
             {/* <!-- ==================== Dashboard Area Start ==================== --> */}
@@ -9,30 +55,7 @@ const RecruiterDashboard = () => {
                 <div class="row g-0">
                      {/* <!-- ==================== Dashboard Left Sidebar Area Start ==================== --> */}
                     <div class="col-lg-2">
-                        <div class="dashboard-sidebar">
-                            <div class="user">
-                                <div class="user-photo" style={{backgroundImage: "url(https://placeimg.com/100/100/people?t=1640373129965)"}}></div>
-                                <div class="user-info">
-                                    <h5>Sajeeb Debnath</h5>
-                                    <p>Recruiter</p>
-                                </div>
-                            </div>
-    
-                            <div class="dashboard-navigation">
-                                <nav>
-                                    <ul>
-                                        <li><a href="#"><span><span class="iconify" data-icon="dashicons:dashboard"></span></span>Dashboard</a></li>
-                                        <li><a href="#"><span><span class="iconify" data-icon="fa-solid:search-location"></span></span>Post Jobs</a></li>
-                                        <li><a href="#"><span><span class="iconify" data-icon="clarity:list-line"></span></span>Manage Posts</a></li>
-                                        <li><a href="#"><span><span class="iconify" data-icon="bx:bxs-briefcase"></span></span>Ongoing Jobs</a></li>
-                                        <li><a href="#"><span><span class="iconify" data-icon="bx:bx-message-detail"></span></span>Messages</a></li>
-                                        <li><a href="#"><span><span class="iconify" data-icon="bx:bxs-user-circle"></span></span>Edit Profile</a></li>
-                                        <li><a href="#"><span><span class="iconify"  data-icon="mdi:logout"></span></span>Logout</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-    
-                        </div>
+                        <DashboardNavigation navigations={DashboardInformation.navigation} user={DashboardInformation.userInfo}></DashboardNavigation>
                     </div>
                      {/* <!-- ==================== Dashboard Left Sidebar End ==================== --> */}
 

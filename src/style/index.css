@@ -154,7 +154,7 @@ form.search-form svg {
 }
 
 .not-found-content {
-	margin-left: 20%;
+	margin: auto;
 }
 /* -------------------------Hero Section CSS End --------------------- */
 
@@ -732,6 +732,57 @@ form.search-form svg {
 
 /* ------------------------- Roadmap Section CSS End --------------------- */
 /* -------------------------About Page CSS  End--------------------- */
+
+/* -------------------------City & Category Page CSS  Start--------------------- */
+.locations-cities-item {
+	background: #FFFFFF;
+	border-radius: 10px;
+	padding: 25px;
+	position: relative;
+	padding-top: 225px;
+	box-shadow: 0px 1px 6px 0px rgb(0 0 0 / 28%);
+	margin-bottom: 15px;
+ }
+ .city-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 210px;
+	border-radius: 10px 10px 0px 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 90%;
+	z-index: 1;
+ }
+ 
+ .city-job-info {
+	position: relative;
+	color: white;
+	text-align: center;
+	top: 70%;
+ }
+ 
+ .city-job-info h4 {
+	font-size: var(--mediumFont);
+	color: white;
+	font-weight: 700;
+ }
+ 
+ .city-job-info h5 {
+	font-weight: 600;
+	color: white;
+ }
+ 
+ .city-list a {
+	font-size: 16px;
+	color: var(--bgColor);
+ }
+ .city-list .col-lg-6:nth-child(even) {
+	text-align: right;
+ }
+ /* -------------------------City & Category Page CSS  End--------------------- */
 
 
 /* -------------------------Contact Us Page CSS  Start--------------------- */
