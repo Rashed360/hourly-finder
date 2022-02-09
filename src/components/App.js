@@ -13,6 +13,7 @@ import UserProfile from './userProfile/UserProfile'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import CityCategory from './cityCategory/CityCategory'
+import AllJobs from './allJobs/AllJobs'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="blog" element={<Blogs />} />
+        <Route path="jobs" element={<AllJobs />} />
         <Route path="blog/:blog_id" element={<SingleBlog />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
