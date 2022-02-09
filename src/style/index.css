@@ -974,14 +974,15 @@ form.search-form svg {
 .form-field select,
 .form-field textarea {
 	display: block;
-	border: 2px solid #f2f2f2;
-	box-sizing: border-box;
-	border-radius: 10px;
-	width: 100%;
-	color: #838995;
-	font-size: var(--smallFont);
-	padding: 7px 15px;
-	outline-color: var(--bgColor);
+    border: 2px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    color: #838995;
+    font-size: var(--smallFont);
+    padding: 7px 15px;
+    outline-color: var(--bgColor);
+    margin-bottom: 5px;
 }
 
 .registration-form h2,
@@ -992,6 +993,7 @@ form.search-form svg {
 .form-field label {
 	font-size: 16px;
 	font-weight: 600;
+	margin-bottom: 5px;
 }
 .form-field .first-name {
 	float: left;
@@ -1740,10 +1742,13 @@ form.search-form svg {
  
  .job-alert-service input {
 	border: none;
-	border-radius: 5px;
-	padding: 9px 15px;
-	margin-bottom: 8px;
+    border-radius: 5px;
+    padding: 9px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
  }
+ .job-alert-service input[type="email"] {outline: none;}
  
  .job-alert-service input[type="submit"] {
 	background: #16395f;

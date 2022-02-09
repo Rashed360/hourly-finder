@@ -14,6 +14,7 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 import CityCategory from './cityCategory/CityCategory'
 import AllJobs from './allJobs/AllJobs'
+import RecruiterDashboard from './dashboard/recruiter/RecruiterDashboard'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="blog/:blog_id" element={<SingleBlog />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="dashboard/recruiter" element={<RecruiterDashboard />} />
         <Route path="user/:userId" element={<UserProfile />} />
         <Route path="apply" element={<Apply />} />
         <Route path="jobs/by" element={<CityCategory />} />
