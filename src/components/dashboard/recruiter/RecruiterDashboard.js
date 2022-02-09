@@ -55,13 +55,13 @@ const RecruiterDashboard = () => {
             <div class="container-fluid">
                 <div class="row g-0">
                      {/* <!-- ==================== Dashboard Left Sidebar Area Start ==================== --> */}
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <DashboardNavigation navigations={DashboardInformation.navigation} user={DashboardInformation.userInfo}></DashboardNavigation>
                     </div>
                      {/* <!-- ==================== Dashboard Left Sidebar End ==================== --> */}
 
                      {/* <!-- ==================== Dashboard Main Section Start ==================== --> */}
-                    <div class="col-lg-9">
+                    <div class="col-lg-7">
                         <div class="dashboard-main">
                             <h3 class="dashboard-title">Overview</h3>
                             <div class="dashboard-content">
@@ -191,7 +191,9 @@ const RecruiterDashboard = () => {
 
 
                       {/* <!-- ==================== Dashboard Right Sidebar Start ==================== --> */}
-                    
+                    <div class="col-lg-3">
+                        <DashboradRightBar></DashboradRightBar>
+                    </div>
                      {/* <!-- ==================== Dashboard Right Sidebar End ==================== --> */}
                 </div>
             </div>
