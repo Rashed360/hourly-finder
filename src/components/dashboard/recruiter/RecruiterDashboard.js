@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardNavigation from '../common/DashboardNavigation';
+import DashboradRightBar from '../common/DashboradRightBar';
 
 const RecruiterDashboard = () => {
     const DashboardInformation = {
@@ -191,80 +192,7 @@ const RecruiterDashboard = () => {
 
                       {/* <!-- ==================== Dashboard Right Sidebar Start ==================== --> */}
                     <div class="col-lg-3">
-                        <div class="dashboard-right-bar">
-                            <div class="dashboard-right-content">
-                                <h3 class="right-bar-title">Upcoming events</h3>
-                                <div class="dashboard-right-item"></div>
-                            </div>
-                            <div class="dashboard-right-content">
-                                <h3 class="right-bar-title">Newly Posted Jobs</h3>
-                                <div class="job-cards">
-                                    <div class="job-card">
-                                        <div class="about-recruiter d-flex align-items-center">
-                                            <a href=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" class="recruiter-logo" /></a>
-                                            <h5 class="recruiter-title">
-                                                <a href="">Founders,</a>
-                                                <span class="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div class="job-content">
-                                            <h3 class="job-title">
-                                                <a href="">Complete House Paintings Services</a>
-                                            </h3>
-                                            <div class="job-status">
-                                                <span class="job-type">Hourly</span> in
-                                                <span class="job-location"><a href="">Banani</a></span>
-                                            </div>
-                                            <div class="job-keyword">
-                                                <a href="" class="job-tag"><div class="creative"></div> Creative</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="job-card">
-                                        <div class="about-recruiter d-flex align-items-center">
-                                            <a href=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" class="recruiter-logo" /></a>
-                                            <h5 class="recruiter-title">
-                                                <a href="">Founders,</a>
-                                                <span class="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div class="job-content">
-                                            <h3 class="job-title">
-                                                <a href="">Complete House Paintings Services</a>
-                                            </h3>
-                                            <div class="job-status">
-                                                <span class="job-type">Hourly</span> in
-                                                <span class="job-location"><a href="">Banani</a></span>
-                                            </div>
-                                            <div class="job-keyword">
-                                                <a href="" class="job-tag"><div class="creative"></div> Creative</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="job-card">
-                                        <div class="about-recruiter d-flex align-items-center">
-                                            <a href=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" class="recruiter-logo" /></a>
-                                            <h5 class="recruiter-title">
-                                                <a href="">Founders,</a>
-                                                <span class="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div class="job-content">
-                                            <h3 class="job-title">
-                                                <a href="">Complete House Paintings Services</a>
-                                            </h3>
-                                            <div class="job-status">
-                                                <span class="job-type">Hourly</span> in
-                                                <span class="job-location"><a href="">Banani</a></span>
-                                            </div>
-                                            <div class="job-keyword">
-                                                <a href="" class="job-tag"><div class="creative"></div> Creative</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <DashboradRightBar></DashboradRightBar>
                     </div>
                      {/* <!-- ==================== Dashboard Right Sidebar End ==================== --> */}
                 </div>
