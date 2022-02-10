@@ -93,7 +93,7 @@ const JobSection = () => {
   return (
     <div className='most-recent-jobs section-padding'>
         <div className='container'>
-            <SectionTitle title="Most Recent Jobs" subTitle="All Jobs" subLink="#" />
+            <SectionTitle title="Most Recent Jobs" subTitle="All Jobs" subLink="/jobs" />
             <div className='row pt-40'>
                 {jobs}
             </div>

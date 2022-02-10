@@ -13,6 +13,8 @@ import UserProfile from './userProfile/UserProfile'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import CityCategory from './cityCategory/CityCategory'
+import AllJobs from './allJobs/AllJobs'
+import RecruiterDashboard from './dashboard/recruiter/RecruiterDashboard'
 
 function App() {
   return (
@@ -20,16 +22,27 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="jobs" element={<AllJobs />} />
+        <Route path="jobs/by" element={<CityCategory />} />
+        <Route path="blogs" element={<Blogs />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="blog" element={<Blogs />} />
-        <Route path="blog/:blog_id" element={<SingleBlog />} />
+        
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="user/:userId" element={<UserProfile />} />
         <Route path="apply" element={<Apply />} />
-        <Route path="jobs/by" element={<CityCategory />} />
+        
+
+        {/* Dynamic Route Start */}
         <Route path="job/:job_id" element={<SingleJob />} />
+        <Route path="user/:userId" element={<UserProfile />} />
+        <Route path="blog/:blog_id" element={<SingleBlog />} />
+        {/* Dynamic Route End */}
+
+        {/* Recruiter Dashboard Route Start */}
+        <Route path="dashboard/recruiter" element={<RecruiterDashboard />} />
+        {/* Recruiter Dashboard Route Start */}
+      
         <Route path="*" element={<NoMatch />} />
       </Routes>
       <Footer />

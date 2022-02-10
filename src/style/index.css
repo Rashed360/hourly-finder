@@ -155,7 +155,7 @@ form.search-form svg {
 }
 
 .not-found-content {
-	margin-left: 20%;
+	margin: auto;
 }
 /* -------------------------Hero Section CSS End --------------------- */
 
@@ -733,6 +733,57 @@ form.search-form svg {
 /* ------------------------- Roadmap Section CSS End --------------------- */
 /* -------------------------About Page CSS  End--------------------- */
 
+/* -------------------------City & Category Page CSS  Start--------------------- */
+.locations-cities-item {
+	background: #FFFFFF;
+	border-radius: 10px;
+	padding: 25px;
+	position: relative;
+	padding-top: 225px;
+	box-shadow: 0px 1px 6px 0px rgb(0 0 0 / 28%);
+	margin-bottom: 15px;
+ }
+ .city-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 210px;
+	border-radius: 10px 10px 0px 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 90%;
+	z-index: 1;
+ }
+ 
+ .city-job-info {
+	position: relative;
+	color: white;
+	text-align: center;
+	top: 70%;
+ }
+ 
+ .city-job-info h4 {
+	font-size: var(--mediumFont);
+	color: white;
+	font-weight: 700;
+ }
+ 
+ .city-job-info h5 {
+	font-weight: 600;
+	color: white;
+ }
+ 
+ .city-list a {
+	font-size: 16px;
+	color: var(--bgColor);
+ }
+ .city-list .col-lg-6:nth-child(even) {
+	text-align: right;
+ }
+ /* -------------------------City & Category Page CSS  End--------------------- */
+
 
 /* -------------------------Contact Us Page CSS  Start--------------------- */
 .contact-sidebar {
@@ -975,14 +1026,15 @@ form.search-form svg {
 .form-field select,
 .form-field textarea {
 	display: block;
-	border: 2px solid #f2f2f2;
-	box-sizing: border-box;
-	border-radius: 10px;
-	width: 100%;
-	color: #838995;
-	font-size: var(--smallFont);
-	padding: 7px 15px;
-	outline-color: var(--bgColor);
+    border: 2px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    color: #838995;
+    font-size: var(--smallFont);
+    padding: 7px 15px;
+    outline-color: var(--bgColor);
+    margin-bottom: 5px;
 }
 
 .registration-form h2,
@@ -993,6 +1045,7 @@ form.search-form svg {
 .form-field label {
 	font-size: 16px;
 	font-weight: 600;
+	margin-bottom: 5px;
 }
 .form-field .first-name {
 	float: left;
@@ -1622,3 +1675,632 @@ form.search-form svg {
 	margin: 7px 0;
  }
  /* -------------------------Job Seeker Profile Page CSS  End--------------------- */
+
+
+
+ 
+/* -------------------------All Job Page CSS  Start--------------------- */
+.all-search-bar-area {
+	padding: 30px 0;
+ }
+ 
+ .search-bar-all {
+	background: white;
+	border: 1px solid #DBDBDB;
+	box-shadow:0px 1px 5px 0px rgb(0 0 0 / 10%);
+	border-radius: 5px;
+	border-right: 0;
+ }
+ 
+ .search-by input {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	padding: 15px 0;
+	padding-left: 50px;
+	font-size: 14px;
+	color: #838995;
+	border: none;
+	border-right: 1px solid #DADADA;
+ }
+ .search-by span {
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	margin-top: -14px;
+	color: #16395f;
+ }
+ 
+ .search-by {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+ }
+ .search-by input:focus-visible {outline: none;}
+ .search-by.search-btn input {
+	padding: 15px;
+	background: #16395f;
+	color: white;
+	margin-left: 0px;
+ }
+ 
+ .grid-header {
+	background: #358fb21c;
+ }
+ .filter-area{
+	background-color: #16395f26;
+	height: 100%;
+ }
+ 
+ .filter-header.dark {
+	border-bottom: 1px solid #16395f1c;
+ }
+ 
+ .filter-header {
+	padding: 15px;
+	display: flex;
+	align-items: center;
+ }
+ 
+ .filter-header span svg {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+ }
+ 
+ .filter-header span {
+	padding-right: 20px;
+ }
+ 
+ .filter-header span.filter-header-text {
+	font-size: 16px;
+ }
+ .filter-header.right span {
+	padding: 0;
+	padding-left: 20px;
+ }
+ .all-filtered-job {
+	padding: 25px;
+ }
+ 
+ .all-filter {
+	padding: 15px 25px;
+ }
+ 
+ .filter-by p {
+	margin-bottom: 5px;
+ }
+ 
+ .filter-by label {
+	font-size: 14px;
+	padding-left: 5px;
+ }
+ .filter-by {
+	margin-bottom: 15px;
+ }
+ .job-alert-service {
+	padding: 10px  25px;
+ }
+ 
+ .job-alert-service h5 {
+	font-size: 18px;
+	color: #2B313F;
+ }
+ 
+ .job-alert-service p {
+	font-size: 14px;
+	margin-bottom: 10px;
+ }
+ 
+ .job-alert-service input {
+	border: none;
+    border-radius: 5px;
+    padding: 9px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+ }
+ .job-alert-service input[type="email"] {outline: none;}
+ 
+ .job-alert-service input[type="submit"] {
+	background: #16395f;
+	color: white;
+ }
+ /* -------------------------All Job Page CSS  End--------------------- */
+ 
+ 
+ 
+ /* -------------------------Recruiter Dashboard CSS  Start--------------------- */
+ .dashboard-header {
+	background: #C2DCE5;
+	padding: 7px 0;
+ }
+ 
+ .header-icon {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+ }
+ 
+ .header-icon img {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	margin-left: 20px;
+ }
+ 
+ .header-icon span svg {
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+	color: #16395F;
+ }
+ .dashboard-all {
+	background: #E7EFF1;
+ }
+ 
+ .dashboard-sidebar .user {
+	padding: 20px;
+	text-align: center;
+	border-bottom: 1px solid #8888;
+ }
+ 
+ .dashboard-sidebar .user-photo {
+	width: 90px;
+	height: 90px;
+	margin: auto;
+	border-radius: 100%;
+ }
+ 
+ .dashboard-main {
+	background: white;
+	height: 100%;
+	padding: 15px 20px;
+ }
+ 
+ .user-info h5 {
+	font-size: 20px;
+	margin: 0;
+ }
+ 
+ .user-info {
+	margin-top: 10px;
+ }
+ 
+ .user-info p {
+	font-size: 14px;
+	color: gray;
+ }
+ 
+ .dashboard-navigation {
+	padding: 20px 0;
+ }
+ 
+ .dashboard-navigation nav ul li a {
+	padding: 7px 25px;
+	display: block;
+	transition: 0.3s;
+	font-size: 18px;
+ }
+ 
+ .dashboard-navigation nav ul li a span {
+	padding-right: 15px;
+ }
+ 
+ .dashboard-navigation nav ul li:hover a, .dashboard-navigation nav ul li:active a {
+	background: #c2dce5;
+	color: #16395f;
+ }
+ 
+ h3.dashboard-title {
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: 15px;
+ }
+ 
+ .overview-item {
+	background: #F9DDA9;
+	padding: 14px 20px;
+	border-radius: 8px;
+	position: relative;
+ }
+ 
+ .overview-item .count {
+	color: #FFBC3A;
+	font-weight: 700;
+ }
+ 
+ .overview-item h5 {
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 5px;
+	margin-bottom: 0;
+ }
+ .overview-item .overview-icon {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+ }
+ 
+ span.overview-icon svg {
+	width: 40px;
+	height: 40px;
+	opacity: 20%;
+ }
+ .overview-item.two {
+	background: #B0D7EA;
+ }
+ 
+ .overview-item.two .count {
+	color: #358FB2;
+ }
+ 
+ .overview-item.three {
+	background: #DBFBCC;
+ }
+ 
+ .overview-item.three .count {
+	color: #96BEA4;
+ }
+ 
+ .overview-item.four {
+	background: #F6A3B4;
+ }
+ 
+ .overview-item.four .count {
+	color: #EE4D6E;
+ }
+ .dashboard-right-bar {
+	padding: 15px 20px;
+ }
+ 
+ h3.right-bar-title {
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: 15px;
+ }
+ .dashboard-right-content {
+	margin-bottom: 30px;
+ }
+ .dashboard-right-item {
+	background: #b0d7ea;
+	width: 100%;
+	height: 150px;
+	border-radius: 8px;
+ }
+ .activity-item {
+	background: #E7EFF1;
+	border-radius: 5px;
+ }
+ 
+ .activity-title {
+	text-align: center;
+	padding: 8px 0;
+	border-bottom: 1px solid #cfcfcf;
+ }
+ 
+ .activity-wrapper {
+	padding: 15px 20px;
+ }
+ .recent-activity {
+	margin-bottom: 15px;
+ }
+ .recent-activity-icon {
+	display: inherit;
+ }
+ 
+ .recent-activity-icon span {
+	width: 40px;
+	height: 40px;
+	background: #358fb2;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 40px;
+ }
+ 
+ .recent-activity-title {
+	padding-left: 15px;
+ }
+ 
+ .recent-activity-icon svg {
+	width: 20px;
+	height: 20px;
+ }
+ 
+ .recent-activity-title h6 {
+	font-size: 14px;
+	margin: 0;
+ }
+ 
+ .recent-activity-title p {
+	font-size: 12px;
+ }
+ .recent-activity-icon span.done {
+	background: #96bea4;
+ }
+ .recent-activity-icon span.selected {
+	background: #ffbc3a;
+ }
+ 
+ .recent-activity-icon span.reviewed {
+	background: #DF865E;
+ }
+ .activity-calender span {
+	width: 40px;
+	height: 40px;
+	background: #dddd;
+	display: inline-block;
+	text-align: center;
+	line-height: 40px;
+	margin-bottom: 9px;
+	margin-right: 9px;
+	border-radius: 100%;
+ }
+ 
+ .activity-calender span a {
+	font-size: 16px;
+ }
+ 
+ .activity-calender {
+	display: inline-block;
+ }
+ .activity-calender span.applied {
+	background: #b0d7ea;
+ }
+ 
+ .activity-calender span.select {
+	background: #ffbc3a;
+ }
+ 
+ .activity-calender span.done {
+	background: #96bea4;
+ }
+ .edit-profile-area,.post-job-area,.manage-job-area {
+	background: #f3f3f3ad;
+	padding: 25px;
+	border-radius: 5px;
+	border: 1px solid #8888884a;
+ }
+ 
+ .edit-title {
+	position: relative;
+	font-size: 20px;
+	margin-bottom: 20px;
+ }
+ 
+ .edit-title::before {
+	content: "";
+	position: absolute;
+	width: 72%;
+	height: 2px;
+	top: 15px;
+	right: 0;
+	background: #a3b3b787;
+ }
+ 
+ .edit-basic-information {
+	margin-bottom: 30px;
+ }
+ 
+ .edit-organization-information {
+	margin-bottom: 30px;
+ }
+ 
+ .edit-organization-information .edit-title::before {
+	width: 61%;
+ }
+ 
+ .edit-organization-address .edit-title::before {
+	width: 66%;
+ }
+ .edit-profile-area .form-field,.post-job-area .form-field {
+	margin-bottom: 15px;
+ }
+ .profile-img-edit {
+	width: 90px;
+	height: 90px;
+	margin: auto;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	margin-top: 10px;
+ }
+ 
+ .edit-profile-picture input {
+	border: none;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	border-radius: 0;
+ }
+ .edit-profile-picture input::-webkit-file-upload-button {
+	visibility: hidden;
+ }
+ 
+ .edit-profile-picture input::before {
+	position: absolute;
+	content: "";
+	background: #e7eff1;
+	width: 100px;
+	height: 80px;
+	text-align: center;
+	left: -6px;
+	top: 0;
+	opacity: 0.5;
+	display: inline-block;
+	color: #214367;
+	line-height: 33px;
+ }
+ .edit-profile-picture input::after {
+	position: absolute;
+	content: url(https://api.iconify.design/ant-design/camera-filled.svg?width=25);
+	left: 50%;
+	top: 5px;
+	opacity: 1;
+	display: inline-block;
+	line-height: 40px;
+	margin-left: -13px;
+ }
+ 
+ .edit-profile-picture p {
+	font-size: 12px;
+	margin-top: 5px;
+ }
+ .job-view-filter .form-field input,.job-view-filter .form-field select {
+	background: #FBFDFF;
+	border: 0.5px solid #CBCBCB;
+	font-weight: 300;
+ }
+ 
+ .job-view-filter {
+	margin-bottom: 20px;
+ }
+ .manage-job-table table th {
+	background: #e7eff1;
+	padding: 8px 20px;
+	width: 100%;
+ }
+ 
+ .manage-job-table table tbody td {
+	padding: 5px 10px;
+	background-color: #80808021;
+	font-size: 14px;
+	color: #2B313F;
+ }
+ .manage-job-table table tbody tr {
+	border-bottom: 15px solid #f7f7f7;
+	border-top: 15px solid #f7f7f7;
+ }
+ .manage-job-table .job-title {
+	margin: 0;
+ }
+ 
+ .manage-job-table .job-title h5 {
+	font-size: 18px;
+ }
+ 
+ .manage-job-table .job-title p {
+	font-size: 12px;
+ }
+ 
+ .manage-job-table .job-title p span svg {
+	color: #737171;
+	font-size: 14px;
+ }
+ .manage-job-table td .job-status {
+	background: #A6E5BC;
+	color: white;
+	font-size: 13px;
+	padding: 2px 5px;
+	border-radius: 4px;
+	text-align: center;
+ }
+ 
+ .manage-job-table td .job-status.pending {
+	background: #FFBC3A;
+ }
+ 
+ .manage-job-table th.title {
+	width: 60%;
+ }
+ 
+ .manage-job-table th.status {
+	width: 5%;
+ }
+ 
+ .manage-job-table th.date {
+	width: 16%;
+ }
+ 
+ .manage-job-table .btn {
+	padding: 5px 8px;
+	margin-right: 5px;
+ }
+ 
+ .manage-job-table .btn svg {
+	font-size: 18px;
+	color: black;
+ }
+ 
+ .manage-job-table .btn.edit {
+	background: #96BEA4;
+ }
+ 
+ .manage-job-table .btn.delete {
+	background: #EE4D6E;
+ }
+ .ongoing-job-area {
+	background: #FBFBFB;
+	padding: 20px;
+	border-radius: 7px;
+	border: 1px solid #8888884d;
+ }
+ 
+ .ongoing-job-item {
+	background: #F4F4F4;
+	padding: 15px;
+	border-radius: 7px;
+	border: 0.5px solid #88888817;
+	align-items: center;
+	padding-bottom: 50px;
+	margin-bottom: 15px;
+ }
+ 
+ .ongoing-job-header {
+	display: flex;
+	justify-content: space-between;
+ }
+ 
+ .ongoing-job-header h5 {
+	font-size: 18px;
+	font-weight: 400;
+ }
+ 
+ .ongoing-job-header p {
+	color: #737171;
+	font-size: 14px;
+ }
+ 
+ .ongoing-job-cards .ongoing-card {
+	width: 40px;
+	height: 40px;
+	background: #C4C4C4;
+	border-radius: 50%;
+ }
+ 
+ .ongoing-job-cards {display: flex;justify-content: space-around;position: relative;z-index: 4;}
+ 
+ .ongoing-card p {
+	margin-top: 45px;
+	margin-left: 3px;
+	font-size: 12px;
+	color: #666666;
+ }
+ 
+ .ongoing-job-progress {
+	width: 80%;
+	height: 4px;
+	background: #c4c4c494;
+	position: absolute;
+	margin: auto;
+	margin-top: -20px;
+	left: 10%;
+	z-index: 1;
+ }
+ 
+ .ongoing-job-content {
+	position: relative;
+ }
+ 
+ .ongoing-job-progress::before {
+	content: "";
+	position: absolute;
+	background: gray;
+	height: 4px;
+	width: 50%;
+	z-index: 2;
+ }
+ .ongoing-card.active {
+	background: gray;
+ }
+ /* -------------------------Recruiter Dashboard CSS  End--------------------- */
