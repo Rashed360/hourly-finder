@@ -1,4 +1,6 @@
 import FooterMenu from './menu/FooterMenu'
+import {FaHeart} from 'react-icons/fa'
+import FooterLogo from '../../assets/logos/logo-footer.svg'
 
 const Footer = () => {
 
@@ -109,12 +111,17 @@ const Footer = () => {
 			<div className='footer-copyright-area'>
 				<div className='container'>
 					<div className='row d-flex align-items-center'>
-						<div className='col-lg-6'>
+						<div className='col-lg-4'>
 							<div className='footer-logo'>
-								<img src='/images/homepage/footer-logo.png' alt='logo' />
+								<img height='30px' src={FooterLogo} alt='logo' />
 							</div>
 						</div>
-						<div className='col-lg-6'>
+						<div className='col-lg-4'>
+							<div className='copyright-text'>
+								<p>Made with <FaHeart color='red'/> by Team-CodeDamn</p>
+							</div>
+						</div>
+						<div className='col-lg-4'>
 							<div className='copyright-text'>
 								<p>Copyright 2021 &copy; Codedamn. All right reserved.</p>
 							</div>

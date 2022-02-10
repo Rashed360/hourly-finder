@@ -38,11 +38,12 @@ const position2 = [23.755395, 90.382118]
 const position3 = [23.756652, 90.372205]
 
 const LeafletMap = () => {
+  
   return (
     <MapContainer
       center={position}
       zoom={15}
-      style={{ height: '100%', zIndex: 90 }}
+      style={{ height: '100%', zIndex: 90, borderRadius: '5px' }}
     >
       {/* <TileLayer
         attribution='<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

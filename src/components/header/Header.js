@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import { Link, NavLink } from 'react-router-dom'
+import Logo from '../../assets/logos/logo.svg'
 
 const Header = () => {
 	const [navbar,setNavbar] = useState()
@@ -26,7 +27,7 @@ const Header = () => {
 					<div className='col-lg-3'>
 						<div className='logo'>
 							<Link to='/'>
-								<img src='/images/Logo.png' alt='Logo' />
+								<img src={Logo} alt='Logo' />
 							</Link>
 						</div>
 					</div>

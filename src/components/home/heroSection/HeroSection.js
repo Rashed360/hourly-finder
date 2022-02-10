@@ -33,18 +33,22 @@ const HeroSection = () => {
                     </div>
                     <div className='hero-search-bar'>
                         <div className='search-bar'>
-                            <form action='' className='search-form'>
+                            <form className='search-form'>
                                 <input
                                     type='text'
                                     placeholder='Where do you live ?'
+                                    list="datalistOptions"
                                     className='search-field'
                                 />
-                                <FaMapMarkerAlt/>
-                                <input
-                                    type='submit'
-                                    value='Get Started'
-                                    className='btn get-started'
-                                />
+                                <datalist id="datalistOptions">
+                                    <option value="Dhanmondi"/>
+                                    <option value="Newmarket"/>
+                                    <option value="Paltan"/>
+                                    <option value="Kalabagan"/>
+                                    <option value="Lalbagh"/>
+                                </datalist>
+                                <FaMapMarkerAlt color=''/>
+                                <button className='btn get-started'>Get Started</button>
                             </form>
                             <div className='tag'>
                                 <span>

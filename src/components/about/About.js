@@ -1,7 +1,7 @@
 import MemberCard from './memberCard/MemberCard'
 import RoadmapCard from './roadmapCard/RoadmapCard'
-import StoryBg from '../../svgs/story-bg.svg'
-import FutureBg from '../../svgs/future-bg.svg'
+import StoryBg from '../../assets/svgs/story-bg.svg'
+import FutureBg from '../../assets/svgs/future-bg.svg'
 import StoryPlan from './storyPlan/StoryPlan'
 
 const About = () => {
