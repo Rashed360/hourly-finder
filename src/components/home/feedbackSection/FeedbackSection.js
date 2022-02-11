@@ -38,7 +38,7 @@ const FeedbackSection = () => {
         indicators: true,
         arrows: false,
         onChange: (oldIndex, newIndex) => {
-          console.log(`slide transition from ${oldIndex} to ${newIndex}`)
+          
         }
     }
 

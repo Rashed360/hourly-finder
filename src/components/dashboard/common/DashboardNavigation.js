@@ -1,34 +1,34 @@
 import React from 'react';
-import {Link} from "react-router-dom"
-import { BsFillHddStackFill,BsCardChecklist,BsBoxArrowRight, BsFillChatRightDotsFill, BsFillHouseFill, BsPersonLinesFill,BsViewList} from 'react-icons/bs';
+import {NavLink} from "react-router-dom"
+import { FaPenSquare,FaTasks,FaSignOutAlt, FaEnvelope, FaTachometerAlt, FaUserEdit,FaPager} from 'react-icons/fa';
 
 const DashboardNavigation = ({navigations, user}) => {
     const {id, name, photo, type} = user
 
     const iconFinder = (icon) => {
         if (icon === "home"){
-            return <BsFillHouseFill />
+            return <FaTachometerAlt />
         }
         else if (icon === "message"){
-            return <BsFillChatRightDotsFill />
+            return <FaEnvelope />
         }
         else if (icon === "edit"){
-            return <BsPersonLinesFill />
+            return <FaUserEdit />
         }
         else if (icon === "manage"){
-            return <BsCardChecklist />
+            return <FaTasks />
         }
         else if (icon === "running"){
-            return <BsViewList />
+            return <FaPager />
         }
         else if (icon === "logout"){
-            return <BsBoxArrowRight />
+            return <FaSignOutAlt />
         }
         else if (icon === "post") {
-            return <BsFillHddStackFill />
+            return <FaPenSquare />
         }
         else {
-            return <BsFillHddStackFill />
+            return <FaTachometerAlt />
         }
 
     }
@@ -37,7 +37,7 @@ const DashboardNavigation = ({navigations, user}) => {
             <div class="user">
                 <div class="user-photo" style={{backgroundImage: `url(${photo})`}}></div>
                 <div class="user-info">
-                    <h5><Link to={`/user/${id}`}>{name}</Link></h5>
+                    <h5><NavLink to={`/user/${id}`}>{name}</NavLink></h5>
                     <p>{type}</p>
                 </div>
             </div>
@@ -49,9 +49,9 @@ const DashboardNavigation = ({navigations, user}) => {
                             navigations.map(item => {
                                 return (
                                     <li key={Math.random()}>
-                                        <Link to={`/dashboard${item.link}`}>
+                                        <NavLink to={`${item.link}`} className={(navInfo) => (navInfo.isActive ? "active": "")}>
                                             <span>{iconFinder(item.icon)}</span> {item.name}
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                 );
                             })

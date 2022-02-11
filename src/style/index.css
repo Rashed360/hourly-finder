@@ -1887,7 +1887,7 @@ form.search-form svg {
 	padding-right: 15px;
  }
  
- .dashboard-navigation nav ul li:hover a, .dashboard-navigation nav ul li:active a {
+.dashboard-navigation nav ul li a.active {
 	background: #c2dce5;
 	color: #16395f;
  }

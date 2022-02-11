@@ -72,11 +72,7 @@ const DashboradRightBar = () => {
             </div>
             <div class="dashboard-right-content">
                 <h3 class="right-bar-title">Newly Posted Jobs</h3>
-                <div class="job-cards">
-                    {
-                        jobList.map(job => <JobBlock job={job} key={job.id} />)
-                    }
-                </div>
+                
             </div>
         </div>
     );
