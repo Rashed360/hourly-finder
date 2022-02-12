@@ -4,16 +4,19 @@ import { FaMapMarkerAlt } from 'react-icons/fa'
 const SearchBar = () => {
 	return (
 		<div className='hero-search-bar'>
+
 			<div className='search-bar active'>
+                <FaMapMarkerAlt className='icon' />
                 <input type='text' placeholder='Where do you live ?' />
-                <div className="auto-complete">
-                    <li>Hello</li>
-                    <li>Hello</li>
-                    <li>Hello</li>
-                </div>
-                <button className='btn get-started'>Get Started</button>
-                <FaMapMarkerAlt color='' />
+                <button className='btn'>Get Started</button>
 			</div>
+
+            <div className="auto-complete">
+                    <li>Hello</li>
+                    <li>Hello</li>
+                    <li>Hello</li>
+            </div>
+
 			<SearchBarTag />
 		</div>
 	)

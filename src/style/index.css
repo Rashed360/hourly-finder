@@ -98,33 +98,31 @@ a.btn.join-us {
 	margin-left: 0px;
 }
 
-/* work in progress*/
-
 .search-bar {
-	position: relative;
-	border-radius: 5px;
-	box-shadow: 0px 2px 0px 1px var(--bgColor3);
-}
-.search-bar input {
-	width: 100%;
-	padding: 17px;
-	padding-left: 60px;
-	position: relative;
-	color: #838995;
-	outline-color: transparent;
-}
-.search-bar .get-started {
-	position: absolute;
-	right: 11px;
-	top: 11px;
+	display: inline-flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #adadad;
+	box-shadow: 0px 2px 0px 1px #00000052;
 }
 .search-bar svg {
-	position: absolute;
-	left: 20px;
-	bottom: 30%;
 	font-size: 24px;
 	color: var(--bgColor4);
-	margin-top: -16px;
+	margin: auto 12px auto 5px;
+}
+.search-bar input {
+	min-width: 350px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+	color: #62656b;
+}
+.search-bar button {
+    border-radius: 5px;
+    font-size: 15px;    
+    height: 40px;
+    width: 120px;
 }
 
 .search-bar .auto-complete {
