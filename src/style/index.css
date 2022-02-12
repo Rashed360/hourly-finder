@@ -112,6 +112,7 @@ a.btn.join-us {
 	font-size: 24px;
 	color: var(--bgColor4);
 	margin: auto 12px auto 5px;
+	cursor: pointer;
 }
 .search-bar input {
 	width: 100%;

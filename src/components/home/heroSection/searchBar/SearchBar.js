@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import LocationIcon from './LocationIcon'
 import SearchBarTag from './SearchBarTag'
-import { FaMapMarkerAlt } from 'react-icons/fa'
 
 const SearchBar = () => {
 	const [districts, setDistricts] = useState([])
@@ -46,7 +46,7 @@ const SearchBar = () => {
 	return (
 		<div className={showSuggestion ? 'hero-search-bar active' : 'hero-search-bar'}>
 			<div className='search-bar'>
-				<FaMapMarkerAlt className='icon' />
+				<LocationIcon />
 				<input
 					type='text'
 					onChange={e => onChangeHandler(e.target.value)}
