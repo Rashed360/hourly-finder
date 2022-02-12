@@ -87,42 +87,38 @@ a.btn.join-us {
 	font-weight: bold;
 	color: var(--textColor);
 }
-
 .hero-text span {
 	background-color: var(--bgColor2);
 }
-
 .hero-text p {
 	margin-bottom: 30px;
 	margin-top: 20px;
 }
-
 .hero-search-bar {
 	margin-left: 0px;
 }
 
-form.search-form .search-field {
+/* work in progress*/
+
+.search-bar {
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0px 2px 0px 1px var(--bgColor3);
+}
+.search-bar input {
 	width: 100%;
 	padding: 17px;
 	padding-left: 60px;
-	border-radius: 5px;
-	border: 1px solid #dbdbdb;
-	box-shadow: 1px 2px 0px 1px var(--bgColor3);
 	position: relative;
 	color: #838995;
 	outline-color: transparent;
 }
-form.search-form .get-started {
+.search-bar .get-started {
 	position: absolute;
 	right: 11px;
 	top: 11px;
 }
-
-form.search-form {
-	position: relative;
-}
-
-form.search-form svg {
+.search-bar svg {
 	position: absolute;
 	left: 20px;
 	bottom: 30%;
@@ -130,28 +126,55 @@ form.search-form svg {
 	color: var(--bgColor4);
 	margin-top: -16px;
 }
-.search-bar {
-	position: relative;
-}
 
-.search-bar .tag {
-	position: absolute;
-	left: 0;
+.search-bar .auto-complete {
+	background-color: #fff;
 	width: 100%;
-	text-align: left;
+	border-radius: 7px;
+	box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+	position: absolute;
+	top: 65px;
+	padding: 0px;
+	max-height: 280px;
+	overflow-y: auto;
+	opacity: 0;
+	pointer-events: none;
 }
+.search-bar.active .auto-complete {
+	padding: 10px 8px;
+	opacity: 1;
+	pointer-events: auto;
+}
+.auto-complete li {
+	display: none;
+	list-style-type: none;
+	padding: 8px 12px;
+	width: 96%;
+	cursor: default;
+	border-radius: 3px;
+}
+.search-bar.active .auto-complete li {
+	display: block;
+}
+.auto-complete li:hover {
+	background: whitesmoke;
+}
+/* work in progress*/
 
-.search-bar .tag span a {
+
+.hero-search-bar .tag {
+	width: 100%;
+	text-align: center;
+}
+.hero-search-bar .tag span a {
 	font-size: var(--smallFont);
 	color: #16395f;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: 500;
 }
-
-.search-bar .tag span:nth-child(2) {
-	position: absolute;
-	right: 0;
+.hero-search-bar .tag span a:hover {
+	color: var(--bgColor);
 }
 
 .not-found-content {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import {FaMapMarkerAlt} from 'react-icons/fa'
+import SearchBar from './searchBar/SearchBar'
 
 const HeroSection = () => {
 
@@ -31,35 +30,9 @@ const HeroSection = () => {
                             study/job.
                         </p>
                     </div>
-                    <div className='hero-search-bar'>
-                        <div className='search-bar'>
-                            <form className='search-form'>
-                                <input
-                                    type='text'
-                                    placeholder='Where do you live ?'
-                                    list="datalistOptions"
-                                    className='search-field'
-                                />
-                                <datalist id="datalistOptions">
-                                    <option value="Dhanmondi"/>
-                                    <option value="Newmarket"/>
-                                    <option value="Paltan"/>
-                                    <option value="Kalabagan"/>
-                                    <option value="Lalbagh"/>
-                                </datalist>
-                                <FaMapMarkerAlt color=''/>
-                                <button className='btn get-started'>Get Started</button>
-                            </form>
-                            <div className='tag'>
-                                <span>
-                                    <Link to='/'>Job on your location</Link>
-                                </span>
-                                <span>
-                                    <Link to='/'>How it works?</Link>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+
+                    <SearchBar/>
+
                 </div>
             </div>
         </div>
