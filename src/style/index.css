@@ -95,10 +95,12 @@ a.btn.join-us {
 	margin-top: 20px;
 }
 .hero-search-bar {
+	position: relative;
 	margin-left: 0px;
 }
 
 .search-bar {
+	width: 100%;
 	display: inline-flex;
     background-color: white;
     padding: 10px;
@@ -112,7 +114,7 @@ a.btn.join-us {
 	margin: auto 12px auto 5px;
 }
 .search-bar input {
-	min-width: 350px;
+	width: 100%;
     margin-right: 10px;
     outline: none;
     border: none;
@@ -122,10 +124,10 @@ a.btn.join-us {
     border-radius: 5px;
     font-size: 15px;    
     height: 40px;
-    width: 120px;
+    width: 160px;
 }
 
-.search-bar .auto-complete {
+.hero-search-bar .auto-complete {
 	background-color: #fff;
 	width: 100%;
 	border-radius: 7px;
@@ -138,7 +140,7 @@ a.btn.join-us {
 	opacity: 0;
 	pointer-events: none;
 }
-.search-bar.active .auto-complete {
+.hero-search-bar.active .auto-complete {
 	padding: 10px 8px;
 	opacity: 1;
 	pointer-events: auto;
@@ -151,7 +153,7 @@ a.btn.join-us {
 	cursor: default;
 	border-radius: 3px;
 }
-.search-bar.active .auto-complete li {
+.hero-search-bar.active .auto-complete li {
 	display: block;
 }
 .auto-complete li:hover {
