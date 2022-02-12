@@ -26,7 +26,7 @@ const Header = () => {
 				<div className='row d-flex justify-content-center'>
 					<div className='col-lg-3'>
 						<div className='logo'>
-							<Link to='/'>
+							<Link to='/' onClick={()=>{window.scrollTo(0,0)}}>
 								<img src={Logo} alt='Logo' />
 							</Link>
 						</div>

@@ -6,6 +6,7 @@ import HowWorkSection from './howWorkSection/HowWorkSection'
 import FeedbackSection from './feedbackSection/FeedbackSection'
 import BlogSection from './blogSection/BlogSection'
 import NewsLetterSection from './newsletterSection/NewsLetterSection'
+import PopUpChat from '../popUpChat/PopUpChat'
 
 const Home = () => {
 	document.title = 'HourlyFinder | Home'
@@ -27,6 +28,8 @@ const Home = () => {
 			<BlogSection />
 
 			<NewsLetterSection />
+
+			<PopUpChat />
 		</div>
 	)
 }
