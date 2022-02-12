@@ -23,7 +23,17 @@ export const useGeoLocation = () => {
 		})
 	}
 
-	useEffect(() => {
+	// useEffect(() => {
+	// 	if (!('geolocation' in navigator)) {
+	// 		onError({
+	// 			code: 0,
+	// 			message: 'GeoLocation not supported',
+	// 		})
+	// 	}
+
+	// 	navigator.geolocation.getCurrentPosition(onSuccess, onError)
+	// }, [])
+	const stratGeoLocation = () => {
 		if (!('geolocation' in navigator)) {
 			onError({
 				code: 0,
@@ -32,7 +42,7 @@ export const useGeoLocation = () => {
 		}
 
 		navigator.geolocation.getCurrentPosition(onSuccess, onError)
-	}, [])
+	}
 
-	return location
+	return [location,stratGeoLocation]
 }

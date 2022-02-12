@@ -3,11 +3,12 @@ import axios from 'axios'
 import { useGeoLocation } from './useGeoLocation/useGeoLocation'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 
-const LocationIcon = () => {
-	const location = useGeoLocation()
+const LocationIcon = ({ setLocation }) => {
+	const [location, stratGeoLocation] = useGeoLocation()
 	const [data, setData] = useState()
 
 	const getLocation = async () => {
+		stratGeoLocation()
 		if (location.loaded) {
 			let lat = location.coordinates.lat
 			let lng = location.coordinates.lng
@@ -20,7 +21,7 @@ const LocationIcon = () => {
 
 	useEffect(() => {
 		if (data !== undefined) {
-			console.log(data.address.suburb)
+			setLocation(data.address.suburb)
 		}
 	}, [data])
 
