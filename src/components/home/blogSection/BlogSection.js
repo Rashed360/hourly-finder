@@ -25,7 +25,7 @@ const BlogSection = () => {
             ]
         },
         {
-            id : 1,
+            id : 2,
             author : "Sajeeb Debnath",
             author_id : "2",
             title : "How House Painting Services Works...",
@@ -43,7 +43,7 @@ const BlogSection = () => {
             ]
         },
         {
-            id : 1,
+            id : 3,
             author : "Sajeeb Debnath",
             author_id : "3",
             title : "How House Painting Services Works...",
@@ -61,7 +61,7 @@ const BlogSection = () => {
             ]
         },
         {
-            id : 1,
+            id : 4,
             author : "Sajeeb Debnath",
             author_id : "4",
             title : "How House Painting Services Works...",

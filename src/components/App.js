@@ -14,6 +14,7 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 import CityCategory from './cityCategory/CityCategory'
 import AllJobs from './allJobs/AllJobs'
+import LocationPage from './locationPage/LocationPage'
 import RecruiterDashboard from './dashboard/recruiter/RecruiterDashboard'
 import RecruiterOverview from "./dashboard/recruiter/overView/RecruiterOverview"
 import RecruiterEditProfile  from "./dashboard/recruiter/editProfile/RecruiterEditProfile"
@@ -34,6 +35,7 @@ function App() {
         <Route path="blogs" element={<Blogs />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="/location/:cityName" element={<LocationPage />} />
         
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
@@ -47,7 +49,8 @@ function App() {
         {/* Dynamic Route End */}
 
         {/* Recruiter Dashboard Route Start */}
-        <Route path="/dashboard/recruiter/*" element={<RecruiterDashboard />} >
+        <Route path="/dashboard" element={<RecruiterDashboard />} >
+          <Route index element={<RecruiterOverview />} />
           <Route path="overview" element={<RecruiterOverview />} />
           <Route path="message" element={<RecruiterMessage />} />
           <Route path="edit-profile" element={<RecruiterEditProfile />} />

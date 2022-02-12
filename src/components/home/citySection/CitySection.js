@@ -9,21 +9,25 @@ const CitySection = () => {
     {
       id : 1,
       name : "Dhaka",
+      code_name: 'dhaka',
       mapPhoto : "/images/homepage/cities/dhaka.png"
     },
     {
       id : 2,
       name : "Chittagong",
+      code_name: 'chittagong',
       mapPhoto : "/images/homepage/cities/chittagong.png"
     },
     {
       id : 3,
       name : "Rajshahi",
+      code_name: 'rajshahi',
       mapPhoto : "/images/homepage/cities/rajshahi.png"
     },
     {
       id : 4,
       name : "Sylhet",
+      code_name: 'sylhet',
       mapPhoto : "/images/homepage/cities/sylhet.png"
     }
   ]

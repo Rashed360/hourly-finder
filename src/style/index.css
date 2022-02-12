@@ -32,7 +32,7 @@
 /* ------------------------- Home Start --------------------- */
 /* ------------------------- Header Section CSS Start --------------------- */
 .header-top-area {
-	background-color: #ffffff69;
+	background: linear-gradient(#ace8eb,#beedf0);
 	padding: 15px 0px;
 	position: fixed;
 	width: 100%;
@@ -40,7 +40,7 @@
 	z-index: 99;
 }
 .header-top-area.active {
-	background-color: #ffffff;
+	background: #ffffff;
 	box-shadow: 0 2px rgb(238, 238, 238);
 }
 .menu-area {
@@ -197,7 +197,7 @@ a.btn.join-us {
 .about-recruiter a .recruiter-logo {
 	width: 50px;
 	height: 50px;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 .recruiter-title {
@@ -230,8 +230,9 @@ a.btn.join-us {
 	background: #e3e3e3;
     display: flex;
 	align-items: center;
-    font-size: var(--smallFont);
-    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 3px 6px 3px 3px;
     border-radius: 10px;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -244,8 +245,7 @@ a.btn.join-us {
     height: 12px;
     display: inline-block;
     border-radius: 50%;
-    margin-right: 5px;
-    margin-top: 5px;
+    margin: auto 4px auto 2px;
 }
 
 .job-keyword,
@@ -931,6 +931,7 @@ a.btn.join-us {
 	margin-top: 70px;
 	height: 90vh;
 	min-height: 590px;
+	background: url(../assets/svgs/hero-bg.svg)
 }
 
 .registration-box,
@@ -938,7 +939,6 @@ a.btn.join-us {
 	width: 960px;
 	height: 540px;
 	border-radius: 30px;
-	border: 1px solid whitesmoke;
 	background: white;
 }
 
@@ -2329,3 +2329,21 @@ a.btn.join-us {
 	background: gray;
  }
  /* -------------------------Recruiter Dashboard CSS  End--------------------- */
+
+  /* -------------------------Location Page CSS  Start--------------------- */
+  .location-page {
+	  margin-top: 70px;
+	  height: 100vh;
+	  display: flex;
+  }
+  .location-page .side-bar {
+	  width: 400px;
+	  background: #FFF;
+	  padding: 10px;
+  }
+  .location-page .window {
+	  width: 100%;
+	  background: whitesmoke;
+	  padding: 10px;
+  }
+  /* -------------------------Location Page CSS  End--------------------- */

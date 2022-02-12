@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import org_logo from '../../../../assets/svgs/org.svg'
 import Tags from '../../../commonComponents/tagElement/Tags'
 
 const JobBlock = ({ job }) => {
@@ -7,7 +8,7 @@ const JobBlock = ({ job }) => {
 			<div class='about-recruiter d-flex align-items-center'>
 				<Link to={`/company/${job.company_id}`}>
 					<img
-						src={job.image}
+						src={job.image? job.image : org_logo}
 						alt='logo'
 						class='recruiter-logo'
 					/>
