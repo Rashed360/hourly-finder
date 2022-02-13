@@ -39,11 +39,11 @@ function App() {
         
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="apply" element={<Apply />} />
         
 
         {/* Dynamic Route Start */}
         <Route path="job/:job_id" element={<SingleJob />} />
+        <Route path="apply/for/:job_id" element={<Apply />} />
         <Route path="user/:userId" element={<UserProfile />} />
         <Route path="blog/:blog_id" element={<SingleBlog />} />
         {/* Dynamic Route End */}

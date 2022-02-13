@@ -1,102 +1,159 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import ApplicationInfo from './applicationInfo/ApplicationInfo'
+import ApplyForm from './applyForm/ApplyForm'
 
 const Apply = () => {
+  const {job_id} = useParams()
+
+    const jobList = [
+        {
+          id : 1,
+          name: 'Complete House Paintings Services',
+          company: 'Founders',
+          image: '/images/homepage/recruiter-logo.png',
+          company_id : 2,
+          vancey : 2,
+          level : "Beginer",
+          salary : 200,
+          duration : "2 days",
+          starting_date : "04 February, 2022",
+          time: '8h ago',
+          type: 'Hourly',
+          location: 'Banani',
+          map_link : "",
+          overview : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna, cursus massa diam placerat. Pharetra ac arcu cursus enim ipsum. Enim nulla diam, nibh tristique sed enim feugiat tincidunt. Eget eu vitae fermentum, amet viverra tempor. Laoreet enim eleifend consequat arcu gravida sollicitudin tristique sapien nam. Dictum ullamcorper amet ac morbi ornare convallis fringilla. Sem cursus ut in tincidunt sed. Felis maecenas scelerisque phasellus amet. `,
+          responsibilities : `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna,cursus massa .diam placerat. Pharetra ac arcu cursus enim ipsum. Enim n.ulla diam, nibh tristique sed enim feugiat tinc. dunt. Eget eu vitae fermentum, amet . viverra tempor. Laoreet enim eleifend consequat arcu gra.`,
+          required_skills : ["ReactJS, Redux, Material UI", "MongoDB and mongoose", "Python, dJango", "DevOps (AWS Services)"],
+          keyword: [
+            {
+              name : "Creative",
+              color : "house"
+            },
+            {
+                name : "Painting",
+                color : "painting"
+            }
+          ]
+        },
+        {
+          id : 4,
+          name: 'Complete House Paintings Services',
+          company: 'Founders',
+          image: '/images/homepage/recruiter-logo.png',
+          company_id : 2,
+          vancey : 2,
+          level : "Beginer",
+          salary : 200,
+          duration : "2 days",
+          starting_date : "04 February, 2022",
+          time: '8h ago',
+          type: 'Hourly',
+          location: 'Banani',
+          map_link : "",
+          overview : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna, cursus massa diam placerat. Pharetra ac arcu cursus enim ipsum. Enim nulla diam, nibh tristique sed enim feugiat tincidunt. Eget eu vitae fermentum, amet viverra tempor. Laoreet enim eleifend consequat arcu gravida sollicitudin tristique sapien nam. Dictum ullamcorper amet ac morbi ornare convallis fringilla. Sem cursus ut in tincidunt sed. Felis maecenas scelerisque phasellus amet. `,
+          responsibilities : `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna,cursus massa .diam placerat. Pharetra ac arcu cursus enim ipsum. Enim n.ulla diam, nibh tristique sed enim feugiat tinc. dunt. Eget eu vitae fermentum, amet . viverra tempor. Laoreet enim eleifend consequat arcu gra.`,
+          required_skills : ["ReactJS, Redux, Material UI", "MongoDB and mongoose", "Python, dJango", "DevOps (AWS Services)"],
+          keyword: [
+            {
+              name : "Creative",
+              color : "house"
+            },
+            {
+                name : "Painting",
+                color : "painting"
+            }
+          ]
+        },
+        {
+          id : 3,
+          name: 'Complete House Paintings Services',
+          company: 'Founders',
+          image: '/images/homepage/recruiter-logo.png',
+          company_id : 2,
+          vancey : 2,
+          level : "Beginer",
+          salary : 200,
+          duration : "2 days",
+          starting_date : "04 February, 2022",
+          time: '8h ago',
+          type: 'Hourly',
+          location: 'Banani',
+          map_link : "",
+          overview : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna, cursus massa diam placerat. Pharetra ac arcu cursus enim ipsum. Enim nulla diam, nibh tristique sed enim feugiat tincidunt. Eget eu vitae fermentum, amet viverra tempor. Laoreet enim eleifend consequat arcu gravida sollicitudin tristique sapien nam. Dictum ullamcorper amet ac morbi ornare convallis fringilla. Sem cursus ut in tincidunt sed. Felis maecenas scelerisque phasellus amet. `,
+          responsibilities : `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna,cursus massa .diam placerat. Pharetra ac arcu cursus enim ipsum. Enim n.ulla diam, nibh tristique sed enim feugiat tinc. dunt. Eget eu vitae fermentum, amet . viverra tempor. Laoreet enim eleifend consequat arcu gra.`,
+          required_skills : ["ReactJS, Redux, Material UI", "MongoDB and mongoose", "Python, dJango", "DevOps (AWS Services)"],
+          keyword: [
+            {
+              name : "Creative",
+              color : "house"
+            },
+            {
+                name : "Painting",
+                color : "painting"
+            }
+          ]
+        },
+        {
+          id : 2,
+          name: 'Complete House Paintings Services',
+          company: 'Founders',
+          image: '/images/homepage/recruiter-logo.png',
+          company_id : 2,
+          vancey : 2,
+          level : "Beginer",
+          salary : 200,
+          duration : "2 days",
+          starting_date : "04 February, 2022",
+          time: '8h ago',
+          type: 'Hourly',
+          location: 'Banani',
+          map_link : "",
+          overview : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna, cursus massa diam placerat. Pharetra ac arcu cursus enim ipsum. Enim nulla diam, nibh tristique sed enim feugiat tincidunt. Eget eu vitae fermentum, amet viverra tempor. Laoreet enim eleifend consequat arcu gravida sollicitudin tristique sapien nam. Dictum ullamcorper amet ac morbi ornare convallis fringilla. Sem cursus ut in tincidunt sed. Felis maecenas scelerisque phasellus amet. `,
+          responsibilities : `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Tincidunt vel, ultrices pellentesque et ut vulputate aliquam sapien iaculis. Fermentum at imperdiet ac urna,cursus massa .diam placerat. Pharetra ac arcu cursus enim ipsum. Enim n.ulla diam, nibh tristique sed enim feugiat tinc. dunt. Eget eu vitae fermentum, amet . viverra tempor. Laoreet enim eleifend consequat arcu gra.`,
+          required_skills : ["ReactJS, Redux, Material UI", "MongoDB and mongoose", "Python, dJango", "DevOps (AWS Services)"],
+          keyword: [
+            {
+              name : "Creative",
+              color : "house"
+            },
+            {
+                name : "Painting",
+                color : "painting"
+            }
+          ]
+        }
+      ]
+
+    const recruiters = [
+        {
+            id : 2,
+            name : "Sajeeb Debnath",
+            position : "CEO & Founder",
+            recruiter_photo : "/images/singlejobpage/recruiter-profile/user-1.jpg",
+            company_name : "Founders Inc.",
+            company_logo : "/images/singlejobpage/profile/logo.jpg",
+            company_cover_img : "/images/singlejobpage/cover/cover-1.jpg",
+            email : "contact.founders@gmail.com",
+            address : "Mohammadpur, Dhaka",
+            location : "Kalabagan, Dhaka",
+            about_company : `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem ad delectus minima voluptatum ea dolorum fugiat possimus minus in pariatur!...`,
+            gallery_img : ["/images/singlejobpage/cover/cover-1.jpg","/images/singlejobpage/photo-gallery/31917962768_c979352217_b.jpg"]
+
+        },
+        
+    ]
+
+    const single_job = jobList.find(job => job.id === Number(job_id))
+    const {company_id} = single_job
+
+    const single_recruiter = recruiters.find(company => company.id === company_id)
+
   return (
     <div className="jobs-application-area registration-area">
       <div className="application-box">
-        <div className="apply-form">
-          <div className="form">
-            <h2>Apply for the job?</h2>
-            <form action="">
-              <div className="form-field name">
-                <label for="">Name</label>
-                <input type="text" placeholder="Enter Full Name" />
-              </div>
-              <div className="form-field name">
-                <label for="">Phone</label>
-                <input type="text" placeholder="Enter Phone NUmber" />
-              </div>
-              <div className="form-field address">
-                <label for="">Address</label>
-                <input type="text" placeholder="Enter Address" />
-              </div>
-              <div className="form-field message">
-                <label for="">Message</label>
-                <textarea
-                  name=""
-                  id=""
-                  cols="10"
-                  rows="3"
-                  placeholder="Write Message"
-                ></textarea>
-              </div>
-              <div className="form-field agree">
-                <input type="checkbox" name="" />
-                <label for="">
-                  I agree to the HourlyFinder’s terms & conditions.
-                </label>
-              </div>
-              <div className="form-field">
-                <input type="submit" value="Apply" className="btn submit" />
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className="job-application-info">
-          <div className="info">
-            <div className="normal-logo">
-              <h3>HourlyFinder</h3>
-            </div>
-            <div className="job-application-title">
-              <h2>Complete House Paintings Services</h2>
-              <p>
-                <span className="job_status">Hourly</span> in{' '}
-                <span className="location">Banani</span>
-              </p>
-            </div>
-            <div className="application-company-profile d-flex align-items-center">
-              <Link to="">
-                <img
-                  src="assets/images/singlejobpage/profile/Logo-2.Alo-logo.jpg"
-                  alt="Recruiter Profile"
-                  className="img-fluid"
-                />
-              </Link>
-              <div className="application-company-name">
-                <Link to="">
-                  <h5>Founders</h5>
-                  <p>House and renovation</p>
-                </Link>
-              </div>
-            </div>
-            <p className="job-overview">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod
-              eget ut aliquet sed elit. Viverra commodo non fermentum gravida
-              eleifend consectetur vitae. Adipiscing ullamcorper ut malesuada
-              habitasse non. Tortor erat facilisi faucibus pulvinar.
-            </p>
-            <div className="job-budget-time">
-              <h3>
-                Rate: <span>10-15</span>$/Hour
-              </h3>
-              <p className="post-time">
-                Posted <span>8h</span> ago
-              </p>
-            </div>
-            <div className="job-keyword">
-              <Link to="" className="job-tag">
-                <div className="creative"></div> Creative
-              </Link>
-              <Link to="" className="job-tag">
-                <div className="service"></div> Painting
-              </Link>
-              <Link to="" className="job-tag">
-                <div className="renovation"></div> Renovation
-              </Link>
-            </div>
-          </div>
-        </div>
+        <ApplyForm></ApplyForm>
+        <ApplicationInfo single_job={single_job} single_recruiter={single_recruiter}></ApplicationInfo>
       </div>
     </div>
   )

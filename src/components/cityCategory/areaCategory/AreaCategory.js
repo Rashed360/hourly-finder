@@ -13,7 +13,7 @@ const AreaCategory = ({area}) => {
             >
                 <div className="city-job-info">
                     <h4>{name}</h4>
-                    <h5>{totalJob} Jobs</h5>this site hacking
+                    <h5>{totalJob} Jobs</h5>
                 </div>
             </div>
             <div className="city-list">

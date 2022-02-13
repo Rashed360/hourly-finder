@@ -7,7 +7,7 @@ const JobSideBar = ({job, recruiter}) => {
             <div className="application-budget-information sidebar-padding">
                 <p>Client Budget</p>
                 <h4 className="budget">Tk. {job.salary} per Hour</h4>
-                <Link to="/apply" className="btn apply-now">Apply Now</Link>
+                <Link to={`/apply/for/${job.id}`} className="btn apply-now">Apply Now</Link>
                 <Link to="" className="btn add-to-wishlist">Save to wishlist</Link>
             </div>
             <div className="about-recruiter-profile sidebar-padding">
