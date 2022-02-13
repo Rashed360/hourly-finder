@@ -58,7 +58,7 @@ function App() {
           <Route path="manage-job" element={<RecruiterManageJob />} />
           <Route path="ongoing-job" element={<RecruiterOngoingJob />} />
         </Route>
-        <Route path='/dashboard/recruiter' element={<Navigate to="/dashboard/recruiter/overview" />}/>
+        <Route path='/dashboard' element={<Navigate to="/dashboard/overview" />}/>
         {/* Recruiter Dashboard Route Start */}
       
         <Route element={<NoMatch />} />
