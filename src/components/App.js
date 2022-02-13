@@ -61,7 +61,7 @@ function App() {
         <Route path='/dashboard' element={<Navigate to="/dashboard/overview" />}/>
         {/* Recruiter Dashboard Route Start */}
       
-        <Route element={<NoMatch />} />
+        <Route path="/*" element={<NoMatch />} />
       </Routes>
       <Footer />
     </>
