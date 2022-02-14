@@ -44,13 +44,13 @@ const SearchBar = () => {
 	}
 
 	const setLocation = data => {
-		setText(data)
+		if (data) setText(data)
 	}
 
 	return (
 		<div className={showSuggestion ? 'hero-search-bar active' : 'hero-search-bar'}>
 			<div className='search-bar'>
-				<LocationIcon setLocation={(data)=>setLocation(data)} />
+				<LocationIcon setLocation={data => setLocation(data)} />
 				<input
 					type='text'
 					onChange={e => onChangeHandler(e.target.value)}
