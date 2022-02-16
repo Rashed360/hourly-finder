@@ -43,25 +43,25 @@ const FeedbackSection = () => {
     }
 
     return (
-        <div class='user-feedback-area section-padding'>
-				<div class='container'>
-					<SectionTitle title="User Feedback" subtitle="See more" link="#" />
-					<div class='row pt-40'>
-							<Slide {...properties}>
-                                {
-                                    user_feedbacks.map(user => {
-                                        return (
-                                            <div class='col-lg-4 user-feedback owl-carousel'>
-                                                <FeedbackDetails  user={user} />
-                                            </div>
-                                            
-                                        );
-                                    })
-                                }
-                            </Slide>
-					</div>
+        <div className='user-feedback-area section-padding'>
+			<div className='container'>
+				<SectionTitle title="User Feedback" subtitle="See more" link="#" />
+				<div className='row pt-40'>
+					<Slide {...properties}>
+						{
+							user_feedbacks.map((user,index) => {
+								return (
+									<div className='col-lg-4 user-feedback owl-carousel' key={index}>
+										<FeedbackDetails user={user} />
+									</div>
+									
+								);
+							})
+						}
+					</Slide>
 				</div>
 			</div>
+		</div>
     )
 }
 

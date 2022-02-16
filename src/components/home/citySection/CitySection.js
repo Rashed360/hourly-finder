@@ -32,10 +32,10 @@ const CitySection = () => {
     }
   ]
   return (
-    <div class='browse-jobs-location section-padding'>
-        <div class='container'>
+    <div className='browse-jobs-location section-padding'>
+        <div className='container'>
             <SectionTitle title="Browse Jobs by Cities" subTitle="More Cities" subLink="jobs/by" />
-            <div class='row pt-40'>
+            <div className='row pt-40'>
                 { locations.map(location => <CityBlock key={location.id} location={location} />)}
             </div>
         </div>

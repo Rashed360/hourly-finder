@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Tags = ({ tags }) => {
   return (
-    <div class="blog-keyword">
-      {tags.map((tag) => {
+    <div className="blog-keyword">
+      {tags.map((tag,i) => {
         return (
-          <Link to="" className="blog-tag">
-            <div class={tag.color}></div> {tag.name}
+          <Link to="" className="blog-tag" key={i}>
+            <div className={tag.color}></div> {tag.name}
           </Link>
         )
       })}

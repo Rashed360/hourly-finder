@@ -5,12 +5,12 @@ import {FaShoppingCart} from "react-icons/fa"
 const CategoryBlock = ({category}) => {
 	const {id, name, icon} = category
 	return (
-		<div class='col-lg-3'>
-			<div class='category-item'>
-				<div class='category-icon'>
+		<div className='col-lg-3'>
+			<div className='category-item'>
+				<div className='category-icon'>
 					{icon === "" ? <FaShoppingCart /> : ""}
 				</div>
-				<div class='category-name'>
+				<div className='category-name'>
 					<Link to={`category/${id}`}>
 						<h3>{name}</h3>
 					</Link>

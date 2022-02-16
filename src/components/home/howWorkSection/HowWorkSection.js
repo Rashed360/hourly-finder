@@ -38,7 +38,7 @@ const HowWorkSection = () => {
             </div>
           </div>
           <div className="col-lg-5">
-            <div classNameName="leaflet-map">
+            <div className="leaflet-map">
               <LeafletMap />
             </div>
           </div>

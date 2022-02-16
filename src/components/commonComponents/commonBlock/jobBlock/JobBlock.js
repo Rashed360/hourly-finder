@@ -4,27 +4,27 @@ import Tags from '../../../commonComponents/tagElement/Tags'
 
 const JobBlock = ({ job }) => {
   return (
-		<div class='job-card'>
-			<div class='about-recruiter d-flex align-items-center'>
+		<div className='job-card'>
+			<div className='about-recruiter d-flex align-items-center'>
 				<Link to={`/company/${job.company_id}`}>
 					<img
 						src={job.image? job.image : org_logo}
 						alt='logo'
-						class='recruiter-logo'
+						className='recruiter-logo'
 					/>
 				</Link>
-				<h5 class='recruiter-title'>
+				<h5 className='recruiter-title'>
 					<Link to={`/company/${job.company_id}`}>{job.company.slice(0,14)}, </Link><br/>
-					<span class='post_time'>{job.time}</span>
+					<span className='post_time'>{job.time}</span>
 				</h5>
 			</div>
-			<div class='job-content'>
-				<h3 class='job-title'>
+			<div className='job-content'>
+				<h3 className='job-title'>
 					<Link to={`/job/${job.id}`}>{job.name.slice(0,40)}</Link>
 				</h3>
-				<div class='job-status'>
-					<span class='job-type'>{job.type}</span> in
-					<span class='job-location'>
+				<div className='job-status'>
+					<span className='job-type'>{job.type}</span> in
+					<span className='job-location'>
 						<Link to={`/jobs/location/${job.location}`}> {job.location.slice(0,15)}</Link>
 					</span>
 				</div>

@@ -3,9 +3,9 @@ import React from 'react';
 const FeedbackDetails = ({user}) => {
     const {author_name, photo, position, comments} = user
     return (
-        <div class='feedback-wrapper'>
-            <div class='user-info'>
-                <div class='user-avatar'>
+        <div className='feedback-wrapper'>
+            <div className='user-info'>
+                <div className='user-avatar'>
                     <img src={photo} alt={author_name} />
                 </div>
                 <h4>
@@ -15,7 +15,7 @@ const FeedbackDetails = ({user}) => {
                     {position}
                 </p>
             </div>
-            <div class='user-feedback'>
+            <div className='user-feedback'>
                 <blockquote>
                     “{comments}”
                 </blockquote>

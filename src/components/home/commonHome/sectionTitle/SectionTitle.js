@@ -4,14 +4,14 @@ import {FaAngleDoubleRight} from 'react-icons/fa'
 
 const SectionTitle = ({title='Title', subTitle='All Links', subLink='#'}) => {
   return (
-    <div class='row'>
-        <div class='col-lg-6'>
-            <div class='section-title'>
+    <div className='row'>
+        <div className='col-lg-6'>
+            <div className='section-title'>
                 <h3>{title}</h3>
             </div>
         </div>
-        <div class='col-lg-6'>
-            <div class='link-title'>
+        <div className='col-lg-6'>
+            <div className='link-title'>
                 <Link to={subLink}>{subTitle} <FaAngleDoubleRight/></Link>
             </div>
         </div>

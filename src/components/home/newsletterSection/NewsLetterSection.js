@@ -14,24 +14,24 @@ const NewsLetterSection = () => {
     }
 
     return (
-        <div class='newsletter-area section-padding'>
-				<div class='container'>
-					<div class='row'>
-						<div class='col-lg-6 offset-lg-3'>
-							<div class='newsletter-content'>
+        <div className='newsletter-area section-padding'>
+				<div className='container'>
+					<div className='row'>
+						<div className='col-lg-6 offset-lg-3'>
+							<div className='newsletter-content'>
 								<h4>{newletterContent.textContent.title}</h4>
-								<form action='' class='newsletter-form'>
+								<form action='' className='newsletter-form'>
 									<input
 										type='text'
 										placeholder='Your Email Address'
-										class='newsletter-email'
+										className='newsletter-email'
                                         name="newsletter_email"
 									/>
 									<FaEnvelope/>
 									<input
 										type='submit'
 										value='Subscribe'
-										class='btn newsletter'
+										className='btn newsletter'
 									/>
 								</form>
 								<p>{newletterContent.textContent.bottomText} <FaSmile/></p>
