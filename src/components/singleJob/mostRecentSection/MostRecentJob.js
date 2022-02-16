@@ -6,7 +6,7 @@ const MostRecentJob = ({jobList}) => {
     return (
         <div className="most-recent-jobs section-padding">
         <div className="container">
-            <SectionTitle title='Most Recent Jobs' subTitle='Browse More' subLink=''></SectionTitle>
+            <SectionTitle title='Most Recent Jobs' subTitle='Browse More' subLink='/jobs'></SectionTitle>
 
             <div className="row pt-40">
                 {

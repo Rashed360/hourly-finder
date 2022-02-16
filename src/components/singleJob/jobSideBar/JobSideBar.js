@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {FaEnvelope,FaMapMarkerAlt,FaBriefcase} from 'react-icons/fa'
 
 const JobSideBar = ({job, recruiter}) => {
     return (
@@ -26,15 +27,15 @@ const JobSideBar = ({job, recruiter}) => {
                 <div className="contact-details">
                     <nav>
                         <ul>
-                            <li><span className="iconify" data-icon="clarity:email-solid"></span>{recruiter.email}</li>
-                            <li><span className="iconify" data-icon="fluent:location-28-filled"></span>{recruiter.address}</li>
-                            <li><span className="iconify" data-icon="fa-solid:briefcase"></span>{recruiter.company_name}</li>
+                            <li><FaEnvelope/>{recruiter.email}</li>
+                            <li><FaMapMarkerAlt/>{recruiter.address}</li>
+                            <li><FaBriefcase/>{recruiter.company_name}</li>
                         </ul>
                     </nav>
                 </div>
                 <div className="profile-gallery">
                     <p>{recruiter.about_company}</p>
-                    <Link to={`/recruiter/${recruiter.id}`} className="more-info">More info</Link>
+                    <Link to={`/recruiter/${recruiter.id}`} className="more-info">More info on the recruiter</Link>
                     <div className="gallery">
                         {
                             recruiter.gallery_img.map(img => <img src={img} alt="gallery" className="img-fluid"/>)

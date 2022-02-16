@@ -1369,15 +1369,15 @@ h2.contact-title,
 }
 
 .profile-gallery p {
-	font-size: 17px;
+	font-size: 14px;
 	text-align: justify;
 }
 
 .profile-gallery a {
 	color: var(--bgColor);
-	margin-top: 5px;
+	font-size: 14px;
+	margin-bottom: 5px;
 	display: inline-block;
-	font-weight: 600;
 }
 .profile-gallery .gallery img {
 	height: 180px;
