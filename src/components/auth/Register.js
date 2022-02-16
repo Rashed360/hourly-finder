@@ -41,10 +41,6 @@ const Register = () => {
                   <option value="recruiter">Recruiter</option>
                 </select>
               </div>
-              <div class="form-field stay-login">
-                <input type="checkbox" name="" />
-                <label for="">Stay logged in</label>
-              </div>
               <div class="form-field">
                 <input type="submit" value="Sign up" class="btn submit" />
               </div>
