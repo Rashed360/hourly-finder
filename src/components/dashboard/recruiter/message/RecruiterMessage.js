@@ -2,9 +2,9 @@ import React from 'react';
 
 const RecruiterMessage = () => {
     return (
-        <div class="dashboard-main">
-            <h3 class="dashboard-title">Message</h3>
-            <div class="dashboard-content">
+        <div className="dashboard-main">
+            <h3 className="dashboard-title">Message</h3>
+            <div className="dashboard-content">
             
             </div>
         </div>

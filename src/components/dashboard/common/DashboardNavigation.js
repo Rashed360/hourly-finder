@@ -33,23 +33,23 @@ const DashboardNavigation = ({navigations, user}) => {
 
     }
     return (
-        <div class="dashboard-sidebar">
-            <div class="user">
-                <div class="user-photo" style={{backgroundImage: `url(${photo})`}}></div>
-                <div class="user-info">
+        <div className="dashboard-sidebar">
+            <div className="user">
+                <div className="user-photo" style={{backgroundImage: `url(${photo})`}}></div>
+                <div className="user-info">
                     <h5><NavLink to={`/user/${id}`}>{name}</NavLink></h5>
                     <p>{type}</p>
                 </div>
             </div>
 
-            <div class="dashboard-navigation">
+            <div className="dashboard-navigation">
                 <nav>
                     <ul>
                         {
                             navigations.map(item => {
                                 return (
                                     <li key={Math.random()}>
-                                        <NavLink to={`${item.link}`} className={(navInfo) => (navInfo.isActive ? "active": "")}>
+                                        <NavLink to={`${item.link}`} classNameName={(navInfo) => (navInfo.isActive ? "active": "")}>
                                             <span>{iconFinder(item.icon)}</span> {item.name}
                                         </NavLink>
                                     </li>

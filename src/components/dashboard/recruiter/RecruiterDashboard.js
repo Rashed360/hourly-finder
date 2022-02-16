@@ -52,24 +52,24 @@ const RecruiterDashboard = () => {
     return (
         <div>
             {/* <!-- ==================== Dashboard Area Start ==================== --> */}
-        <div class="dashboard-all mt-70">
-            <div class="container-fluid">
-                <div class="row g-0">
+        <div className="dashboard-all mt-70">
+            <div className="container-fluid">
+                <div className="row g-0">
                      {/* <!-- ==================== Dashboard Left Sidebar Area Start ==================== --> */}
-                    <div class="col-lg-3">
+                    <div className="col-lg-3">
                         <DashboardNavigation navigations={DashboardInformation.navigation} user={DashboardInformation.userInfo}></DashboardNavigation>
                     </div>
                      {/* <!-- ==================== Dashboard Left Sidebar End ==================== --> */}
 
                      {/* <!-- ==================== Dashboard Main Section Start ==================== --> */}
-                    <div class="col-lg-7">
+                    <div className="col-lg-7">
                         <Outlet></Outlet>
                     </div>
                      {/* <!-- ==================== Dashboard Main Section End ==================== --> */}
 
 
                       {/* <!-- ==================== Dashboard Right Sidebar Start ==================== --> */}
-                    <div class="col-lg-2">
+                    <div className="col-lg-2">
                         <DashboradRightBar></DashboradRightBar>
                     </div>
                      {/* <!-- ==================== Dashboard Right Sidebar End ==================== --> */}

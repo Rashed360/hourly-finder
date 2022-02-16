@@ -23,7 +23,7 @@ const LocationIcon = ({ setLocation }) => {
 		if (data !== undefined) {
 			setLocation(data.address.suburb)
 		}
-	}, [data])
+	}, [data,setLocation])
 
 	return <FaMapMarkerAlt onClick={() => getLocation()} />
 }

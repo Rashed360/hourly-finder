@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const CityBlock = ({location}) => {
-	const {id, name, code_name, mapPhoto} = location
+	const {name, code_name, mapPhoto} = location
 	return (
 		<div class='col-lg-3'>
 			<div class='location-based-jobs' style={{backgroundImage: `url(${mapPhoto})`}}>
