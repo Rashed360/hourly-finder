@@ -19,12 +19,13 @@
     "formik": "^2.2.9",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.1.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-leaflet": "^3.2.5",
     "react-pagination-bar": "^1.0.8",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
-    "react-slideshow-image": "^3.7.0",
+    "react-slideshow-image": "^3.7.0"
   }
 ```
