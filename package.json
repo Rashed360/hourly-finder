@@ -2,11 +2,23 @@
   "name": "hourly-finder",
   "version": "0.1.0",
   "description": "student hourly based job tracker",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/Rashed360/hourly-finder.git"
   },
-  "private": true,
+  "contributors": [
+    {
+      "name": "Rashed Ahmed",
+      "email": "rashed.ahmed@email.com",
+      "url": "https://github.com/Rashed360/"
+    },
+    {
+      "name": "Sajeeb Debnath",
+      "email": "sajeebdebnath.cse@gmail.com",
+      "url": "https://github.com/Sajeebdebnath"
+    }
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -21,9 +33,11 @@
     "react-icons": "^4.3.1",
     "react-leaflet": "^3.2.5",
     "react-pagination-bar": "^1.0.8",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "react-slideshow-image": "^3.7.0",
+    "redux": "^4.1.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
