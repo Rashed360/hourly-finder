@@ -5,7 +5,7 @@
 
 #### 🖥️: install dependencies
 ```bash
-- npm ci #not npm install
+- npm ci #instead of : npm install
 ```
 
 #### 📰: sample ui
