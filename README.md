@@ -29,5 +29,6 @@
     "react-scripts": "4.0.3",
     "react-slideshow-image": "^3.7.0",
     "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
   }
 ```
