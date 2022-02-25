@@ -63,6 +63,7 @@ const Register = () => {
 
 		return errors
 	}
+  
 	return (
 		<div className='registration-area'>
 			<div className='registration-box'>
