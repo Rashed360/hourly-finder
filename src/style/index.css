@@ -489,10 +489,10 @@ a.btn.join-us {
 }
 .newsletter-form .btn.newsletter {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1px;
+  right: 1px;
   padding: 15px 25px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 300;
 }
 .newsletter-form svg {
