@@ -24,19 +24,19 @@ const LeftContent = ({ page }) => {
   }
 
   return (
-    <div class="registration-left">
-      <div class="registration-left-content">
-        <div class="normal-logo">
+    <div className="registration-left">
+      <div className="registration-left-content">
+        <div className="normal-logo">
           <h3>HourlyFinder</h3>
         </div>
-        <div class="registration-left-text">
+        <div className="registration-left-text">
           <h2>The most exciting hourly-based jobs are awaiting...</h2>
           <p>
             Log in to find hourly-based jobs nearby your location also learn and
             enjoy from weekly free blogs...
           </p>
         </div>
-        <div class="registration-status-info">
+        <div className="registration-status-info">
           {statusInfo()}
         </div>
       </div>
