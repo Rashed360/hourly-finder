@@ -1086,6 +1086,7 @@ h2.contact-title,
   display: inline-block;
   margin-right: 10px;
   margin-bottom: 15px;
+  padding: 7px;
 }
 
 .form-field .btn {
