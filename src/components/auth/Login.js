@@ -5,11 +5,11 @@ const Login = () => {
 	const initialValues = {
 		email: '',
 		password: '',
-		passCheck: false,
+		passwordCheck: false,
 	}
 
 	const onSubmitHandle = values => {
-		console.log('Submitted:', values.email, values.password, values.passCheck)
+		console.log('Login:', values.email, values.password, values.passwordCheck)
 	}
 
 	const validateHandle = values => {
@@ -29,6 +29,7 @@ const Login = () => {
 
 		return errors
 	}
+
 	return (
 		<div className='registration-area'>
 			<div className='registration-box'>
@@ -88,24 +89,24 @@ const Login = () => {
 
 									<div className='form-check form-field stay-login'>
 										<Field
-											name='passCheck'
+											name='passwordCheck'
 											type='checkbox'
                       className="form-check-input"
-											checked={values.passCheck}
+											checked={values.passwordCheck}
 											onChange={handleChange}
 										/>
 										<label
-											htmlFor='passCheck'
+											htmlFor='passwordCheck'
 											className={
-												touched.passCheck
-													? values.passCheck
+												touched.passwordCheck
+													? values.passwordCheck
 														? 'text-success'
 														: 'text-danger'
 													: null
 											}
 										>
-											{touched.passCheck
-												? values.passCheck
+											{touched.passwordCheck
+												? values.passwordCheck
 													? 'Password Saved'
 													: 'Password Not Saved'
 												: 'Save Password'}
