@@ -1,17 +1,17 @@
 # Hourly-Finder
 
-#### 🌻: design files project
-[Design Files](https://github.com/Sajeebdebnath/hourly-finder-design/)
+#### 🌻: UI Files Project
+[UI Files](https://github.com/Sajeebdebnath/hourly-finder-design/)
 
-#### 🖥️: install dependencies
+#### 🖥️: Installing Dependencies
 ```bash
 - npm ci #instead of : npm install
 ```
 
-#### 📰: sample ui
+#### 📰: Sample UI
 ![image](https://user-images.githubusercontent.com/29564029/152134566-60511c7d-a049-4ba0-8187-ece13c9eaf12.png)
 
-#### 📀: dependencies
+#### 📀: Dependencies List
 ```json
   "dependencies": {
     "axios": "^0.25.0",
