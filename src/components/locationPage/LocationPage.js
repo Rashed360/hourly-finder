@@ -5,22 +5,22 @@ import { Link } from "react-router-dom"
 const LocationPage = () => {
   const { cityName } = useParams()
   return (
-    <div class='job-map-area mt-70'>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-lg-3'>
-            <div class='job-map-sidebar'>
-              <div class='location-search'>
+    <div className='job-map-area mt-70'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-lg-3'>
+            <div className='job-map-sidebar'>
+              <div className='location-search'>
                 <h5>Jobs in your location</h5>
                 <form action=''>
-                  <div class='form-field'>
+                  <div className='form-field'>
                     <label for=''>Select your location</label>
                     <input type='text' placeholder='Type here...' value={cityName} />
                   </div>
                 </form>
               </div>
-              <div class='all-filter'>
-                <div class='filter-by'>
+              <div className='all-filter'>
+                <div className='filter-by'>
                   <p>Filter Job by Type</p>
                   <form action=''>
                     <div>
@@ -41,12 +41,12 @@ const LocationPage = () => {
                     </div>
                   </form>
                 </div>
-                <div class='btn apply-filter'>Apply</div>
+                <div className='btn apply-filter'>Apply</div>
               </div>
-              <div class='selected-location-based-job'>
-                <div class='small-job-card'>
-                  <div class='small-job-title'>
-                    <div class='recruiter-logo'>
+              <div className='selected-location-based-job'>
+                <div className='small-job-card'>
+                  <div className='small-job-title'>
+                    <div className='recruiter-logo'>
                       <Link to='#'>
                         <img src='/assets/images/homepage/recruiter-logo.png' alt='' />
                       </Link>
@@ -55,16 +55,16 @@ const LocationPage = () => {
                       <Link to='#'>Complete Home Painting Services</Link>
                     </h3>
                   </div>
-                  <p class='small-job-bottom'>
+                  <p className='small-job-bottom'>
                     Job: <span>Hourly</span>, Posted by: <span>Founders</span>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class='col-lg-9'>
-            <div class='job-map-area'>
-              <div class='map'></div>
+          <div className='col-lg-9'>
+            <div className='job-map-area'>
+              <div className='map'></div>
             </div>
           </div>
         </div>

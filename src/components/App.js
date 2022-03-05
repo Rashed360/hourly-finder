@@ -4,6 +4,7 @@ import AllJobs from "./allJobs/AllJobs"
 import Apply from "./apply/Apply"
 import Login from "./auth/Login"
 import Register from "./auth/Register"
+import AvailabelJobSeeker from "./availableJobseeker/AvailabelJobSeeker"
 import Blogs from "./blogs/Blogs"
 import CityCategory from "./cityCategory/CityCategory"
 import Contact from "./contact/Contact"
@@ -35,6 +36,7 @@ function App() {
         <Route path='blogs' element={<Blogs />} />
         <Route path='about' element={<About />} />
         <Route path='contact' element={<Contact />} />
+        <Route path='available/jobseeker' element={<AvailabelJobSeeker />} />
         <Route path='/location/:cityName' element={<LocationPage />} />
 
         <Route path='login' element={<Login />} />

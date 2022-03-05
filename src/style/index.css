@@ -2682,3 +2682,164 @@ h3.right-bar-title {
 }
 /* -------------------------Location JOb Page CSS  End--------------------- */
 
+/* -------------------------Avaiabel Job Seeker Page CSS  Start--------------------- */
+.avaiable-jobseeker-title h3,
+.sidebar-title h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.sidebar-content {
+  background: #edf1f5;
+  height: 96%;
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.all-sidebar {
+  height: 100%;
+}
+
+.avaiable-jobseeker-wrapper {
+  background: #fbfbfb;
+  border-radius: 10px;
+  border: 0.3px solid #c6e1cda6;
+}
+
+.avaiable-jobseeker-header {
+  background: #d4ecdb;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.avaiable-jobseeker-header p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.avaiable-jobseeker-header p span {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.avaiable-jobseeker-filter {
+  display: flex;
+  justify-content: space-between;
+  background: #e9f2fb;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant {
+  font-size: 14px;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant span {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant p,
+.avaiable-jobseeker-filter .show-all-applicant .display-page {
+  display: flex;
+  align-items: center;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant p {
+  margin-right: 20px;
+}
+.avaiable-jobseeker-filter .form-field select {
+  margin: 0;
+}
+.avaiable-jobseeker-cards-warapper {
+  padding: 10px 25px;
+}
+
+.avaible-jobseeker-card {
+  border: 1px solid #96bea4;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 1px 1px 0px 1px #96bea4;
+  margin: 10px 0;
+}
+
+.avaiable-jobseeker-card-footer {
+  background: #d4ecdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-top: 1px solid #96bea4;
+  padding: 10px 0;
+}
+
+.avaiable-jobseeker-rating .rating svg {
+  color: #4c9566;
+  font-size: 16px;
+}
+
+.avaiable-jobseeker-rating span {
+  font-size: 15px;
+  margin-left: 6px;
+}
+
+.avaiable-jobseeker-rating {
+  display: flex;
+  align-items: center;
+}
+
+.btn.jobseeker-profile {
+  background: #96bea4;
+  color: #2f4e39;
+  padding: 3px 10px;
+  font-size: 14px;
+  border: 0.5px solid #65a97d;
+}
+.avaiable-jobseeker-dp {
+  width: 60px;
+  height: 60px;
+  background: #d4ecdb;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.avaiable-jobseeker-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-avaiable-jobseeker {
+  font-size: 12px;
+}
+
+.avaiable-jobseeker-card-content {
+  padding: 10px 15px;
+}
+
+.avaiable-jobseeker-info .name {
+  font-size: 18px;
+}
+
+.avaiable-jobseeker-info .designation {
+  font-size: 12px;
+  margin: 3px 0;
+  margin-bottom: 0px;
+}
+
+.avaiable-jobseeker-info .avaiabele-status {
+  font-size: 12px;
+  background: #5ed788;
+  color: white;
+  padding: 3px 11px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 10px;
+}
+/* -------------------------Avaiabel Job Seeker Page CSS  End--------------------- */
