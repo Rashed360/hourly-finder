@@ -93,9 +93,9 @@ const ViewPostedJob = () => {
           <div className='applicant-information-area'>
             <div className='applicant-information-filter'>
               <div className='show-all-applicant'>
-                <a href='#' className='btn applicant-info'>
+                <Link to='#' className='btn applicant-info'>
                   Show All Applicants
-                </a>
+                </Link>
                 <div className='display-page'>
                   <span>
                     <span className='iconify' data-icon='ic:baseline-list-alt'></span>
@@ -182,18 +182,18 @@ const ViewPostedJob = () => {
           </div>
           <div className='see-posted-job-footer'>
             <div className='pagination-wrapper'>
-              <a href='' className='page'>
+              <Link to='' className='page'>
                 <span className='iconify' data-icon='codicon:arrow-left'></span> Prev
-              </a>
-              <a href=''>1</a>
-              <a href=''>2</a>
-              <a href='' className='active'>
+              </Link>
+              <Link to=''>1</Link>
+              <Link to=''>2</Link>
+              <Link to='' className='active'>
                 3
-              </a>
-              <a href=''>4</a>
-              <a href='' className='page next'>
+              </Link>
+              <Link to=''>4</Link>
+              <Link to='' className='page next'>
                 Next <span className='iconify' data-icon='codicon:arrow-right'></span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

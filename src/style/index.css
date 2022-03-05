@@ -2638,3 +2638,47 @@ h3.right-bar-title {
   background: #c6e1cd;
 }
 /* -------------------------Recruiter Posted JOb Page CSS  End--------------------- */
+
+/* -------------------------Location Job Page CSS  Start--------------------- */
+.btn.apply-filter {
+  width: 100%;
+  background: #16395f;
+  font-weight: 500;
+}
+
+.job-map-sidebar {
+  background: #f8f8f8;
+  height: 100%;
+}
+
+.location-search {
+  padding: 0px 25px;
+  padding-top: 15px;
+}
+
+.location-search h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.location-search .form-field label {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.job-map-area .map {
+  background: #358fb2a6;
+  height: 710px;
+  border-radius: 10px;
+}
+
+.job-map-area {
+  padding: 15px 0px;
+}
+.selected-location-based-job {
+  padding: 0px 15px;
+  margin: 15px 0;
+}
+/* -------------------------Location JOb Page CSS  End--------------------- */
+
