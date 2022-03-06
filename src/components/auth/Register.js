@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 	}
 }
 
-const Register = () => {
+const Register = (props) => {
 	const initialValues = {
 		firstName: '',
 		lastName: '',
@@ -28,16 +28,8 @@ const Register = () => {
 	}
 
 	const onSubmitHandle = values => {
-		console.log(
-			'Register:',
-			values.firstName,
-			values.lastName,
-			values.email,
-			values.username,
-			values.password,
-			values.accountType
-		)
-		authSignUp(
+		console.log('Register')
+		props.authSignUp(
 			values.firstName,
 			values.lastName,
 			values.email,

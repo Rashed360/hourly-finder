@@ -1,3 +1,4 @@
+import axios from 'axios'
 import {
 	AUTH_CHECK,
 	AUTH_FAILED,
@@ -8,14 +9,15 @@ import {
 	AUTH_SUCCESS,
 } from '../actionTypes/authActionTypes'
 
-export const authSignUp = (firstName, lastName, email, username, password, accountType) => {
+export const authSignUp = (firstName, lastName, email, username, password, accountType) => dispatch => {
+	console.log('here')
 	const authData = {
-    first_name: firstName,
-    last_name: lastName,
+		first_name: firstName,
+		last_name: lastName,
 		email: email,
-    username: username,
-    password: password,
-    accountType: accountType,
+		username: username,
+		password: password,
+		accountType: accountType,
 	}
 	axios
 		.post('http://localhost:8000/auth/users/', authData)
@@ -27,22 +29,33 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 			// localStorage.setItem('userId', data.localId)
 			// localStorage.setItem('expiration', expiration)
 			// dispatch(authSuccess(data.idToken, data.localId))
-      console.log(data)
+			console.log(data)
 		})
 		.catch(error => {
 			dispatch(authLoading(false))
+      console.log(error.response)
 			// dispatch(authFailed(error.response.data.error.message))
 		})
 }
 
-export const authLogin = (email, password) => {
-	return {
-		type: AUTH_LOGIN,
-		payload: {
-			email: email,
-			password: password,
-		},
+export const authLogin = (email, password) => dispatch => {
+	const authData = {
+		email: email,
+		password: password,
 	}
+	axios
+		.post('http://localhost:8000/auth/token/login/', authData)
+		.then(response => {
+			const data = response.data
+			localStorage.setItem('token', data.auth_token)
+			dispatch(authSuccess(data.auth_token))
+
+			console.log(data.auth_token)
+		})
+		.catch(error => {
+			console.log(error.response)
+			// dispatch(authFailed(error.response.data.error.message))
+		})
 }
 
 export const authLogout = () => {
