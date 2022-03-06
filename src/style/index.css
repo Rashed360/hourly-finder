@@ -45,6 +45,9 @@
 }
 .menu-area {
   text-align: right;
+  display: flex;
+    align-items: center;
+    justify-content: right;
 }
 .menu-area nav {
   display: inline-block;
@@ -2797,6 +2800,7 @@ h3.right-bar-title {
   padding: 3px 10px;
   font-size: 14px;
   border: 0.5px solid #65a97d;
+  line-height: 28px;
 }
 .avaiable-jobseeker-dp {
   width: 60px;
