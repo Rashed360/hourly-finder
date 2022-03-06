@@ -1,7 +1,21 @@
 import LeftContent from './commonAuth/LeftContent'
 import { Formik, Field, Form } from 'formik'
+import { connect } from 'react-redux'
+import { authLogin } from '../../redux/actionCreators/authActionCreators'
 
-const Login = () => {
+const mapDispatchToProps = dispatch => {
+	return {
+		authLogin: (email, password) => dispatch(authLogin(email, password)),
+	}
+}
+
+const mapStateToProps = state => {
+	return {
+		token: state.auth.token,
+	}
+}
+
+const Login = (props) => {
 	const initialValues = {
 		email: '',
 		password: '',
@@ -9,7 +23,8 @@ const Login = () => {
 	}
 
 	const onSubmitHandle = values => {
-		console.log('Login:', values.email, values.password, values.passwordCheck)
+		console.log('Login:')
+		props.authLogin(values.email, values.password)
 	}
 
 	const validateHandle = values => {
@@ -91,18 +106,14 @@ const Login = () => {
 										<Field
 											name='passwordCheck'
 											type='checkbox'
-                      className="form-check-input"
+											className='form-check-input'
 											checked={values.passwordCheck}
 											onChange={handleChange}
 										/>
 										<label
 											htmlFor='passwordCheck'
 											className={
-												touched.passwordCheck
-													? values.passwordCheck
-														? 'text-success'
-														: 'text-danger'
-													: null
+												touched.passwordCheck ? (values.passwordCheck ? 'text-success' : 'text-danger') : null
 											}
 										>
 											{touched.passwordCheck
@@ -126,4 +137,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

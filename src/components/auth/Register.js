@@ -1,22 +1,39 @@
 import LeftContent from './commonAuth/LeftContent'
 import { Formik, Field, Form } from 'formik'
+import { connect } from 'react-redux'
+import { authSignUp } from '../../redux/actionCreators/authActionCreators'
 
-const Register = () => {
+const mapDispatchToProps = dispatch => {
+	return {
+		authSignUp: (firstName, lastName, email, username, password, accountType) =>
+			dispatch(authSignUp(firstName, lastName, email, username, password, accountType)),
+	}
+}
+
+const mapStateToProps = state => {
+	return {
+		token: state.auth.token,
+	}
+}
+
+const Register = (props) => {
 	const initialValues = {
 		firstName: '',
 		lastName: '',
 		email: '',
+		username: '',
 		password: '',
 		passwordConfirm: '',
 		accountType: '',
 	}
 
 	const onSubmitHandle = values => {
-		console.log(
-			'Register:',
+		console.log('Register')
+		props.authSignUp(
 			values.firstName,
 			values.lastName,
 			values.email,
+			values.username,
 			values.password,
 			values.accountType
 		)
@@ -57,13 +74,19 @@ const Register = () => {
 			errors.passwordConfirm = 'Must be atleast 8 characters long'
 		}
 
+		if (!values.username) {
+			errors.username = 'Field is Required'
+		} else if (!/^[a-zA-Z0-9\s]*$/.test(values.username)) {
+			errors.username = 'Contains Invalid Charecters'
+		}
+
 		if (!values.accountType) {
 			errors.accountType = 'Account Type not Selected'
 		}
 
 		return errors
 	}
-  
+
 	return (
 		<div className='registration-area'>
 			<div className='registration-box'>
@@ -192,33 +215,56 @@ const Register = () => {
 											)}
 										</div>
 									</div>
+									<div className='form-field name'>
+										<div className='first-name'>
+											<label htmlFor='username'>User Name</label>
+											<Field
+												name='username'
+												type='text'
+												className={
+													touched.username
+														? errors.username
+															? 'form-control is-invalid'
+															: 'form-control is-valid'
+														: 'form-control'
+												}
+												value={values.username}
+												onChange={handleChange}
+												placeholder='Enter First Name'
+											/>
+											{touched.username && errors.username ? (
+												<div className='invalid-feedback'>{errors.username}</div>
+											) : (
+												<div className='valid-feedback'>Looks good!</div>
+											)}
+										</div>
 
-									<div className='form-field account-type'>
-										<label htmlFor=''>Account Type</label>
-										<Field
-											name='accountType'
-											as='select'
-											className={
-												touched.accountType
-													? errors.accountType
-														? 'form-control is-invalid'
-														: 'form-control is-valid'
-													: 'form-control'
-											}
-											value={values.accountType}
-											onChange={handleChange}
-										>
-											<option value=''>Select Account Type</option>
-											<option value='job seeker'>Job Seeker</option>
-											<option value='recruiter'>Recruiter</option>
-										</Field>
-										{touched.accountType && errors.accountType ? (
-											<div className='invalid-feedback'>{errors.accountType}</div>
-										) : (
-											<div className='valid-feedback'>Looks good!</div>
-										)}
+										<div className='form-field account-type'>
+											<label htmlFor=''>Account Type</label>
+											<Field
+												name='accountType'
+												as='select'
+												className={
+													touched.accountType
+														? errors.accountType
+															? 'form-control is-invalid'
+															: 'form-control is-valid'
+														: 'form-control'
+												}
+												value={values.accountType}
+												onChange={handleChange}
+											>
+												<option value=''>Select Account Type</option>
+												<option value='seeker'>Job Seeker</option>
+												<option value='recruiter'>Recruiter</option>
+											</Field>
+											{touched.accountType && errors.accountType ? (
+												<div className='invalid-feedback'>{errors.accountType}</div>
+											) : (
+												<div className='valid-feedback'>Looks good!</div>
+											)}
+										</div>
 									</div>
-
 									<div className='form-field'>
 										<input type='submit' value='Sign up' className='btn submit' />
 									</div>
@@ -232,4 +278,4 @@ const Register = () => {
 	)
 }
 
-export default Register
+export default connect(mapStateToProps, mapDispatchToProps)(Register)
