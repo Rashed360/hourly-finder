@@ -45,6 +45,9 @@
 }
 .menu-area {
   text-align: right;
+  display: flex;
+    align-items: center;
+    justify-content: right;
 }
 .menu-area nav {
   display: inline-block;
@@ -982,11 +985,7 @@ h2.contact-title,
   width: 80%;
   margin: auto;
   height: 80%;
-  background: linear-gradient(
-    148.31deg,
-    rgba(255, 255, 255, 0.165) 0%,
-    rgba(255, 255, 255, 0.3) 100%
-  );
+  background: linear-gradient(148.31deg, rgba(255, 255, 255, 0.165) 0%, rgba(255, 255, 255, 0.3) 100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -2447,3 +2446,404 @@ h3.right-bar-title {
   margin: 9px;
 }
 /* -------------------------PopUp Chat CSS  End--------------------- */
+
+/* -------------------------Recruiter Posted JOb Page CSS  Start--------------------- */
+.see-posted-job-area {
+  background: #fbfbfb;
+  border-radius: 10px;
+  border: 0.3px solid #c6e1cda6;
+}
+
+.see-posted-job-header {
+  background: #e9fbee;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.3px solid #c6e1cda6;
+}
+
+.see-posted-job-header .job-header-content span {
+  font-size: 12px;
+}
+
+.see-posted-job-header .job-header-content h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.see-posted-job-header .job-header-content {
+  padding: 15px 15px;
+}
+
+.see-posted-job-header .job-header-content.applicant {
+  background: #96bea440;
+  border-radius: 10px 10px 0px 0px;
+  padding-right: 50px;
+}
+.see-posted-job-header .job-header-right {
+  display: flex;
+  align-items: center;
+  background: rgba(150, 190, 164, 0.25);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.see-posted-job-header .job-header-content.status {
+  padding-right: 40px;
+}
+.job-header-content.action .btn {
+  background: #ffbc3a;
+  color: black;
+  padding: 7px 10px;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.job-header-content.action .btn.delete {
+  background: #ee4d6e;
+}
+.see-posted-job-footer,
+.avaiable-jobseeker-footer {
+  background: #e9fbee;
+  border-radius: 0px 0px 10px 10px;
+  padding: 5px 0;
+  border-top: 0.3px solid #c6e1cda6;
+}
+
+.see-posted-job-footer .pagination-wrapper,
+.avaiable-jobseeker-footer .pagination-wrapper {
+  background: transparent;
+}
+
+.see-posted-job-footer .pagination-wrapper a,
+.avaiable-jobseeker-footer .pagination-wrapper a {
+  font-size: 14px;
+}
+.see-posted-job-content {
+  padding: 15px 20px;
+}
+.applicant-information-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-all-applicant {
+  display: flex;
+  align-items: center;
+}
+
+.applicant-filter {
+  display: flex;
+  align-items: center;
+}
+
+.applicant-information-filter {
+  background: #e9f2fb;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #434343;
+}
+
+.show-all-applicant .btn {
+  background: #74cfe4;
+  font-size: 14px;
+  margin-right: 15px;
+}
+
+.applicant-information-filter .display-page span {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.applicant-information-filter .display-page {
+  display: flex;
+  align-items: center;
+}
+
+.applicant-filter .filter-meta {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+
+.applicant-filter .filter-meta span.filter-header-text {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+.applicant-information-table th {
+  background: #b8e2f1;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.applicant-information-table th.name {
+  width: 20%;
+}
+.applicant-information-table td.img .img {
+  width: 40px;
+  height: 40px;
+  background: #b8e2f1;
+  margin: auto;
+  border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.applicant-information-table td {
+  font-size: 14px;
+  text-align: center;
+}
+.applicant-information-table td.message {
+  font-size: 13px;
+}
+
+.applicant-information-table th.status {
+  width: 16%;
+}
+
+.applicant-information-table td .status {
+  background: #ffbc3a;
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+
+.applicant-information-table td.name {
+  font-weight: 500;
+}
+.applicant-information-table .data-row {
+  border-top: 10px solid #fbfbfb;
+  border-bottom: 10px solid #fbfbfb;
+  position: relative;
+}
+
+.applicant-information-table .data-row::after {
+  position: absolute;
+  content: "";
+  background: #dae1e9;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: -30%;
+}
+.applicant-information-table .data-row:last-child::after {
+  height: 0;
+}
+.applicant-information-table td .status.rejected {
+  background: #ee4d6e;
+}
+
+.applicant-information-table td .status.hired {
+  background: #c6e1cd;
+}
+/* -------------------------Recruiter Posted JOb Page CSS  End--------------------- */
+
+/* -------------------------Location Job Page CSS  Start--------------------- */
+.btn.apply-filter {
+  width: 100%;
+  background: #16395f;
+  font-weight: 500;
+}
+
+.job-map-sidebar {
+  background: #f8f8f8;
+  height: 100%;
+}
+
+.location-search {
+  padding: 0px 25px;
+  padding-top: 15px;
+}
+
+.location-search h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.location-search .form-field label {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.job-map-area .map {
+  background: #358fb2a6;
+  height: 710px;
+  border-radius: 10px;
+}
+
+.job-map-area {
+  padding: 15px 0px;
+}
+.selected-location-based-job {
+  padding: 0px 15px;
+  margin: 15px 0;
+}
+/* -------------------------Location JOb Page CSS  End--------------------- */
+
+/* -------------------------Avaiabel Job Seeker Page CSS  Start--------------------- */
+.avaiable-jobseeker-title h3,
+.sidebar-title h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.sidebar-content {
+  background: #edf1f5;
+  height: 96%;
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.all-sidebar {
+  height: 100%;
+}
+
+.avaiable-jobseeker-wrapper {
+  background: #fbfbfb;
+  border-radius: 10px;
+  border: 0.3px solid #c6e1cda6;
+}
+
+.avaiable-jobseeker-header {
+  background: #d4ecdb;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.avaiable-jobseeker-header p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.avaiable-jobseeker-header p span {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.avaiable-jobseeker-filter {
+  display: flex;
+  justify-content: space-between;
+  background: #e9f2fb;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant {
+  font-size: 14px;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant span {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant p,
+.avaiable-jobseeker-filter .show-all-applicant .display-page {
+  display: flex;
+  align-items: center;
+}
+
+.avaiable-jobseeker-filter .show-all-applicant p {
+  margin-right: 20px;
+}
+.avaiable-jobseeker-filter .form-field select {
+  margin: 0;
+}
+.avaiable-jobseeker-cards-warapper {
+  padding: 10px 25px;
+}
+
+.avaible-jobseeker-card {
+  border: 1px solid #96bea4;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 1px 1px 0px 1px #96bea4;
+  margin: 10px 0;
+}
+
+.avaiable-jobseeker-card-footer {
+  background: #d4ecdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-top: 1px solid #96bea4;
+  padding: 10px 0;
+}
+
+.avaiable-jobseeker-rating .rating svg {
+  color: #4c9566;
+  font-size: 16px;
+}
+
+.avaiable-jobseeker-rating span {
+  font-size: 15px;
+  margin-left: 6px;
+}
+
+.avaiable-jobseeker-rating {
+  display: flex;
+  align-items: center;
+}
+
+.btn.jobseeker-profile {
+  background: #96bea4;
+  color: #2f4e39;
+  padding: 3px 10px;
+  font-size: 14px;
+  border: 0.5px solid #65a97d;
+  line-height: 28px;
+}
+.avaiable-jobseeker-dp {
+  width: 60px;
+  height: 60px;
+  background: #d4ecdb;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.avaiable-jobseeker-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-avaiable-jobseeker {
+  font-size: 12px;
+}
+
+.avaiable-jobseeker-card-content {
+  padding: 10px 15px;
+}
+
+.avaiable-jobseeker-info .name {
+  font-size: 18px;
+}
+
+.avaiable-jobseeker-info .designation {
+  font-size: 12px;
+  margin: 3px 0;
+  margin-bottom: 0px;
+}
+
+.avaiable-jobseeker-info .avaiabele-status {
+  font-size: 12px;
+  background: #5ed788;
+  color: white;
+  padding: 3px 11px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 10px;
+}
+/* -------------------------Avaiabel Job Seeker Page CSS  End--------------------- */
