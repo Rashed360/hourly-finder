@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Dropdown } from "react-bootstrap"
 import { FaBell } from "react-icons/fa"
 import { useLocation } from "react-router"
 import { Link, NavLink } from "react-router-dom"
@@ -69,9 +70,18 @@ const Header = () => {
                         <FaBell />
                       </span>
                     </Link>
-                    <Link to='/dashboard'>
-                      <img src='https://placeimg.com/100/100/people?t=1640373129965' alt='User' />
-                    </Link>
+
+                    <Dropdown>
+                      <Dropdown.Toggle as='a'>
+                        <img src='https://placeimg.com/100/100/people?t=1640373129965' alt='User' />
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu>
+                        <Link to='/dashboard'>Dashboard</Link>
+                        <Link to='/dashboard/message'>Message</Link>
+                        <Link to='/dashboard/logout'>Logout</Link>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
                 </>
               )}

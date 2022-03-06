@@ -46,8 +46,8 @@
 .menu-area {
   text-align: right;
   display: flex;
-    align-items: center;
-    justify-content: right;
+  align-items: center;
+  justify-content: right;
 }
 .menu-area nav {
   display: inline-block;
@@ -1879,6 +1879,27 @@ h2.contact-title,
   display: flex;
   justify-content: right;
   align-items: center;
+}
+.header-icon .dropdown-toggle::after {
+  border: none;
+}
+.header-icon .dropdown-menu.show a {
+  display: block;
+  padding: 8px 15px;
+  background: transparent;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  border-bottom: 0.3px solid #16395f17;
+}
+.header-icon .dropdown-menu.show {
+  margin-top: 8px;
+}
+.header-icon .dropdown-menu.show a:hover {
+  background: #16395f;
+  color: white;
+}
+.header-icon .dropdown-menu.show a:last-child {
+  border: none;
 }
 
 .header-icon img {
