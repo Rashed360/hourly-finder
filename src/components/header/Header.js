@@ -3,6 +3,7 @@ import { Dropdown } from "react-bootstrap"
 import { FaBell } from "react-icons/fa"
 import { useLocation } from "react-router"
 import { Link, NavLink } from "react-router-dom"
+import Image from "../../assets/images/user-1.jpg"
 import Logo from "../../assets/logos/logo.svg"
 
 const Header = () => {
@@ -73,7 +74,7 @@ const Header = () => {
 
                     <Dropdown>
                       <Dropdown.Toggle as='a'>
-                        <img src='https://placeimg.com/100/100/people?t=1640373129965' alt='User' />
+                        <img src={Image} alt='User' />
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>

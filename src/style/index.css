@@ -1930,6 +1930,9 @@ h2.contact-title,
   height: 90px;
   margin: auto;
   border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .dashboard-main {
