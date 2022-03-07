@@ -1,14 +1,9 @@
 import axios from 'axios'
-import {
-	AUTH_CHECK,
-	AUTH_FAILED,
-	AUTH_LOADING,
-	AUTH_LOGOUT,
-	AUTH_SUCCESS,
-} from '../actionTypes/authActionTypes'
+import jwt_decode from 'jwt-decode'
+import { AUTH_FAILED, AUTH_LOADING, AUTH_LOGOUT, AUTH_SUCCESS } from '../actionTypes/authActionTypes'
 
 export const authSignUp = (firstName, lastName, email, username, password, accountType) => dispatch => {
-	console.log('here')
+	dispatch(authLoading(true))
 	const authData = {
 		first_name: firstName,
 		last_name: lastName,
@@ -31,26 +26,33 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 		})
 		.catch(error => {
 			dispatch(authLoading(false))
-      console.log(error.response)
-			// dispatch(authFailed(error.response.data.error.message))
+			const key = Object.keys(error.response.data)[0]
+			dispatch(authFailed(error.response.data[key]))
 		})
 }
 
 export const authLogin = (email, password) => dispatch => {
+	dispatch(authLoading(true))
 	const authData = {
 		email: email,
 		password: password,
 	}
 	axios
-		.post('http://localhost:8000/auth/token/login/', authData)
+		.post('http://localhost:8000/auth/jwt/create', authData)
 		.then(response => {
-			const data = response.data
-			localStorage.setItem('token', data.auth_token)
-			dispatch(authSuccess(data.auth_token))
+			dispatch(authLoading(false))
+			const token = response.data.access
+			const decode = jwt_decode(token)
+			const expiration = new Date(decode.exp * 1000)
+			localStorage.setItem('token', token)
+			localStorage.setItem('userId', decode.user_id)
+			localStorage.setItem('expiration', expiration)
+			dispatch(authSuccess(token, decode.user_id))
 		})
 		.catch(error => {
-			console.log(error.response)
-			dispatch(authFailed('error'))
+			dispatch(authLoading(false))
+			const key = Object.keys(error.response.data)[0]
+			dispatch(authFailed(error.response.data[key]))
 		})
 }
 
@@ -63,16 +65,28 @@ export const authLogout = () => {
 	}
 }
 
-export const authCheck = () => {
-	return {
-		type: AUTH_CHECK,
+export const authCheck = () => dispatch => {
+	const token = localStorage.getItem('token')
+	if (!token) {
+		dispatch(authLogout())
+	} else {
+		const expiration = new Date(localStorage.getItem('expiration'))
+		if (expiration <= new Date()) {
+			dispatch(authLogout())
+		} else {
+			const userId = localStorage.getItem('userId')
+			dispatch(authSuccess(token, userId))
+		}
 	}
 }
 
-export const authSuccess = token => {
+export const authSuccess = (token, userId) => {
 	return {
 		type: AUTH_SUCCESS,
-		payload: token,
+		payload: {
+			token: token,
+			userId: userId,
+		},
 	}
 }
 

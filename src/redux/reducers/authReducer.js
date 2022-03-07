@@ -2,6 +2,7 @@ import { AUTH_SUCCESS, AUTH_LOGOUT, AUTH_FAILED } from '../actionTypes/authActio
 
 const authInitialState = {
 	token: null,
+	userId: null,
 	authLoading: false,
 	authFailedMsg: null,
 }
@@ -11,7 +12,9 @@ const authReducer = (state = authInitialState, action) => {
 		case AUTH_SUCCESS:
 			return {
 				...state,
-				token: action.payload,
+				authFailedMsg: null,
+				token: action.payload.token,
+				userId: action.payload.userId,
 			}
 
 		case AUTH_FAILED:
@@ -23,6 +26,7 @@ const authReducer = (state = authInitialState, action) => {
 		case AUTH_LOGOUT:
 			return {
 				...state,
+				authFailedMsg: null,
 				token: null,
 			}
 

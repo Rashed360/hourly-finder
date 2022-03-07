@@ -1,5 +1,6 @@
 import LeftContent from './commonAuth/LeftContent'
 import { Formik, Field, Form } from 'formik'
+import { Alert } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { authSignUp } from '../../redux/actionCreators/authActionCreators'
 
@@ -13,10 +14,11 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
 	return {
 		token: state.auth.token,
+		authFailedMsg: state.auth.authFailedMsg,
 	}
 }
 
-const Register = (props) => {
+const Register = props => {
 	const initialValues = {
 		firstName: '',
 		lastName: '',
@@ -94,6 +96,8 @@ const Register = (props) => {
 				<div className='registration-form'>
 					<div className='form'>
 						<h2>Sign up</h2>
+						{props?.authFailedMsg !== null ? <Alert variant='danger'>{props?.authFailedMsg}</Alert> : null}
+
 						<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 							{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
 								<Form onSubmit={handleSubmit} onReset={handleReset}>
