@@ -476,16 +476,14 @@ a.btn.join-us {
   position: relative;
   margin: 10px 0;
 }
-
 .newsletter-form .newsletter-email {
   width: 100%;
   border: 1px solid var(--bgColor3);
   box-sizing: border-box;
   box-shadow: 1px 2px 0px 1px var(--bgColor3);
   border-radius: 5px;
-  padding: 15px;
+  padding: 15px 131px 15px 60px;
   position: relative;
-  padding-left: 60px;
   outline-color: var(--bgColor);
   font-weight: 400;
   color: #838995;
@@ -494,21 +492,29 @@ a.btn.join-us {
   position: absolute;
   top: 1px;
   right: 1px;
-  padding: 15px 25px;
+  padding: 15px 20px;
+  border-radius: 0px 5px 5px 0px;
   font-size: 15px;
   font-weight: 300;
 }
-.newsletter-form svg {
+.newsletter-form .svg {
   position: absolute;
   left: 20px;
-  bottom: 30%;
+  top: 32px;
   font-size: 24px;
   color: var(--bgColor4);
   margin-top: -16px;
 }
-.newsletter-content p {
+.newsletter-form p {
+  margin-top: 10px;
   font-size: var(--smallFont);
   color: #838995;
+}
+.newsletter-form p.err {
+  color: red;
+}
+.newsletter-form p.okk {
+  color: green;
 }
 /* -------------------------Newsletter Section CSS End --------------------- */
 
