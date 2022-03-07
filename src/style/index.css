@@ -2877,3 +2877,32 @@ h3.right-bar-title {
   margin-bottom: 10px;
 }
 /* -------------------------Avaiabel Job Seeker Page CSS  End--------------------- */
+
+/* -------------------------Simple Spinner CSS Start--------------------- */
+.holder {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.square {
+width: 1em;
+height: 1em;
+background: #2980b9;
+border-radius: 50%;
+font-size: 100px;
+animation: spin .7s linear infinite, to-circle .7s infinite alternate linear;
+}
+@keyframes spin {
+to {
+  transform: rotateY(.5turn);
+}
+}
+@keyframes to-circle {
+0%,49% {
+  background: #2980b9;
+}
+50%,100% {
+  background: #f39c12;
+}  
+}
+/* -------------------------Simple Spinner CSS End--------------------- */

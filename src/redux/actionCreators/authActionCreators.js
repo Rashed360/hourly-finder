@@ -67,7 +67,7 @@ export const authLogout = () => {
 	}
 }
 
-export const authChcek = () => {
+export const authCheck = () => {
 	return {
 		type: AUTH_CHECK,
 	}
