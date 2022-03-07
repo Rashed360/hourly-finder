@@ -27,6 +27,7 @@ import NoMatch from './noMatch/NoMatch'
 import SingleBlog from './singleBlog/SingleBlog'
 import SingleJob from './singleJob/SingleJob'
 import UserProfile from './userProfile/UserProfile'
+import Logout from './auth/Logout'
 
 const mapDispatchToProps = dispatch => {
 	return {
@@ -61,6 +62,7 @@ const App = props => {
 
 				<Route path='login' element={<Login />} />
 				<Route path='register' element={<Register />} />
+				<Route path='logout' element={<Logout />} />
 
 				{/* Dynamic Route Start */}
 				<Route path='job/:job_id' element={<SingleJob />} />

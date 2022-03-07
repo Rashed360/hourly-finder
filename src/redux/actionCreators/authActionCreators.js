@@ -3,9 +3,7 @@ import {
 	AUTH_CHECK,
 	AUTH_FAILED,
 	AUTH_LOADING,
-	AUTH_LOGIN,
 	AUTH_LOGOUT,
-	AUTH_SIGNUP,
 	AUTH_SUCCESS,
 } from '../actionTypes/authActionTypes'
 
@@ -49,12 +47,10 @@ export const authLogin = (email, password) => dispatch => {
 			const data = response.data
 			localStorage.setItem('token', data.auth_token)
 			dispatch(authSuccess(data.auth_token))
-
-			console.log(data.auth_token)
 		})
 		.catch(error => {
 			console.log(error.response)
-			// dispatch(authFailed(error.response.data.error.message))
+			dispatch(authFailed('error'))
 		})
 }
 
