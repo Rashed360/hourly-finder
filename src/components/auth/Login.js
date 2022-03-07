@@ -1,6 +1,7 @@
 import LeftContent from './commonAuth/LeftContent'
 import { Formik, Field, Form } from 'formik'
 import { connect } from 'react-redux'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { authLogin } from '../../redux/actionCreators/authActionCreators'
 
 const mapDispatchToProps = dispatch => {
@@ -15,16 +16,24 @@ const mapStateToProps = state => {
 	}
 }
 
-const Login = (props) => {
+const Login = props => {
+	const navigate = useNavigate()
+	const location = useLocation()
+
+	const redirectPath = location.state?.path || '/'
+
 	const initialValues = {
 		email: '',
 		password: '',
 		passwordCheck: false,
 	}
 
-	const onSubmitHandle = values => {
+	const onSubmitHandle = (values, { resetForm }) => {
 		console.log('Login:')
+
 		props.authLogin(values.email, values.password)
+		resetForm(initialValues)
+		navigate(redirectPath, { replace: true })
 	}
 
 	const validateHandle = values => {
