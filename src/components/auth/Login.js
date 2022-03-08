@@ -1,6 +1,8 @@
 import LeftContent from './commonAuth/LeftContent'
 import { Formik, Field, Form } from 'formik'
+import { Alert } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { authLogin } from '../../redux/actionCreators/authActionCreators'
 
 const mapDispatchToProps = dispatch => {
@@ -12,19 +14,30 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
 	return {
 		token: state.auth.token,
+		// authSuccessMsg: state.auth.authSuccessMsg,
+		authFailedMsg: state.auth.authFailedMsg,
 	}
 }
 
-const Login = (props) => {
+const Login = props => {
+	const navigate = useNavigate()
+
 	const initialValues = {
 		email: '',
 		password: '',
 		passwordCheck: false,
 	}
 
-	const onSubmitHandle = values => {
-		console.log('Login:')
+	const onSubmitHandle = (values, { resetForm }) => {
 		props.authLogin(values.email, values.password)
+		console.log('here')
+		if (props?.authFailedMsg===null) {
+			resetForm(initialValues)
+			navigate('/')
+			console.log('navigate')
+		} else {
+			console.log(props?.authFailedMsg)
+		}
 	}
 
 	const validateHandle = values => {
@@ -52,6 +65,7 @@ const Login = (props) => {
 				<div className='registration-form'>
 					<div className='form'>
 						<h2>Sign in</h2>
+						{props.authFailedMsg !== null ? <Alert variant='danger'>{props.authFailedMsg}</Alert> : null}
 
 						<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 							{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (

@@ -1,11 +1,10 @@
 import { Formik, Form, Field } from 'formik'
-import { FaEnvelope, FaSmile } from 'react-icons/fa'
+import { FaEnvelope, FaRegLaugh,FaRegTired,FaRegKissWinkHeart  } from 'react-icons/fa'
 
 const NewsLetterSection = () => {
 	const newletterContent = {
 		textContent: {
 			title: 'Subscribe to receive our weekly blog',
-			bottomText: 'Dont worry we dont spam!',
 		},
 	}
 
@@ -13,8 +12,9 @@ const NewsLetterSection = () => {
 		newsletterEmail: '',
 	}
 
-	const onSubmitHandle = values => {
+	const onSubmitHandle = (values,{resetForm}) => {
 		console.log('Subscribed:', values.newsletterEmail)
+		resetForm(initialValues)
 	}
 
 	const validateHandle = values => {
@@ -52,19 +52,27 @@ const NewsLetterSection = () => {
 											onChange={handleChange}
 											placeholder='Your Email Address'
 										/>
-										<FaEnvelope />
-										{touched.newsletterEmail && errors.newsletterEmail ? (
-											<div className='invalid-feedback'>{errors.newsletterEmail}</div>
-										) : (
-											<div className='valid-feedback'>Looks good!</div>
-										)}
+										<FaEnvelope className='svg' />
 										<input type='submit' value='Subscribe' className='btn newsletter' />
+
+										{touched.newsletterEmail ? (
+											errors.newsletterEmail ? (
+												<p className='err'>
+													{errors.newsletterEmail} <FaRegTired />
+												</p>
+											) : (
+												<p className='okk'>
+													Looks Good! <FaRegKissWinkHeart />
+												</p>
+											)
+										) : (
+											<p>
+												Dont worry we dont spam! <FaRegLaugh />
+											</p>
+										)}
 									</Form>
 								)}
 							</Formik>
-							<p>
-								{newletterContent.textContent.bottomText} <FaSmile />
-							</p>
 						</div>
 					</div>
 				</div>
