@@ -13,7 +13,7 @@ const LocationIcon = ({ setLocation }) => {
 			let lat = location.coordinates.lat
 			let lng = location.coordinates.lng
 			const response = await axios.get(
-				`https://geocode.maps.co/reverse?lat=${lat}&lon=${lng}`
+				`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&location=${lng},${lat}`
 			)
 			setData(response.data)
 		}
@@ -21,9 +21,10 @@ const LocationIcon = ({ setLocation }) => {
 
 	useEffect(() => {
 		if (data !== undefined) {
-			setLocation(data.address.suburb)
+			setLocation(data.address.Subregion)
+			// change data.[...]
 		}
-	}, [data,setLocation])
+	}, [data, setLocation])
 
 	return <FaMapMarkerAlt onClick={() => getLocation()} />
 }
