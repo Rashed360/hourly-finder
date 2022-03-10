@@ -1,7 +1,14 @@
 import axios from 'axios'
-import { JOB_CREATE, JOB_REMOVE, JOB_UPDATE } from '../actionTypes/jobActionTypes'
+import { JOB_FETCH_SINGLE, JOB_CREATE, JOB_REMOVE, JOB_UPDATE } from '../actionTypes/jobActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
+
+export const jobLoad = job => {
+	return {
+		type: JOB_FETCH_SINGLE,
+		payload: job,
+	}
+}
 
 export const jobSingleFetch = id => async dispatch => {
 	const config = {
@@ -13,6 +20,7 @@ export const jobSingleFetch = id => async dispatch => {
 		.get(`${url}jobs/job/${id}/`, config)
 		.then(response => {
 			console.log(response.data)
+			dispatch(jobLoad(response.data))
 		})
 		.catch(error => {
 			console.log(error.response)

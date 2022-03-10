@@ -19,7 +19,7 @@ const mapStateToProps = state => {
 }
 
 const SingleJob = props => {
-	const { jobSingleFetch } = props
+	const { jobSingleFetch, singleJob } = props
 	const { job_id } = useParams()
 
 	useEffect(() => {
@@ -197,7 +197,7 @@ const SingleJob = props => {
 				<div className='container'>
 					<div className='row'>
 						<div className='col-lg-8'>
-							<JobDetails job={single_job} recruiter={single_recruiter}></JobDetails>
+							<JobDetails job={single_job} recruiter={single_recruiter} test={singleJob}></JobDetails>
 						</div>
 						<div className='col-lg-4'>
 							<JobSideBar job={single_job} recruiter={single_recruiter}></JobSideBar>

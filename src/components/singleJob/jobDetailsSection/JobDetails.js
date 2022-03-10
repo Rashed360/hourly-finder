@@ -2,16 +2,46 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LeafletMap from '../../commonComponents/map/LeafletMap'
 
-const JobDetails = ({job, recruiter}) => {
+const JobDetails = ({job, recruiter,test}) => {
+    const jobLevel = (level) => {
+        switch(level){
+            case 1:
+                return 'Novice'
+            case 2:
+                return 'Beginer'
+            case 3:
+                return 'Intermediate'
+            case 4:
+                return 'Advanced'
+            case 5:
+                return 'Expert'
+            default:
+                return 'Invalid'
+        }
+    }
+    const jobType = (type) => {
+        switch(type){
+            case 1:
+                return 'Hourly'
+            case 2:
+                return 'Full Time'
+            case 3:
+                return 'Part Time'
+            case 4:
+                return 'Remote'
+            default:
+                return 'Invalid'
+        }
+    }
     return (
         <div className="apply-left">
-            <div className="recruiter-company-cover" style={{backgroundImage : `url(${recruiter.company_cover_img})`}}>
+            <div className="recruiter-company-cover" style={{backgroundImage : `url(${test.image})`}}>
                 <div className="company-profile" style={{backgroundImage : `url(${recruiter.company_logo})`}}>
                 </div>
             </div>
             <div className="jobs-details-information">
                 <div className="single-job-title">
-                    <h2>{job.name}</h2>
+                    <h2>{test.title}</h2>
                     <p><Link to={`/recruiter/${recruiter.id}`} className="company">{recruiter.company_name}</Link>,  <Link to="" className="location">{job.location}</Link></p>
                 </div>
                 <div className="single-job-basic-info">
@@ -19,37 +49,37 @@ const JobDetails = ({job, recruiter}) => {
                         <div className="col-lg-3">
                             <div className="basic-info">
                                 <p>vancey</p>
-                                <h5>{job.vancey}</h5>
+                                <h5>{test.vacancy}</h5>
                             </div>
                         </div>
                         <div className="col-lg-3">
                             <div className="basic-info">
                                 <p>LEVEL</p>
-                                <h5>{job.level}</h5>
+                                <h5>{jobLevel(test.level)}</h5>
                             </div>
                         </div>
                         <div className="col-lg-3">
                             <div className="basic-info">
                                 <p>EMPOWERMENT</p>
-                                <h5>{job.type}</h5>
+                                <h5>{jobType(test.type)}</h5>
                             </div>
                         </div>
                         <div className="col-lg-3">
                             <div className="basic-info">
                                 <p>SALARY TYPE</p>
-                                <h5>{job.salary} per Hour</h5>
+                                <h5>{test.salary} per Hour</h5>
                             </div>
                         </div>
                         <div className="col-lg-3">
                             <div className="basic-info">
                                 <p>DURATION</p>
-                                <h5>{job.duration}</h5>
+                                <h5>{test.duration}</h5>
                             </div>
                         </div>
                         <div className="col-lg-3">
                             <div className="basic-info">
                                 <p>STARTING DATE</p>
-                                <h5>{job.starting_date}</h5>
+                                <h5>{test.starting}</h5>
                             </div>
                         </div>
                         <div className="col-lg-3">
@@ -68,11 +98,11 @@ const JobDetails = ({job, recruiter}) => {
                 </div>
                 <div className="single-job-details">
                     <h3>Overview</h3>
-                    <p>{job.overview}</p>
+                    <p>{test.overview}</p>
                 </div>
                 <div className="single-job-details">
                     <h3>Duties and Responsibilities</h3>
-                    <p>{job.responsibilities}</p>
+                    <p>{test.todo}</p>
                 </div>
                 <div className="single-job-details">
                     <h3>Skill Requirements</h3>
