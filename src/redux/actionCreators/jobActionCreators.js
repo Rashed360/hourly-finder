@@ -1,4 +1,9 @@
+import axios from "axios"
 import { JOB_CREATE, JOB_REMOVE, JOB_UPDATE } from "../actionTypes/jobActionTypes"
+
+export const jobSingleFetch = () => async dispatch => {
+  await axios.get()
+}
 
 export const jobCreate = (
   recruiter_id,
