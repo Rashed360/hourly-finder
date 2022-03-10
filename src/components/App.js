@@ -28,6 +28,8 @@ import SingleBlog from './singleBlog/SingleBlog'
 import SingleJob from './singleJob/SingleJob'
 import UserProfile from './userProfile/UserProfile'
 import Logout from './auth/Logout'
+import AccountActivate from './auth/AccountActivate'
+import PasswordReset from './auth/PasswordReset'
 
 const mapDispatchToProps = dispatch => {
 	return {
@@ -60,9 +62,12 @@ const App = props => {
 				<Route path='available/jobseeker' element={<AvailabelJobSeeker />} />
 				<Route path='/location/:cityName' element={<LocationPage />} />
 
-				<Route path='login' element={<Login />} />
-				<Route path='register' element={<Register />} />
-				<Route path='logout' element={<Logout />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/register' element={<Register />} />
+				<Route path='/logout' element={<Logout />} />
+
+				<Route path='/activate' element={<AccountActivate />} />
+				<Route path='/password-reset' element={<PasswordReset />} />
 
 				{/* Dynamic Route Start */}
 				<Route path='job/:job_id' element={<SingleJob />} />

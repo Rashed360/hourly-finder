@@ -2,6 +2,8 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { AUTH_FAILED, AUTH_LOADING, AUTH_LOGOUT, AUTH_SUCCESS } from '../actionTypes/authActionTypes'
 
+const url = process.env.REACT_APP_BACKEND_SERVER
+
 export const authSignUp = (firstName, lastName, email, username, password, accountType) => dispatch => {
 	dispatch(authLoading(true))
 	const authData = {
@@ -13,7 +15,7 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 		accountType: accountType,
 	}
 	axios
-		.post('http://localhost:8000/auth/users/', authData)
+		.post(url+'auth/users/', authData)
 		.then(response => {
 			dispatch(authLoading(false))
 			const data = response
@@ -38,7 +40,7 @@ export const authLogin = (email, password) => dispatch => {
 		password: password,
 	}
 	axios
-		.post('http://localhost:8000/auth/jwt/create', authData)
+		.post(url+'auth/jwt/create', authData)
 		.then(response => {
 			dispatch(authLoading(false))
 			const token = response.data.access
