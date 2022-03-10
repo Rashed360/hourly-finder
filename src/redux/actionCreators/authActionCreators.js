@@ -4,7 +4,7 @@ import { AUTH_FAILED, AUTH_LOADING, AUTH_LOGOUT, AUTH_SUCCESS } from '../actionT
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
-export const authSignUp = (firstName, lastName, email, username, password, accountType) => dispatch => {
+export const authSignUp = (firstName, lastName, email, username, password, accountType) => async dispatch => {
 	dispatch(authLoading(true))
 	const authData = {
 		first_name: firstName,
@@ -14,16 +14,11 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 		password: password,
 		accountType: accountType,
 	}
-	axios
+	await axios
 		.post(url+'auth/users/', authData)
 		.then(response => {
 			dispatch(authLoading(false))
 			const data = response
-			// const expiration = new Date(new Date().getTime() + data.expiresIn * 1000)
-			// localStorage.setItem('token', data.idToken)
-			// localStorage.setItem('userId', data.localId)
-			// localStorage.setItem('expiration', expiration)
-			// dispatch(authSuccess(data.idToken, data.localId))
 			console.log(data)
 		})
 		.catch(error => {
@@ -33,13 +28,13 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 		})
 }
 
-export const authLogin = (email, password) => dispatch => {
+export const authLogin = (email, password) => async dispatch => {
 	dispatch(authLoading(true))
 	const authData = {
 		email: email,
 		password: password,
 	}
-	axios
+	await axios
 		.post(url+'auth/jwt/create', authData)
 		.then(response => {
 			dispatch(authLoading(false))
