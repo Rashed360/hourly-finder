@@ -23,6 +23,7 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 		})
 		.catch(error => {
 			dispatch(authLoading(false))
+			console.log(error.response)
 			const key = Object.keys(error.response.data)[0]
 			dispatch(authFailed(error.response.data[key]))
 		})
@@ -38,6 +39,7 @@ export const authLogin = (email, password) => async dispatch => {
 		.post(url+'auth/jwt/create', authData)
 		.then(response => {
 			dispatch(authLoading(false))
+			console.log(response.data)
 			const token = response.data.access
 			const decode = jwt_decode(token)
 			const expiration = new Date(decode.exp * 1000)
