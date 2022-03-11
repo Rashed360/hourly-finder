@@ -1925,8 +1925,20 @@ h2.contact-title,
 .header-icon span svg:hover {
   color: #16395f;
 }
+
 .dashboard-all {
+  display: flex;
+  flex-wrap: wrap;
   background: #e7eff1;
+}
+.dashboard-all .left {
+  width: 280px;
+}
+.dashboard-all .mid {
+  width: 827px;
+}
+.dashboard-all .right {
+  width: 242px;
 }
 
 .dashboard-sidebar .user {
@@ -1980,6 +1992,10 @@ h2.contact-title,
   padding-right: 15px;
 }
 
+.dashboard-navigation nav ul li a:hover {
+  background: #DBE6EB;
+  color: #358FB2;
+}
 .dashboard-navigation nav ul li a.active {
   background: #c2dce5;
   color: #16395f;
