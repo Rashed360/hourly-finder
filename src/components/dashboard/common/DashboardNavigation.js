@@ -53,7 +53,7 @@ const DashboardNavigation = ({ navigations, user }) => {
                 <li key={Math.random()}>
                   <NavLink
                     to={`${item.link}`}
-                    classNameName={(navInfo) => (navInfo.isActive ? "active" : "")}
+                    className={(navInfo) => (navInfo.isActive ? "active" : "")}
                   >
                     <span>{iconFinder(item.icon)}</span> {item.name}
                   </NavLink>
