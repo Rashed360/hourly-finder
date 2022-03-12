@@ -1,4 +1,3 @@
-import React from 'react';
 
 const RecruiterEditProfile = () => {
     return (
@@ -15,13 +14,13 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">First Name</label>
+                                                <label htmlFor="">First Name</label>
                                                 <input type="text" placeholder="first name" />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Last Name</label>
+                                                <label htmlFor="">Last Name</label>
                                                 <input type="text" placeholder="last name" />
                                             </div>
                                         </div>
@@ -29,7 +28,7 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="form-field">
-                                                <label for="">User Name</label>
+                                                <label htmlFor="">User Name</label>
                                                 <input type="text" placeholder="www.hourlyfinder.com/user/rashed360" />
                                             </div>
                                         </div>
@@ -37,13 +36,13 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Email</label>
+                                                <label htmlFor="">Email</label>
                                                 <input type="email" placeholder="eg. exmple@gmail.com" />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Phone</label>
+                                                <label htmlFor="">Phone</label>
                                                 <input type="text" placeholder="01xxxxxxxxxx" />
                                             </div>
                                         </div>
@@ -51,13 +50,13 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">NID/Birth Certificate No.</label>
+                                                <label htmlFor="">NID/Birth Certificate No.</label>
                                                 <input type="email" placeholder="eg. 43490342341" />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Date of Birth</label>
+                                                <label htmlFor="">Date of Birth</label>
                                                 <input type="date" placeholder="01xxxxxxxxxx" />
                                             </div>
                                         </div>
@@ -65,8 +64,8 @@ const RecruiterEditProfile = () => {
                                 </div>
                                 <div className="col-lg-3">
                                     <div className="form-field edit-profile-picture">
-                                        <label for="">Profile Picture</label>
-                                        <div className="profile-img-edit" for="profile-pic" style={{backgroundImage: "url(https://placeimg.com/100/100/people?t=1640373129965)"}}>
+                                        <label htmlFor="">Profile Picture</label>
+                                        <div className="profile-img-edit" htmlFor="profile-pic" style={{backgroundImage: "url(https://placeimg.com/100/100/people?t=1640373129965)"}}>
                                             <input type="file" id="profile-pic" />
                                         </div>
                                         <p>Profile picture must be less than 1MB and 300x300px aspect ratio.</p>
@@ -83,13 +82,13 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Organization Name</label>
+                                                <label htmlFor="">Organization Name</label>
                                                 <input type="text" placeholder="e.g. Google Inc." />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Moto</label>
+                                                <label htmlFor="">Moto</label>
                                                 <input type="text" placeholder="e.g. A Developer Company" />
                                             </div>
                                         </div>
@@ -97,7 +96,7 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="form-field">
-                                                <label for="">Bio <span className="edit-bio">(Full description about your organization)</span></label>
+                                                <label htmlFor="">Bio <span className="edit-bio">(Full description about your organization)</span></label>
                                                 <textarea name="" id="" cols="5" rows="3" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim ultrices cursus velit in. "></textarea>
                                             </div>
                                         </div>
@@ -105,8 +104,8 @@ const RecruiterEditProfile = () => {
                                 </div>
                                 <div className="col-lg-3">
                                     <div className="form-field edit-profile-picture">
-                                        <label for="">Logo</label>
-                                        <div className="profile-img-edit" for="profile-pic" style={{backgroundImage: "url(https://placeimg.com/100/100/people?t=1640373129965)"}}>
+                                        <label htmlFor="">Logo</label>
+                                        <div className="profile-img-edit" htmlFor="profile-pic" style={{backgroundImage: "url(https://placeimg.com/100/100/people?t=1640373129965)"}}>
                                             <input type="file" id="profile-pic" />
                                         </div>
                                         <p>Profile picture must be less than 1MB and 300x300px aspect ratio.</p>
@@ -123,13 +122,13 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">State</label>
+                                                <label htmlFor="">State</label>
                                                 <input type="text" placeholder="Dhaka" />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">District</label>
+                                                <label htmlFor="">District</label>
                                                 <input type="text" placeholder="South Dhaka" />
                                             </div>
                                         </div>
@@ -137,13 +136,13 @@ const RecruiterEditProfile = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Full Address</label>
+                                                <label htmlFor="">Full Address</label>
                                                 <input type="text" placeholder="2nd Floor, 37/B, Lake Circus Road, Kalabag..." />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-field">
-                                                <label for="">Zip Code</label>
+                                                <label htmlFor="">Zip Code</label>
                                                 <input type="text" placeholder="1207" />
                                             </div>
                                         </div>

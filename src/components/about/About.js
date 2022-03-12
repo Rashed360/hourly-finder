@@ -9,16 +9,19 @@ const About = () => {
 
 	const teamMembersInfo = [
 		{
+			id: 1,
 			name: 'Sajeeb Debnath',
 			designation: 'Founder & CEO',
 			image: '/images/aboutPage/team-1.jpg'
 		},
 		{
+			id: 2,
 			name: 'Rashed Ahmed',
 			designation: 'Co-Founder & LD',
 			image: '/images/aboutPage/team-2.jpg'
 		},
 		{
+			id: 3,
 			name: 'Samiul Siddique',
 			designation: 'CTO & BM',
 			image: '/images/aboutPage/team-3.jpg'
@@ -28,6 +31,7 @@ const About = () => {
 	const teamMembers = teamMembersInfo.map(member => {
 		return (
 			<MemberCard 
+				key={member.id}
 				name={member.name}
 				designation={member.designation}
 				image={member.image}
@@ -37,21 +41,25 @@ const About = () => {
 
 	const roadmapInfo = [
 		{
+			id: 1,
 			month: 'Apr',
 			day: '20',
 			title: 'Initial Plannings'
 		},
 		{
+			id: 2,
 			month: 'Jun',
 			day: '12',
 			title: 'UI/UX &amp; Brainstorming'
 		},
 		{
+			id: 3,
 			month: 'Aug',
 			day: '23',
 			title: 'Front End'
 		},
 		{
+			id: 4,
 			month: 'Oct',
 			day: '04',
 			title: 'Back End'
@@ -61,6 +69,7 @@ const About = () => {
 	const roadmap = roadmapInfo.map(info => {
 		return (
 			<RoadmapCard
+				key={info.id}
 				month={info.month}
 				day={info.day}
 				title={info.title}

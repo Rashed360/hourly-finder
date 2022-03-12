@@ -1,4 +1,4 @@
-import { Formik, Field, Form, Date } from 'formik'
+import { Formik, Field, Form } from 'formik'
 import { connect } from 'react-redux'
 import { jobCreate } from '../../../../redux/actionCreators/jobActionCreators'
 

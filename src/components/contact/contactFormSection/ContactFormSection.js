@@ -57,7 +57,7 @@ const ContactFormSection = () => {
 						<form onSubmit={handleSubmit}>
 							<div className='form-field name'>
 								<div className='first-name'>
-									<label for=''>First Name</label>
+									<label htmlFor=''>First Name</label>
 									<input
 										name='first_name'
 										type='text'
@@ -70,7 +70,7 @@ const ContactFormSection = () => {
 									</p>
 								</div>
 								<div className='last-name'>
-									<label for=''>Last Name</label>
+									<label htmlFor=''>Last Name</label>
 									<input
 										type='text'
 										placeholder='Enter your last name'
@@ -84,7 +84,7 @@ const ContactFormSection = () => {
 								</div>
 							</div>
 							<div className='form-field email'>
-								<label for=''>Email</label>
+								<label htmlFor=''>Email</label>
 								<input
 									name='email'
 									type='email'
@@ -98,7 +98,7 @@ const ContactFormSection = () => {
 							</div>
 							<div className='form-field'>
 								<div className='contact-phone'>
-									<label for=''>Phone</label>
+									<label htmlFor=''>Phone</label>
 									<input
 										name='phone'
 										type='text'
@@ -111,7 +111,7 @@ const ContactFormSection = () => {
 									</p>
 								</div>
 								<div className='profile'>
-									<label for=''>Profile</label>
+									<label htmlFor=''>Profile</label>
 									<input
 										type='text'
 										name='profile_name'
@@ -122,7 +122,7 @@ const ContactFormSection = () => {
 								</div>
 							</div>
 							<div className='form-field subject'>
-								<label for=''>Subject</label>
+								<label htmlFor=''>Subject</label>
 								<input
 									type='text'
 									name='subject'
@@ -135,7 +135,7 @@ const ContactFormSection = () => {
 								</p>
 							</div>
 							<div className='form-field message'>
-								<label for=''>Message</label>
+								<label htmlFor=''>Message</label>
 								<textarea
 									name='message'
 									id=''
