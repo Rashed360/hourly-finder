@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { JOB_FETCH_SINGLE, JOB_CREATE, JOB_REMOVE, JOB_UPDATE } from '../actionTypes/jobActionTypes'
+import { JOB_FETCH_SINGLE } from '../actionTypes/jobActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
@@ -17,7 +17,7 @@ export const jobSingleFetch = id => async dispatch => {
 		},
 	}
 	await axios
-		.get(`${url}jobs/job/${id}/`, config)
+		.get(`${url}/jobs/job/${id}/`, config)
 		.then(response => {
 			console.log(response.data)
 			dispatch(jobLoad(response.data))
@@ -27,54 +27,33 @@ export const jobSingleFetch = id => async dispatch => {
 		})
 }
 
-export const jobCreate = (
-	recruiter_id,
-	job_title,
-	job_type,
-	job_category_id,
-	job_location,
-	job_vancey,
-	job_salary,
-	job_duration,
-	job_overview,
-	job_skills,
-	job_language,
-	job_duties,
-	job_started_date,
-	job_ending_date,
-	job_current_status
-) => {
-	return {
-		type: JOB_CREATE,
-		payload: {
-			recruiter_id: recruiter_id,
-			job_title: job_title,
-			job_type: job_type,
-			job_category_id: job_category_id,
-			job_location: job_location,
-			job_vancey: job_vancey,
-			job_salary: job_vancey,
-			job_duration: job_duration,
-			job_overview: job_overview,
-			job_skills: job_skills,
-			job_language: job_language,
-			job_duties: job_duties,
-			job_started_date: job_started_date,
-			job_ending_date: job_ending_date,
-			job_current_status: job_current_status,
-		},
-	}
-}
+export const jobCreate = values => async dispatch => {
+	console.log('Job Posted', values)
 
-export const jobRemove = id => {
-	return {
-		type: JOB_REMOVE,
-		payload: id,
+	const jobData = {
+		title: values.title,
+		image: values.banner,
+		salary: values.salary,
+		duration: values.duration,
+		language: values.language,
+		vacancy: values.vacancy,
+		level: parseInt(values.level),
+		starting: values.starting,
+		latlng: values.map,
+		overview: values.overview,
+		todo: values.todo,
+		skill: values.skill,
+		keyword: values.keyword,
+		company: 1,
+		recruiter: 1,
+		type: parseInt(values.type),
 	}
-}
-export const jobUpdate = () => {
-	return {
-		type: JOB_UPDATE,
-		payload: {},
-	}
+	await axios
+		.post(`${url}/jobs/job/`, jobData)
+		.then(response => {
+			console.log(response.data)
+		})
+		.catch(error => {
+			console.log(error.response)
+		})
 }

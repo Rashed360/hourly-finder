@@ -1,8 +1,6 @@
 export const JOB_FETCH_SINGLE = "JOB_FETCH_SINGLE"
 export const JOB_FETCH_SINGLE_FAILED = "JOB_FETCH_SINGLE_FAILED"
 
-export const JOB_CREATE = "JOB_CREATE"
-export const JOB_UPDATE = "JOB_UPDATE"
 export const JOB_REMOVE = "JOB_REMOVE"
 
 export const JOB_FETCH_ALL = "JOB_FETCH_ALL"

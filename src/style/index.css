@@ -1053,6 +1053,35 @@ h2.contact-title,
 	outline-color: var(--bgColor);
 	margin-bottom: 5px;
 }
+.form-field input[type="file"] {
+	margin-bottom: 0;
+	height: 39px;
+}
+
+.file_edit_button {
+	border-radius: 10px;
+	background-color: #FFFFFF;
+	position: relative;
+	overflow: hidden;
+}
+.file_edit_button input::-webkit-file-upload-button {
+	visibility: hidden;
+}
+
+.file_edit_button input::before {
+	content: 'Choose File';
+	background: var(--bgColor);
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	border-radius: 3px;
+	padding: 0 13px;
+	padding-top: 1px;
+	height: 35px;
+	display: inline-block;
+	color: #FFFFFF;
+	line-height: 33px;
+}
 
 .registration-form h2,
 .apply-form h2 {
@@ -2248,6 +2277,7 @@ h3.right-bar-title {
 	border: 0.5px solid #cbcbcb;
 	font-weight: 300;
 }
+
 
 .job-view-filter {
 	margin-bottom: 20px;

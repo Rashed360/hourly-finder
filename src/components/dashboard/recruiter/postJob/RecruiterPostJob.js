@@ -4,7 +4,7 @@ import { jobCreate } from '../../../../redux/actionCreators/jobActionCreators'
 
 const mapDispatchToProps = dispatch => {
 	return {
-		jobCreate: email => dispatch(jobCreate(email)),
+		jobCreate: values => dispatch(jobCreate(values)),
 	}
 }
 
@@ -17,13 +17,13 @@ const mapStateToProps = state => {
 const RecruiterPostJob = props => {
 	const initialValues = {
 		title: 'title',
-		type: 'type',
+		type: '',
 		salary: 'salary',
-		level: 'level',
+		level: '',
 		vacancy: 'vacancy',
 		starting: '',
 		duration: 'duration',
-		banner: 'banner',
+		banner: '',
 		language: 'language',
 		skill: 'skill',
 		keyword: 'keyword',
@@ -34,7 +34,7 @@ const RecruiterPostJob = props => {
 	}
 
 	const onSubmitHandle = values => {
-		console.log('Job Posted', values)
+		props.jobCreate(values)
 	}
 
 	const validateHandle = values => {
@@ -85,14 +85,14 @@ const RecruiterPostJob = props => {
 			<div className='dashboard-content'>
 				<div className='post-job-area'>
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
-						{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
+						{({ values, errors, touched, handleChange, handleSubmit, handleReset, setFieldValue }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset}>
 								<div className='row'>
 									<div className='col-lg-12'>
 										<div className='row'>
 											<div className='col-lg-8'>
 												<div className='form-field'>
-													<label htmlFor=''>Job Title</label>
+													<label htmlFor='title'>Job Title</label>
 													<Field
 														name='title'
 														type='text'
@@ -116,8 +116,17 @@ const RecruiterPostJob = props => {
 											</div>
 											<div className='col-lg-4'>
 												<div className='form-field'>
-													<label htmlFor=''>Banner</label>
-													<input type='file' placeholder='Select Banner' />
+													<label htmlFor='banner'>Banner</label>
+													<div className='file_edit_button' htmlFor='banner'>
+														<input
+															name='banner'
+															type='file'
+															accept='image/*'
+															onChange={event => {
+																setFieldValue('banner', event.currentTarget.files[0])
+															}}
+														/>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -126,12 +135,24 @@ const RecruiterPostJob = props => {
 											<div className='col-lg-6'>
 												<div className='form-field'>
 													<label htmlFor=''>Job Type</label>
-													<select name='' id=''>
+													<Field
+														name='type'
+														as='select'
+														className={
+															touched.type
+																? errors.type
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
+														value={values.type}
+														onChange={handleChange}
+													>
 														<option value=''>Select</option>
 														<option value='1'>Hourly</option>
 														<option value='2'>Part Time</option>
 														<option value='3'>Project Based</option>
-													</select>
+													</Field>
 												</div>
 											</div>
 											<div className='col-lg-6'>
@@ -140,10 +161,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='salary'
 														type='text'
+														className={
+															touched.salary
+																? errors.salary
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.salary}
 														onChange={handleChange}
 														placeholder='e.g. 250'
 													/>
+													{touched.salary && errors.salary ? (
+														<div className='invalid-feedback'>{errors.salary}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 										</div>
@@ -167,10 +200,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='vacancy'
 														type='text'
+														className={
+															touched.vacancy
+																? errors.vacancy
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.vacancy}
 														onChange={handleChange}
 														placeholder='e.g. 3'
 													/>
+													{touched.vacancy && errors.vacancy ? (
+														<div className='invalid-feedback'>{errors.vacancy}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 										</div>
@@ -182,10 +227,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='starting'
 														type='date'
+														className={
+															touched.starting
+																? errors.starting
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.starting}
 														onChange={handleChange}
 														placeholder='01/02/2022'
 													/>
+													{touched.starting && errors.starting ? (
+														<div className='invalid-feedback'>{errors.starting}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 											<div className='col-lg-6'>
@@ -194,10 +251,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='duration'
 														type='text'
+														className={
+															touched.duration
+																? errors.duration
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.duration}
 														onChange={handleChange}
 														placeholder='5 Months'
 													/>
+													{touched.duration && errors.duration ? (
+														<div className='invalid-feedback'>{errors.duration}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 										</div>
@@ -209,10 +278,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='location'
 														type='text'
+														className={
+															touched.location
+																? errors.location
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.location}
 														onChange={handleChange}
 														placeholder='e.g. Uttara'
 													/>
+													{touched.location && errors.location ? (
+														<div className='invalid-feedback'>{errors.location}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 											<div className='col-lg-6'>
@@ -221,10 +302,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='keyword'
 														type='text'
+														className={
+															touched.keyword
+																? errors.keyword
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.keyword}
 														onChange={handleChange}
 														placeholder='Development,Designer'
 													/>
+													{touched.keyword && errors.keyword ? (
+														<div className='invalid-feedback'>{errors.keyword}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 										</div>
@@ -236,10 +329,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='skill'
 														type='text'
+														className={
+															touched.skill
+																? errors.skill
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.skill}
 														onChange={handleChange}
 														placeholder='React,Django'
 													/>
+													{touched.skill && errors.skill ? (
+														<div className='invalid-feedback'>{errors.skill}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 											<div className='col-lg-6'>
@@ -248,10 +353,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='language'
 														type='text'
+														className={
+															touched.language
+																? errors.language
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.language}
 														onChange={handleChange}
 														placeholder='e.g. Bangla'
 													/>
+													{touched.language && errors.language ? (
+														<div className='invalid-feedback'>{errors.language}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 										</div>
@@ -279,10 +396,22 @@ const RecruiterPostJob = props => {
 													<Field
 														name='map'
 														type='text'
+														className={
+															touched.map
+																? errors.map
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
 														value={values.map}
 														onChange={handleChange}
 														placeholder='90.456,45.6886'
 													/>
+													{touched.map && errors.map ? (
+														<div className='invalid-feedback'>{errors.map}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 										</div>
