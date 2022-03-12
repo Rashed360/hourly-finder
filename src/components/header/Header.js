@@ -2,24 +2,45 @@ import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Dropdown } from 'react-bootstrap'
 import { FaBell } from 'react-icons/fa'
-import { useLocation } from 'react-router'
+import { useLocation } from 'react-router-dom'
 import { Link, NavLink } from 'react-router-dom'
 import Image from '../../assets/images/user-1.jpg'
 import Logo from '../../assets/logos/logo.svg'
+import { headerColorChange } from '../../redux/actionCreators/utilsActionCreators'
+
 
 const mapStateToProps = state => {
 	return {
 		token: state.auth.token,
+		headerColor: state.utils.headerColor,
+	}
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		headerColorChange: (color) => dispatch(headerColorChange(color)),
 	}
 }
 
 const Header = props => {
 	const [navbar, setNavbar] = useState()
-	const { pathname } = useLocation()
+	const { pathname } = useLocation()	
+	const {headerColorChange} = props
+
+	const STYLES = {
+		normal: {
+			background: props.headerColor,
+			transition: 'background 500ms'
+		},
+		active: {
+			background: 'white',
+		},
+	}
 
 	useEffect(() => {
 		window.scrollTo(0, 0)
-	}, [pathname])
+		headerColorChange('transparent')
+	}, [pathname,headerColorChange])
 
 	const changeNavbar = () => {
 		if (window.scrollY >= 1) {
@@ -31,8 +52,11 @@ const Header = props => {
 	window.addEventListener('scroll', changeNavbar)
 
 	return (
-		<div className={navbar ? 'header-top-area active' : 'header-top-area'}>
-			<div className='container'>
+		<div
+			className={navbar ? 'header-top-area active' : 'header-top-area'}
+			style={navbar ? STYLES.active : STYLES.normal}
+		>
+			<div className='container-fluid'>
 				<div className='row d-flex justify-content-center'>
 					<div className='col-lg-3'>
 						<div className='logo'>
@@ -54,7 +78,7 @@ const Header = props => {
 										<NavLink to='/'>Home</NavLink>
 									</li>
 									<li>
-										<NavLink to='/blogs'>Blog</NavLink>
+										<NavLink to='/dashboard'>Blog</NavLink>
 									</li>
 									<li>
 										<NavLink to='/about'>About Us</NavLink>
@@ -64,7 +88,7 @@ const Header = props => {
 									</li>
 								</ul>
 							</nav>
-							{props.token===null ? (
+							{props.token === null ? (
 								<Link to='/login' className='btn join-us'>
 									Join Us
 								</Link>
@@ -97,4 +121,4 @@ const Header = props => {
 	)
 }
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps,mapDispatchToProps)(Header)

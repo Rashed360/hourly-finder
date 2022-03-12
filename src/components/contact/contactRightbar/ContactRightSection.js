@@ -40,7 +40,7 @@ const ContactRightSection = () => {
                     </ul>
                 </nav>
             </div>
-            <div className='contact-details social-links siderbar-border'>
+            <div className='contact-details social-links'>
                 <nav>
                     <ul>
                         <li>
@@ -82,7 +82,7 @@ const ContactRightSection = () => {
                     </ul>
                 </nav>
             </div>
-            <div className='about-hourlyfinder siderbar-border'>
+            <div className='about-hourlyfinder mt-30'>
                 <div className='section-title'>
                     <h3>About HourlyFinders</h3>
                 </div>

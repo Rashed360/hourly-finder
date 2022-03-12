@@ -1,24 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
+import { Accordion } from 'react-bootstrap'
 
-const FaqItem = ({faq}) => {
-    const {question, answer} = faq
-    const [isActive, setIsActive] = useState(false)
-    return (
-        <div className='faq-question-item'>
-            <h2 className='questions-header'>
-                <button className='question-button' type='button' onClick={()=>setIsActive(!isActive)}>
-                    <span>{question}</span> <span className='text-right faq-indicator'>{isActive ? "-" : "+"}</span>
-                </button>
-            </h2>
-            {
-                isActive && <div className='collapse show'>
-                <div className='answers-body'>
-                   {answer}
-                </div>
-            </div>
-            }
-        </div>
-    );
-};
+const FaqItem = ({ faq,key }) => {
+	const { question, answer } = faq
+	const [isActive, setIsActive] = useState(false)
 
-export default FaqItem;
+	return (
+		<Accordion.Item eventKey={faq.id}>
+			<Accordion.Header>{question}</Accordion.Header>
+			<Accordion.Body>{answer}</Accordion.Body>
+		</Accordion.Item>
+	)
+}
+
+export default FaqItem

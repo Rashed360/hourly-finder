@@ -52,46 +52,48 @@ const App = props => {
 	return (
 		<>
 			<Header />
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='jobs' element={<AllJobs />} />
-				<Route path='jobs/by' element={<CityCategory />} />
-				<Route path='blogs' element={<Blogs />} />
-				<Route path='about' element={<About />} />
-				<Route path='contact' element={<Contact />} />
-				<Route path='available/jobseeker' element={<AvailabelJobSeeker />} />
-				<Route path='/location/:cityName' element={<LocationPage />} />
+			<div className='app'>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='jobs' element={<AllJobs />} />
+					<Route path='jobs/by' element={<CityCategory />} />
+					<Route path='blogs' element={<Blogs />} />
+					<Route path='about' element={<About />} />
+					<Route path='contact' element={<Contact />} />
+					<Route path='available/jobseeker' element={<AvailabelJobSeeker />} />
+					<Route path='/location/:cityName' element={<LocationPage />} />
 
-				<Route path='/login' element={<Login />} />
-				<Route path='/register' element={<Register />} />
-				<Route path='/logout' element={<Logout />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/register' element={<Register />} />
+					<Route path='/logout' element={<Logout />} />
 
-				<Route path='/activate' element={<AccountActivate />} />
-				<Route path='/password-reset' element={<PasswordReset />} />
+					<Route path='/activate' element={<AccountActivate />} />
+					<Route path='/password-reset' element={<PasswordReset />} />
 
-				{/* Dynamic Route Start */}
-				<Route path='job/:job_id' element={<SingleJob />} />
-				<Route path='apply/for/:job_id' element={<Apply />} />
-				<Route path='user/:userId' element={<UserProfile />} />
-				<Route path='blog/:blog_id' element={<SingleBlog />} />
-				{/* Dynamic Route End */}
+					{/* Dynamic Route Start */}
+					<Route path='job/:job_id' element={<SingleJob />} />
+					<Route path='apply/for/:job_id' element={<Apply />} />
+					<Route path='user/:userId' element={<UserProfile />} />
+					<Route path='blog/:blog_id' element={<SingleBlog />} />
+					{/* Dynamic Route End */}
 
-				{/* Recruiter Dashboard Route Start */}
-				<Route path='/dashboard' element={<RecruiterDashboard />}>
-					<Route index element={<RecruiterOverview />} />
-					<Route path='overview' element={<RecruiterOverview />} />
-					<Route path='message' element={<RecruiterMessage />} />
-					<Route path='edit-profile' element={<RecruiterEditProfile />} />
-					<Route path='post-job' element={<RecruiterPostJob />} />
-					<Route path='manage-job' element={<RecruiterManageJob />} />
-					<Route path='manage-job/view' element={<ViewPostedJob />} />
-					<Route path='ongoing-job' element={<RecruiterOngoingJob />} />
-				</Route>
-				<Route path='/dashboard' element={<Navigate to='/dashboard/overview' />} />
-				{/* Recruiter Dashboard Route Start */}
+					{/* Recruiter Dashboard Route Start */}
+					<Route path='/dashboard' element={<RecruiterDashboard />}>
+						<Route index element={<RecruiterOverview />} />
+						<Route path='overview' element={<RecruiterOverview />} />
+						<Route path='message' element={<RecruiterMessage />} />
+						<Route path='edit-profile' element={<RecruiterEditProfile />} />
+						<Route path='post-job' element={<RecruiterPostJob />} />
+						<Route path='manage-job' element={<RecruiterManageJob />} />
+						<Route path='manage-job/view' element={<ViewPostedJob />} />
+						<Route path='ongoing-job' element={<RecruiterOngoingJob />} />
+					</Route>
+					<Route path='/dashboard' element={<Navigate to='/dashboard/overview' />} />
+					{/* Recruiter Dashboard Route Start */}
 
-				<Route path='/*' element={<NoMatch />} />
-			</Routes>
+					<Route path='/*' element={<NoMatch />} />
+				</Routes>
+			</div>
 			<Footer />
 		</>
 	)

@@ -32,7 +32,7 @@
 /* ------------------------- Home Start --------------------- */
 /* ------------------------- Header Section CSS Start --------------------- */
 .header-top-area {
-	background: linear-gradient(#ace8eb, #beedf0);
+	background: #ffffff;
 	padding: 15px 0px;
 	position: fixed;
 	width: 100%;
@@ -43,6 +43,9 @@
 .header-top-area.active {
 	background: #ffffff;
 	box-shadow: 0 2px rgb(238, 238, 238);
+}
+.header-top-area .logo {
+	margin-left: 50px;
 }
 .menu-area {
 	text-align: right;
@@ -72,10 +75,14 @@
 a.btn.join-us {
 	margin-left: 30px;
 }
+.app {
+	margin-top: 70px;
+}
 /* ------------------------- Header Section CSS End --------------------- */
 
 /* -------------------------Hero Section CSS Start --------------------- */
 .hero-area {
+	margin-top: -70px;
 	background: url(../assets/svgs/hero-bg.svg);
 	background-repeat: no-repeat;
 	background-color: #c9f0f2;
@@ -819,9 +826,11 @@ a.btn.join-us {
 
 /* -------------------------Contact Us Page CSS  Start--------------------- */
 .contact-sidebar {
-	background: #16395f17;
-	padding: 10px 30px;
-	height: 100%;
+	border-radius: 10px;
+	background: #e7eff1;
+	margin-top: 47px;
+	padding: 20px 20px;
+	height: calc(100%-47px);
 }
 
 .contact-information p,
@@ -833,15 +842,14 @@ a.btn.join-us {
 
 .siderbar-border {
 	border-bottom: 1px solid #9e9e9e;
-	padding: 20px 0px;
+	margin-bottom: 20px;
 }
 .contact-area {
-	background: #f6f6f6;
+	background: #fafafa;
 	border-bottom: 0.5px solid #e1e1e1;
 }
-
-.contact-form-area {
-	padding: 30px 0;
+.contact-area .row {
+	padding-top: 30px;
 }
 
 .contact-form-area .contact-form {
@@ -849,7 +857,7 @@ a.btn.join-us {
 	padding: 30px 35px;
 	border-radius: 10px;
 	margin-top: 15px;
-	box-shadow: 1px 0px 5px 0px #ccc;
+	box-shadow: 1px 1px 0px 2px var(--bgColor3);
 }
 h2.contact-title,
 .faq-title h2 {
@@ -883,7 +891,7 @@ h2.contact-title,
 	font-size: 0.7rem;
 }
 .form-field .is-valid {
-	border-color:#19875450;
+	border-color: #19875450;
 }
 .form-field .is-invalid {
 	border-color: #dc354550;
@@ -904,44 +912,9 @@ h2.contact-title,
 	top: 50%;
 	background: #737171;
 }
-.faq-question-item {
-	padding: 20px 30px;
-	border-radius: 10px;
-	background: white;
-	margin-bottom: 20px;
-	box-shadow: 1px 0px 5px 0px #ccc;
-}
-
-.question-button {
-	border: none;
-	font-size: 22px;
-	font-weight: 500;
-	margin: 0;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	position: relative;
-	text-align: left;
-	transition: 0.5s;
-	background-color: transparent;
-	margin-left: -6px;
-}
-
-.faq-indicator {
-	border: 2px solid #181717;
-	height: 30px;
-	width: 30px;
-	text-align: center;
-	line-height: 30px;
-	border-radius: 50%;
-}
-
-.answers-body {
-	padding: 10px 0;
-	text-align: justify;
-	font-size: 16px;
-	border-top: 1px solid #cbcbcb;
-	margin-top: 15px;
+.faq-questions .accordion-button {
+	font-size: 20px;
+	font-weight: 400;
 }
 /* -------------------------Contact Us Page CSS  End--------------------- */
 
@@ -1245,7 +1218,7 @@ h2.contact-title,
 
 /* -------------------------Single Job Page CSS  Start--------------------- */
 .apply-area {
-	margin-top: 70px;
+	margin-top: 100px;
 }
 .recruiter-company-cover {
 	background-color: #ccc; /* temporary */
@@ -1289,9 +1262,6 @@ h2.contact-title,
 	margin-bottom: 25px;
 }
 
-.apply-left {
-	padding-top: 30px;
-}
 .basic-info p {
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1327,8 +1297,9 @@ h2.contact-title,
 
 /* -------Apply Sidebar CSS------ */
 .apply-sidebar {
-	background: var(--sectionBg);
+	border-radius: 10px;
 	height: 100%;
+	background: var(--sectionBg);
 }
 .sidebar-padding {
 	padding: 25px 30px;
@@ -1971,7 +1942,7 @@ h2.contact-title,
 }
 
 .dashboard-main {
-	background: white;
+	background: #fafafa;
 	height: 100%;
 	padding: 15px 20px;
 }
