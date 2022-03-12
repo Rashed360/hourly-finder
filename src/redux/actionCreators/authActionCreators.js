@@ -15,7 +15,7 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 		accountType: accountType,
 	}
 	await axios
-		.post(url+'auth/users/', authData)
+		.post(url+'/auth/users/', authData)
 		.then(response => {
 			dispatch(authLoading(false))
 			const data = response
@@ -36,7 +36,7 @@ export const authLogin = (email, password) => async dispatch => {
 		password: password,
 	}
 	await axios
-		.post(url+'auth/jwt/create', authData)
+		.post(url+'/auth/jwt/create', authData)
 		.then(response => {
 			dispatch(authLoading(false))
 			console.log(response.data)

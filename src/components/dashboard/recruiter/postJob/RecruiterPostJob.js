@@ -17,9 +17,9 @@ const mapStateToProps = state => {
 const RecruiterPostJob = props => {
 	const initialValues = {
 		title: 'title',
-		type: '',
+		type: 1,
 		salary: 'salary',
-		level: '',
+		level: 1,
 		vacancy: 'vacancy',
 		starting: '',
 		duration: 'duration',
@@ -34,7 +34,9 @@ const RecruiterPostJob = props => {
 	}
 
 	const onSubmitHandle = values => {
+		console.log('posting')
 		props.jobCreate(values)
+		console.log('posted')
 	}
 
 	const validateHandle = values => {
@@ -421,9 +423,6 @@ const RecruiterPostJob = props => {
 									<div className='row'>
 										<div className='col-lg-4 offset-lg-4'>
 											<input type='submit' className='btn' value='Create New Job' />
-										</div>
-										<div className='col-lg-4'>
-											<input type='reset' className='btn' value='Reset Data' />
 										</div>
 									</div>
 								</div>

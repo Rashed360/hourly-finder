@@ -29,7 +29,6 @@ export const jobSingleFetch = id => async dispatch => {
 
 export const jobCreate = values => async dispatch => {
 	console.log('Job Posted', values)
-
 	const jobData = {
 		title: values.title,
 		image: values.banner,
@@ -48,8 +47,13 @@ export const jobCreate = values => async dispatch => {
 		recruiter: 1,
 		type: parseInt(values.type),
 	}
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	}
 	await axios
-		.post(`${url}/jobs/job/`, jobData)
+		.post(`${url}/jobs/job/`, jobData,config)
 		.then(response => {
 			console.log(response.data)
 		})
