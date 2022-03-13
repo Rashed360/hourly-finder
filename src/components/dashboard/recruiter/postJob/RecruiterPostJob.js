@@ -23,7 +23,7 @@ const RecruiterPostJob = props => {
 		vacancy: 'vacancy',
 		starting: '',
 		duration: 'duration',
-		banner: '',
+		banner: null,
 		language: 'language',
 		skill: 'skill',
 		keyword: 'keyword',
@@ -88,7 +88,7 @@ const RecruiterPostJob = props => {
 				<div className='post-job-area'>
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset, setFieldValue }) => (
-							<Form onSubmit={handleSubmit} onReset={handleReset}>
+							<Form onSubmit={handleSubmit} onReset={handleReset} encType='multipart/form-data'>
 								<div className='row'>
 									<div className='col-lg-12'>
 										<div className='row'>

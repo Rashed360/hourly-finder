@@ -31,7 +31,7 @@ export const jobCreate = values => async dispatch => {
 	console.log('Job Posted', values)
 	const jobData = {
 		title: values.title,
-		image: values.banner,
+		// image: values.banner,
 		salary: values.salary,
 		duration: values.duration,
 		language: values.language,
@@ -53,7 +53,7 @@ export const jobCreate = values => async dispatch => {
 		},
 	}
 	await axios
-		.post(`${url}/jobs/job/`, jobData,config)
+		.post(`${url}/jobs/job/`, jobData, config)
 		.then(response => {
 			console.log(response.data)
 		})
