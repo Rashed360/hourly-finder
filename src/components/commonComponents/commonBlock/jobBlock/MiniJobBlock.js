@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const MiniJobBlock = ({ job }) => {
   return (
-    <div class="small-job-card">
-      <div class="small-job-title">
-        <div class="recruiter-logo">
+    <div className="small-job-card">
+      <div className="small-job-title">
+        <div className="recruiter-logo">
           <Link to="/job/">
             <img src={job.image} alt="" />
           </Link>
@@ -14,7 +14,7 @@ const MiniJobBlock = ({ job }) => {
           <Link to={`/job/${job.id}`}>{job.name}</Link>
         </h3>
       </div>
-      <p class="small-job-bottom">
+      <p className="small-job-bottom">
         Job: <span>{job.type}</span>, Posted by: <span>Founders</span>
       </p>
     </div>
