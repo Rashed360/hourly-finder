@@ -38,7 +38,7 @@ const Header = props => {
 	}
 
 	useEffect(() => {
-		window.scrollTo(0, 0)
+		scrollToZero()
 		headerColorChange('transparent')
 	}, [pathname, headerColorChange])
 
@@ -48,6 +48,9 @@ const Header = props => {
 		} else {
 			setNavbar(false)
 		}
+	}
+	const scrollToZero = () => {
+		window.scrollTo(0, 0)
 	}
 	window.addEventListener('scroll', changeNavbar)
 
@@ -61,12 +64,7 @@ const Header = props => {
 					<div className='col-lg-3'>
 						<div className='logo'>
 							<Animate />
-							<Link
-								to='/'
-								onClick={() => {
-									window.scrollTo(0, 0)
-								}}
-							>
+							<Link to='/' onClick={scrollToZero}>
 								<img src={Logo} alt='Logo' />
 							</Link>
 						</div>
