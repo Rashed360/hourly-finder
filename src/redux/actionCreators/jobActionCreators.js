@@ -61,3 +61,23 @@ export const jobCreate = values => async dispatch => {
 			console.log(error.response)
 		})
 }
+
+export const jobApply = values => async dispatch => {
+	console.log('Applied to Job', values)
+	// const applyData = {
+	// 	title: values.title,
+	// }
+	// const config = {
+	// 	headers: {
+	// 		'Content-Type': 'application/json',
+	// 	},
+	// }
+	// await axios
+	// 	.post(`${url}/jobs/job/`, applyData, config)
+	// 	.then(response => {
+	// 		console.log(response.data)
+	// 	})
+	// 	.catch(error => {
+	// 		console.log(error.response)
+	// 	})
+}
