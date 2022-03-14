@@ -191,26 +191,22 @@ const SingleJob = props => {
 	const single_recruiter = recruiters.find(company => company.id === company_id)
 
 	return (
-		<div>
-			{/* <!-- ==================== Apply Area Start ==================== --> */}
+		<>
 			<div className='apply-area'>
 				<div className='container'>
 					<div className='row'>
 						<div className='col-lg-8'>
-							<JobDetails job={single_job} recruiter={single_recruiter} test={singleJob}></JobDetails>
+							<JobDetails job={single_job} recruiter={single_recruiter} test={singleJob} />
 						</div>
 						<div className='col-lg-4'>
-							<JobSideBar job={single_job} recruiter={single_recruiter}></JobSideBar>
+							<JobSideBar job={single_job} recruiter={single_recruiter} />
 						</div>
 					</div>
 				</div>
 			</div>
-			{/* <!-- ==================== Apply Area End ==================== --> */}
 
-			{/* <!-- ==================== Most Recent Job Area Start ==================== --> */}
-			<MostRecentJob jobList={jobList}></MostRecentJob>
-			{/* <!-- ==================== Most Recent Job Area End ==================== --> */}
-		</div>
+			<MostRecentJob jobList={jobList} />
+		</>
 	)
 }
 
