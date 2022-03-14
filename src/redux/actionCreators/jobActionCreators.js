@@ -62,22 +62,25 @@ export const jobCreate = values => async dispatch => {
 		})
 }
 
-export const jobApply = values => async dispatch => {
-	console.log('Applied to Job', values)
-	// const applyData = {
-	// 	title: values.title,
-	// }
-	// const config = {
-	// 	headers: {
-	// 		'Content-Type': 'application/json',
-	// 	},
-	// }
-	// await axios
-	// 	.post(`${url}/jobs/job/`, applyData, config)
-	// 	.then(response => {
-	// 		console.log(response.data)
-	// 	})
-	// 	.catch(error => {
-	// 		console.log(error.response)
-	// 	})
+export const jobApply = (job, values) => async dispatch => {
+	let msg = values.name + ',' + values.phone + ',' + values.address + ',' + values.message
+	const applyData = {
+		message: msg,
+		job: parseInt(job),
+		seeker: 1, //get_user_data
+	}
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	}
+	console.log('Applied to Job', applyData) //debug__
+	await axios
+		.post(`${url}/jobs/apply/`, applyData, config)
+		.then(response => {
+			console.log(response.data)
+		})
+		.catch(error => {
+			console.log(error.response)
+		})
 }

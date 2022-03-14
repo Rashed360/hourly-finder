@@ -45,7 +45,12 @@
 	box-shadow: 0 2px rgb(238, 238, 238);
 }
 .header-top-area .logo {
+	display: flex;
+	gap: 8px;
 	margin-left: 50px;
+}
+.header-top-area .logo object {
+	height: 30px;
 }
 .menu-area {
 	text-align: right;
@@ -870,7 +875,7 @@ h2.contact-title,
 .form-field {
 	overflow: hidden;
 	display: block;
-	margin-bottom: 5px;
+	/* margin-bottom: 5px; */
 }
 
 .form-field .contact-phone {
@@ -1053,14 +1058,14 @@ h2.contact-title,
 	outline-color: var(--bgColor);
 	margin-bottom: 5px;
 }
-.form-field input[type="file"] {
+.form-field input[type='file'] {
 	margin-bottom: 0;
 	height: 39px;
 }
 
 .file_edit_button {
 	border-radius: 10px;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	position: relative;
 	overflow: hidden;
 }
@@ -1079,7 +1084,7 @@ h2.contact-title,
 	padding-top: 1px;
 	height: 35px;
 	display: inline-block;
-	color: #FFFFFF;
+	color: #ffffff;
 	line-height: 33px;
 }
 
@@ -2278,7 +2283,6 @@ h3.right-bar-title {
 	font-weight: 300;
 }
 
-
 .job-view-filter {
 	margin-bottom: 20px;
 }
@@ -2515,6 +2519,7 @@ h3.right-bar-title {
 .see-posted-job-area {
 	background: #fbfbfb;
 	border-radius: 10px;
+	overflow: hidden;
 	border: 0.3px solid #c6e1cda6;
 }
 
@@ -2529,15 +2534,17 @@ h3.right-bar-title {
 
 .see-posted-job-header .job-header-content span {
 	font-size: 12px;
+	line-height: 12px;
 }
 
 .see-posted-job-header .job-header-content h4 {
 	font-size: 16px;
+	line-height: 16px;
 	font-weight: 500;
 }
 
 .see-posted-job-header .job-header-content {
-	padding: 15px 15px;
+	padding: 10px 15px;
 }
 
 .see-posted-job-header .job-header-content.applicant {
@@ -2556,11 +2563,16 @@ h3.right-bar-title {
 	padding-right: 40px;
 }
 .job-header-content.action .btn {
+	border: none;
 	background: #ffbc3a;
-	color: black;
-	padding: 7px 10px;
-	font-size: 22px;
-	line-height: 22px;
+	padding: 5px 5px;
+	font-size: 0px;
+}
+.job-header-content.action svg {
+	width: 13px;
+	height: 13px;
+	color: var(--bgColor4);
+	cursor: pointer;
 }
 
 .job-header-content.action .btn.delete {
@@ -2570,7 +2582,7 @@ h3.right-bar-title {
 .avaiable-jobseeker-footer {
 	background: #e9fbee;
 	border-radius: 0px 0px 10px 10px;
-	padding: 5px 0;
+	/* padding: 5px 0; */
 	border-top: 0.3px solid #c6e1cda6;
 }
 
@@ -2584,7 +2596,7 @@ h3.right-bar-title {
 	font-size: 14px;
 }
 .see-posted-job-content {
-	padding: 15px 20px;
+	padding: 15px 20px 0px 20px;
 }
 .applicant-information-filter {
 	display: flex;

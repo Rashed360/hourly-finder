@@ -6,8 +6,8 @@ import { useLocation } from 'react-router-dom'
 import { Link, NavLink } from 'react-router-dom'
 import Image from '../../assets/images/user-1.jpg'
 import Logo from '../../assets/logos/logo.svg'
+import Animate from './animate/Animate'
 import { headerColorChange } from '../../redux/actionCreators/utilsActionCreators'
-
 
 const mapStateToProps = state => {
 	return {
@@ -18,19 +18,19 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		headerColorChange: (color) => dispatch(headerColorChange(color)),
+		headerColorChange: color => dispatch(headerColorChange(color)),
 	}
 }
 
 const Header = props => {
 	const [navbar, setNavbar] = useState()
-	const { pathname } = useLocation()	
-	const {headerColorChange} = props
+	const { pathname } = useLocation()
+	const { headerColorChange } = props
 
 	const STYLES = {
 		normal: {
 			background: props.headerColor,
-			transition: 'background 500ms'
+			transition: 'background 500ms',
 		},
 		active: {
 			background: 'white',
@@ -40,7 +40,7 @@ const Header = props => {
 	useEffect(() => {
 		window.scrollTo(0, 0)
 		headerColorChange('transparent')
-	}, [pathname,headerColorChange])
+	}, [pathname, headerColorChange])
 
 	const changeNavbar = () => {
 		if (window.scrollY >= 1) {
@@ -60,6 +60,7 @@ const Header = props => {
 				<div className='row d-flex justify-content-center'>
 					<div className='col-lg-3'>
 						<div className='logo'>
+							<Animate />
 							<Link
 								to='/'
 								onClick={() => {
@@ -121,4 +122,4 @@ const Header = props => {
 	)
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

@@ -2,11 +2,12 @@ import { Formik, Field, Form } from 'formik'
 // import { Alert } from 'react-bootstrap'
 import { connect } from 'react-redux'
 // import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { jobApply } from '../../../redux/actionCreators/jobActionCreators'
 
 const mapDispatchToProps = dispatch => {
 	return {
-		jobApply: values => dispatch(jobApply(values)),
+		jobApply: (job, values) => dispatch(jobApply(job, values)),
 	}
 }
 
@@ -18,6 +19,7 @@ const mapStateToProps = state => {
 
 const ApplyForm = props => {
 	// const navigate = useNavigate()
+	const { job_id } = useParams()
 
 	const initialValues = {
 		name: '',
@@ -28,7 +30,7 @@ const ApplyForm = props => {
 	}
 
 	const onSubmitHandle = (values, { resetForm }) => {
-		props.jobApply(values)
+		props.jobApply(job_id, values)
 	}
 
 	const validateHandle = values => {
