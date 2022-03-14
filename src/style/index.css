@@ -33,6 +33,7 @@
 /* ------------------------- Header Section CSS Start --------------------- */
 .header-top-area {
 	background: #ffffff;
+	user-select: none;
 	padding: 15px 0px;
 	position: fixed;
 	width: 100%;
@@ -48,6 +49,9 @@
 	display: flex;
 	gap: 8px;
 	margin-left: 50px;
+}
+.header-top-area .logo img {
+	-webkit-user-drag: none;
 }
 .header-top-area .logo object {
 	height: 30px;
@@ -209,6 +213,10 @@ a.btn.join-us {
 	margin-bottom: 30px;
 	height: 230px;
 }
+.job-card:hover {
+	transform: scale(1.01);
+	background: #fafafa;
+}
 .about-recruiter a .recruiter-logo {
 	width: 50px;
 	height: 50px;
@@ -292,6 +300,10 @@ a.btn.join-us {
 	height: 200px;
 	margin-bottom: 25px;
 }
+.category-item:hover {
+	transform: scale(1.01);
+	background: #fafafa;
+}
 
 .category-icon {
 	text-align: right;
@@ -310,7 +322,6 @@ a.btn.join-us {
 
 /* -------------------------Browse Jobs by Cities Section CSS Start --------------------- */
 .location-based-jobs {
-	/* background: url(../images/homepage/cities/dhaka.png); */
 	background-repeat: no-repeat;
 	border: 1px solid var(--bgColor3);
 	box-shadow: 2px 3px 0px 2px var(--bgColor3);
@@ -321,17 +332,9 @@ a.btn.join-us {
 	background-position: right;
 	background-size: contain;
 }
-.location-based-jobs.bg-2 {
-	/* background-image: url(../images/homepage/cities/chittagong.png); */
-	background: red;
-}
-.location-based-jobs.bg-3 {
-	/* background-image: url(../images/homepage/cities/rajshahi.png); */
-	background: red;
-}
-.location-based-jobs.bg-4 {
-	/* background-image: url(../images/homepage/cities/sylhet.png); */
-	background: red;
+.location-based-jobs:hover {
+	transform: scale(1.01);
+	background: #fafafa;
 }
 .location-name {
 	position: absolute;
@@ -434,6 +437,10 @@ a.btn.join-us {
 	position: relative;
 	padding-top: 180px;
 	margin-bottom: 25px;
+}
+.blog-item:hover {
+	transform: scale(1.01);
+	background: #fafafa;
 }
 .blog-bg {
 	position: absolute;
