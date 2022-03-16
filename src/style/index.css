@@ -3003,33 +3003,27 @@ h3.right-bar-title {
 }
 /* -------------------------Avaiabel Job Seeker Page CSS  End--------------------- */
 
-/* -------------------------Simple Spinner CSS Start--------------------- */
-.holder {
-	width: 100%;
+/* -------------------------Simplle Loader Start--------------------- */
+.spinner {
 	display: flex;
+	align-items: center;
 	justify-content: space-around;
+	width: 100%;
 }
-.square {
-	width: 1em;
-	height: 1em;
-	background: #2980b9;
-	border-radius: 50%;
-	font-size: 100px;
-	animation: spin 0.7s linear infinite, to-circle 0.7s infinite alternate linear;
+.spinner object {
+	opacity: 0.5;
+	width: 100px;
+	animation: opac 3s infinite;
 }
-@keyframes spin {
-	to {
-		transform: rotateY(0.5turn);
-	}
-}
-@keyframes to-circle {
+@keyframes opac {
 	0%,
-	49% {
-		background: #2980b9;
-	}
 	50%,
 	100% {
-		background: #f39c12;
+		opacity: 0.4;
+	}
+	25%,
+	75% {
+		opacity: 0.6;
 	}
 }
-/* -------------------------Simple Spinner CSS End--------------------- */
+/* -------------------------Simplle Loader End--------------------- */

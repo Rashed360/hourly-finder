@@ -1,7 +1,9 @@
+import Animate from '../../header/animate/Animate'
+
 const Spinner = () => {
 	return (
-		<div className='holder'>
-			<div className='square'></div>
+		<div className='spinner'>
+			<Animate />
 		</div>
 	)
 }

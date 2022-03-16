@@ -1,28 +1,63 @@
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
-import { AUTH_FAILED, AUTH_LOADING, AUTH_LOGOUT, AUTH_SUCCESS } from '../actionTypes/authActionTypes'
+import {
+	AUTH_FAILED,
+	AUTH_LOADING,
+	AUTH_LOGOUT,
+	AUTH_SUCCESS,
+	AUTH_REG_SUCCESS,
+} from '../actionTypes/authActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
+export const authSuccess = (token, userId) => {
+	return {
+		type: AUTH_SUCCESS,
+		payload: {
+			token: token,
+			userId: userId,
+		},
+	}
+}
+
+export const authRegSuccess = msg => {
+	return {
+		type: AUTH_REG_SUCCESS,
+		payload: msg,
+	}
+}
+
+export const authLoading = () => {
+	return {
+		type: AUTH_LOADING,
+	}
+}
+
+export const authFailed = error => {
+	return {
+		type: AUTH_FAILED,
+		payload: error,
+	}
+}
+
 export const authSignUp = (firstName, lastName, email, username, password, accountType) => async dispatch => {
-	dispatch(authLoading(true))
+	dispatch(authLoading())
 	const authData = {
 		first_name: firstName,
 		last_name: lastName,
 		email: email,
 		username: username,
 		password: password,
-		accountType: accountType,
+		accountType: parseInt(accountType),
 	}
 	await axios
-		.post(url+'/auth/users/', authData)
+		.post(url + '/auth/users/', authData)
 		.then(response => {
-			dispatch(authLoading(false))
+			dispatch(authRegSuccess('Account Created, Please Activate!'))
 			const data = response
 			console.log(data)
 		})
 		.catch(error => {
-			dispatch(authLoading(false))
 			console.log(error.response)
 			const key = Object.keys(error.response.data)[0]
 			dispatch(authFailed(error.response.data[key]))
@@ -36,7 +71,7 @@ export const authLogin = (email, password) => async dispatch => {
 		password: password,
 	}
 	await axios
-		.post(url+'/auth/jwt/create', authData)
+		.post(url + '/auth/jwt/create', authData)
 		.then(response => {
 			dispatch(authLoading(false))
 			console.log(response.data)
@@ -76,29 +111,5 @@ export const authCheck = () => dispatch => {
 			const userId = localStorage.getItem('userId')
 			dispatch(authSuccess(token, userId))
 		}
-	}
-}
-
-export const authSuccess = (token, userId) => {
-	return {
-		type: AUTH_SUCCESS,
-		payload: {
-			token: token,
-			userId: userId,
-		},
-	}
-}
-
-export const authLoading = loading => {
-	return {
-		type: AUTH_LOADING,
-		payload: loading,
-	}
-}
-
-export const authFailed = error => {
-	return {
-		type: AUTH_FAILED,
-		payload: error,
 	}
 }
