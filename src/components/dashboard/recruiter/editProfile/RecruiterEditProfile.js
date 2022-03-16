@@ -2,13 +2,14 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
 	return {
-		authLoading: state.auth.authLoading,
-		authSuccessMsg: state.auth.authSuccessMsg,
-		authFailedMsg: state.auth.authFailedMsg,
+		user: state.user.user,
+		profile: state.user.profile,
 	}
 }
 
-const RecruiterEditProfile = () => {
+const RecruiterEditProfile = props => {
+	const { email, first_name, last_name, username, user_type } = props.user
+	const { bio, expertise, phone } = props.profile
 	return (
 		<div className='dashboard-main'>
 			<h3 className='dashboard-title'>Edit Profile</h3>

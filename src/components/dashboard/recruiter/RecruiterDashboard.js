@@ -11,8 +11,17 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-const RecruiterDashboard = (props) => {
+const mapStateToProps = state => {
+	return {
+		user: state.user.user,
+		profile: state.user.profile,
+	}
+}
+
+const RecruiterDashboard = props => {
 	const { headerColorChange } = props
+	const { id, email, first_name, last_name, username, user_type } = props.user
+	const { bio, expertise, phone } = props.profile
 
 	useEffect(() => {
 		headerColorChange('#d1e4e9')
@@ -53,14 +62,14 @@ const RecruiterDashboard = (props) => {
 			{
 				name: 'Logout',
 				icon: 'logout',
-				link: 'logout',
+				link: '/logout',
 			},
 		],
 		userInfo: {
-			id: 1,
-			name: 'Sajeeb Debnath',
-			type: 'Recruiter',
-			photo: 'https://placeimg.com/100/100/people?t=1640373129965',
+			id: id,
+			name: first_name + ' ' + last_name,
+			type: user_type,
+			photo: '',
 		},
 	}
 	return (
@@ -81,4 +90,4 @@ const RecruiterDashboard = (props) => {
 	)
 }
 
-export default connect(null, mapDispatchToProps)(RecruiterDashboard)
+export default connect(mapStateToProps, mapDispatchToProps)(RecruiterDashboard)
