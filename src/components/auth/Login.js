@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 }
 
 const Login = props => {
-	const { headerColorChange } = props
+	const { authLogin, headerColorChange } = props
 	const navigate = useNavigate()
 
 	useEffect(() => {
@@ -37,15 +37,7 @@ const Login = props => {
 	}
 
 	const onSubmitHandle = (values, { resetForm }) => {
-		props.authLogin(values.email, values.password)
-		console.log('here')
-		if (props?.authFailedMsg === null) {
-			resetForm(initialValues)
-			navigate('/')
-			console.log('navigate')
-		} else {
-			console.log(props?.authFailedMsg)
-		}
+		authLogin(values.email, values.password)
 	}
 
 	const validateHandle = values => {

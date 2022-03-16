@@ -133,7 +133,7 @@ const Register = props => {
 									<Form onSubmit={handleSubmit} onReset={handleReset} style={{ height: '300px' }}>
 										{step.current === 2 && (
 											<>
-												<p className='msg'>
+												<p className='msg_notify'>
 													<FaInfoCircle /> What should we call you?
 												</p>
 												<div className='form-field email'>
@@ -187,7 +187,7 @@ const Register = props => {
 
 										{step.current === 3 && (
 											<>
-												<p className='msg'>
+												<p className='msg_notify'>
 													<FaInfoCircle /> {values.firstName === '' ? 'User' : values.firstName}, What's your
 													Email?
 												</p>
@@ -239,7 +239,7 @@ const Register = props => {
 										)}
 										{step.current === 4 && (
 											<>
-												<p className='msg'>
+												<p className='msg_notify'>
 													<FaInfoCircle /> Create a STRONG Password!
 												</p>
 												<div className='form-field email'>
@@ -309,11 +309,11 @@ const Register = props => {
 												</div>
 
 												{values.accountType === '' ? (
-													<p className='msg error'>
+													<p className='msg_notify error'>
 														<FaInfoCircle /> Select any category!
 													</p>
 												) : (
-													<p className='msg'>
+													<p className='msg_notify'>
 														<FaInfoCircle />{' '}
 														{values.accountType === '1'
 															? 'I am Looking for Jobs'
@@ -325,16 +325,16 @@ const Register = props => {
 										{step.current === 5 && (
 											<>
 												{authFailedMsg ? (
-													<p className='msg error'>
+													<p className='msg_notify error'>
 														<FaInfoCircle /> {authFailedMsg}
 													</p>
 												) : authSuccessMsg ? (
-													<p className='msg'>
+													<p className='msg_notify'>
 														<FaInfoCircle /> Account Creation Successful. Check your inbox for activation
 														link!
 													</p>
 												) : (
-													<p className='msg'>
+													<p className='msg_notify'>
 														<FaInfoCircle /> Info Summary!
 													</p>
 												)}

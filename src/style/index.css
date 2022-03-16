@@ -1052,7 +1052,7 @@ h2.contact-title,
 	position: relative;
 	width: 100%;
 }
-.registration-form .form .msg {
+.msg_notify {
 	color: teal;
 	padding: 5px 10px;
 	border-radius: 7px;
@@ -1062,7 +1062,7 @@ h2.contact-title,
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
-.registration-form .form .msg.error {
+.msg_notify.error {
 	color: #e19b69;
 	background-color: #fbf5df;
 	border: 1px solid #fdd5b8;
@@ -3027,3 +3027,11 @@ h3.right-bar-title {
 	}
 }
 /* -------------------------Simplle Loader End--------------------- */
+.activation_box {
+	width: 600px;
+	height: 400px;
+	background: #ffffff;
+	border: 1px solid #96bea4;
+	box-shadow: 1px 1px 0px 1px #96bea4;
+	border-radius: 10px;
+}
