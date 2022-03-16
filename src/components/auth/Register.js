@@ -55,7 +55,7 @@ const Register = props => {
 	}
 
 	const onSubmitHandle = async values => {
-		console.log('Register', values)
+		console.log('Registration')
 		await props.authSignUp(
 			values.firstName,
 			values.lastName,

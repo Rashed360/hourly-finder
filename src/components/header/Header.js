@@ -88,11 +88,11 @@ const Header = props => {
 								</ul>
 							</nav>
 							{props.token === null ? (
-								<Link to='/register' className='btn join-us'>
+								<Link to='/login' className='btn join-us'>
 									Join Us
 								</Link>
 							) : (
-								<div class='header-icon'>
+								<div className='header-icon'>
 									<Link to='/dashboard'>
 										<span>
 											<FaBell />

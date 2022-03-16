@@ -71,7 +71,7 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 }
 
 export const authLogin = (email, password) => async dispatch => {
-	dispatch(authLoading(true))
+	dispatch(authLoading())
 	const authData = {
 		email: email,
 		password: password,
@@ -79,7 +79,6 @@ export const authLogin = (email, password) => async dispatch => {
 	await axios
 		.post(url + '/auth/jwt/create', authData)
 		.then(response => {
-			dispatch(authLoading(false))
 			console.log(response.data)
 			const token = response.data.access
 			const decode = jwt_decode(token)
@@ -90,7 +89,6 @@ export const authLogin = (email, password) => async dispatch => {
 			dispatch(authSuccess(token, decode.user_id))
 		})
 		.catch(error => {
-			dispatch(authLoading(false))
 			const key = Object.keys(error.response.data)[0]
 			dispatch(authFailed(error.response.data[key]))
 		})
