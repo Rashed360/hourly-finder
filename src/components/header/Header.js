@@ -88,7 +88,7 @@ const Header = props => {
 								</ul>
 							</nav>
 							{props.token === null ? (
-								<Link to='/login' className='btn join-us'>
+								<Link to='/register' className='btn join-us'>
 									Join Us
 								</Link>
 							) : (

@@ -1,13 +1,16 @@
+import { useEffect } from 'react'
 import LeftContent from './commonAuth/LeftContent'
 import { Formik, Field, Form } from 'formik'
 import { Alert } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { authLogin } from '../../redux/actionCreators/authActionCreators'
+import { headerColorChange } from '../../redux/actionCreators/utilsActionCreators'
 
 const mapDispatchToProps = dispatch => {
 	return {
 		authLogin: (email, password) => dispatch(authLogin(email, password)),
+		headerColorChange: color => dispatch(headerColorChange(color)),
 	}
 }
 
@@ -20,7 +23,12 @@ const mapStateToProps = state => {
 }
 
 const Login = props => {
+	const { headerColorChange } = props
 	const navigate = useNavigate()
+
+	useEffect(() => {
+		headerColorChange('transparent')
+	}, [headerColorChange])
 
 	const initialValues = {
 		email: '',
@@ -31,7 +39,7 @@ const Login = props => {
 	const onSubmitHandle = (values, { resetForm }) => {
 		props.authLogin(values.email, values.password)
 		console.log('here')
-		if (props?.authFailedMsg===null) {
+		if (props?.authFailedMsg === null) {
 			resetForm(initialValues)
 			navigate('/')
 			console.log('navigate')
@@ -69,7 +77,7 @@ const Login = props => {
 
 						<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 							{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
-								<Form onSubmit={handleSubmit} onReset={handleReset}>
+								<Form onSubmit={handleSubmit} onReset={handleReset} style={{ height: '300px' }}>
 									<div className='form-field email'>
 										<label htmlFor='email'>Email</label>
 										<Field

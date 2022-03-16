@@ -447,7 +447,7 @@ a.btn.join-us {
 	background-position: center;
 	border-radius: 9px 9px 0px 0px;
 }
-.blog-bg img{
+.blog-bg img {
 	width: 100%;
 	height: 100%;
 }
@@ -931,17 +931,19 @@ h2.contact-title,
 /* -------------------------Registration & Login Page CSS Start--------------------- */
 .registration-area,
 .jobs-application-area {
+	margin-top: -70px;
+	background: url(../assets/svgs/hero-bg.svg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 70px;
-	height: 90vh;
+	background-size: cover;
+	height: 100vh;
 	min-height: 590px;
-	background: url(../assets/svgs/hero-bg.svg);
 }
 
 .registration-box,
 .application-box {
+	margin-top: 35px;
 	width: 960px;
 	height: 540px;
 	border-radius: 30px;
@@ -1047,7 +1049,51 @@ h2.contact-title,
 	height: 100%;
 }
 .registration-form .form {
+	position: relative;
 	width: 100%;
+}
+.registration-form .form .msg {
+	color: teal;
+	padding: 5px 10px;
+	border-radius: 7px;
+	background-color: #ceffe0;
+	border: 1px solid lightseagreen;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.registration-form .form .msg.error {
+	color: #e19b69;
+	background-color: #fbf5df;
+	border: 1px solid #fdd5b8;
+}
+.registration-form .form ul {
+	color: grey;
+	padding: 5px 10px;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.registration-form .form ul li {
+	margin-bottom: 3px;
+}
+.registration-form .form .btn_group {
+	position: absolute;
+	display: flex;
+	gap: 10px;
+	bottom: 0;
+	width: 100%;
+}
+.registration-form .form .btn_group span {
+	user-select: none;
+	cursor: pointer;
+	color: white;
+	padding: 3px 10px;
+	border-radius: 5px;
+	background-color: var(--bgColor);
+}
+.registration-form .form .btn_group span:nth-child(1) {
+	background-color: grey;
 }
 .form-field input,
 .form-field select,
@@ -1119,8 +1165,36 @@ h2.contact-title,
 	margin-bottom: 15px;
 	padding: 7px;
 }
-
+.form-field.account-type .group {
+	margin-top: 10px;
+	display: flex;
+	gap: 20px;
+}
+.form-field.account-type .group input {
+	visibility: hidden;
+}
+.form-field.account-type .group label {
+	text-align: center;
+	border: 2px solid transparent;
+	background-color: #ffe1a7;
+	border-radius: 5px;
+	height: 80px;
+	width: 120px;
+}
+.form-field.account-type .group label svg {
+	color: #0008;
+	height: 30px;
+	margin-bottom: -20px;
+}
+.form-field.account-type .group label.active {
+	border: 2px solid var(--bgColor5);
+}
+.form-field.account-type .group label:nth-child(2) {
+	background-color: #c6e1cd;
+}
 .form-field .btn {
+	height: 45px;
+	font-size: 16px;
 	background: #16395f;
 	color: white;
 }
