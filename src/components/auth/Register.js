@@ -12,7 +12,7 @@ import {
 	FaUserGraduate,
 } from 'react-icons/fa'
 import { connect } from 'react-redux'
-import { authSignUp } from '../../redux/actionCreators/authActionCreators'
+import { authSignUp, clearAuthErrors } from '../../redux/actionCreators/authActionCreators'
 import LeftContent from './commonAuth/LeftContent'
 import Spinner from '../commonComponents/spinner/Spinner'
 
@@ -20,6 +20,7 @@ const mapDispatchToProps = dispatch => {
 	return {
 		authSignUp: (firstName, lastName, email, username, password, accountType) =>
 			dispatch(authSignUp(firstName, lastName, email, username, password, accountType)),
+		clearAuthErrors: () => dispatch(clearAuthErrors()),
 	}
 }
 
@@ -32,7 +33,7 @@ const mapStateToProps = state => {
 }
 
 const Register = props => {
-	const { authLoading, authSuccessMsg, authFailedMsg } = props
+	const { authLoading, authSuccessMsg, authFailedMsg, clearAuthErrors } = props
 	const [step, setStep] = useState({ start: 1, end: 5, current: 1 })
 
 	const stepHandle = value => {
@@ -63,6 +64,10 @@ const Register = props => {
 			values.password,
 			values.accountType
 		)
+		let timer = setTimeout(() => {
+			clearAuthErrors()
+		}, 5000)
+		clearTimeout(timer)
 	}
 
 	const validateHandle = values => {
@@ -325,7 +330,8 @@ const Register = props => {
 													</p>
 												) : authSuccessMsg ? (
 													<p className='msg'>
-														<FaInfoCircle /> {authSuccessMsg}
+														<FaInfoCircle /> Account Creation Successful. Check your inbox for activation
+														link!
 													</p>
 												) : (
 													<p className='msg'>
@@ -348,9 +354,11 @@ const Register = props => {
 														<FaLock /> {values.password ? 'STRONG Password!' : 'No Passwords'}
 													</li>
 												</ul>
-												<div className='form-field'>
-													<input type='submit' value='Create Account' className='btn submit' />
-												</div>
+												{authSuccessMsg ? null : (
+													<div className='form-field'>
+														<input type='submit' value='Create Account' className='btn submit' />
+													</div>
+												)}
 											</>
 										)}
 										<div className='btn_group'>

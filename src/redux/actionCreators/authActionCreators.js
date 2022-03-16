@@ -4,11 +4,18 @@ import {
 	AUTH_FAILED,
 	AUTH_LOADING,
 	AUTH_LOGOUT,
+	AUTH_ERROR_CLEAR,
 	AUTH_SUCCESS,
 	AUTH_REG_SUCCESS,
 } from '../actionTypes/authActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
+
+export const clearAuthErrors = () => {
+	return {
+		type: AUTH_ERROR_CLEAR,
+	}
+}
 
 export const authSuccess = (token, userId) => {
 	return {
@@ -20,10 +27,9 @@ export const authSuccess = (token, userId) => {
 	}
 }
 
-export const authRegSuccess = msg => {
+export const authRegSuccess = () => {
 	return {
 		type: AUTH_REG_SUCCESS,
-		payload: msg,
 	}
 }
 
@@ -53,7 +59,7 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 	await axios
 		.post(url + '/auth/users/', authData)
 		.then(response => {
-			dispatch(authRegSuccess('Account Created, Please Activate!'))
+			dispatch(authRegSuccess())
 			const data = response
 			console.log(data)
 		})

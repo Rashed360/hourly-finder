@@ -2,6 +2,7 @@ import {
 	AUTH_LOADING,
 	AUTH_REG_SUCCESS,
 	AUTH_SUCCESS,
+	AUTH_ERROR_CLEAR,
 	AUTH_LOGOUT,
 	AUTH_FAILED,
 } from '../actionTypes/authActionTypes'
@@ -28,7 +29,7 @@ const authReducer = (state = authInitialState, action) => {
 				...state,
 				authLoading: false,
 				authFailedMsg: null,
-				authSuccessMsg: action.payload,
+				authSuccessMsg: 'OK',
 			}
 
 		case AUTH_FAILED:
@@ -36,6 +37,13 @@ const authReducer = (state = authInitialState, action) => {
 				...state,
 				authLoading: false,
 				authFailedMsg: action.payload,
+			}
+		case AUTH_ERROR_CLEAR:
+			return {
+				...state,
+				authLoading: false,
+				authFailedMsg: null,
+				authSuccessMsg: null,
 			}
 		case AUTH_LOADING:
 			return {

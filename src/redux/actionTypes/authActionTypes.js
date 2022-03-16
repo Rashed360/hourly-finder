@@ -1,5 +1,6 @@
 export const AUTH_LOGOUT = "AUTH_LOGOUT"
 export const AUTH_REG_SUCCESS = "AUTH_REG_SUCCESS"
+export const AUTH_ERROR_CLEAR = "AUTH_ERROR_CLEAR"
 
 export const AUTH_CHECK = "AUTH_CHECK"
 export const AUTH_LOADING = "AUTH_LOADING"
