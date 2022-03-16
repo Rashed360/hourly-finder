@@ -20,9 +20,9 @@ const mapStateToProps = state => {
 
 const RecruiterDashboard = props => {
 	const { headerColorChange } = props
-	const { id, email, first_name, last_name, username, user_type } = props.user
+	const { id, email, first_name, last_name, username, user_type } = props?.user
 	const { bio, expertise, phone } = props.profile
-
+	
 	useEffect(() => {
 		headerColorChange('#d1e4e9')
 	}, [headerColorChange])

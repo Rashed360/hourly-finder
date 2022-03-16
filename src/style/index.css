@@ -2010,6 +2010,7 @@ h2.contact-title,
 .header-icon img {
 	width: 30px;
 	height: 30px;
+	border: 1px solid lightgrey;
 	border-radius: 100%;
 	margin-left: 20px;
 }
@@ -2048,6 +2049,7 @@ h2.contact-title,
 	width: 90px;
 	height: 90px;
 	margin: auto;
+	border: 1px solid lightgrey;
 	border-radius: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
