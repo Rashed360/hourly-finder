@@ -1,3 +1,13 @@
+import { connect } from 'react-redux'
+
+const mapStateToProps = state => {
+	return {
+		authLoading: state.auth.authLoading,
+		authSuccessMsg: state.auth.authSuccessMsg,
+		authFailedMsg: state.auth.authFailedMsg,
+	}
+}
+
 const RecruiterEditProfile = () => {
 	return (
 		<div className='dashboard-main'>
@@ -184,4 +194,4 @@ const RecruiterEditProfile = () => {
 	)
 }
 
-export default RecruiterEditProfile
+export default connect(mapStateToProps)(RecruiterEditProfile)

@@ -8,6 +8,7 @@ import {
 	AUTH_SUCCESS,
 	AUTH_REG_SUCCESS,
 } from '../actionTypes/authActionTypes'
+import { userFetch } from './userActionCreators'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
@@ -87,6 +88,7 @@ export const authLogin = (email, password) => async dispatch => {
 			localStorage.setItem('userId', decode.user_id)
 			localStorage.setItem('expiration', expiration)
 			dispatch(authSuccess(token, decode.user_id))
+			dispatch(userFetch())
 		})
 		.catch(error => {
 			const key = Object.keys(error.response.data)[0]

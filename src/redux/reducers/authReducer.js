@@ -8,6 +8,7 @@ import {
 } from '../actionTypes/authActionTypes'
 
 const authInitialState = {
+	isAuthenticated: false,
 	token: null,
 	userId: null,
 	authLoading: false,
@@ -22,6 +23,7 @@ const authReducer = (state = authInitialState, action) => {
 				...state,
 				authLoading: false,
 				authFailedMsg: null,
+				isAuthenticated: true,
 				token: action.payload.token,
 				userId: action.payload.userId,
 			}
@@ -55,6 +57,7 @@ const authReducer = (state = authInitialState, action) => {
 		case AUTH_LOGOUT:
 			return {
 				...state,
+				isAuthenticated: false,
 				authFailedMsg: null,
 				token: null,
 			}
