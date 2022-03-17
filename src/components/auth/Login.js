@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import LeftContent from './commonAuth/LeftContent'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { FaInfoCircle } from 'react-icons/fa'
 import { Formik, Field, Form } from 'formik'
 import { connect } from 'react-redux'
@@ -160,6 +160,9 @@ const Login = props => {
 										<div className='form-field'>
 											<input type='submit' value='Sign in' className='btn submit' />
 										</div>
+										<p className='forget mt-20'>
+											<Link to='/password-reset'>Forgot Password?</Link>
+										</p>
 									</Form>
 								)}
 							</Formik>
@@ -170,7 +173,10 @@ const Login = props => {
 							<p className='msg_notify'>
 								<FaInfoCircle /> Signed In completed Successfully!
 							</p>
-							<p className='mt-30'>Your profile is not completed. In order to post or apply for a job, you have to complete your profile creation. Go to Dashboard and Edit your Profile.</p>
+							<p className='mt-30'>
+								Your profile is not completed. In order to post or apply for a job, you have to complete your
+								profile creation. Go to Dashboard and Edit your Profile.
+							</p>
 							<div className='btn_group'>
 								<span onClick={() => navigate('/')}>Go to Home</span>
 								<span onClick={() => navigate('/dashboard')}>Go to Dashboard</span>

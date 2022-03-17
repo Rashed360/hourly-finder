@@ -1052,6 +1052,10 @@ h2.contact-title,
 	position: relative;
 	width: 100%;
 }
+.registration-form .form .forget {
+	font-size: 15px;
+	text-align: center;
+}
 .msg_notify {
 	color: teal;
 	padding: 5px 10px;

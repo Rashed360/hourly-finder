@@ -69,6 +69,7 @@ const App = props => {
 
 					<Route path='/activate/:uid/:token' element={<AccountActivate />} />
 					<Route path='/password-reset' element={<PasswordReset />} />
+					<Route path='/password-reset/:uid/:token' element={<PasswordReset />} />
 
 					{/* Dynamic Route Start */}
 					<Route path='job/:job_id' element={<SingleJob />} />
