@@ -7,6 +7,7 @@ import {
 	AUTH_ERROR_CLEAR,
 	AUTH_SUCCESS,
 	AUTH_REG_SUCCESS,
+	ACTIVATE_SUCCESS,
 } from '../actionTypes/authActionTypes'
 import { userFetch } from './userActionCreators'
 
@@ -118,4 +119,52 @@ export const authCheck = () => dispatch => {
 			dispatch(authSuccess(token, userId))
 		}
 	}
+}
+
+export const activateAccount = (uid, token) => async dispatch => {
+	dispatch(authLoading())
+	await axios
+		.post(url + '/auth/jwt/create')
+		.then(response => {
+			console.log(response.data)
+			dispatch({
+				type: ACTIVATE_SUCCESS,
+			})
+		})
+		.catch(error => {
+			const data = error.response
+			console.log(data)
+			dispatch({
+				type: AUTH_FAILED,
+				payload: 'Activatioon Failed',
+			})
+		})
+}
+
+export const resetPasswordRequest = id => async dispatch => {
+	dispatch(authLoading())
+	await axios
+		.post(url + '/auth/jwt/create')
+		.then(response => {
+			console.log(response.data)
+			dispatch(authSuccess()) ///
+		})
+		.catch(error => {
+			const key = Object.keys(error.response.data)[0]
+			dispatch(authFailed(error.response.data[key]))
+		})
+}
+
+export const resetPasswordConfirm = (uid, token) => async dispatch => {
+	dispatch(authLoading())
+	await axios
+		.post(url + '/auth/jwt/create')
+		.then(response => {
+			console.log(response.data)
+			dispatch(authSuccess()) ///
+		})
+		.catch(error => {
+			const key = Object.keys(error.response.data)[0]
+			dispatch(authFailed(error.response.data[key]))
+		})
 }

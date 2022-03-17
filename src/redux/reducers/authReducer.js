@@ -5,6 +5,7 @@ import {
 	AUTH_ERROR_CLEAR,
 	AUTH_LOGOUT,
 	AUTH_FAILED,
+	ACTIVATE_SUCCESS,
 } from '../actionTypes/authActionTypes'
 
 const authInitialState = {
@@ -14,6 +15,7 @@ const authInitialState = {
 	authLoading: false,
 	authFailedMsg: null,
 	authSuccessMsg: null,
+	activationSuccess: false,
 }
 
 const authReducer = (state = authInitialState, action) => {
@@ -62,6 +64,12 @@ const authReducer = (state = authInitialState, action) => {
 				token: null,
 			}
 
+		case ACTIVATE_SUCCESS:
+			return {
+				...state,
+				activationSuccess: true,
+				authLoading: false,
+			}
 		default:
 			return state
 	}
