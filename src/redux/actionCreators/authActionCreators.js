@@ -56,7 +56,7 @@ export const authSignUp = (firstName, lastName, email, username, password, accou
 		email: email,
 		username: username,
 		password: password,
-		accountType: parseInt(accountType),
+		user_type: parseInt(accountType),
 	}
 	await axios
 		.post(url + '/auth/users/', authData)
