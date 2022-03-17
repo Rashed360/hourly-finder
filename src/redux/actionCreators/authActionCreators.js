@@ -144,30 +144,51 @@ export const activateAccount = (uid, token) => async dispatch => {
 		})
 }
 
-export const resetPasswordRequest = id => async dispatch => {
+export const resetPasswordRequest = email => async dispatch => {
 	dispatch(authLoading())
+	const authData = {
+		email: email,
+	}
 	await axios
-		.post(url + '/auth/jwt/create')
+		.post(url + '/auth/users/reset_password/', authData)
 		.then(response => {
-			console.log(response.data)
-			dispatch(authSuccess()) ///
+			console.log(response)
+			dispatch({
+				type: ACTIVATE_SUCCESS,
+			})
 		})
 		.catch(error => {
-			const key = Object.keys(error.response.data)[0]
-			dispatch(authFailed(error.response.data[key]))
+			const data = error
+			console.log(data)
+			dispatch({
+				type: AUTH_FAILED,
+				payload: data,
+			})
 		})
 }
 
-export const resetPasswordConfirm = (uid, token) => async dispatch => {
+export const resetPasswordConfirm = (uid, token, password) => async dispatch => {
 	dispatch(authLoading())
+	const authData = {
+		uid: uid,
+		token: token,
+		new_password: password,
+	}
 	await axios
-		.post(url + '/auth/jwt/create')
+		.post(url + '/auth/users/reset_password_confirm/', authData)
 		.then(response => {
-			console.log(response.data)
-			dispatch(authSuccess()) ///
+			console.log(response)
+			dispatch({
+				type: ACTIVATE_SUCCESS,
+			})
 		})
 		.catch(error => {
 			const key = Object.keys(error.response.data)[0]
-			dispatch(authFailed(error.response.data[key]))
+			const data = error.response.data[key][0]
+			console.log(data)
+			dispatch({
+				type: AUTH_FAILED,
+				payload: data,
+			})
 		})
 }
