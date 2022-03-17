@@ -2,6 +2,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { Field, Form, Formik } from 'formik'
 import { FaInfoCircle } from 'react-icons/fa'
 import { activateAccount, clearAuthErrors } from '../../redux/actionCreators/authActionCreators'
+import Spinner from '../commonComponents/spinner/Spinner'
 import { connect } from 'react-redux'
 
 const mapDispatchToProps = dispatch => {
@@ -30,6 +31,10 @@ const AccountActivate = props => {
 	const onSubmitHandle = async () => {
 		console.log('Activate')
 		await activateAccount(uid, token)
+		let timer = setTimeout(() => {
+			clearAuthErrors()
+		}, 5000)
+		clearTimeout(timer)
 	}
 
 	const validateHandle = values => {
@@ -49,44 +54,59 @@ const AccountActivate = props => {
 					) : (
 						<div className='form'>
 							<h2>Activate Account</h2>
-							<p className='msg_notify error'>
-								<FaInfoCircle /> Check consent and press activate.
-							</p>
 
-							<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
-								{({ values, touched, handleChange, handleSubmit, handleReset }) => (
-									<Form onSubmit={handleSubmit} onReset={handleReset}>
-										<div className='form-check form-field stay-login mt-30'>
-											<Field
-												name='passwordCheck'
-												type='checkbox'
-												className='form-check-input'
-												checked={values.passwordCheck}
-												onChange={handleChange}
-											/>
-											<label
-												htmlFor='passwordCheck'
-												className={
-													touched.passwordCheck
+							{activationSuccess ? (
+								<p className='msg_notify'>
+									<FaInfoCircle /> Account activated successfully.
+								</p>
+							) : authFailedMsg !== null ? (
+								<p className='msg_notify error'>
+									<FaInfoCircle />{' '}
+									{authFailedMsg === 'Failed' ? 'Opps! Account activation Failed.' : authFailedMsg+' Already Activated'}
+								</p>
+							) : (
+								<p className='msg_notify error'>
+									<FaInfoCircle /> Check consent and press activate.
+								</p>
+							)}
+							{authLoading ? (
+								<Spinner />
+							) : activationSuccess ? null : (
+								<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
+									{({ values, touched, handleChange, handleSubmit, handleReset }) => (
+										<Form onSubmit={handleSubmit} onReset={handleReset}>
+											<div className='form-check form-field stay-login mt-30'>
+												<Field
+													name='passwordCheck'
+													type='checkbox'
+													className='form-check-input'
+													checked={values.passwordCheck}
+													onChange={handleChange}
+												/>
+												<label
+													htmlFor='passwordCheck'
+													className={
+														touched.passwordCheck
+															? values.passwordCheck
+																? 'text-success'
+																: 'text-danger'
+															: null
+													}
+												>
+													{touched.passwordCheck
 														? values.passwordCheck
-															? 'text-success'
-															: 'text-danger'
-														: null
-												}
-											>
-												{touched.passwordCheck
-													? values.passwordCheck
-														? 'Yes, Activate my account'
-														: "Don't Activate my account"
-													: 'Are you sure to activate?'}
-											</label>
-										</div>
-										<div className='form-field'>
-											<input type='submit' value='Activate Account' className='btn submit' />
-										</div>
-									</Form>
-								)}
-							</Formik>
+															? 'Yes, Activate my account'
+															: "Don't Activate my account"
+														: 'Are you sure to activate?'}
+												</label>
+											</div>
+											<div className='form-field'>
+												<input type='submit' value='Activate Account' className='btn submit' />
+											</div>
+										</Form>
+									)}
+								</Formik>
+							)}
 						</div>
 					)}
 				</div>

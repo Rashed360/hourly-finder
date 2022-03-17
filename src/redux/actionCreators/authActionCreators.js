@@ -123,20 +123,23 @@ export const authCheck = () => dispatch => {
 
 export const activateAccount = (uid, token) => async dispatch => {
 	dispatch(authLoading())
+	const authData = {
+		uid: uid,
+		token: token,
+	}
 	await axios
-		.post(url + '/auth/jwt/create')
+		.post(url + '/auth/users/activation/', authData)
 		.then(response => {
-			console.log(response.data)
 			dispatch({
 				type: ACTIVATE_SUCCESS,
 			})
 		})
 		.catch(error => {
-			const data = error.response
+			const data = error.response.data.detail ? error.response.data.detail : 'Failed'
 			console.log(data)
 			dispatch({
 				type: AUTH_FAILED,
-				payload: 'Activatioon Failed',
+				payload: data,
 			})
 		})
 }
