@@ -8,8 +8,20 @@ const mapStateToProps = state => {
 }
 
 const RecruiterEditProfile = props => {
-	const { email, first_name, last_name, username, user_type } = props.user
-	const { bio, expertise, phone } = props.profile
+	const tempEmpty = {
+		id: 0,
+		email: 'no@email',
+		first_name: 'No',
+		last_name: 'User',
+		username: 'user',
+		user_type: 1,
+		bio: '',
+		expertise: '',
+		phone: '',
+	}
+	const { id, email, first_name, last_name, username, user_type } =
+		props.user === null ? tempEmpty : props.user
+	const { bio, expertise, phone } = props.profile === null ? tempEmpty : props.profile
 	return (
 		<div className='dashboard-main'>
 			<h3 className='dashboard-title'>Edit Profile</h3>

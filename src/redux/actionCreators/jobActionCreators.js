@@ -29,31 +29,30 @@ export const jobSingleFetch = id => async dispatch => {
 
 export const jobCreate = values => async dispatch => {
 	console.log('Job Posted', values)
-	const jobData = {
-		title: values.title,
-		// image: values.banner,
-		salary: values.salary,
-		duration: values.duration,
-		language: values.language,
-		vacancy: values.vacancy,
-		level: parseInt(values.level),
-		starting: values.starting,
-		latlng: values.map,
-		overview: values.overview,
-		todo: values.todo,
-		skill: values.skill,
-		keyword: values.keyword,
-		company: 1,
-		recruiter: 1,
-		type: parseInt(values.type),
-	}
+	let form_data = new FormData()
+	form_data.append('image', values.banner, values.banner.name)
+	form_data.append('level', parseInt(values.level))
+	form_data.append('type', parseInt(values.type))
+	form_data.append('title', values.title)
+	form_data.append('salary', values.salary)
+	form_data.append('duration', values.duration)
+	form_data.append('language', values.language)
+	form_data.append('vacancy', values.vacancy)
+	form_data.append('starting', values.starting)
+	form_data.append('latlng', values.map)
+	form_data.append('overview', values.overview)
+	form_data.append('todo', values.todo)
+	form_data.append('skill', values.skill)
+	form_data.append('keyword', values.keyword)
+	form_data.append('company', 5)
+	form_data.append('recruiter', 6)
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
+			'content-type': 'multipart/form-data',
 		},
 	}
 	await axios
-		.post(`${url}/jobs/job/`, jobData, config)
+		.post(`${url}/jobs/job/`, form_data, config)
 		.then(response => {
 			console.log(response.data)
 		})

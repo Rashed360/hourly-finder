@@ -15,15 +15,17 @@ const mapStateToProps = state => {
 }
 
 const RecruiterPostJob = props => {
+	const { jobCreate } = props
+
 	const initialValues = {
 		title: 'title',
+		banner: null,
 		type: 1,
 		salary: 'salary',
 		level: 1,
 		vacancy: 'vacancy',
 		starting: '',
 		duration: 'duration',
-		banner: null,
 		language: 'language',
 		skill: 'skill',
 		keyword: 'keyword',
@@ -33,10 +35,8 @@ const RecruiterPostJob = props => {
 		todo: 'todo',
 	}
 
-	const onSubmitHandle = values => {
-		console.log('posting')
-		props.jobCreate(values)
-		console.log('posted')
+	const onSubmitHandle = async values => {
+		await jobCreate(values)
 	}
 
 	const validateHandle = values => {
