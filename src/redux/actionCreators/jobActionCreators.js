@@ -66,7 +66,7 @@ export const jobApply = (job, values) => async dispatch => {
 	const applyData = {
 		message: msg,
 		job: parseInt(job),
-		seeker: 1, //get_user_data
+		seeker: 1, //get_user_data_ _dummy_for_now
 	}
 	const config = {
 		headers: {
