@@ -43,15 +43,6 @@ const DashboradRightBar = () => {
               <span> “Complete House Painting Service”</span>
             </div>
           </div>
-          <div className="event-item">
-            <div className="event-icon">
-              <div className="event-icon-wrap">03</div>
-            </div>
-            <div className="event-title">
-              Job
-              <span> “Complete House Painting Service” </span> ends
-            </div>
-          </div>
         </div>
       </div>
     </div>

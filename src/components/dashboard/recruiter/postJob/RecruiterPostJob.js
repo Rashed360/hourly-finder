@@ -18,21 +18,21 @@ const RecruiterPostJob = props => {
 	const { jobCreate } = props
 
 	const initialValues = {
-		title: 'title',
+		title: '',
 		banner: null,
-		type: 1,
-		salary: 'salary',
-		level: 1,
-		vacancy: 'vacancy',
+		type: '',
+		salary: '',
+		level: '',
+		vacancy: '',
 		starting: '',
-		duration: 'duration',
-		language: 'language',
-		skill: 'skill',
-		keyword: 'keyword',
-		location: 'location',
-		map: 'map',
-		overview: 'overview',
-		todo: 'todo',
+		duration: '',
+		language: '',
+		skill: '',
+		keyword: '',
+		location: '',
+		map: '',
+		overview: '',
+		todo: '',
 	}
 
 	const onSubmitHandle = async values => {
@@ -43,19 +43,19 @@ const RecruiterPostJob = props => {
 		const errors = {}
 
 		if (!values.title) {
-			errors.title = 'Field is Required'
+			errors.title = 'Title is Mandetory'
 		}
 
 		if (!values.type) {
-			errors.type = 'Field is Required'
+			errors.type = 'Must choose a type'
 		}
 
 		if (!values.salary) {
-			errors.salary = 'Field is Required'
+			errors.salary = 'Salary is Required'
 		}
 
 		if (!values.level) {
-			errors.level = 'Field is Required'
+			errors.level = 'Level not chosen'
 		}
 
 		if (!values.vacancy) {
@@ -150,11 +150,16 @@ const RecruiterPostJob = props => {
 														value={values.type}
 														onChange={handleChange}
 													>
-														<option value=''>Select</option>
+														<option value=''>- Select Type -</option>
 														<option value='1'>Hourly</option>
 														<option value='2'>Part Time</option>
 														<option value='3'>Project Based</option>
 													</Field>
+													{touched.type && errors.type ? (
+														<div className='invalid-feedback'>{errors.type}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 											<div className='col-lg-6'>
@@ -172,7 +177,7 @@ const RecruiterPostJob = props => {
 														}
 														value={values.salary}
 														onChange={handleChange}
-														placeholder='e.g. 250'
+														placeholder='e.g. 18,000'
 													/>
 													{touched.salary && errors.salary ? (
 														<div className='invalid-feedback'>{errors.salary}</div>
@@ -187,13 +192,31 @@ const RecruiterPostJob = props => {
 											<div className='col-lg-6'>
 												<div className='form-field'>
 													<label htmlFor=''>Level</label>
-													<select name='' id=''>
+													<Field
+														name='level'
+														as='select'
+														className={
+															touched.level
+																? errors.level
+																	? 'form-control is-invalid'
+																	: 'form-control is-valid'
+																: 'form-control'
+														}
+														value={values.level}
+														onChange={handleChange}
+													>
+														<option value=''>- Select Level -</option>
 														<option value='1'>Novice</option>
 														<option value='2'>Beginer</option>
 														<option value='3'>Intermediate</option>
 														<option value='4'>Advanced</option>
 														<option value='5'>Expert</option>
-													</select>
+													</Field>
+													{touched.level && errors.level ? (
+														<div className='invalid-feedback'>{errors.level}</div>
+													) : (
+														<div className='valid-feedback'>Looks good!</div>
+													)}
 												</div>
 											</div>
 											<div className='col-lg-6'>
@@ -262,7 +285,7 @@ const RecruiterPostJob = props => {
 														}
 														value={values.duration}
 														onChange={handleChange}
-														placeholder='5 Months'
+														placeholder='e.g. 5 Months/Infinite'
 													/>
 													{touched.duration && errors.duration ? (
 														<div className='invalid-feedback'>{errors.duration}</div>
@@ -313,7 +336,7 @@ const RecruiterPostJob = props => {
 														}
 														value={values.keyword}
 														onChange={handleChange}
-														placeholder='Development,Designer'
+														placeholder='e.g. Development,Designer'
 													/>
 													{touched.keyword && errors.keyword ? (
 														<div className='invalid-feedback'>{errors.keyword}</div>
@@ -331,22 +354,10 @@ const RecruiterPostJob = props => {
 													<Field
 														name='skill'
 														type='text'
-														className={
-															touched.skill
-																? errors.skill
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
 														value={values.skill}
 														onChange={handleChange}
-														placeholder='React,Django'
+														placeholder='e.g. React,Django'
 													/>
-													{touched.skill && errors.skill ? (
-														<div className='invalid-feedback'>{errors.skill}</div>
-													) : (
-														<div className='valid-feedback'>Looks good!</div>
-													)}
 												</div>
 											</div>
 											<div className='col-lg-6'>
@@ -355,22 +366,10 @@ const RecruiterPostJob = props => {
 													<Field
 														name='language'
 														type='text'
-														className={
-															touched.language
-																? errors.language
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
 														value={values.language}
 														onChange={handleChange}
 														placeholder='e.g. Bangla'
 													/>
-													{touched.language && errors.language ? (
-														<div className='invalid-feedback'>{errors.language}</div>
-													) : (
-														<div className='valid-feedback'>Looks good!</div>
-													)}
 												</div>
 											</div>
 										</div>
@@ -398,22 +397,10 @@ const RecruiterPostJob = props => {
 													<Field
 														name='map'
 														type='text'
-														className={
-															touched.map
-																? errors.map
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
 														value={values.map}
 														onChange={handleChange}
 														placeholder='90.456,45.6886'
 													/>
-													{touched.map && errors.map ? (
-														<div className='invalid-feedback'>{errors.map}</div>
-													) : (
-														<div className='valid-feedback'>Looks good!</div>
-													)}
 												</div>
 											</div>
 										</div>

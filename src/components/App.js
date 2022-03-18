@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { authCheck } from '../redux/actionCreators/authActionCreators'
 import About from './about/About'
@@ -44,7 +44,9 @@ const mapStateToProps = state => {
 }
 
 const App = props => {
+	const { pathname } = useLocation()
 	const { authCheck } = props
+
 	useEffect(() => {
 		authCheck()
 	}, [authCheck])
@@ -95,7 +97,7 @@ const App = props => {
 					<Route path='/*' element={<NoMatch />} />
 				</Routes>
 			</div>
-			<Footer />
+			{pathname.includes('/dashboard') ? null : <Footer />}
 		</>
 	)
 }

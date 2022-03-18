@@ -2029,17 +2029,22 @@ h2.contact-title,
 }
 
 .dashboard-all {
+	height: calc(100vh - 70px);
 	display: flex;
 	flex-wrap: wrap;
 	background: #e7eff1;
 }
 .dashboard-all .left {
+	height: calc(100vh - 70px);
 	width: 280px;
 }
 .dashboard-all .mid {
-	width: 827px;
+	width: 838px;
+	height: calc(100vh - 70px);
+	overflow-y: scroll;
 }
 .dashboard-all .right {
+	height: calc(100vh - 70px);
 	width: 242px;
 }
 
@@ -2062,8 +2067,7 @@ h2.contact-title,
 
 .dashboard-main {
 	background: #fafafa;
-	height: 100%;
-	padding: 15px 20px;
+	padding: 15px 15px 20px 20px;
 }
 
 .user-info h5 {

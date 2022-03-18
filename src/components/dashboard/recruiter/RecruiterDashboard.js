@@ -85,14 +85,14 @@ const RecruiterDashboard = props => {
 		},
 	}
 	return (
-		<div className='dashboard-all mt-70'>
+		<div className='dashboard-all'>
 			<div className='left'>
 				<DashboardNavigation
 					navigations={DashboardInformation.navigation}
 					user={DashboardInformation.userInfo}
 				></DashboardNavigation>
 			</div>
-			<div className='mid'>
+			<div className='mid dashScroll'>
 				<Outlet></Outlet>
 			</div>
 			<div className='right'>
