@@ -1,18 +1,15 @@
-import { useEffect } from 'react'
 import LeftContent from './commonAuth/LeftContent'
 import { useNavigate, Link } from 'react-router-dom'
 import { FaInfoCircle } from 'react-icons/fa'
 import { Formik, Field, Form } from 'formik'
 import { connect } from 'react-redux'
 import { authLogin, clearAuthErrors } from '../../redux/actionCreators/authActionCreators'
-import { headerColorChange } from '../../redux/actionCreators/utilsActionCreators'
 import Spinner from '../commonComponents/spinner/Spinner'
 
 const mapDispatchToProps = dispatch => {
 	return {
 		authLogin: (email, password) => dispatch(authLogin(email, password)),
 		clearAuthErrors: () => dispatch(clearAuthErrors()),
-		headerColorChange: color => dispatch(headerColorChange(color)),
 	}
 }
 
@@ -28,10 +25,6 @@ const mapStateToProps = state => {
 const Login = props => {
 	const { token, authLoading, authSuccessMsg, authFailedMsg, clearAuthErrors, headerColorChange } = props
 	const navigate = useNavigate()
-
-	useEffect(() => {
-		headerColorChange('transparent')
-	}, [headerColorChange])
 
 	const initialValues = {
 		email: '',

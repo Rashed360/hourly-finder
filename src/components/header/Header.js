@@ -1,35 +1,22 @@
 import { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Dropdown } from 'react-bootstrap'
 import { FaBell } from 'react-icons/fa'
-import { useLocation } from 'react-router-dom'
-import { Link, NavLink } from 'react-router-dom'
+import { useLocation, Link, NavLink } from 'react-router-dom'
 import Image from '../../assets/images/user.svg'
 import Logo from '../../assets/logos/logo.svg'
 import Animate from './animate/Animate'
-import { headerColorChange } from '../../redux/actionCreators/utilsActionCreators'
+import useHeaderColor from '../../hooks/useHeaderColor'
 
-const mapStateToProps = state => {
-	return {
-		token: state.auth.token,
-		headerColor: state.utils.headerColor,
-	}
-}
-
-const mapDispatchToProps = dispatch => {
-	return {
-		headerColorChange: color => dispatch(headerColorChange(color)),
-	}
-}
-
-const Header = props => {
+const Header = () => {
+	const token = useSelector(state => state.auth.token)
+	const headerColor = useHeaderColor()
 	const [navbar, setNavbar] = useState()
 	const { pathname } = useLocation()
-	const { headerColorChange } = props
 
 	const STYLES = {
 		normal: {
-			background: props.headerColor,
+			background: headerColor,
 			transition: 'background 500ms',
 		},
 		active: {
@@ -39,8 +26,7 @@ const Header = props => {
 
 	useEffect(() => {
 		scrollToZero()
-		headerColorChange('transparent')
-	}, [pathname, headerColorChange])
+	}, [pathname])
 
 	const changeNavbar = () => {
 		if (window.scrollY >= 1) {
@@ -87,7 +73,7 @@ const Header = props => {
 									</li>
 								</ul>
 							</nav>
-							{props.token === null ? (
+							{token === null ? (
 								<Link to='/login' className='btn join-us'>
 									Join Us
 								</Link>
@@ -120,4 +106,4 @@ const Header = props => {
 	)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default Header

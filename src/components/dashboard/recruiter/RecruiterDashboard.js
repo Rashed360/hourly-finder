@@ -1,15 +1,7 @@
-import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import DashboardNavigation from '../common/DashboardNavigation'
 import DashboradRightBar from '../common/DashboradRightBar'
-import { headerColorChange } from '../../../redux/actionCreators/utilsActionCreators'
-
-const mapDispatchToProps = dispatch => {
-	return {
-		headerColorChange: color => dispatch(headerColorChange(color)),
-	}
-}
 
 const mapStateToProps = state => {
 	return {
@@ -19,7 +11,6 @@ const mapStateToProps = state => {
 }
 
 const RecruiterDashboard = props => {
-	const { headerColorChange } = props
 	const tempEmpty = {
 		id: 0,
 		email: 'no@email',
@@ -34,10 +25,6 @@ const RecruiterDashboard = props => {
 	const { id, email, first_name, last_name, username, user_type } =
 		props.user === null ? tempEmpty : props.user
 	const { bio, expertise, phone } = props.profile === null ? tempEmpty : props.profile
-
-	useEffect(() => {
-		headerColorChange('#d1e4e9')
-	}, [headerColorChange])
 
 	const DashboardInformation = {
 		navigation: [
@@ -102,4 +89,4 @@ const RecruiterDashboard = props => {
 	)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecruiterDashboard)
+export default connect(mapStateToProps)(RecruiterDashboard)
