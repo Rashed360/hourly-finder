@@ -64,25 +64,31 @@ const App = props => {
 					<Route path='about' element={<About />} />
 					<Route path='/contact' element={<Contact />} />
 					<Route path='/location/:cityName' element={<LocationPage />} />
-
+					{/*  */}
 					<Route path='/login' element={<Login />} />
 					<Route path='/register' element={<Register />} />
+					<Route path='/logout' element={<Logout />} />
 					<Route path='/activate/:uid/:token' element={<AccountActivate />} />
 					<Route path='/password-reset' element={<PasswordReset />} />
 					<Route path='/password-reset/:uid/:token' element={<PasswordReset />} />
-
+					{/*  */}
 					<Route path='/job/:job_id' element={<SingleJob />} />
 					<Route path='/blog/:blog_id' element={<SingleBlog />} />
-
-					<Route path='/*' element={<PrivateOutlet />}>
-						<Route path='available/jobseeker' element={<AvailabelJobSeeker />} /> {/* ??? */}
-						<Route path='logout' element={<Logout />} />
-						{/*  */}
-						<Route path='apply/for/:job_id' element={<Apply />} />
-						<Route path='user/:userId' element={<UserProfile />} />
-						{/* dashboard */}
-						<Route path='dashboard' element={<RecruiterDashboard />}>
-							<Route index element={<RecruiterOverview />} />
+					{/*  */}
+					<Route
+						path='/jobseeker'
+						element={
+							<PrivateOutlet>
+								<AvailabelJobSeeker />
+							</PrivateOutlet>
+						}
+					/>
+					{/*  */}
+					<Route path='apply/for/:job_id' element={<Apply />} />
+					<Route path='user/:userId' element={<UserProfile />} />
+					{/* dashboard - start */}
+					<Route path='/dashboard' element={<PrivateOutlet />}>
+						<Route path='*' element={<RecruiterDashboard />}>
 							<Route path='overview' element={<RecruiterOverview />} />
 							<Route path='message' element={<RecruiterMessage />} />
 							<Route path='edit-profile' element={<RecruiterEditProfile />} />
@@ -90,9 +96,10 @@ const App = props => {
 							<Route path='manage-job' element={<RecruiterManageJob />} />
 							<Route path='manage-job/view' element={<ViewPostedJob />} />
 							<Route path='ongoing-job' element={<RecruiterOngoingJob />} />
+							<Route path='*' element={<Navigate to='/dashboard/overview' />} />
 						</Route>
 					</Route>
-
+					{/* dashboard - end */}
 					<Route path='*' element={<NoMatch />} />
 				</Routes>
 			</div>
