@@ -1,5 +1,5 @@
 import LeftContent from './commonAuth/LeftContent'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link, useLocation } from 'react-router-dom'
 import { FaInfoCircle } from 'react-icons/fa'
 import { Formik, Field, Form } from 'formik'
 import { connect } from 'react-redux'
@@ -17,14 +17,15 @@ const mapStateToProps = state => {
 	return {
 		token: state.auth.token,
 		authLoading: state.auth.authLoading,
-		authSuccessMsg: state.auth.authSuccessMsg,
 		authFailedMsg: state.auth.authFailedMsg,
 	}
 }
 
 const Login = props => {
-	const { token, authLoading, authSuccessMsg, authFailedMsg, clearAuthErrors, headerColorChange } = props
+	const { token, authLoading, authFailedMsg, clearAuthErrors } = props
+	const location = useLocation()
 	const navigate = useNavigate()
+	const redirectPath = location.state?.path
 
 	const initialValues = {
 		email: '',
@@ -39,6 +40,7 @@ const Login = props => {
 			clearAuthErrors()
 		}, 5000)
 		clearTimeout(timer)
+		if (redirectPath !== undefined) navigate(redirectPath, { replace: true })
 	}
 
 	const validateHandle = values => {
