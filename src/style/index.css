@@ -213,8 +213,21 @@ a.btn.join-us {
 	margin-bottom: 30px;
 	height: 230px;
 }
+.job-card-sk {
+	animation: skeleton 1.5s linear infinite alternate;
+}
+@keyframes skeleton {
+	0% {
+		opacity: 0.7;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	100% {
+		opacity: 0.95;
+	}
+}
 .job-card:hover {
-	transform: scale(1.01);
 	background: #fafafa;
 }
 .about-recruiter a .recruiter-logo {
@@ -223,6 +236,13 @@ a.btn.join-us {
 	border: 1px solid whitesmoke;
 	border-radius: 5px;
 }
+.about-recruiter .logo-sk {
+	width: 50px;
+	height: 50px;
+	background-color: lightgrey;
+	border-radius: 5px;
+	border: 1px solid whitesmoke;
+}
 
 .recruiter-title {
 	font-size: var(--smallFont);
@@ -230,6 +250,14 @@ a.btn.join-us {
 	font-weight: 400;
 	margin-bottom: 0;
 	word-break: break-word;
+}
+.recruiter-title-sk {
+	width: 145px;
+	height: 20px;
+	background-color: lightgrey;
+	border-radius: 5px;
+	margin-left: 25px;
+	margin-bottom: 0;
 }
 
 .post_time {
@@ -240,9 +268,35 @@ a.btn.join-us {
 	font-size: var(--normalFont);
 	margin: 10px 0px;
 }
+.job-title-sk {
+	width: 100%;
+	height: 30px;
+	background-color: lightgrey;
+	border-radius: 5px;
+	margin: 10px 0px;
+}
 
 .job-status {
 	font-size: var(--smallFont);
+}
+.job-status-sk {
+	width: 100%;
+	height: 15px;
+	background-color: lightgrey;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+.job-keywords-sk {
+	width: 100%;
+	display: flex;
+	margin-top: 10px;
+	gap: 5px;
+}
+.keyword-sk {
+	width: 80px;
+	height: 25px;
+	background-color: lightgrey;
+	border-radius: 15px;
 }
 
 .job-content {
@@ -293,7 +347,6 @@ a.btn.join-us {
 	margin-bottom: 25px;
 }
 .category-item:hover {
-	transform: scale(1.01);
 	background: #fafafa;
 }
 
@@ -323,10 +376,6 @@ a.btn.join-us {
 	position: relative;
 	background-position: right;
 	background-size: contain;
-}
-.location-based-jobs:hover {
-	transform: scale(1.01);
-	background: #fafafa;
 }
 .location-name {
 	position: absolute;
@@ -432,7 +481,6 @@ a.btn.join-us {
 	margin-bottom: 25px;
 }
 .blog-item:hover {
-	transform: scale(1.01);
 	background: #fafafa;
 }
 .blog-bg {

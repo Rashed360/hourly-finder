@@ -1,19 +1,36 @@
-import {JOB_FETCH_SINGLE,JOB_FETCH_SINGLE_FAILED} from '../actionTypes/jobActionTypes'
+import {
+	JOB_FETCH_SINGLE,
+	JOB_FETCH_SINGLE_FAILED,
+	JOB_FETCH_ALL,
+	JOB_FETCH_ALL_FAILED,
+} from '../actionTypes/jobActionTypes'
 
 const jobInitialState = {
-	allJobs: [],
+	allJobs: null,
+	allJobsFailed: false,
 	singleJobLoading: false,
 	singleJobFailed: false,
-	singleJob: [],
+	singleJob: null,
 }
 
 const jobReducer = (state = jobInitialState, action) => {
 	switch (action.type) {
+		case JOB_FETCH_ALL:
+			return {
+				...state,
+				allJobs: action.payload,
+				allJobsFailed: false,
+			}
+		case JOB_FETCH_ALL_FAILED:
+			return {
+				...state,
+				allJobsFailed: true,
+			}
 		case JOB_FETCH_SINGLE:
 			return {
 				...state,
 				singleJob: action.payload,
-				singleJobLoading: false
+				singleJobLoading: false,
 			}
 		case JOB_FETCH_SINGLE_FAILED:
 			return {

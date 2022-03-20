@@ -80,8 +80,7 @@ export const profileFetch = (type, id) => async dispatch => {
 			await axios
 				.get(link, config)
 				.then(response => {
-                ///// error if pagination removed : fix later /////
-					const data = response.data.results[0]
+					const data = response.data[0]
 					console.log(data)
 					dispatch(profileLoad(data))
 				})

@@ -1,13 +1,26 @@
 import axios from 'axios'
-import { JOB_FETCH_SINGLE } from '../actionTypes/jobActionTypes'
+import { JOB_FETCH_SINGLE, JOB_FETCH_ALL, JOB_FETCH_ALL_FAILED } from '../actionTypes/jobActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
-export const jobLoad = job => {
-	return {
-		type: JOB_FETCH_SINGLE,
-		payload: job,
+export const jobAllFetch = () => async dispatch => {
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
 	}
+	await axios
+		.get(url + '/jobs/all/', config)
+		.then(response => {
+			console.log(response.data)
+			dispatch({
+				type: JOB_FETCH_ALL,
+				payload: response.data,
+			})
+		})
+		.catch(error => {
+			console.log(error.response)
+		})
 }
 
 export const jobSingleFetch = id => async dispatch => {
@@ -20,15 +33,22 @@ export const jobSingleFetch = id => async dispatch => {
 		.get(`${url}/jobs/job/${id}/`, config)
 		.then(response => {
 			console.log(response.data)
-			dispatch(jobLoad(response.data))
+			dispatch({
+				type: JOB_FETCH_SINGLE,
+				payload: response.data,
+			})
 		})
 		.catch(error => {
 			console.log(error.response)
+			dispatch({
+				type: JOB_FETCH_ALL_FAILED,
+			})
 		})
 }
 
-export const jobCreate = values => async dispatch => {
-	console.log('Job Posted', values)
+export const jobCreate = (values, recruiter) => async dispatch => {
+	console.log('Job Posted', values, recruiter)
+
 	let form_data = new FormData()
 	form_data.append('image', values.banner, values.banner.name)
 	form_data.append('level', parseInt(values.level))
@@ -44,8 +64,8 @@ export const jobCreate = values => async dispatch => {
 	form_data.append('todo', values.todo)
 	form_data.append('skill', values.skill)
 	form_data.append('keyword', values.keyword)
-	form_data.append('company', 5)
-	form_data.append('recruiter', 6)
+	form_data.append('company', recruiter)
+	form_data.append('recruiter', recruiter)
 	const config = {
 		headers: {
 			'content-type': 'multipart/form-data',

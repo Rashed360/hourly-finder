@@ -1,21 +1,10 @@
 import { Formik, Field, Form } from 'formik'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { jobCreate } from '../../../../redux/actionCreators/jobActionCreators'
 
-const mapDispatchToProps = dispatch => {
-	return {
-		jobCreate: values => dispatch(jobCreate(values)),
-	}
-}
-
-const mapStateToProps = state => {
-	return {
-		token: state.auth.token,
-	}
-}
-
-const RecruiterPostJob = props => {
-	const { jobCreate } = props
+const RecruiterPostJob = () => {
+	const recruiterId = useSelector(state => state.user.profile?.id)
+	const dispatch = useDispatch()
 
 	const initialValues = {
 		title: '',
@@ -35,8 +24,8 @@ const RecruiterPostJob = props => {
 		todo: '',
 	}
 
-	const onSubmitHandle = async values => {
-		await jobCreate(values)
+	const onSubmitHandle = values => {
+		dispatch(jobCreate(values, recruiterId))
 	}
 
 	const validateHandle = values => {
@@ -44,6 +33,10 @@ const RecruiterPostJob = props => {
 
 		if (!values.title) {
 			errors.title = 'Title is Mandetory'
+		}
+
+		if (values.banner === null) {
+			errors.banner = 'Banner is Mandetory'
 		}
 
 		if (!values.type) {
@@ -128,6 +121,11 @@ const RecruiterPostJob = props => {
 																setFieldValue('banner', event.currentTarget.files[0])
 															}}
 														/>
+														{touched.banner && errors.banner ? (
+															<div className='invalid-feedback'>{errors.banner}</div>
+														) : (
+															<div className='valid-feedback'>Looks good!</div>
+														)}
 													</div>
 												</div>
 											</div>
@@ -378,7 +376,14 @@ const RecruiterPostJob = props => {
 											<div className='col-lg'>
 												<div className='form-field'>
 													<label htmlFor=''>Job Overview</label>
-													<textarea name='' id='' cols='10' rows='3' placeholder='Overview'></textarea>
+													<Field
+														name='overview'
+														as='textarea'
+														rows='3'
+														value={values.overview}
+														onChange={handleChange}
+														placeholder='Write Overview'
+													/>
 												</div>
 											</div>
 										</div>
@@ -386,7 +391,14 @@ const RecruiterPostJob = props => {
 											<div className='col-lg'>
 												<div className='form-field'>
 													<label htmlFor=''>Duty Responsibilities</label>
-													<textarea name='' id='' cols='10' rows='3' placeholder='Description'></textarea>
+													<Field
+														name='todo'
+														as='textarea'
+														rows='3'
+														value={values.todo}
+														onChange={handleChange}
+														placeholder='List Responsibilities'
+													/>
 												</div>
 											</div>
 										</div>
@@ -422,4 +434,4 @@ const RecruiterPostJob = props => {
 	)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecruiterPostJob)
+export default RecruiterPostJob
