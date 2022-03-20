@@ -4,6 +4,21 @@ import Tags from '../../../commonComponents/tagElement/Tags'
 import { DateTime } from 'luxon'
 
 const JobBlock = ({ job }) => {
+	const jobType = type => {
+		switch (type) {
+			case 1:
+				return 'Hourly'
+			case 2:
+				return 'Full Time'
+			case 3:
+				return 'Part Time'
+			case 4:
+				return 'Remote'
+			default:
+				return 'Invalid'
+		}
+	}
+
 	const timeSince = date => {
 		var seconds = Math.floor((new Date() - date) / 1000)
 
@@ -32,6 +47,7 @@ const JobBlock = ({ job }) => {
 	}
 
 	const formatted = timeSince(DateTime.fromISO(job.created))
+	const type = jobType(job.type)
 
 	return (
 		<div className='job-card'>
@@ -50,7 +66,7 @@ const JobBlock = ({ job }) => {
 					<Link to={`/job/1`}>{job.title.slice(0, 40)}</Link>
 				</h3>
 				<div className='job-status'>
-					<span className='job-type'>{job.type}</span> in
+					<span className='job-type'>{type}</span> in
 					<span className='job-location'>
 						<Link to={'/jobs/location/${job.location}'}> {job.company.location.slice(0, 15)}</Link>
 					</span>
