@@ -72,7 +72,7 @@ const App = props => {
 					<Route path='/password-reset' element={<PasswordReset />} />
 					<Route path='/password-reset/:uid/:token' element={<PasswordReset />} />
 					{/*  */}
-					<Route path='/job/:job_id' element={<SingleJob />} />
+					<Route path='/job/:job_slug' element={<SingleJob />} />
 					<Route path='/blog/:blog_id' element={<SingleBlog />} />
 					{/*  */}
 					<Route

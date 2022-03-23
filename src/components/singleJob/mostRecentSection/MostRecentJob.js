@@ -8,13 +8,13 @@ const MostRecentJob = ({ jobList }) => {
 			<div className='container'>
 				<SectionTitle title='Most Recent Jobs' subTitle='Browse More' subLink='/jobs' />
 				<div className='row pt-40'>
-					{jobList.map((job, index) => {
+					{/* {jobList.map((job, index) => {
 						return (
 							<div key={index} className='col-lg-3'>
 								<JobBlock job={job}></JobBlock>
 							</div>
 						)
-					})}
+					})} */}
 				</div>
 			</div>
 		</div>

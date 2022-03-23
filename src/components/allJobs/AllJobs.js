@@ -166,10 +166,10 @@ const AllJobs = () => {
                                 <div className="col-lg-4">
                                     <div className="job-card">
                                         <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
                                             <h5 className="recruiter-title">
                                                 <Link to="">Founders,</Link>
-                                                <span className="post_time">8h ago</span>
+                                                <span className="post_time">20min ago</span>
                                             </h5>
                                         </div>
                                         <div className="job-content">
@@ -178,7 +178,7 @@ const AllJobs = () => {
                                             </h3>
                                             <div className="job-status">
                                                 <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
                                             </div>
                                             <div className="job-keyword">
                                                 <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
@@ -189,7 +189,122 @@ const AllJobs = () => {
                                 <div className="col-lg-4">
                                     <div className="job-card">
                                         <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <h5 className="recruiter-title">
+                                                <Link to="">Founders,</Link>
+                                                <span className="post_time">1h ago</span>
+                                            </h5>
+                                        </div>
+                                        <div className="job-content">
+                                            <h3 className="job-title">
+                                                <Link to="">Virtual Assistance</Link>
+                                            </h3>
+                                            <div className="job-status">
+                                                <span className="job-type">Hourly</span> in
+                                                <span className="job-location"><Link to=""> Dhanmondi</Link></span>
+                                            </div>
+                                            <div className="job-keyword">
+                                                <Link to="" className="job-tag"><div className="creative"></div> Assistance</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="job-card">
+                                        <div className="about-recruiter d-flex align-items-center">
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <h5 className="recruiter-title">
+                                                <Link to="">Founders,</Link>
+                                                <span className="post_time">2h ago</span>
+                                            </h5>
+                                        </div>
+                                        <div className="job-content">
+                                            <h3 className="job-title">
+                                                <Link to="">Customer Service Engineer</Link>
+                                            </h3>
+                                            <div className="job-status">
+                                                <span className="job-type">Hourly</span> in
+                                                <span className="job-location"><Link to=""> Uttara</Link></span>
+                                            </div>
+                                            <div className="job-keyword">
+                                                <Link to="" className="job-tag"><div className="creative"></div> Engineer</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="job-card">
+                                        <div className="about-recruiter d-flex align-items-center">
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <h5 className="recruiter-title">
+                                                <Link to="">Founders,</Link>
+                                                <span className="post_time">9h ago</span>
+                                            </h5>
+                                        </div>
+                                        <div className="job-content">
+                                            <h3 className="job-title">
+                                                <Link to="">Support Coordinator</Link>
+                                            </h3>
+                                            <div className="job-status">
+                                                <span className="job-type">Hourly</span> in
+                                                <span className="job-location"><Link to=""> Framgate</Link></span>
+                                            </div>
+                                            <div className="job-keyword">
+                                                <Link to="" className="job-tag"><div className="creative"></div> Support</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="job-card">
+                                        <div className="about-recruiter d-flex align-items-center">
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <h5 className="recruiter-title">
+                                                <Link to="">Founders,</Link>
+                                                <span className="post_time">10h ago</span>
+                                            </h5>
+                                        </div>
+                                        <div className="job-content">
+                                            <h3 className="job-title">
+                                                <Link to="">Sales service representative</Link>
+                                            </h3>
+                                            <div className="job-status">
+                                                <span className="job-type">Hourly</span> in
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
+                                            </div>
+                                            <div className="job-keyword">
+                                                <Link to="" className="job-tag"><div className="creative"></div> Sales</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="job-card">
+                                        <div className="about-recruiter d-flex align-items-center">
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <h5 className="recruiter-title">
+                                                <Link to="">Founders,</Link>
+                                                <span className="post_time">12h ago</span>
+                                            </h5>
+                                        </div>
+                                        <div className="job-content">
+                                            <h3 className="job-title">
+                                                <Link to="">Customer Service Agent</Link>
+                                            </h3>
+                                            <div className="job-status">
+                                                <span className="job-type">Hourly</span> in
+                                                <span className="job-location"><Link to=""> Uttara</Link></span>
+                                            </div>
+                                            <div className="job-keyword">
+                                                <Link to="" className="job-tag"><div className="creative"></div> Agent</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="job-card">
+                                        <div className="about-recruiter d-flex align-items-center">
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
                                             <h5 className="recruiter-title">
                                                 <Link to="">Founders,</Link>
                                                 <span className="post_time">8h ago</span>
@@ -201,7 +316,7 @@ const AllJobs = () => {
                                             </h3>
                                             <div className="job-status">
                                                 <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
                                             </div>
                                             <div className="job-keyword">
                                                 <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
@@ -212,7 +327,7 @@ const AllJobs = () => {
                                 <div className="col-lg-4">
                                     <div className="job-card">
                                         <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
                                             <h5 className="recruiter-title">
                                                 <Link to="">Founders,</Link>
                                                 <span className="post_time">8h ago</span>
@@ -224,7 +339,7 @@ const AllJobs = () => {
                                             </h3>
                                             <div className="job-status">
                                                 <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
                                             </div>
                                             <div className="job-keyword">
                                                 <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
@@ -235,7 +350,7 @@ const AllJobs = () => {
                                 <div className="col-lg-4">
                                     <div className="job-card">
                                         <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
                                             <h5 className="recruiter-title">
                                                 <Link to="">Founders,</Link>
                                                 <span className="post_time">8h ago</span>
@@ -247,7 +362,7 @@ const AllJobs = () => {
                                             </h3>
                                             <div className="job-status">
                                                 <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
                                             </div>
                                             <div className="job-keyword">
                                                 <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
@@ -258,7 +373,7 @@ const AllJobs = () => {
                                 <div className="col-lg-4">
                                     <div className="job-card">
                                         <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
                                             <h5 className="recruiter-title">
                                                 <Link to="">Founders,</Link>
                                                 <span className="post_time">8h ago</span>
@@ -270,7 +385,7 @@ const AllJobs = () => {
                                             </h3>
                                             <div className="job-status">
                                                 <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
                                             </div>
                                             <div className="job-keyword">
                                                 <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
@@ -281,7 +396,7 @@ const AllJobs = () => {
                                 <div className="col-lg-4">
                                     <div className="job-card">
                                         <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
                                             <h5 className="recruiter-title">
                                                 <Link to="">Founders,</Link>
                                                 <span className="post_time">8h ago</span>
@@ -293,7 +408,7 @@ const AllJobs = () => {
                                             </h3>
                                             <div className="job-status">
                                                 <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
                                             </div>
                                             <div className="job-keyword">
                                                 <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
@@ -304,7 +419,7 @@ const AllJobs = () => {
                                 <div className="col-lg-4">
                                     <div className="job-card">
                                         <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
+                                            <Link to=""><img src="images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
                                             <h5 className="recruiter-title">
                                                 <Link to="">Founders,</Link>
                                                 <span className="post_time">8h ago</span>
@@ -316,122 +431,7 @@ const AllJobs = () => {
                                             </h3>
                                             <div className="job-status">
                                                 <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
-                                            </div>
-                                            <div className="job-keyword">
-                                                <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="job-card">
-                                        <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
-                                            <h5 className="recruiter-title">
-                                                <Link to="">Founders,</Link>
-                                                <span className="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div className="job-content">
-                                            <h3 className="job-title">
-                                                <Link to="">Complete House Paintings Services</Link>
-                                            </h3>
-                                            <div className="job-status">
-                                                <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
-                                            </div>
-                                            <div className="job-keyword">
-                                                <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="job-card">
-                                        <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
-                                            <h5 className="recruiter-title">
-                                                <Link to="">Founders,</Link>
-                                                <span className="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div className="job-content">
-                                            <h3 className="job-title">
-                                                <Link to="">Complete House Paintings Services</Link>
-                                            </h3>
-                                            <div className="job-status">
-                                                <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
-                                            </div>
-                                            <div className="job-keyword">
-                                                <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="job-card">
-                                        <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
-                                            <h5 className="recruiter-title">
-                                                <Link to="">Founders,</Link>
-                                                <span className="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div className="job-content">
-                                            <h3 className="job-title">
-                                                <Link to="">Complete House Paintings Services</Link>
-                                            </h3>
-                                            <div className="job-status">
-                                                <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
-                                            </div>
-                                            <div className="job-keyword">
-                                                <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="job-card">
-                                        <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
-                                            <h5 className="recruiter-title">
-                                                <Link to="">Founders,</Link>
-                                                <span className="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div className="job-content">
-                                            <h3 className="job-title">
-                                                <Link to="">Complete House Paintings Services</Link>
-                                            </h3>
-                                            <div className="job-status">
-                                                <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
-                                            </div>
-                                            <div className="job-keyword">
-                                                <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="job-card">
-                                        <div className="about-recruiter d-flex align-items-center">
-                                            <Link to=""><img src="assets/images/homepage/recruiter-logo.png" alt="logo" className="recruiter-logo" /></Link>
-                                            <h5 className="recruiter-title">
-                                                <Link to="">Founders,</Link>
-                                                <span className="post_time">8h ago</span>
-                                            </h5>
-                                        </div>
-                                        <div className="job-content">
-                                            <h3 className="job-title">
-                                                <Link to="">Complete House Paintings Services</Link>
-                                            </h3>
-                                            <div className="job-status">
-                                                <span className="job-type">Hourly</span> in
-                                                <span className="job-location"><Link to="">Banani</Link></span>
+                                                <span className="job-location"><Link to=""> Banani</Link></span>
                                             </div>
                                             <div className="job-keyword">
                                                 <Link to="" className="job-tag"><div className="creative"></div> Creative</Link>

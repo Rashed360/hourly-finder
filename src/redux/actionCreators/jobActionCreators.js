@@ -23,19 +23,20 @@ export const jobAllFetch = () => async dispatch => {
 		})
 }
 
-export const jobSingleFetch = id => async dispatch => {
+export const jobSingleFetch = slug => async dispatch => {
 	const config = {
 		headers: {
 			'Content-Type': 'application/json',
 		},
 	}
 	await axios
-		.get(`${url}/jobs/job/${id}/`, config)
+		.get(`${url}/jobs/job/?slug=${slug}`, config)
 		.then(response => {
-			console.log(response.data)
+			const data = response.data.results[0] // change when, count changes
+			console.log(data)
 			dispatch({
 				type: JOB_FETCH_SINGLE,
-				payload: response.data,
+				payload: data,
 			})
 		})
 		.catch(error => {
