@@ -13,22 +13,14 @@ const Home = () => {
 
 	return (
 		<div>
-			<HeroSection/>
-
-			<JobSection/>
-
-			<CategorySection/>
-
-			<CitySection/>
-
-			<HowWorkSection/>
-
+			<HeroSection />
+			<JobSection />
+			<CategorySection />
+			<CitySection />
+			<HowWorkSection />
 			<FeedbackSection />
-
 			<BlogSection />
-
 			<NewsLetterSection />
-
 			<PopUpChat />
 		</div>
 	)

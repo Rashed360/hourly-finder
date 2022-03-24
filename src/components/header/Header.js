@@ -92,6 +92,7 @@ const Header = () => {
 
 										<Dropdown.Menu>
 											<Link to='/dashboard'>Dashboard</Link>
+											<Link to='/jobseeker'>Jobseeker</Link>
 											<Link to='/dashboard/message'>Message</Link>
 											<Link to='/logout'>Logout</Link>
 										</Dropdown.Menu>

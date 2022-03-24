@@ -1,9 +1,8 @@
-import React from "react"
 import { FaCheckCircle, FaFilter, FaRegListAlt, FaUserCheck } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import AvailableJobseekerCard from "./AvailableJobseekerCard/AvailableJobseekerCard"
 
-const AvailabelJobSeeker = () => {
+const AvailableJobSeeker = () => {
   return (
     <div className='avaiable-jobseeker-area mt-90 mb-30'>
       <div className='container mt-20'>
@@ -119,4 +118,4 @@ const AvailabelJobSeeker = () => {
   )
 }
 
-export default AvailabelJobSeeker
+export default AvailableJobSeeker

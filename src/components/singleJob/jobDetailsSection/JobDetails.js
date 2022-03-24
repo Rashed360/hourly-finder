@@ -1,4 +1,4 @@
-import React from 'react'
+import { useJobType, useJobLevel } from '../../../hooks/useJobHook'
 import { Link } from 'react-router-dom'
 import LeafletMap from '../../commonComponents/map/LeafletMap'
 
@@ -25,36 +25,9 @@ const JobDetails = props => {
 		type,
 	} = props.job
 
-	const jobLevel = level => {
-		switch (level) {
-			case 1:
-				return 'Novice'
-			case 2:
-				return 'Beginer'
-			case 3:
-				return 'Intermediate'
-			case 4:
-				return 'Advanced'
-			case 5:
-				return 'Expert'
-			default:
-				return 'Invalid'
-		}
-	}
-	const jobType = type => {
-		switch (type) {
-			case 1:
-				return 'Hourly'
-			case 2:
-				return 'Full Time'
-			case 3:
-				return 'Part Time'
-			case 4:
-				return 'Remote'
-			default:
-				return 'Invalid'
-		}
-	}
+	const jobType = useJobType(type)
+	const jobLevel = useJobLevel(level)
+
 	return (
 		<div className='apply-left'>
 			<div className='recruiter-company-cover' style={{ backgroundImage: `url(${image})` }}>
@@ -87,19 +60,19 @@ const JobDetails = props => {
 						<div className='col-lg-3'>
 							<div className='basic-info'>
 								<p>LEVEL</p>
-								<h5>{jobLevel(level)}</h5>
+								<h5>{jobLevel}</h5>
 							</div>
 						</div>
 						<div className='col-lg-3'>
 							<div className='basic-info'>
 								<p>EMPOWERMENT</p>
-								<h5>{jobType(type)}</h5>
+								<h5>{jobType}</h5>
 							</div>
 						</div>
 						<div className='col-lg-3'>
 							<div className='basic-info'>
-								<p>SALARY TYPE</p>
-								<h5>{salary} per Hour</h5>
+								<p>SALARY</p>
+								<h5>{salary} BDT</h5>
 							</div>
 						</div>
 						<div className='col-lg-3'>

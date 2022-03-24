@@ -1,25 +1,12 @@
 import { Formik, Field, Form } from 'formik'
-// import { Alert } from 'react-bootstrap'
-import { connect } from 'react-redux'
-// import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { jobApply } from '../../../redux/actionCreators/jobActionCreators'
 
-const mapDispatchToProps = dispatch => {
-	return {
-		jobApply: (job, values) => dispatch(jobApply(job, values)),
-	}
-}
-
-const mapStateToProps = state => {
-	return {
-		token: state.auth.token,
-	}
-}
-
-const ApplyForm = props => {
-	// const navigate = useNavigate()
-	const { job_id } = useParams()
+const ApplyForm = ({ id }) => {
+	const dispatch = useDispatch()
+	const userType = useSelector(state => state.user.user?.user_type)
+	const userId = useSelector(state => state.user.profile?.id)
 
 	const initialValues = {
 		name: '',
@@ -30,7 +17,11 @@ const ApplyForm = props => {
 	}
 
 	const onSubmitHandle = (values, { resetForm }) => {
-		props.jobApply(job_id, values)
+		if (userType === 1) {
+			dispatch(jobApply(id, values, userId))
+		} else {
+			console.log('Only Seeker can apply')
+		}
 	}
 
 	const validateHandle = values => {
@@ -176,4 +167,4 @@ const ApplyForm = props => {
 	)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ApplyForm)
+export default ApplyForm

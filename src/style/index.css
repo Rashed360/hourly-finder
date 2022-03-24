@@ -1386,7 +1386,7 @@ h2.contact-title,
 	margin-top: 100px;
 }
 .recruiter-company-cover {
-	background-color: #ccc; /* temporary */
+	background-color: #e7e7e7;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1404,10 +1404,43 @@ h2.contact-title,
 	margin-left: -45px;
 	margin-bottom: -40px;
 	border-radius: 10px;
-	background-color: #aaa; /* temporary */
+	background-color: #d7d7d7;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+.job-title-sk {
+	width: 100%;
+	height: 30px;
+	background-color: #e7e7e7;
+}
+.inline-sk {
+	display: inline-block;
+	margin-right: 5px;
+	border-radius: 5px;
+	width: 100px;
+	height: 20px;
+	background-color: #e7e7e7;
+}
+.title-sk {
+	border-radius: 5px;
+	margin-bottom: 20px;
+	width: 50%;
+	height: 30px;
+	background-color: #e7e7e7;
+}
+.content-sk {
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background-color: #e7e7e7;
+}
+.image-sk {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #e7e7e7;
 }
 .jobs-details-information {
 	padding: 10px 25px;
@@ -1464,7 +1497,11 @@ h2.contact-title,
 .apply-sidebar {
 	border-radius: 10px;
 	height: 100%;
-	background: var(--sectionBg);
+	background: #d5ecec;
+}
+.sk-flash {
+	opacity: 1;
+	animation: opac 3s infinite;
 }
 .sidebar-padding {
 	padding: 25px 30px;
@@ -3060,7 +3097,38 @@ h3.right-bar-title {
 	margin-bottom: 10px;
 }
 /* -------------------------Avaiabel Job Seeker Page CSS  End--------------------- */
-
+.short_alert {
+	max-width: 300px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	background-color: whitesmoke;
+	border: 1px solid var(--bgColor5);
+	border-right: none;
+	position: fixed;
+	bottom: 90px;
+	right: -300px;
+	animation: 2s ease alternate 2 both;
+	animation-name: alert;
+}
+.short_color {
+	width: 15px;
+	height: 100%;
+}
+.short_txt {
+	padding: 10px;
+}
+@keyframes alert {
+	0% {
+		right: -300px;
+	}
+	80% {
+		right: 0px;
+	}
+	100% {
+		right: 0px;
+	}
+}
 /* -------------------------Simplle Loader Start--------------------- */
 .spinner {
 	display: flex;
@@ -3073,6 +3141,17 @@ h3.right-bar-title {
 	width: 100px;
 	animation: opac 3s infinite;
 }
+/* -------------------------Simplle Loader End--------------------- */
+.activation_box {
+	width: 600px;
+	height: 400px;
+	background: #ffffff;
+	border: 1px solid #96bea4;
+	box-shadow: 1px 1px 0px 1px #96bea4;
+	border-radius: 10px;
+}
+
+/* ---> animations <--- */
 @keyframes opac {
 	0%,
 	50%,
@@ -3083,13 +3162,4 @@ h3.right-bar-title {
 	75% {
 		opacity: 0.6;
 	}
-}
-/* -------------------------Simplle Loader End--------------------- */
-.activation_box {
-	width: 600px;
-	height: 400px;
-	background: #ffffff;
-	border: 1px solid #96bea4;
-	box-shadow: 1px 1px 0px 1px #96bea4;
-	border-radius: 10px;
 }

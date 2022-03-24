@@ -55,6 +55,7 @@ export const jobCreate = (values, recruiter) => async dispatch => {
 	form_data.append('level', parseInt(values.level))
 	form_data.append('type', parseInt(values.type))
 	form_data.append('title', values.title)
+	form_data.append('slug', 'a-0')
 	form_data.append('salary', values.salary)
 	form_data.append('duration', values.duration)
 	form_data.append('language', values.language)
@@ -82,12 +83,12 @@ export const jobCreate = (values, recruiter) => async dispatch => {
 		})
 }
 
-export const jobApply = (job, values) => async dispatch => {
+export const jobApply = (job, values, user) => async dispatch => {
 	let msg = values.name + ',' + values.phone + ',' + values.address + ',' + values.message
 	const applyData = {
 		message: msg,
-		job: parseInt(job),
-		seeker: 1, //get_user_data_ _dummy_for_now
+		job: job,
+		seeker: user, //get_user_data_ _dummy_for_now
 	}
 	const config = {
 		headers: {

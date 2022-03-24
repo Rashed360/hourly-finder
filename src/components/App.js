@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { authCheck } from '../redux/actionCreators/authActionCreators'
+import AlertShort from './commonComponents/modal/AlertShort'
 import About from './about/About'
 import AllJobs from './allJobs/AllJobs'
 import Apply from './apply/Apply'
 import Login from './auth/Login'
 import Register from './auth/Register'
-import AvailabelJobSeeker from './availableJobseeker/AvailabelJobSeeker'
+import AvailableJobSeeker from './availableJobseeker/AvailableJobSeeker'
 import Blogs from './blogs/Blogs'
 import CityCategory from './cityCategory/CityCategory'
 import Contact from './contact/Contact'
@@ -75,14 +76,7 @@ const App = props => {
 					<Route path='/job/:job_slug' element={<SingleJob />} />
 					<Route path='/blog/:blog_id' element={<SingleBlog />} />
 					{/*  */}
-					<Route
-						path='/jobseeker'
-						element={
-							<PrivateOutlet>
-								<AvailabelJobSeeker />
-							</PrivateOutlet>
-						}
-					/>
+					<Route path='/jobseeker' element={<AvailableJobSeeker />} />
 					{/*  */}
 					<Route path='apply/for/:job_id' element={<Apply />} />
 					<Route path='user/:userId' element={<UserProfile />} />
@@ -104,6 +98,7 @@ const App = props => {
 				</Routes>
 			</div>
 			{pathname.includes('/dashboard') ? null : <Footer />}
+			{/* <AlertShort /> */}
 		</>
 	)
 }
