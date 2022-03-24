@@ -416,6 +416,9 @@ a.btn.join-us {
 	box-shadow: 2px 3px 0px 2px var(--bgColor3);
 	z-index: 90;
 }
+.leaflet-map.big {
+	height: 565px;
+}
 /* -------------------------How Works it Section CSS End --------------------- */
 
 /* -------------------------User Feedback Section CSS Start --------------------- */

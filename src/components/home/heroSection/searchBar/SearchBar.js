@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import LocationIcon from './LocationIcon'
 import SearchBarTag from './SearchBarTag'
 
 const SearchBar = () => {
+	const navigate = useNavigate()
 	const [districts, setDistricts] = useState([])
 	const [suggestions, setSuggestions] = useState([])
 	const [showSuggestion, setShowSuggestion] = useState(false)
@@ -43,6 +45,10 @@ const SearchBar = () => {
 		setSuggestions([])
 	}
 
+	const getStartedHandler = () => {
+		navigate(`/location/${text}`)
+	}
+
 	const setLocation = data => {
 		if (data) setText(data)
 	}
@@ -62,7 +68,7 @@ const SearchBar = () => {
 					value={text}
 					placeholder='Where do you live ?'
 				/>
-				<button className='btn'>Get Started</button>
+				<button className='btn' onClick={getStartedHandler}>Get Started</button>
 			</div>
 
 			<div className='auto-complete'>
