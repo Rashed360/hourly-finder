@@ -1,4 +1,5 @@
 import React from "react"
+import { FaServer, FaSortAmountDown } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import Pagination from "../pagination/Pagination"
 
@@ -8,20 +9,20 @@ const AllJobContent = () => {
       <div className='grid-header d-flex justify-content-between'>
         <div className='filter-header'>
           <span>
-            <span className='iconify' data-icon='clarity:grid-view-line'></span>
+            <FaServer />
           </span>
           <span className='filter-header-text'>Showing 176 Total Jobs Nearby</span>
         </div>
         <div className='filter-header right'>
           <span className='filter-header-text'>Sort : Newest first</span>
           <span>
-            <span className='iconify' data-icon='cil:sort-descending'></span>
+            <FaSortAmountDown />
           </span>
         </div>
       </div>
       <div className='all-filtered-job'>
         <div className='row'>
-          <div className='col-lg-3'>
+          <div className='col-lg-4'>
             <div className='job-card'>
               <div className='about-recruiter d-flex align-items-center'>
                 <Link to=''>
