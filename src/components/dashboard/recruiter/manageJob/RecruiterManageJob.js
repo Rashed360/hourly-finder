@@ -1,10 +1,12 @@
 import React from "react"
 import { FaBookmark, FaMapMarkerAlt, FaRegEye } from "react-icons/fa"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 const RecruiterManageJob = () => {
+  const user = useSelector((state) => state.user.user)
   return (
     <div className='dashboard-main'>
-      <h3 className='dashboard-title'>Manage Posted Jobs</h3>
+      <h3 className='dashboard-title'>{user?.user_type === 2 ? "Manage Posted Jobs" : "Applications"}</h3>
       <div className='dashboard-content'>
         <div className='manage-job-area'>
           <div className='job-view-filter'>

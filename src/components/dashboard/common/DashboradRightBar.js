@@ -27,26 +27,30 @@ const DashboradRightBar = () => {
       </div>
       <div className='dashboard-right-content'>
         <h3 className='right-bar-title'>Upcoming events</h3>
-        <div className='event-wrapper'>
-          <div className='event-item'>
-            <div className='event-icon'>
-              <div className='event-icon-wrap'>01</div>
+        {user?.user_type === 2 ? (
+          ""
+        ) : (
+          <div className='event-wrapper'>
+            <div className='event-item'>
+              <div className='event-icon'>
+                <div className='event-icon-wrap'>01</div>
+              </div>
+              <div className='event-title'>
+                Selection date for the job
+                <span>“Complete House Painting Service”</span>
+              </div>
             </div>
-            <div className='event-title'>
-              Selection date for the job
-              <span>“Complete House Painting Service”</span>
+            <div className='event-item'>
+              <div className='event-icon'>
+                <div className='event-icon-wrap'>02</div>
+              </div>
+              <div className='event-title'>
+                Starting date for the job
+                <span> “Complete House Painting Service”</span>
+              </div>
             </div>
           </div>
-          <div className='event-item'>
-            <div className='event-icon'>
-              <div className='event-icon-wrap'>02</div>
-            </div>
-            <div className='event-title'>
-              Starting date for the job
-              <span> “Complete House Painting Service”</span>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   )
