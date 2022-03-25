@@ -10,6 +10,8 @@ import Animate from "./animate/Animate"
 
 const Header = () => {
   const token = useSelector((state) => state.auth.token)
+  const user = useSelector((state) => state.user.user)
+  console.log(user)
   const headerColor = useHeaderColor()
   const [navbar, setNavbar] = useState()
   const { pathname } = useLocation()
@@ -95,7 +97,7 @@ const Header = () => {
 
                     <Dropdown.Menu>
                       <Link to='/dashboard'>Dashboard</Link>
-                      <Link to='/jobseeker'>Jobseeker</Link>
+                      {user?.user_type === 2 && <Link to='/jobseeker'>Jobseeker</Link>}
                       <Link to='/dashboard/message'>Message</Link>
                       <Link to='/logout'>Logout</Link>
                     </Dropdown.Menu>
