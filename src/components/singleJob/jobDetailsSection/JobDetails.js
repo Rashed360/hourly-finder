@@ -20,32 +20,31 @@ const JobDetails = props => {
 		todo,
 		skill,
 		keyword,
-		company,
-		recruiter,
 		type,
-	} = props.job
+	} = props.data.job
+	const { bio, phone, designation } = props.data.recruiter
+	const { name, moto, description, logo, location } = props.data.company
+	const { email, username, first_name, last_name } = props.data.user
+	const imagePath = process.env.REACT_APP_BACKEND_SERVER
 
 	const jobType = useJobType(type)
 	const jobLevel = useJobLevel(level)
 
 	return (
 		<div className='apply-left'>
-			<div className='recruiter-company-cover' style={{ backgroundImage: `url(${image})` }}>
-				<div
-					className='company-profile'
-					style={{ backgroundImage: `url('/images/singlejobpage/profile/logo.jpg')` }}
-				></div>
+			<div className='recruiter-company-cover' style={{ backgroundImage: `url(${imagePath+image})` }}>
+				<div className='company-profile' style={{ backgroundImage: `url(${imagePath+logo})` }}></div>
 			</div>
 			<div className='jobs-details-information'>
 				<div className='single-job-title'>
 					<h2>{title}</h2>
 					<p>
-						<Link to={`/user/${recruiter}`} className='company'>
-							{company + 'company_name'}
+						<Link to={`/user/${username}`} className='company'>
+							{name}
 						</Link>
 						,{' '}
-						<Link to='' className='location'>
-							{'location'}
+						<Link to={`/location/${location}`} className='location'>
+							{location}
 						</Link>
 					</p>
 				</div>
@@ -90,7 +89,7 @@ const JobDetails = props => {
 						<div className='col-lg-3'>
 							<div className='basic-info'>
 								<p>WORK LOCATION</p>
-								<h5>{'location'}</h5>
+								<h5>{location}</h5>
 							</div>
 						</div>
 						<div className='col-lg-3'>

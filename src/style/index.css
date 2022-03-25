@@ -1936,7 +1936,10 @@ h2.contact-title,
 .all-search-bar-area {
 	padding: 30px 0;
 }
-
+.filter-header-area {
+	width: 1348px;
+	display: flex;
+}
 .search-bar-all {
 	background: white;
 	border: 1px solid #dbdbdb;
@@ -1978,13 +1981,16 @@ h2.contact-title,
 	color: white;
 	margin-left: 0px;
 }
-
 .grid-header {
-	background: #358fb21c;
+    background: #358fb21c
 }
 .filter-area {
-	background-color: #16395f26;
-	height: 100%;
+	width: 300px;
+	background-color: #e5f8ff;
+    height: 100%;
+}
+.content-area {
+	width: 1060px;
 }
 
 .filter-header.dark {

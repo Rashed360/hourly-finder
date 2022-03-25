@@ -2,7 +2,12 @@ import { Link } from 'react-router-dom'
 import { FaEnvelope, FaMapMarkerAlt, FaBriefcase } from 'react-icons/fa'
 
 const JobSideBar = props => {
-	const { slug, salary, recruiter } = props.job
+	const { slug, salary } = props.data.job
+	const { designation } = props.data.recruiter
+	const { moto, description, logo, location } = props.data.company
+	const { email, username, first_name, last_name } = props.data.user
+	const imagePath = process.env.REACT_APP_BACKEND_SERVER
+
 	return (
 		<div className='apply-sidebar'>
 			<div className='application-budget-information sidebar-padding'>
@@ -19,18 +24,14 @@ const JobSideBar = props => {
 				<h4>About the recruiter</h4>
 				<div className='recruiter-profile-name'>
 					<div className='profile-info d-flex align-items-center'>
-						<Link to=''>
-							<img
-								src='/images/singlejobpage/recruiter-profile/user-1.jpg'
-								alt='Recruiter Profile'
-								className='img-fluid'
-							/>
+						<Link to={`/user/${username}`}>
+							<img src={imagePath + logo} alt='Recruiter Profile' className='img-fluid' />
 						</Link>
 						<div className='profile-name'>
-							<Link to=''>
-								<h5>{recruiter + ' name'}</h5>
-								<p>{recruiter + ' ocapasion'}</p>
+							<Link to={`/user/${username}`}>
+								<h5>{first_name + ' ' + last_name}</h5>
 							</Link>
+							<p>Recruiter</p>
 						</div>
 					</div>
 				</div>
@@ -39,28 +40,29 @@ const JobSideBar = props => {
 						<ul>
 							<li>
 								<FaEnvelope />
-								{'recruiter' + recruiter + '@email.com'}
+								{email}
 							</li>
 							<li>
 								<FaMapMarkerAlt />
-								{'Dhanmondi, Dhaka'}
+								{location}
 							</li>
 							<li>
 								<FaBriefcase />
-								{'Recruiter'}
+								{designation}
 							</li>
 						</ul>
 					</nav>
 				</div>
 				<div className='profile-gallery'>
-					<p>{recruiter.about_company}</p>
-					<Link to={`/user/${recruiter}`} className='more-info'>
+					<p>{moto}</p>
+					<Link to={`/user/${username}`} className='more-info'>
 						More info on the recruiter
 					</Link>
 					<div className='gallery'>
 						{/* {recruiter.gallery_img.map((img, index) => (
 							<img key={index} src={img} alt='gallery' className='img-fluid' />
 						))} */}
+						<p>{description}</p>
 					</div>
 				</div>
 			</div>

@@ -25,11 +25,11 @@ const SingleJob = () => {
 					<div className='row'>
 						<div className='col-lg-8'>
 							{singleJob === null && <JobDetailsSkeleton />}
-							{singleJob !== null && <JobDetails job={singleJob} />}
+							{singleJob !== null && <JobDetails data={singleJob} />}
 						</div>
 						<div className='col-lg-4'>
 							{singleJob === null && <JobSideBarSkeleton />}
-							{singleJob !== null && <JobSideBar job={singleJob} />}
+							{singleJob !== null && <JobSideBar data={singleJob} />}
 						</div>
 					</div>
 				</div>

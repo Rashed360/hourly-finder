@@ -16,7 +16,7 @@ const ApplyForm = ({ id }) => {
 		agree: false,
 	}
 
-	const onSubmitHandle = (values, { resetForm }) => {
+	const onSubmitHandle = (values) => {
 		if (userType === 1) {
 			dispatch(jobApply(id, values, userId))
 		} else {

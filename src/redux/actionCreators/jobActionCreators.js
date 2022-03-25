@@ -10,16 +10,17 @@ export const jobAllFetch = () => async dispatch => {
 		},
 	}
 	await axios
-		.get(url + '/jobs/all/', config)
+		.get(url + '/jobs/all/?page_size=4', config)
 		.then(response => {
-			console.log(response.data)
+			const data = response.data.results
+			console.log(data)
 			dispatch({
 				type: JOB_FETCH_ALL,
-				payload: response.data,
+				payload: data,
 			})
 		})
 		.catch(error => {
-			console.log(error.response)
+			console.log('Fetch error',error.response)
 		})
 }
 
@@ -30,9 +31,9 @@ export const jobSingleFetch = slug => async dispatch => {
 		},
 	}
 	await axios
-		.get(`${url}/jobs/job/?slug=${slug}`, config)
+		.get(`${url}/jobs/single/${slug}`, config)
 		.then(response => {
-			const data = response.data.results[0] // change when, count changes
+			const data = response.data
 			console.log(data)
 			dispatch({
 				type: JOB_FETCH_SINGLE,
@@ -74,7 +75,7 @@ export const jobCreate = (values, recruiter) => async dispatch => {
 		},
 	}
 	await axios
-		.post(`${url}/jobs/job/`, form_data, config)
+		.post(`${url}/jobs/create/`, form_data, config)
 		.then(response => {
 			console.log(response.data)
 		})
@@ -88,7 +89,7 @@ export const jobApply = (job, values, user) => async dispatch => {
 	const applyData = {
 		message: msg,
 		job: job,
-		seeker: user, //get_user_data_ _dummy_for_now
+		seeker: user,
 	}
 	const config = {
 		headers: {
