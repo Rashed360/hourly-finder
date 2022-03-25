@@ -68,7 +68,7 @@ const SearchBar = () => {
 					value={text}
 					placeholder='Where do you live ?'
 				/>
-				<button className='btn' onClick={getStartedHandler}>Get Started</button>
+				<button className='btn btn-main' onClick={getStartedHandler}>Get Started</button>
 			</div>
 
 			<div className='auto-complete'>

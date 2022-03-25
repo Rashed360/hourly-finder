@@ -10,7 +10,7 @@ const NoMatch = () => {
         <h2 className="f-100">404</h2>
         <h1>We looked really hard</h1>
         <p>But it appears the page you seek,<br/>doesn't exist anymore.</p>
-        <button onClick={() => navigate(-1)} className="btn mt-20">
+        <button onClick={() => navigate(-1)} className="btn btn-main mt-20">
           Go back to where you came from
         </button>
       </div>

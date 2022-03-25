@@ -1788,12 +1788,6 @@ h2.contact-title,
 	font-weight: 400;
 	border-radius: 10px;
 }
-
-.important-links .btn.message {
-	background: #dcdcdc;
-	color: #464646;
-	border: 1px solid #c0c0c0;
-}
 .profile-view-information {
 	background: #f4f4f4;
 	padding: 30px;
@@ -2133,6 +2127,7 @@ h2.contact-title,
 	width: 280px;
 }
 .dashboard-all .mid {
+	background-color: #fafafa;
 	width: 838px;
 	height: calc(100vh - 70px);
 	overflow-y: scroll;

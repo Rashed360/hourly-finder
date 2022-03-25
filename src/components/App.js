@@ -64,7 +64,9 @@ const App = props => {
 					<Route path='/blogs' element={<Blogs />} />
 					<Route path='about' element={<About />} />
 					<Route path='/contact' element={<Contact />} />
-					<Route path='/location/:cityName' element={<LocationPage />} />
+					<Route path='/location' element={<LocationPage />}>
+						<Route path=':cityName' element={<LocationPage />} />
+					</Route>
 					{/*  */}
 					<Route path='/login' element={<Login />} />
 					<Route path='/register' element={<Register />} />

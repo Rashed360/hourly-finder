@@ -42,10 +42,10 @@ const ProfileSideBar = () => {
         </nav>
       </div>
       <div className="important-links">
-        <Link to="" className="btn hire">
+        <Link to="" className="btn btn-main">
           Hire Me
         </Link>
-        <Link to="" className="btn message">
+        <Link to="" className="btn btn-alt">
           Message
         </Link>
       </div>

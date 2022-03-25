@@ -74,7 +74,7 @@ const Header = () => {
 								</ul>
 							</nav>
 							{token === null ? (
-								<Link to='/login' className='btn join-us'>
+								<Link to='/login' className='btn btn-main join-us'>
 									Join Us
 								</Link>
 							) : (
