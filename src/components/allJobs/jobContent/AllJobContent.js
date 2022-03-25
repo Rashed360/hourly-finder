@@ -10,7 +10,9 @@ const AllJobContent = ({ jobs, allJobs, jobsSkeleton }) => {
           <span>
             <FaServer />
           </span>
-          <span className='filter-header-text'>Showing {allJobs.length} Total Jobs Nearby</span>
+          <span className='filter-header-text'>
+            Showing {jobs != null ? jobs.length : "0"} Total Jobs Nearby
+          </span>
         </div>
         <div className='filter-header right'>
           <span className='filter-header-text'>Sort : Newest first</span>
