@@ -2372,15 +2372,16 @@ h3.right-bar-title {
   position: relative;
   font-size: 20px;
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .edit-title::before {
   content: "";
   position: absolute;
-  width: 72%;
+  width: 1000%;
   height: 2px;
   top: 15px;
-  right: 0;
+  left: 110%;
   background: #a3b3b787;
 }
 
@@ -2392,13 +2393,6 @@ h3.right-bar-title {
   margin-bottom: 30px;
 }
 
-.edit-organization-information .edit-title::before {
-  width: 61%;
-}
-
-.edit-organization-address .edit-title::before {
-  width: 66%;
-}
 .edit-profile-area .form-field,
 .post-job-area .form-field {
   margin-bottom: 15px;
