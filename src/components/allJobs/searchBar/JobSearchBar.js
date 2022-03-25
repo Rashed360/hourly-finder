@@ -1,0 +1,54 @@
+import React from "react"
+import { FaBriefcase, FaMapMarkerAlt, FaSearchLocation } from "react-icons/fa"
+
+const JobSearchBar = () => {
+  return (
+    <div className='all-job-area mt-70'>
+      <div className='container'>
+        <div className='all-search-bar-area'>
+          <div className='row'>
+            <div className='col-lg-10 offset-lg-1'>
+              <div className='search-bar-all'>
+                <form action=''>
+                  <div className='g-0 row align-items-center'>
+                    <div className='col-lg-5'>
+                      <div className='search-by'>
+                        <input type='text' placeholder='Job Name e.g. Temporary Chef' />
+                        <span>
+                          <FaSearchLocation />
+                        </span>
+                      </div>
+                    </div>
+                    <div className='col-lg-3'>
+                      <div className='search-by'>
+                        <input type='text' placeholder='Location' />
+                        <span>
+                          <FaMapMarkerAlt />
+                        </span>
+                      </div>
+                    </div>
+                    <div className='col-lg-2'>
+                      <div className='search-by'>
+                        <input type='text' placeholder='Type' />
+                        <span>
+                          <FaBriefcase />
+                        </span>
+                      </div>
+                    </div>
+                    <div className='col-lg-2'>
+                      <div className='search-by search-btn'>
+                        <input type='Submit' value='Search' className='all-search' />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default JobSearchBar
