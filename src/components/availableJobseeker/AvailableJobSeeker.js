@@ -1,13 +1,62 @@
-import { FaCheckCircle, FaFilter, FaRegListAlt, FaUserCheck } from "react-icons/fa"
+import {
+  FaCheckCircle,
+  FaFilter,
+  FaMapMarkerAlt,
+  FaRegListAlt,
+  FaSearchLocation,
+  FaUserCheck,
+} from "react-icons/fa"
 import { Link } from "react-router-dom"
 import AvailableJobseekerCard from "./AvailableJobseekerCard/AvailableJobseekerCard"
 
 const AvailableJobSeeker = () => {
   return (
     <div className='avaiable-jobseeker-area mt-90 mb-30'>
+      <div className='all-job-area'>
+        <div className='container'>
+          <div className='all-search-bar-area'>
+            <div className='row'>
+              <div className='col-lg-8 offset-lg-2'>
+                <div className='search-bar-all'>
+                  <form action=''>
+                    <div className='g-0 row align-items-center'>
+                      <div className='col-lg-6'>
+                        <div className='search-by'>
+                          <input type='text' placeholder='Job Seeker Name' />
+                          <span>
+                            <FaSearchLocation />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-lg-4'>
+                        <div className='search-by'>
+                          <input type='text' placeholder='Location' />
+                          <span>
+                            <FaMapMarkerAlt />
+                          </span>
+                        </div>
+                      </div>
+                      <div className='col-lg-2'>
+                        <div className='search-by search-btn'>
+                          <input
+                            type='button'
+                            value='Search'
+                            className='all-search'
+                            style={{ background: "#4c9566" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className='container mt-20'>
         <div className='row'>
-          <div className='col-lg-10'>
+          <div className='col-lg-12'>
             <div className='avaiable-jobseeker-container'>
               <div className='avaiable-jobseeker-title'>
                 <h3>Available JobSeekers</h3>
@@ -46,9 +95,10 @@ const AvailableJobSeeker = () => {
                       </div>
                       <div className='form-field'>
                         <select name='' id=''>
-                          <option value='shortlisted'>Short List</option>
-                          <option value='hired'>Hired</option>
-                          <option value='rejected'>Rejected</option>
+                          <option value='all'>Rating</option>
+                          <option value='5'>5 Star</option>
+                          <option value='4'>4 Star</option>
+                          <option value='3'>3 Star</option>
                         </select>
                       </div>
                     </div>
@@ -102,14 +152,6 @@ const AvailableJobSeeker = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className='col-lg-2'>
-            <div className='all-sidebar'>
-              <div className='sidebar-title'>
-                <h3>More Information</h3>
-              </div>
-              <div className='sidebar-content'></div>
             </div>
           </div>
         </div>
