@@ -12,11 +12,11 @@ const JobSideBar = props => {
 		<div className='apply-sidebar'>
 			<div className='application-budget-information sidebar-padding'>
 				<p>Client Budget</p>
-				<h4 className='budget'>Tk. {salary} per Hour</h4>
-				<Link to={`/apply/for/${slug}`} className='btn apply-now'>
+				<h4 className='budget'>Tk. {salary}</h4>
+				<Link to={`/apply/for/${slug}`} className='btn btn-main'>
 					Apply Now
 				</Link>
-				<Link to='' className='btn add-to-wishlist'>
+				<Link to='' className='btn btn-alt'>
 					Save to wishlist
 				</Link>
 			</div>
