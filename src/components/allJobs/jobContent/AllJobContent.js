@@ -58,7 +58,7 @@ const AllJobContent = () => {
 
 			<div className='job-pagination mb-40'>
 				<div className='row'>
-					<div className='col-lg-6 offset-lg-2'>
+					<div className='col-lg-7 offset-lg-2'>
 						<Pagination />
 					</div>
 				</div>
