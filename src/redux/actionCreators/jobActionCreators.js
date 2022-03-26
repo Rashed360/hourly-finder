@@ -29,25 +29,51 @@ export const jobAllFetch = () => async dispatch => {
 		})
 }
 
-export const jobAllPaginationFetch = (perPage, curPage=1) => async dispatch => {
-	const config = {
-		headers: {
-			'Content-Type': 'application/json',
-		},
-	}
-	await axios
-		.get(`${url}/jobs/all/?page=${curPage}&page_size=${perPage}`, config)
-		.then(response => {
-			const data = response.data
-			console.log(data)
-			dispatch({
-				type: JOB_PAGINATION_FETCH_ALL,
-				payload: data,
+export const jobAllPaginationFetch =
+	(perPage, curPage = 1) =>
+	async dispatch => {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		}
+		await axios
+			.get(`${url}/jobs/all/?page=${curPage}&page_size=${perPage}`, config)
+			.then(response => {
+				const data = response.data
+				console.log(data)
+				dispatch({
+					type: JOB_PAGINATION_FETCH_ALL,
+					payload: data,
+				})
 			})
-		})
-		.catch(error => {
-			console.log('Pagination Fetch error', error.response)
-		})
+			.catch(error => {
+				console.log('Pagination Fetch error', error.response)
+			})
+	}
+export const jobAllPaginationNavigate = curPage => async dispatch => {
+	if (curPage !== null) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		}
+		await axios
+			.get(curPage, config)
+			.then(response => {
+				const data = response.data
+				console.log(data)
+				dispatch({
+					type: JOB_PAGINATION_FETCH_ALL,
+					payload: data,
+				})
+			})
+			.catch(error => {
+				console.log('Pagination Fetch error', error.response)
+			})
+	} else {
+		console.log('Pagination Paginate error')
+	}
 }
 
 export const jobSingleFetch = slug => async dispatch => {

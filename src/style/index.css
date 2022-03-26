@@ -1353,6 +1353,13 @@ h2.contact-title,
 .pagination-wrapper a.page {
 	font-weight: 300;
 	text-transform: uppercase;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+.pagination-wrapper a.page:hover {
+	cursor: pointer;
+	color: var(--bgColor);
+	background-color: #e4e4e4;
 }
 
 .pagination-wrapper a svg {
