@@ -2,11 +2,13 @@ import {
 	JOB_FETCH_SINGLE,
 	JOB_FETCH_SINGLE_FAILED,
 	JOB_FETCH_ALL,
+	JOB_PAGINATION_FETCH_ALL,
 	JOB_FETCH_ALL_FAILED,
 } from '../actionTypes/jobActionTypes'
 
 const jobInitialState = {
 	allJobs: null,
+	allJobsPagination: null,
 	allJobsFailed: false,
 	singleJobLoading: false,
 	singleJobFailed: false,
@@ -19,6 +21,12 @@ const jobReducer = (state = jobInitialState, action) => {
 			return {
 				...state,
 				allJobs: action.payload,
+				allJobsFailed: false,
+			}
+		case JOB_PAGINATION_FETCH_ALL:
+			return {
+				...state,
+				allJobsPagination: action.payload,
 				allJobsFailed: false,
 			}
 		case JOB_FETCH_ALL_FAILED:

@@ -17,8 +17,8 @@ const RecruiterDashboard = () => {
 	const tempEmpty = {
 		id: 0,
 		email: 'no@email',
-		first_name: 'No',
-		last_name: 'User',
+		first_name: 'User',
+		last_name: 'Name',
 		username: 'user',
 		user_type: 1,
 		bio: '',

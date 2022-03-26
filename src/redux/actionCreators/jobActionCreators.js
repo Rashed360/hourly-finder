@@ -1,5 +1,10 @@
 import axios from 'axios'
-import { JOB_FETCH_SINGLE, JOB_FETCH_ALL, JOB_FETCH_ALL_FAILED } from '../actionTypes/jobActionTypes'
+import {
+	JOB_FETCH_SINGLE,
+	JOB_FETCH_ALL,
+	JOB_FETCH_ALL_FAILED,
+	JOB_PAGINATION_FETCH_ALL,
+} from '../actionTypes/jobActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
@@ -20,7 +25,28 @@ export const jobAllFetch = () => async dispatch => {
 			})
 		})
 		.catch(error => {
-			console.log('Fetch error',error.response)
+			console.log('Fetch error', error.response)
+		})
+}
+
+export const jobAllPaginationFetch = (perPage, curPage=1) => async dispatch => {
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	}
+	await axios
+		.get(`${url}/jobs/all/?page=${curPage}&page_size=${perPage}`, config)
+		.then(response => {
+			const data = response.data
+			console.log(data)
+			dispatch({
+				type: JOB_PAGINATION_FETCH_ALL,
+				payload: data,
+			})
+		})
+		.catch(error => {
+			console.log('Pagination Fetch error', error.response)
 		})
 }
 
