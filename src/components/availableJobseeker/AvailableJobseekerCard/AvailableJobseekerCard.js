@@ -2,7 +2,7 @@ import React from "react"
 import { FaRegStar, FaStar } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
-const AvailableJobseekerCard = () => {
+const AvailableJobseekerCard = ({ name, designation, image }) => {
   return (
     <div className='avaible-jobseeker-card'>
       <div className='avaiable-jobseeker-card-content'>
@@ -10,19 +10,17 @@ const AvailableJobseekerCard = () => {
           <div
             className='avaiable-jobseeker-dp'
             style={{
-              backgroundImage: "url(https://placeimg.com/100/100/people?t=1640373129965)",
+              backgroundImage: `url(${image})`,
             }}
           ></div>
           <div className='avaiable-jobseeker-info'>
-            <h4 className='name'>Sajeeb Debnath</h4>
-            <p className='designation'>Fullstack Developer</p>
-            <div className='avaiabele-status'>Available for Work</div>
+            <h4 className='name'>{name}</h4>
+            <p className='designation'>{designation}</p>
+            <div className='avaiabele-status'>Avaialable for Work</div>
           </div>
         </div>
         <div className='about-avaiable-jobseeker'>
-          <p>
-            I am ipsum dolor sit amet, consectetur adipis eliot a dolor sit conctetur asdfsadf trtryt sas.
-          </p>
+          <p>I am {name}, client statisfaction is my passion, work until statisfaction.</p>
         </div>
       </div>
       <div className='avaiable-jobseeker-card-footer'>
@@ -36,7 +34,7 @@ const AvailableJobseekerCard = () => {
           </div>
           <span>3.0</span>
         </div>
-        <Link to='' className='btn jobseeker-profile'>
+        <Link to='/user/0' className='btn jobseeker-profile'>
           View Profile
         </Link>
       </div>
