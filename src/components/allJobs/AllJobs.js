@@ -3,6 +3,8 @@ import AllJobContent from './jobContent/AllJobContent'
 import JobSearchBar from './searchBar/JobSearchBar'
 
 const AllJobs = () => {
+	document.title = 'HourlyFinder | All Jobs'
+
 	return (
 		<div>
 			<JobSearchBar />

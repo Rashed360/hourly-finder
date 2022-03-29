@@ -14,7 +14,7 @@ const LocationPage = () => {
 								<h5>Jobs in your location</h5>
 								<form action=''>
 									<div className='form-field'>
-										<label for=''>Select your location</label>
+										<label htmlFor=''>Select your location</label>
 										<input type='text' placeholder='Type here...' value={cityName} />
 									</div>
 								</form>
@@ -25,23 +25,23 @@ const LocationPage = () => {
 									<form action=''>
 										<div>
 											<input type='checkbox' />
-											<label for=''>Hourly</label>
+											<label htmlFor=''>Hourly</label>
 										</div>
 										<div>
 											<input type='checkbox' />
-											<label for=''>Part Time</label>
+											<label htmlFor=''>Part Time</label>
 										</div>
 										<div>
 											<input type='checkbox' />
-											<label for=''>Project Based</label>
+											<label htmlFor=''>Project Based</label>
 										</div>
 										<div>
 											<input type='checkbox' />
-											<label for=''>Full Time</label>
+											<label htmlFor=''>Full Time</label>
 										</div>
 									</form>
 								</div>
-								<div className='btn apply-filter'>Apply</div>
+								<div className='btn btn-main ww-100'>Apply</div>
 							</div>
 							<div className='selected-location-based-job'>
 								<div className='small-job-card'>
@@ -65,7 +65,7 @@ const LocationPage = () => {
 					<div className='col-lg-9'>
 						<div className='job-map-area'>
 							<div className='leaflet-map big'>
-								<LeafletMap />
+							<LeafletMap mark={[23.754925, 90.376495]} title={'Your Location'} desc={'You are Here'} />
 							</div>
 						</div>
 					</div>

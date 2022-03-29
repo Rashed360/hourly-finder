@@ -29,11 +29,12 @@ const JobDetails = props => {
 
 	const jobType = useJobType(type)
 	const jobLevel = useJobLevel(level)
+	const mapData = latlng.split(',')
 
 	return (
 		<div className='apply-left'>
-			<div className='recruiter-company-cover' style={{ backgroundImage: `url(${imagePath+image})` }}>
-				<div className='company-profile' style={{ backgroundImage: `url(${imagePath+logo})` }}></div>
+			<div className='recruiter-company-cover' style={{ backgroundImage: `url(${imagePath + image})` }}>
+				<div className='company-profile' style={{ backgroundImage: `url(${imagePath + logo})` }}></div>
 			</div>
 			<div className='jobs-details-information'>
 				<div className='single-job-title'>
@@ -123,7 +124,7 @@ const JobDetails = props => {
 					<p>1.2 Km away from your location.</p>
 				</div>
 				<div className='leaflet-map'>
-					<LeafletMap />
+					<LeafletMap mark={[23.754925, 90.376495]} title={jobType + ' at '+ name} desc={title} />
 				</div>
 			</div>
 		</div>

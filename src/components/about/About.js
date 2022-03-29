@@ -11,21 +11,15 @@ const About = () => {
 		{
 			id: 1,
 			name: 'Sajeeb Debnath',
-			designation: 'Founder & CEO',
+			designation: 'Founder',
 			image: '/images/aboutPage/team-1.jpg'
 		},
 		{
 			id: 2,
 			name: 'Rashed Ahmed',
-			designation: 'Co-Founder & LD',
+			designation: 'Co-Founder',
 			image: '/images/aboutPage/team-2.jpg'
 		},
-		{
-			id: 3,
-			name: 'Samiul Siddique',
-			designation: 'CTO & BM',
-			image: '/images/aboutPage/team-3.jpg'
-		}
 	]
 
 	const teamMembers = teamMembersInfo.map(member => {
