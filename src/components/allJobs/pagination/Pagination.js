@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useSearchParams } from 'react-router-dom'
 import { jobAllPaginationNavigate } from '../../../redux/actionCreators/jobActionCreators'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
@@ -12,7 +12,6 @@ const Pagination = () => {
 	const next = allJobsPagination?.next
 	const page = searchParams.get('page')
 
-
 	const paginate = curPage => {
 		if (curPage === 1) {
 			dispatch(jobAllPaginationNavigate(next))
@@ -25,20 +24,18 @@ const Pagination = () => {
 
 	return (
 		<div className='pagination-wrapper'>
-			<a onClick={() => paginate(0)} className='page'>
+			<a onClick={() => paginate(0)} className={previous === null ? 'page disabled' : 'page'}>
 				<FaArrowLeft />
 				Prev
 			</a>
 
-			<NavLink to=''>1</NavLink>
+			<Link to='' className='link'>1</Link>
 
-			<NavLink to=''>2</NavLink>
+			<Link to='' className='link'>2</Link>
 
-			<NavLink to=''>3</NavLink>
+			<Link to='' className='link'>3</Link>
 
-			<NavLink to=''>4</NavLink>
-
-			<a onClick={() => paginate(1)} className='page next'>
+			<a onClick={() => paginate(1)} className={next === null ? 'page next disabled' : 'page next'}>
 				Next
 				<FaArrowRight />
 			</a>

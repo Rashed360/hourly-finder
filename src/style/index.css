@@ -1337,17 +1337,39 @@ h2.contact-title,
 .pagination-wrapper a {
 	font-size: 20px;
 	font-weight: 700;
-	margin: 0 15px;
+	margin: 0 10px;
 }
-
-.pagination-wrapper a.active {
-	width: 35px;
-	height: 35px;
+.pagination-wrapper a.link {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: transparent;
+	display: inline-block;
+}
+.pagination-wrapper a.link:hover {
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
 	background: #262626;
 	display: inline-block;
 	color: white;
-	line-height: 36px;
+}
+
+.pagination-wrapper a.active {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #262626;
+	display: inline-block;
+	color: white;
+}
+.pagination-wrapper a.page.disabled {
+	color: lightgrey;
+}
+.pagination-wrapper a.page.disabled:hover {
+	cursor: not-allowed;
+	color: lightgray;
+	background-color: #f1f1f1;
 }
 
 .pagination-wrapper a.page {
