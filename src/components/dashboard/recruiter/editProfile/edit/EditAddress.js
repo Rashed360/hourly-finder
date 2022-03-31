@@ -1,5 +1,3 @@
-import React from "react"
-
 const EditAddress = ({ user, tempEmpty }) => {
   const { user_type } = user === null ? tempEmpty : user
   return (
