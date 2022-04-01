@@ -3,7 +3,11 @@ import Spinner from '../commonComponents/spinner/Spinner'
 
 const EditBasicInformation = () => {
 	const initialValues = {
-		first_name: '',
+		firstName: '',
+		lastName: '',
+		email: '',
+		username: '',
+		password: '',
 	}
 
 	const onSubmitHandle = async values => {
