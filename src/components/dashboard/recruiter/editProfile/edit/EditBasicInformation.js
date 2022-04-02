@@ -1,13 +1,17 @@
-import { Formik, Field, Form } from 'formik'
+import { Formik, Form } from 'formik'
+import FormField from '../../../../commonComponents/formik/FormField'
 import Spinner from '../../../../commonComponents/spinner/Spinner'
 
 const EditBasicInformation = () => {
 	const initialValues = {
-		firstName: '',
-		lastName: '',
-		email: '',
-		username: '',
-		password: '',
+		firstName: 'Rashed',
+		lastName: 'Ahmed',
+		email: 'ruman.rush@gmail.com',
+		phone: '01679654321',
+		username: 'Rashed360',
+		identity: '967230965',
+		picture: '',
+		dob: '',
 	}
 
 	const onSubmitHandle = async values => {
@@ -34,62 +38,83 @@ const EditBasicInformation = () => {
 											<div className='col-lg-9'>
 												<div className='row'>
 													<div className='col-lg-6'>
-														<div className='form-field'>
-															<label htmlFor=''>First Name</label>
-															<input type='text' placeholder='first name' />
-															<Field
-																name='first_name'
-																type='test'
-																className={
-																	touched.first_name
-																		? errors.first_name
-																			? 'form-control is-invalid'
-																			: 'form-control is-valid'
-																		: 'form-control'
-																}
-																value={values.first_name}
-																onChange={handleChange}
-																placeholder='Enter First Name'
-															/>
-														</div>
+														<FormField
+															title='First Name'
+															name='firstName'
+															type='text'
+															place='e.g. John'
+															change={handleChange}
+															value={values.firstName}
+															touch={touched.firstName}
+															error={errors.firstName}
+														/>
 													</div>
-
 													<div className='col-lg-6'>
-														<div className='form-field'>
-															<label htmlFor=''>Last Name</label>
-															<input type='text' placeholder='last name' />
-														</div>
+														<FormField
+															title='Last Name'
+															name='lastName'
+															type='text'
+															place='e.g. Doe'
+															change={handleChange}
+															value={values.lastName}
+															touch={touched.lastName}
+															error={errors.lastName}
+														/>
 													</div>
 												</div>
 												<div className='row'>
 													<div className='col-lg-12'>
-														<div className='form-field'>
-															<label htmlFor=''>User Name</label>
-															<input type='text' placeholder='www.hourlyfinder.com/user/rashed360' />
-														</div>
+														<FormField
+															title='User Name'
+															name='username'
+															type='text'
+															place='Must be Unique'
+															change={handleChange}
+															value={values.username}
+															touch={touched.username}
+															error={errors.username}
+														/>
 													</div>
 												</div>
 												<div className='row'>
 													<div className='col-lg-6'>
-														<div className='form-field'>
-															<label htmlFor=''>Email</label>
-															<input type='email' placeholder='eg. exmple@gmail.com' />
-														</div>
+														<FormField
+															title='Email'
+															name='email'
+															type='email'
+															place='e.g. john.doe@gmail.com'
+															change={handleChange}
+															value={values.email}
+															touch={touched.email}
+															error={errors.email}
+														/>
 													</div>
 
 													<div className='col-lg-6'>
-														<div className='form-field'>
-															<label htmlFor=''>Phone</label>
-															<input type='text' placeholder='01xxxxxxxxxx' />
-														</div>
+														<FormField
+															title='Phone'
+															name='phone'
+															type='text'
+															place='01xxxxxxxxxx'
+															change={handleChange}
+															value={values.phone}
+															touch={touched.phone}
+															error={errors.phone}
+														/>
 													</div>
 												</div>
 												<div className='row'>
 													<div className='col-lg-6'>
-														<div className='form-field'>
-															<label htmlFor=''>NID/Birth Certificate No.</label>
-															<input type='email' placeholder='eg. 43490342341' />
-														</div>
+													<FormField
+															title='NID/Birth Certificate No.'
+															name='identity'
+															type='text'
+															place='eg. 43490342341'
+															change={handleChange}
+															value={values.identity}
+															touch={touched.identity}
+															error={errors.identity}
+														/>
 													</div>
 
 													<div className='col-lg-6'>

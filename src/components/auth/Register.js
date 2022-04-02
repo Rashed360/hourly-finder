@@ -1,5 +1,10 @@
 import { useState } from 'react'
 import { Field, Form, Formik } from 'formik'
+import FormField from '../commonComponents/formik/FormField'
+import { useSelector, useDispatch } from 'react-redux'
+import { authSignUp, clearAuthErrors } from '../../redux/actionCreators/authActionCreators'
+import LeftContent from './commonAuth/LeftContent'
+import Spinner from '../commonComponents/spinner/Spinner'
 import {
 	FaInfoCircle,
 	FaRegArrowAltCircleLeft,
@@ -11,29 +16,12 @@ import {
 	FaUserTie,
 	FaUserGraduate,
 } from 'react-icons/fa'
-import { connect } from 'react-redux'
-import { authSignUp, clearAuthErrors } from '../../redux/actionCreators/authActionCreators'
-import LeftContent from './commonAuth/LeftContent'
-import Spinner from '../commonComponents/spinner/Spinner'
 
-const mapDispatchToProps = dispatch => {
-	return {
-		authSignUp: (firstName, lastName, email, username, password, accountType) =>
-			dispatch(authSignUp(firstName, lastName, email, username, password, accountType)),
-		clearAuthErrors: () => dispatch(clearAuthErrors()),
-	}
-}
-
-const mapStateToProps = state => {
-	return {
-		authLoading: state.auth.authLoading,
-		authSuccessMsg: state.auth.authSuccessMsg,
-		authFailedMsg: state.auth.authFailedMsg,
-	}
-}
-
-const Register = props => {
-	const { authLoading, authSuccessMsg, authFailedMsg, clearAuthErrors } = props
+const Register = () => {
+	const dispatch = useDispatch()
+	const authLoading = useSelector(state => state.auth.authLoading)
+	const authSuccessMsg = useSelector(state => state.auth.authSuccessMsg)
+	const authFailedMsg = useSelector(state => state.auth.authFailedMsg)
 	const [step, setStep] = useState({ start: 1, end: 5, current: 1 })
 
 	const stepHandle = value => {
@@ -56,16 +44,18 @@ const Register = props => {
 
 	const onSubmitHandle = async values => {
 		console.log('Registration')
-		await props.authSignUp(
-			values.firstName,
-			values.lastName,
-			values.email,
-			values.username,
-			values.password,
-			values.accountType
+		dispatch(
+			authSignUp(
+				values.firstName,
+				values.lastName,
+				values.email,
+				values.username,
+				values.password,
+				values.accountType
+			)
 		)
 		let timer = setTimeout(() => {
-			clearAuthErrors()
+			dispatch(clearAuthErrors())
 		}, 5000)
 		clearTimeout(timer)
 	}
@@ -136,52 +126,26 @@ const Register = props => {
 												<p className='msg_notify'>
 													<FaInfoCircle /> What should we call you?
 												</p>
-												<div className='form-field email'>
-													<label htmlFor='firstName'>First Name</label>
-													<Field
-														name='firstName'
-														type='text'
-														className={
-															touched.firstName
-																? errors.firstName
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
-														value={values.firstName}
-														onChange={handleChange}
-														placeholder='e.g. John'
-													/>
-													{touched.firstName && errors.firstName ? (
-														<div className='invalid-feedback'>{errors.firstName}</div>
-													) : (
-														<div className='valid-feedback'>Looks good!</div>
-													)}
-												</div>
-
-												<div className='form-field email'>
-													<label htmlFor='lastName'>Last Name</label>
-													<Field
-														name='lastName'
-														type='text'
-														className={
-															touched.lastName
-																? errors.lastName
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
-														value={values.lastName}
-														onChange={handleChange}
-														placeholder='e.g. Doe'
-													/>
-													{touched.lastName && errors.lastName ? (
-														<div className='invalid-feedback'>{errors.lastName}</div>
-													) : (
-														<div className='valid-feedback'>Looks good!</div>
-													)}
-												</div>
-												{/* </div> */}
+												<FormField
+													title='First Name'
+													name='firstName'
+													type='text'
+													place='e.g. John'
+													change={handleChange}
+													value={values.firstName}
+													touch={touched.firstName}
+													error={errors.firstName}
+												/>
+												<FormField
+													title='Last Name'
+													name='lastName'
+													type='text'
+													place='e.g. Doe'
+													change={handleChange}
+													value={values.lastName}
+													touch={touched.lastName}
+													error={errors.lastName}
+												/>
 											</>
 										)}
 
@@ -191,50 +155,26 @@ const Register = props => {
 													<FaInfoCircle /> {values.firstName === '' ? 'User' : values.firstName}, What's your
 													Email?
 												</p>
-												<div className='form-field email'>
-													<label htmlFor='email'>Email</label>
-													<Field
-														name='email'
-														type='email'
-														className={
-															touched.email
-																? errors.email
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
-														value={values.email}
-														onChange={handleChange}
-														placeholder='e.g. john.doe@gmail.com'
-													/>
-													{touched.email && errors.email ? (
-														<div className='invalid-feedback'>{errors.email}</div>
-													) : (
-														<div className='valid-feedback'>Looks good!</div>
-													)}
-												</div>
-												<div className='form-field email'>
-													<label htmlFor='username'>User Name</label>
-													<Field
-														name='username'
-														type='text'
-														className={
-															touched.username
-																? errors.username
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
-														value={values.username}
-														onChange={handleChange}
-														placeholder='Must be Unique'
-													/>
-													{touched.username && errors.username ? (
-														<div className='invalid-feedback'>{errors.username}</div>
-													) : (
-														<div className='valid-feedback'>Looks good!</div>
-													)}
-												</div>
+												<FormField
+													title='Email'
+													name='email'
+													type='email'
+													place='e.g. john.doe@gmail.com'
+													change={handleChange}
+													value={values.email}
+													touch={touched.email}
+													error={errors.email}
+												/>
+												<FormField
+													title='User Name'
+													name='username'
+													type='text'
+													place='Must be Unique'
+													change={handleChange}
+													value={values.username}
+													touch={touched.username}
+													error={errors.username}
+												/>
 											</>
 										)}
 										{step.current === 4 && (
@@ -242,51 +182,26 @@ const Register = props => {
 												<p className='msg_notify'>
 													<FaInfoCircle /> Create a STRONG Password!
 												</p>
-												<div className='form-field email'>
-													<label htmlFor='password'>Password</label>
-													<Field
-														name='password'
-														type='password'
-														className={
-															touched.password
-																? errors.password
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
-														value={values.password}
-														onChange={handleChange}
-														placeholder='Password'
-													/>
-													{touched.password && errors.password ? (
-														<div className='invalid-feedback'>{errors.password}</div>
-													) : (
-														<div className='valid-feedback'>Strong Password!</div>
-													)}
-												</div>
-
-												<div className='form-field email'>
-													<label htmlFor='passwordConfirm'>Confirm Password</label>
-													<Field
-														name='passwordConfirm'
-														type='password'
-														className={
-															touched.passwordConfirm
-																? errors.passwordConfirm
-																	? 'form-control is-invalid'
-																	: 'form-control is-valid'
-																: 'form-control'
-														}
-														value={values.passwordConfirm}
-														onChange={handleChange}
-														placeholder='Again Here'
-													/>
-													{touched.passwordConfirm && errors.passwordConfirm ? (
-														<div className='invalid-feedback'>{errors.passwordConfirm}</div>
-													) : (
-														<div className='valid-feedback'>Password Matched!</div>
-													)}
-												</div>
+												<FormField
+													title='Password'
+													name='password'
+													type='password'
+													place='Password'
+													change={handleChange}
+													value={values.password}
+													touch={touched.password}
+													error={errors.password}
+												/>
+												<FormField
+													title='Confirm Password'
+													name='passwordConfirm'
+													type='password'
+													place='Must be Unique'
+													change={handleChange}
+													value={values.passwordConfirm}
+													touch={touched.passwordConfirm}
+													error={errors.passwordConfirm}
+												/>
 											</>
 										)}
 										{step.current === 1 && (
@@ -380,4 +295,4 @@ const Register = props => {
 	)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register)
+export default Register
