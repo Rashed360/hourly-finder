@@ -1,17 +1,42 @@
+import { useEffect } from 'react'
 import { Formik, Form } from 'formik'
+import { useSelector, useDispatch } from 'react-redux'
+import { userFetch } from '../../../../../redux/actionCreators/userActionCreators'
 import FormField from '../../../../commonComponents/formik/FormField'
 import Spinner from '../../../../commonComponents/spinner/Spinner'
 
 const EditBasicInformation = () => {
-	const initialValues = {
-		firstName: 'Rashed',
-		lastName: 'Ahmed',
-		email: 'ruman.rush@gmail.com',
-		phone: '01679654321',
-		username: 'Rashed360',
-		identity: '967230965',
+	const dispatch = useDispatch()
+	const user = useSelector(state => state.user.user)
+	const profile = useSelector(state => state.user.profile)
+
+	useEffect(() => {
+		dispatch(userFetch())
+	}, [])
+
+	const tempEmpty = {
+		firstName: '',
+		last_ame: '',
+		email: '',
+		username: '',
+		phone: '',
+		identity: '',
 		picture: '',
 		dob: '',
+	}
+
+	const { email, first_name, last_name, username } = user === null ? tempEmpty : user
+	const { phone, identity, picture, dob } = profile === null ? tempEmpty : profile
+
+	const initialValues = {
+		firstName: first_name,
+		lastName: last_name,
+		email: email,
+		username: username,
+		phone: phone,
+		identity: identity,
+		picture: picture,
+		dob: dob,
 	}
 
 	const onSubmitHandle = async values => {
@@ -105,7 +130,7 @@ const EditBasicInformation = () => {
 												</div>
 												<div className='row'>
 													<div className='col-lg-6'>
-													<FormField
+														<FormField
 															title='NID/Birth Certificate No.'
 															name='identity'
 															type='text'
