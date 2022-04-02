@@ -1,5 +1,5 @@
 import { Formik, Field, Form } from 'formik'
-import Spinner from '../commonComponents/spinner/Spinner'
+import Spinner from '../../../../commonComponents/spinner/Spinner'
 
 const EditBasicInformation = () => {
 	const initialValues = {
