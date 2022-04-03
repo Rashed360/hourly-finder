@@ -1483,6 +1483,13 @@ h2.contact-title,
 .jobs-details-information {
 	padding: 10px 25px;
 }
+.jobs-details-information.dashboard {
+	margin-top: -25px;
+	margin-left: -25px;
+	margin-bottom: 10px;
+	margin-right: -25px;
+	background-color: #e7eff1;
+}
 
 .single-job-title h2 {
 	font-size: 30px;
@@ -2392,10 +2399,14 @@ h3.right-bar-title {
 .edit-profile-area,
 .post-job-area,
 .manage-job-area {
+	overflow: hidden;
 	background: #f3f3f3ad;
 	padding: 25px;
 	border-radius: 5px;
 	border: 1px solid #8888884a;
+}
+.profile-area {
+	height: 530px;
 }
 
 .edit-title {
@@ -2408,7 +2419,7 @@ h3.right-bar-title {
 .edit-title::before {
 	content: '';
 	position: absolute;
-	width: 1000%;
+	width: 100%;
 	height: 2px;
 	top: 15px;
 	left: 110%;

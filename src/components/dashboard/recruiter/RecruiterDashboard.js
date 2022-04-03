@@ -108,16 +108,13 @@ const RecruiterDashboard = () => {
 	return (
 		<div className='dashboard-all'>
 			<div className='left'>
-				<DashboardNavigation
-					navigations={DashboardInformation}
-					user={DashboardInformation.userInfo}
-				></DashboardNavigation>
+				<DashboardNavigation navigations={DashboardInformation} user={DashboardInformation.userInfo} />
 			</div>
 			<div className='mid dashScroll'>
-				<Outlet></Outlet>
+				<Outlet />
 			</div>
 			<div className='right'>
-				<DashboradRightBar></DashboradRightBar>
+				<DashboradRightBar />
 			</div>
 		</div>
 	)

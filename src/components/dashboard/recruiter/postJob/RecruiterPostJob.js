@@ -1,3 +1,4 @@
+import { useJobLevel, useJobType } from '../../../../hooks/useJobHook'
 import { Formik, Field, Form } from 'formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { jobCreate } from '../../../../redux/actionCreators/jobActionCreators'
@@ -77,11 +78,70 @@ const RecruiterPostJob = () => {
 	return (
 		<div className='dashboard-main'>
 			<h3 className='dashboard-title'>Post a new Job</h3>
+
 			<div className='dashboard-content'>
 				<div className='post-job-area'>
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset, setFieldValue }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset} encType='multipart/form-data'>
+								<div className='jobs-details-information dashboard'>
+									<div className='single-job-title'>
+										<h2>{values.title || 'Your Job Title'}</h2>
+									</div>
+									<div className='single-job-basic-info'>
+										<div className='row d-flex justify-content-around'>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>vancey</p>
+													<h5>{values.vacancy || '--'}</h5>
+												</div>
+											</div>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>LEVEL</p>
+													<h5>{values.level || '--'}</h5>
+												</div>
+											</div>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>EMPOWERMENT</p>
+													<h5>{values.type || '--'}</h5>
+												</div>
+											</div>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>SALARY</p>
+													<h5>{values.salary || '--'} BDT</h5>
+												</div>
+											</div>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>DURATION</p>
+													<h5>{values.duration || '--'}</h5>
+												</div>
+											</div>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>STARTING DATE</p>
+													<h5>{values.starting || '--'}</h5>
+												</div>
+											</div>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>WORK LOCATION</p>
+													<h5>Location</h5>
+												</div>
+											</div>
+											<div className='col-lg-3'>
+												<div className='basic-info'>
+													<p>LANGUAGE</p>
+													<h5>{values.language || '--'}</h5>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div className='row'>
 									<div className='col-lg-12'>
 										<div className='row'>

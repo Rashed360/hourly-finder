@@ -12,7 +12,7 @@ const EditBasicInformation = () => {
 
 	useEffect(() => {
 		dispatch(userFetch())
-	}, [])
+	}, [dispatch])
 
 	const tempEmpty = {
 		firstName: '',
@@ -22,7 +22,7 @@ const EditBasicInformation = () => {
 		phone: '',
 		identity: '',
 		picture: '',
-		dob: '',
+		dob: '10/03/1998',
 	}
 
 	const { email, first_name, last_name, username } = user === null ? tempEmpty : user
@@ -40,7 +40,7 @@ const EditBasicInformation = () => {
 	}
 
 	const onSubmitHandle = async values => {
-		console.log('Edit profile')
+		console.log('Edit profile', values)
 	}
 
 	const validateHandle = values => {
@@ -52,7 +52,7 @@ const EditBasicInformation = () => {
 		<>
 			<h3 className='dashboard-title'>Edit Profile</h3>
 			<div className='dashboard-content'>
-				<div className='edit-profile-area'>
+				<div className='edit-profile-area profile-area'>
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset} style={{ height: '300px' }}>
