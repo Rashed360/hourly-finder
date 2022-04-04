@@ -2483,11 +2483,18 @@ h3.right-bar-title {
 	line-height: 40px;
 	margin-left: -13px;
 }
-
 .edit-profile-picture p {
 	font-size: 12px;
 	margin-top: 5px;
 }
+.save-all-change {
+	display: flex;
+	justify-content: space-between;
+}
+.save-all-change .action {
+	width: 250px;
+}
+
 .job-view-filter .form-field input,
 .job-view-filter .form-field select {
 	background: #fbfdff;
