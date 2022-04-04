@@ -1,9 +1,21 @@
-import React from "react"
+import { useSelector } from "react-redux"
+const EditOrganizationAbout = () => {
+  const user = useSelector((state) => state.user.user)
 
-const EditOrganizationAbout = ({ user, tempEmpty }) => {
+  const tempEmpty = {
+    id: 0,
+    email: "no@email",
+    first_name: "No",
+    last_name: "User",
+    username: "user",
+    user_type: 1,
+    bio: "",
+    expertise: "",
+    phone: "",
+  }
   const { user_type } = user === null ? tempEmpty : user
   return (
-    <>
+    <div className='dashboard-main'>
       <h3 className='dashboard-title mt-30'>{user_type === 2 ? "Edit Organization" : "Edit About"}</h3>
       <div className='dashboard-content'>
         <div className='edit-profile-area'>
@@ -118,7 +130,7 @@ const EditOrganizationAbout = ({ user, tempEmpty }) => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

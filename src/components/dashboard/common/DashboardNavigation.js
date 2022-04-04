@@ -1,11 +1,15 @@
 import {
+  FaAddressBook,
+  FaAngleDown,
   FaEnvelope,
+  FaIdCardAlt,
   FaPager,
   FaPenSquare,
   FaSearchLocation,
   FaSignOutAlt,
   FaTachometerAlt,
   FaTasks,
+  FaUserCircle,
   FaUserEdit,
 } from "react-icons/fa"
 import { NavLink } from "react-router-dom"
@@ -33,9 +37,20 @@ const DashboardNavigation = ({ navigations, user }) => {
       return <FaPenSquare />
     } else if (icon === "find") {
       return <FaSearchLocation />
+    } else if (icon === "address") {
+      return <FaAddressBook />
+    } else if (icon === "about") {
+      return <FaIdCardAlt />
+    } else if (icon === "profile") {
+      return <FaUserCircle />
     } else {
       return <FaTachometerAlt />
     }
+  }
+
+  const handleDropDown = (event) => {
+    const parentEle = event.target.parentElement.parentElement
+    parentEle.classList.toggle("showMenu")
   }
   return (
     <div className='dashboard-sidebar'>
@@ -54,10 +69,31 @@ const DashboardNavigation = ({ navigations, user }) => {
           <ul>
             {sidebar_menu.map((item, index) => {
               return (
-                <li key={index}>
+                <li key={index} onClick={(event) => handleDropDown(event)}>
                   <NavLink to={`${item.link}`} className={(navInfo) => (navInfo.isActive ? "active" : "")}>
-                    <span>{iconFinder(item.icon)}</span> {item.name}
+                    <div>
+                      <span>{iconFinder(item.icon)}</span> {item.name}
+                    </div>
+                    {item.subMenu !== null && (
+                      <span className='dropdown-icon'>
+                        <FaAngleDown />
+                      </span>
+                    )}
                   </NavLink>
+                  {item.subMenu !== null && (
+                    <ul className='sub-menu'>
+                      {item.subMenu.map((item, index) => {
+                        return (
+                          <li kye={index}>
+                            <NavLink to={item.link} className='link-name'>
+                              <span>{iconFinder(item.icon)}</span>
+                              {item.name}
+                            </NavLink>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )}
                 </li>
               )
             })}
