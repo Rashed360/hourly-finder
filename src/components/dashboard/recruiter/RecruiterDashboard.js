@@ -43,17 +43,17 @@ const RecruiterDashboard = () => {
         subMenu: [
           {
             name: "Profile",
-            icon: "edit",
+            icon: "profile",
             link: "edit-profile",
           },
           {
             name: "Organization",
-            icon: "edit",
+            icon: "about",
             link: "edit-details",
           },
           {
             name: "Address",
-            icon: "edit",
+            icon: "address",
             link: "edit-address",
           },
         ],
@@ -103,17 +103,17 @@ const RecruiterDashboard = () => {
         subMenu: [
           {
             name: "Profile",
-            icon: "edit",
+            icon: "profile",
             link: "edit-profile",
           },
           {
             name: "About You",
-            icon: "edit",
+            icon: "about",
             link: "edit-details",
           },
           {
             name: "Address",
-            icon: "edit",
+            icon: "address",
             link: "edit-address",
           },
         ],

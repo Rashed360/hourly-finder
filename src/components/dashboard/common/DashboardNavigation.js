@@ -1,6 +1,8 @@
 import {
+  FaAddressBook,
   FaAngleDown,
   FaEnvelope,
+  FaIdCardAlt,
   FaPager,
   FaPenSquare,
   FaSearchLocation,
@@ -35,6 +37,12 @@ const DashboardNavigation = ({ navigations, user }) => {
       return <FaPenSquare />
     } else if (icon === "find") {
       return <FaSearchLocation />
+    } else if (icon === "address") {
+      return <FaAddressBook />
+    } else if (icon === "about") {
+      return <FaIdCardAlt />
+    } else if (icon === "profile") {
+      return <FaUserCircle />
     } else {
       return <FaTachometerAlt />
     }
@@ -78,9 +86,7 @@ const DashboardNavigation = ({ navigations, user }) => {
                         return (
                           <li kye={index}>
                             <NavLink to={item.link} className='link-name'>
-                              <span>
-                                <FaUserCircle />
-                              </span>
+                              <span>{iconFinder(item.icon)}</span>
                               {item.name}
                             </NavLink>
                           </li>
