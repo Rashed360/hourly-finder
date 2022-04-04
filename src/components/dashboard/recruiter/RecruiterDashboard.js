@@ -49,12 +49,12 @@ const RecruiterDashboard = () => {
           {
             name: "Organization",
             icon: "edit",
-            link: "edit-profile",
+            link: "edit-details",
           },
           {
             name: "Address",
             icon: "edit",
-            link: "edit-profile",
+            link: "edit-address",
           },
         ],
       },
@@ -109,12 +109,12 @@ const RecruiterDashboard = () => {
           {
             name: "About You",
             icon: "edit",
-            link: "edit-profile",
+            link: "edit-details",
           },
           {
             name: "Address",
             icon: "edit",
-            link: "edit-profile",
+            link: "edit-address",
           },
         ],
       },

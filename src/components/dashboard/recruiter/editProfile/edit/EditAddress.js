@@ -1,7 +1,21 @@
-const EditAddress = ({ user, tempEmpty }) => {
+import { useSelector } from "react-redux"
+const EditAddress = () => {
+  const user = useSelector((state) => state.user.user)
+
+  const tempEmpty = {
+    id: 0,
+    email: "no@email",
+    first_name: "No",
+    last_name: "User",
+    username: "user",
+    user_type: 1,
+    bio: "",
+    expertise: "",
+    phone: "",
+  }
   const { user_type } = user === null ? tempEmpty : user
   return (
-    <>
+    <div className='dashboard-main'>
       <h3 className='dashboard-title mt-30'>Edit Address</h3>
       <div className='dashboard-content'>
         <div className='edit-profile-area'>
@@ -53,7 +67,7 @@ const EditAddress = ({ user, tempEmpty }) => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
