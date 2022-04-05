@@ -1,13 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Formik, Field, Form } from 'formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { jobCreate } from '../../../../redux/actionCreators/jobActionCreators'
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa'
 
 const RecruiterPostJob = () => {
+	const [image, setImage] = useState(null)
+	const [preview, setPreview] = useState(null)
 	const recruiterId = useSelector(state => state.user.profile?.id)
 	const dispatch = useDispatch()
 	const [step, setStep] = useState({ start: 1, end: 6, current: 1 })
+
+	useEffect(() => {
+		if (image) {
+			const reader = new FileReader()
+			reader.onloadend = () => {
+				setPreview(reader.result)
+			}
+			reader.readAsDataURL(image)
+		} else {
+			setPreview(null)
+		}
+	}, [image])
 
 	const stepHandle = value => {
 		if (value === 1 && step.current < step.end) {
@@ -19,7 +33,7 @@ const RecruiterPostJob = () => {
 
 	const initialValues = {
 		title: '',
-		banner: null,
+		banner: image,
 		type: '',
 		salary: '',
 		level: '',
@@ -35,6 +49,10 @@ const RecruiterPostJob = () => {
 		todo: '',
 	}
 
+	const onImageChange = event => {
+		setImage(event.currentTarget.files[0])
+	}
+
 	const onSubmitHandle = values => {
 		console.log(values)
 		// dispatch(jobCreate(values, recruiterId))
@@ -45,10 +63,6 @@ const RecruiterPostJob = () => {
 
 		if (!values.title) {
 			errors.title = 'Title is Mandetory'
-		}
-
-		if (values.banner === null) {
-			errors.banner = 'Banner is Mandetory'
 		}
 
 		if (!values.type) {
@@ -95,10 +109,8 @@ const RecruiterPostJob = () => {
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset, setFieldValue }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset} encType='multipart/form-data'>
-								<div
-									className='jobs-details-information dashboard'
-									style={values.banner !== null ? { backgroundImage: values.banner } : null}
-								>
+								<div className='jobs-details-information dashboard' style={{ backgroundImage: preview }}>
+									<img src={preview} alt="test" />
 									<div className='single-job-title'>
 										<h3>{values.title || 'Your Job Title'}</h3>
 									</div>
@@ -197,19 +209,7 @@ const RecruiterPostJob = () => {
 														<div className='form-field'>
 															<label htmlFor='banner'>Banner</label>
 															<div className='file_edit_button' htmlFor='banner'>
-																<input
-																	name='banner'
-																	type='file'
-																	accept='image/*'
-																	onChange={event => {
-																		setFieldValue('banner', event.currentTarget.files[0])
-																	}}
-																/>
-																{touched.banner && errors.banner ? (
-																	<div className='invalid-feedback'>{errors.banner}</div>
-																) : (
-																	<div className='valid-feedback'>Looks good!</div>
-																)}
+																<input name='banner' type='file' accept='image/*' onChange={onImageChange} />
 															</div>
 														</div>
 													</div>
