@@ -1136,14 +1136,14 @@ h2.contact-title,
 .registration-form .form ul li {
 	margin-bottom: 3px;
 }
-.registration-form .form .btn_group {
+.btn_group {
 	position: absolute;
 	display: flex;
 	gap: 10px;
 	bottom: 0;
 	width: 100%;
 }
-.registration-form .form .btn_group span {
+.btn_group span {
 	user-select: none;
 	cursor: pointer;
 	color: white;
@@ -1151,7 +1151,7 @@ h2.contact-title,
 	border-radius: 5px;
 	background-color: var(--bgColor);
 }
-.registration-form .form .btn_group span:nth-child(1) {
+.btn_group span:nth-child(1) {
 	background-color: grey;
 }
 .form-field input,
@@ -1492,9 +1492,9 @@ h2.contact-title,
 	margin-bottom: 20px;
 }
 .job-details-image {
-  height: 203px;
-  opacity: 0.4;
-  background-size: cover;
+	height: 203px;
+	opacity: 0.4;
+	background-size: cover;
 	background-color: #c9e2e9;
 }
 .jobs-details-information.dashboard {
@@ -2480,6 +2480,16 @@ h3.right-bar-title {
 .edit-profile-area .form-field,
 .post-job-area .form-field {
 	margin-bottom: 15px;
+}
+.post-job-area .job-success {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.post-job-area .job-success .btn_group {
+	position: inherit;
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
 }
 .profile-img-edit {
 	width: 90px;

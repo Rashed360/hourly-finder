@@ -4,6 +4,10 @@ import {
 	JOB_FETCH_ALL,
 	JOB_PAGINATION_FETCH_ALL,
 	JOB_FETCH_ALL_FAILED,
+	JOB_CREATE,
+	JOB_CREATE_RESET,
+	JOB_CREATE_SUCCESS,
+	JOB_CREATE_FAILED,
 } from '../actionTypes/jobActionTypes'
 
 const jobInitialState = {
@@ -13,6 +17,9 @@ const jobInitialState = {
 	singleJobLoading: false,
 	singleJobFailed: false,
 	singleJob: null,
+	creatingJob: false,
+	createJobSuccess: false,
+	createJobFailed: false,
 }
 
 const jobReducer = (state = jobInitialState, action) => {
@@ -45,6 +52,30 @@ const jobReducer = (state = jobInitialState, action) => {
 				...state,
 				singleJobFailed: true,
 				singleJobLoading: false,
+			}
+		case JOB_CREATE:
+			return {
+				...state,
+				creatingJob: true,
+			}
+		case JOB_CREATE_SUCCESS:
+			return {
+				...state,
+				creatingJob: false,
+				createJobSuccess: true,
+			}
+		case JOB_CREATE_FAILED:
+			return {
+				...state,
+				creatingJob: false,
+				createJobFailed: true,
+			}
+		case JOB_CREATE_RESET:
+			return {
+				...state,
+				creatingJob: false,
+				createJobSuccess: false,
+				createJobFailed: false,
 			}
 		default:
 			return state

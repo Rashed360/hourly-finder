@@ -1,9 +1,13 @@
 import axios from 'axios'
 import {
+	JOB_CREATE,
+	JOB_CREATE_RESET,
+	JOB_CREATE_FAILED,
 	JOB_FETCH_SINGLE,
 	JOB_FETCH_ALL,
 	JOB_FETCH_ALL_FAILED,
 	JOB_PAGINATION_FETCH_ALL,
+	JOB_CREATE_SUCCESS,
 } from '../actionTypes/jobActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
@@ -100,11 +104,14 @@ export const jobSingleFetch = slug => async dispatch => {
 		})
 }
 
-export const jobCreate = (values, recruiter) => async dispatch => {
-	console.log('Job Posted', values, recruiter)
+export const jobCreateReset = () => async dispatch => {
+	dispatch({ type: JOB_CREATE_RESET })
+}
 
+export const jobCreate = (values, image, recruiter) => async dispatch => {
+	dispatch({ type: JOB_CREATE })
 	let form_data = new FormData()
-	form_data.append('image', values.banner, values.banner.name)
+	form_data.append('image', image, image.name)
 	form_data.append('level', parseInt(values.level))
 	form_data.append('type', parseInt(values.type))
 	form_data.append('title', values.title)
@@ -129,10 +136,16 @@ export const jobCreate = (values, recruiter) => async dispatch => {
 	await axios
 		.post(`${url}/jobs/create/`, form_data, config)
 		.then(response => {
-			console.log(response.data)
+			dispatch({
+				type: JOB_CREATE_SUCCESS,
+				payload: response.data,
+			})
 		})
 		.catch(error => {
-			console.log(error.response)
+			dispatch({
+				type: JOB_CREATE_FAILED,
+				payload: error.response,
+			})
 		})
 }
 
