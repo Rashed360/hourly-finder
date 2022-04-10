@@ -109,8 +109,8 @@ const RecruiterPostJob = () => {
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset, setFieldValue }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset} encType='multipart/form-data'>
-								<div className='jobs-details-information dashboard' style={{ backgroundImage: preview }}>
-									<img src={preview} alt="test" />
+								<div className='job-details-image' style={{ backgroundImage: `url(${preview})` }}></div>
+								<div className='jobs-details-information dashboard'>
 									<div className='single-job-title'>
 										<h3>{values.title || 'Your Job Title'}</h3>
 									</div>
@@ -176,7 +176,7 @@ const RecruiterPostJob = () => {
 									</div>
 								</div>
 
-								<div className='row'>
+								<div className='row fields'>
 									<div className='col-lg-12'>
 										{step.current === 1 && (
 											<>
@@ -513,7 +513,7 @@ const RecruiterPostJob = () => {
 									</div>
 								</div>
 
-								<div className='save-all-change mt-20'>
+								<div className='save-all-change'>
 									<span className='btn btn-alt' onClick={() => stepHandle(0)}>
 										<FaRegArrowAltCircleLeft /> Previous
 									</span>
