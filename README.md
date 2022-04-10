@@ -1,5 +1,4 @@
 # Hourly-Finder
-
 #### 🌻: UI Files Project
 [UI Files](https://github.com/Sajeebdebnath/hourly-finder-design/)
 
@@ -32,3 +31,6 @@
     "redux-thunk": "^2.4.1",
   }
 ```
+#### 🚀: Deployment
+- [![Hourly Finder](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://hourly-finder.herokuapp.com/)
+- Warning: Deployed App has no Backend Connected!
