@@ -8,7 +8,7 @@ const RecruiterManageJob = () => {
     <div className='dashboard-main'>
       <h3 className='dashboard-title'>{user?.user_type === 2 ? "Manage Posted Jobs" : "Applications"}</h3>
       <div className='dashboard-content'>
-        <div className='manage-job-area'>
+        <div className='manage-job-area content'>
           <div className='job-view-filter'>
             <form action=''>
               <div className='row'>

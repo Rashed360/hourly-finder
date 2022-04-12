@@ -16,7 +16,7 @@ import { NavLink, Link } from 'react-router-dom'
 import Image from '../../../assets/images/user.svg'
 
 const DashboardNavigation = ({ navigations, user }) => {
-	const { id, name, type } = user
+	const { id, name, type, photo } = user
 	const { recruiterNavigation, seekerNavigation } = navigations
 	const sidebar_menu = type === 1 ? seekerNavigation : recruiterNavigation
 
@@ -56,7 +56,10 @@ const DashboardNavigation = ({ navigations, user }) => {
 	return (
 		<div className='dashboard-sidebar'>
 			<div className='user'>
-				<div className='user-photo' style={{ backgroundImage: `url(${Image})` }}></div>
+				<div
+					className='user-photo'
+					style={{ backgroundImage: `url(${photo !== null ? photo : Image})` }}
+				></div>
 				<div className='user-info'>
 					<h5>
 						<NavLink to={`/user/${id}`}>{name}</NavLink>

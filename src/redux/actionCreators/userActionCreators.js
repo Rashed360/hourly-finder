@@ -8,19 +8,6 @@ import {
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
-export const userLoad = user => {
-	return {
-		type: USER_LOAD_SUCCESS,
-		payload: user,
-	}
-}
-
-export const userLoadFailed = () => {
-	return {
-		type: USER_LOAD_FAILED,
-	}
-}
-
 export const userFetch = () => async dispatch => {
 	const token = localStorage.getItem('token')
 	if (token) {
@@ -34,29 +21,22 @@ export const userFetch = () => async dispatch => {
 		await axios
 			.get(`${url}/auth/users/me/`, config)
 			.then(response => {
-				console.log(response.data)
-				dispatch(userLoad(response.data))
+				dispatch({
+					type: USER_LOAD_SUCCESS,
+					payload: response.data,
+				})
 				dispatch(profileFetch(response.data.user_type, response.data.id))
 			})
 			.catch(error => {
 				console.log(error.response)
-				dispatch(userLoadFailed())
+				dispatch({
+					type: USER_LOAD_FAILED,
+				})
 			})
 	} else {
-		dispatch(userLoadFailed())
-	}
-}
-
-export const profileLoad = profile => {
-	return {
-		type: PROFILE_LOAD_SUCCESS,
-		payload: profile,
-	}
-}
-
-export const profileLoadFailed = () => {
-	return {
-		type: PROFILE_LOAD_FAILED,
+		dispatch({
+			type: USER_LOAD_FAILED,
+		})
 	}
 }
 
@@ -81,15 +61,25 @@ export const profileFetch = (type, id) => async dispatch => {
 				.get(link, config)
 				.then(response => {
 					const data = response.data[0]
-					console.log(data)
-					dispatch(profileLoad(data))
+					dispatch({
+						type: PROFILE_LOAD_SUCCESS,
+						payload: data,
+					})
 				})
 				.catch(error => {
 					console.log(error.response)
-					dispatch(profileLoadFailed())
+					dispatch({
+						type: PROFILE_LOAD_FAILED,
+					})
 				})
 		}
 	} else {
-		dispatch(profileLoadFailed())
+		dispatch({
+			type: PROFILE_LOAD_FAILED,
+		})
 	}
+}
+
+export const profileUpdate = data => async dispatch => {
+	console.log(data)
 }

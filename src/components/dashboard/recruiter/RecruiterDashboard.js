@@ -1,18 +1,11 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
-import { userFetch } from '../../../redux/actionCreators/userActionCreators'
 import DashboardNavigation from '../common/DashboardNavigation'
 import DashboradRightBar from '../common/DashboradRightBar'
 
 const RecruiterDashboard = () => {
-	const dispatch = useDispatch()
 	const user = useSelector(state => state.user.user)
 	const profile = useSelector(state => state.user.profile)
-
-	useEffect(() => {
-		dispatch(userFetch())
-	}, [])
 
 	const tempEmpty = {
 		id: 0,
@@ -25,8 +18,8 @@ const RecruiterDashboard = () => {
 		expertise: '',
 		phone: '',
 	}
-	const { id, email, first_name, last_name, username, user_type } = user === null ? tempEmpty : user
-	const { bio, expertise, phone } = profile === null ? tempEmpty : profile
+	const { id, first_name, last_name, user_type } = user === null ? tempEmpty : user
+	const { picture } = profile === null ? tempEmpty : profile
 
 	const DashboardInformation = {
 		recruiterNavigation: [
@@ -97,7 +90,7 @@ const RecruiterDashboard = () => {
 				subMenu: null,
 			},
 			{
-				name: 'Edit Profile',
+				name: 'Edit Info',
 				icon: 'edit',
 				link: '#',
 				subMenu: [
@@ -147,7 +140,7 @@ const RecruiterDashboard = () => {
 			id: id,
 			name: first_name + ' ' + last_name,
 			type: user_type,
-			photo: '',
+			photo: picture,
 		},
 	}
 	return (

@@ -18,7 +18,7 @@ const EditOrganizationAbout = () => {
     <div className='dashboard-main'>
       <h3 className='dashboard-title mt-30'>{user_type === 2 ? "Edit Organization" : "Edit About"}</h3>
       <div className='dashboard-content'>
-        <div className='edit-profile-area'>
+        <div className='edit-profile-area content'>
           <form action='' style={{ overflow: "hidden" }}>
             <div className='edit-organization-information'>
               <h5 className='edit-title'>About {user_type === 2 ? "Your Organization" : "You"}</h5>

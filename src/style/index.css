@@ -1158,7 +1158,7 @@ h2.contact-title,
 .form-field select,
 .form-field textarea {
 	display: block;
-	border: 2px solid #f2f2f2;
+	border: 2px solid #e8e8e8;
 	box-sizing: border-box;
 	border-radius: 5px;
 	width: 100%;
@@ -2149,7 +2149,9 @@ h2.contact-title,
 	width: 30px;
 	height: 30px;
 	border: 1px solid lightgrey;
-	border-radius: 100%;
+	background-color: #fafafa;
+	border-radius: 50%;
+	overflow: hidden;
 	margin-left: 20px;
 }
 .header-icon span svg {
@@ -2444,14 +2446,16 @@ h3.right-bar-title {
 .manage-job-area {
 	position: relative;
 	overflow: hidden;
-	background: #f3f3f3ad;
+	background: #f9f9f9;
 	border-radius: 5px;
 	border: 1px solid #8888884a;
 }
 .profile-area {
-	height: 530px;
+	height: 545px;
 }
-
+.content {
+	padding: 20px;
+}
 .edit-title {
 	position: relative;
 	font-size: 20px;
@@ -2497,7 +2501,7 @@ h3.right-bar-title {
 	margin: auto;
 	border-radius: 50%;
 	position: relative;
-	overflow: hidden;
+	background-size: cover;
 	margin-top: 10px;
 }
 
@@ -2551,7 +2555,7 @@ h3.right-bar-title {
 .job-view-filter .form-field input,
 .job-view-filter .form-field select {
 	background: #fbfdff;
-	border: 0.5px solid #cbcbcb;
+	border: 0.5px solid #adadad;
 	font-weight: 300;
 }
 

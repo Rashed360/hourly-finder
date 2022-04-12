@@ -1,17 +1,12 @@
 import { Form, Formik, Field } from 'formik'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { userFetch } from '../../../../../redux/actionCreators/userActionCreators'
+import { useSelector, useDispatch } from 'react-redux'
 import FormField from '../../../../commonComponents/formik/FormField'
+import { profileUpdate } from '../../../../../redux/actionCreators/userActionCreators'
 
 const EditBasicInformation = () => {
 	const dispatch = useDispatch()
 	const user = useSelector(state => state.user.user)
 	const profile = useSelector(state => state.user.profile)
-
-	useEffect(() => {
-		dispatch(userFetch())
-	}, [dispatch])
 
 	const tempEmpty = {
 		firstName: '',
@@ -21,7 +16,7 @@ const EditBasicInformation = () => {
 		phone: '',
 		identity: '',
 		picture: '',
-		dob: '10/03/1998',
+		dob: '',
 	}
 
 	const { email, first_name, last_name, username } = user === null ? tempEmpty : user
@@ -31,13 +26,13 @@ const EditBasicInformation = () => {
 		firstName: first_name,
 		lastName: last_name,
 		phone: phone,
-		identity: identity,
 		picture: picture,
 		dob: dob,
 	}
 
 	const onSubmitHandle = async values => {
-		console.log('Edit profile', values)
+		console.log('Edit profile')
+		dispatch(profileUpdate(values))
 	}
 
 	const validateHandle = values => {
@@ -49,7 +44,7 @@ const EditBasicInformation = () => {
 		<div className='dashboard-main'>
 			<h3 className='dashboard-title'>Edit Profile</h3>
 			<div className='dashboard-content'>
-				<div className='edit-profile-area profile-area'>
+				<div className='edit-profile-area content profile-area'>
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset} style={{ height: '300px' }}>
@@ -85,6 +80,32 @@ const EditBasicInformation = () => {
 													</div>
 												</div>
 												<div className='row'>
+													<div className='col-lg-6'>
+														<FormField
+															title='Phone'
+															name='phone'
+															type='text'
+															place='01xxxxxxxxxx'
+															change={handleChange}
+															value={values.phone}
+															touch={touched.phone}
+															error={errors.phone}
+														/>
+													</div>
+													<div className='col-lg-6'>
+														<FormField
+															title={values.dob}
+															name='dob'
+															type='date'
+															place=''
+															change={handleChange}
+															value={values.dob}
+															touch={touched.dob}
+															error={errors.dob}
+														/>
+													</div>
+												</div>
+												<div className='row'>
 													<div className='col-lg-12'>
 														<div className='form-field'>
 															<label htmlFor=''>Username</label>
@@ -111,38 +132,16 @@ const EditBasicInformation = () => {
 															/>
 														</div>
 													</div>
-
-													<div className='col-lg-6'>
-														<FormField
-															title='Phone'
-															name='phone'
-															type='text'
-															place='01xxxxxxxxxx'
-															change={handleChange}
-															value={values.phone}
-															touch={touched.phone}
-															error={errors.phone}
-														/>
-													</div>
-												</div>
-												<div className='row'>
-													<div className='col-lg-6'>
-														<FormField
-															title='NID/Birth Certificate No.'
-															name='identity'
-															type='text'
-															place='eg. 43490342341'
-															change={handleChange}
-															value={values.identity}
-															touch={touched.identity}
-															error={errors.identity}
-														/>
-													</div>
-
 													<div className='col-lg-6'>
 														<div className='form-field'>
-															<label htmlFor=''>Date of Birth</label>
-															<input type='date' placeholder='01xxxxxxxxxx' />
+															<label htmlFor=''>NID/Passport</label>
+															<Field
+																name='identity'
+																disabled
+																type='text'
+																defaultValue={identity}
+																placeholder='e.g. 987456123'
+															/>
 														</div>
 													</div>
 												</div>
@@ -155,7 +154,7 @@ const EditBasicInformation = () => {
 														className='profile-img-edit'
 														htmlFor='profile-pic'
 														style={{
-															backgroundImage: 'url(https://placeimg.com/100/100/people?t=1640373129965)',
+															backgroundImage: `url(${picture})`,
 														}}
 													>
 														<input type='file' id='profile-pic' />

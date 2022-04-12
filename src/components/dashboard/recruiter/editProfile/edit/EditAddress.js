@@ -23,7 +23,7 @@ const EditAddress = () => {
     <div className='dashboard-main'>
       <h3 className='dashboard-title mt-30'>Edit Address</h3>
       <div className='dashboard-content'>
-        <div className='edit-profile-area'>
+        <div className='edit-profile-area content'>
           <form action='' style={{ overflow: "hidden" }}>
             <div className='edit-organization-address'>
               <h5 className='edit-title'>{user_type === 2 ? "Organization Address" : "Address"} </h5>

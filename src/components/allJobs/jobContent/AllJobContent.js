@@ -12,7 +12,7 @@ const AllJobContent = () => {
 	const count = allJobsPagination?.count
 
 	useEffect(() => {
-		dispatch(jobAllPaginationFetch(2))
+		dispatch(jobAllPaginationFetch(6))
 	}, [])
 
 	const jobs = allJobsPagination?.results.map((job, index) => {
@@ -23,7 +23,7 @@ const AllJobContent = () => {
 		)
 	})
 
-	const jobsSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(index => {
+	const jobsSkeleton = [1, 2, 3, 4, 5, 6].map(index => {
 		return (
 			<div className='col-lg-4' key={index}>
 				<JobBlockSkeleton />
