@@ -151,11 +151,11 @@ const RecruiterPostJob = () => {
 														<div className='basic-info'>
 															<p>EMPOWERMENT</p>
 															<h5>
-																{values.type == '1'
+																{values.type === '1'
 																	? 'Hourly'
-																	: values.type == '2'
+																	: values.type === '2'
 																	? 'Part Time'
-																	: values.type == '3'
+																	: values.type === '3'
 																	? 'Project Based'
 																	: '---'}
 															</h5>

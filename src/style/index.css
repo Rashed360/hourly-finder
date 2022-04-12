@@ -2499,6 +2499,7 @@ h3.right-bar-title {
 	width: 90px;
 	height: 90px;
 	margin: auto;
+	border: 1px solid lightgrey;
 	border-radius: 50%;
 	position: relative;
 	background-size: cover;

@@ -16,7 +16,7 @@ const SingleJob = () => {
 
 	useEffect(() => {
 		dispatch(jobSingleFetch(job_slug))
-	}, [jobSingleFetch, job_slug])
+	}, [jobSingleFetch, job_slug, dispatch])
 
 	return (
 		<>

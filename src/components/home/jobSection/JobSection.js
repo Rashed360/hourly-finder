@@ -10,8 +10,7 @@ const JobSection = () => {
 	const allJobs = useSelector(state => state.job.allJobs)
 	useEffect(() => {
 		dispatch(jobAllFetch())
-	}, [])
-
+	}, [dispatch])
 
 	const jobs = allJobs?.map((job, index) => {
 		return (

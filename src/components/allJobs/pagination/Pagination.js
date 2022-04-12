@@ -15,10 +15,12 @@ const Pagination = () => {
 	const paginate = curPage => {
 		if (curPage === 1) {
 			dispatch(jobAllPaginationNavigate(next))
-			console.log('->')
+			setSearchParams({ page: '' })
+			console.log('->', page)
 		} else {
 			dispatch(jobAllPaginationNavigate(previous))
-			console.log('<-')
+			setSearchParams({ page: '' })
+			console.log('<-', page)
 		}
 	}
 
@@ -29,11 +31,17 @@ const Pagination = () => {
 				Prev
 			</a>
 
-			<Link to='' className='link'>1</Link>
+			<Link to='' className='link'>
+				1
+			</Link>
 
-			<Link to='' className='link'>2</Link>
+			<Link to='' className='link'>
+				2
+			</Link>
 
-			<Link to='' className='link'>3</Link>
+			<Link to='' className='link'>
+				3
+			</Link>
 
 			<a onClick={() => paginate(1)} className={next === null ? 'page next disabled' : 'page next'}>
 				Next

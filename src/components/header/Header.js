@@ -34,7 +34,7 @@ const Header = () => {
 			dispatch(userFetch())
 		}
 		scrollToZero()
-	}, [pathname, token])
+	}, [pathname, token, dispatch])
 
 	const changeNavbar = () => {
 		if (window.scrollY >= 1) {

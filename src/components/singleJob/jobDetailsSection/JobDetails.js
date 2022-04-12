@@ -6,11 +6,8 @@ const JobDetails = props => {
 	const {
 		title,
 		image,
-		slug,
 		salary,
 		duration,
-		created,
-		edited,
 		language,
 		vacancy,
 		level,
@@ -19,12 +16,10 @@ const JobDetails = props => {
 		overview,
 		todo,
 		skill,
-		keyword,
 		type,
 	} = props.data.job
-	const { bio, phone, designation } = props.data.recruiter
-	const { name, moto, description, logo, location } = props.data.company
-	const { email, username, first_name, last_name } = props.data.user
+	const { name, logo, location } = props.data.company
+	const { username } = props.data.user
 	const imagePath = process.env.REACT_APP_BACKEND_SERVER
 
 	const jobType = useJobType(type)
@@ -124,7 +119,7 @@ const JobDetails = props => {
 					<p>1.2 Km away from your location.</p>
 				</div>
 				<div className='leaflet-map'>
-					<LeafletMap mark={[23.754925, 90.376495]} title={jobType + ' at '+ name} desc={title} />
+					<LeafletMap mark={mapData} title={jobType + ' at ' + name} desc={title} />
 				</div>
 			</div>
 		</div>

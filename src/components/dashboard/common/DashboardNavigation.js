@@ -12,7 +12,7 @@ import {
 	FaUserCircle,
 	FaUserEdit,
 } from 'react-icons/fa'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Image from '../../../assets/images/user.svg'
 
 const DashboardNavigation = ({ navigations, user }) => {

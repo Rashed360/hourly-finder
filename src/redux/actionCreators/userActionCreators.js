@@ -80,6 +80,12 @@ export const profileFetch = (type, id) => async dispatch => {
 	}
 }
 
-export const profileUpdate = data => async dispatch => {
-	console.log(data)
+export const profileUpdate = (data, image) => async dispatch => {
+	console.log('Update Profile', data, image)
+}
+export const profileAddressUpdate = data => async dispatch => {
+	console.log('Update Address', data)
+}
+export const profileOrganizationUpdate = data => async dispatch => {
+	console.log('Update Organization', data)
 }

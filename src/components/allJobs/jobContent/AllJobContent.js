@@ -13,7 +13,7 @@ const AllJobContent = () => {
 
 	useEffect(() => {
 		dispatch(jobAllPaginationFetch(6))
-	}, [])
+	}, [dispatch])
 
 	const jobs = allJobsPagination?.results.map((job, index) => {
 		return (

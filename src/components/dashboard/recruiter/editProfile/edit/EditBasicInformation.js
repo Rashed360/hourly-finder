@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Form, Formik, Field } from 'formik'
 import { useSelector, useDispatch } from 'react-redux'
 import FormField from '../../../../commonComponents/formik/FormField'
@@ -7,6 +8,20 @@ const EditBasicInformation = () => {
 	const dispatch = useDispatch()
 	const user = useSelector(state => state.user.user)
 	const profile = useSelector(state => state.user.profile)
+	const [image, setImage] = useState(null)
+	const [preview, setPreview] = useState(null)
+
+	useEffect(() => {
+		if (image) {
+			const reader = new FileReader()
+			reader.onloadend = () => {
+				setPreview(reader.result)
+			}
+			reader.readAsDataURL(image)
+		} else {
+			setPreview(null)
+		}
+	}, [image])
 
 	const tempEmpty = {
 		firstName: '',
@@ -26,13 +41,15 @@ const EditBasicInformation = () => {
 		firstName: first_name,
 		lastName: last_name,
 		phone: phone,
-		picture: picture,
 		dob: dob,
 	}
 
+	const onImageChange = event => {
+		setImage(event.currentTarget.files[0])
+	}
+
 	const onSubmitHandle = async values => {
-		console.log('Edit profile')
-		dispatch(profileUpdate(values))
+		dispatch(profileUpdate(values, image))
 	}
 
 	const validateHandle = values => {
@@ -154,10 +171,10 @@ const EditBasicInformation = () => {
 														className='profile-img-edit'
 														htmlFor='profile-pic'
 														style={{
-															backgroundImage: `url(${picture})`,
+															backgroundImage: `url(${preview !== null ? preview : picture})`,
 														}}
 													>
-														<input type='file' id='profile-pic' />
+														<input type='file' id='profile-pic' accept='image/*' onChange={onImageChange} />
 													</div>
 													<p>Profile picture must be less than 1MB and 300x300px aspect ratio.</p>
 												</div>
