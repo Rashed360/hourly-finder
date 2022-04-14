@@ -98,23 +98,27 @@ export const profileUpdate = (type, id, userData, profileData) => async dispatch
 				link = `${url}/user/recruiter/${id}/`
 			} else return
 			// profile update
-			await axios
-				.patch(link, config, profileData)
-				.then(response => {
-					console.log(response.data)
-				})
-				.catch(error => {
-					console.log(error.response)
-				})
+			if (Object.keys(profileData).length !== 0) {
+				await axios
+					.patch(link, profileData, config)
+					.then(response => {
+						console.log(response.data)
+					})
+					.catch(error => {
+						console.log(error.response)
+					})
+			}
 			// user update
-			await axios
-				.patch(`${url}/auth/users/me/`, config, userData)
-				.then(response => {
-					console.log(response.data)
-				})
-				.catch(error => {
-					console.log(error.response)
-				})
+			if (Object.keys(userData).length !== 0) {
+				await axios
+					.patch(`${url}/auth/users/me/`, userData, config)
+					.then(response => {
+						console.log(response.data)
+					})
+					.catch(error => {
+						console.log(error.response)
+					})
+			}
 		}
 	} else {
 		dispatch({
