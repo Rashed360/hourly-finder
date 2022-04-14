@@ -1,4 +1,3 @@
-import React from "react"
 import { FaBookmark, FaMapMarkerAlt, FaRegEye } from "react-icons/fa"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"

@@ -31,7 +31,7 @@ const EditBasicInformation = () => {
 		phone: '',
 		identity: '',
 		picture: '',
-		dob: '',
+		dob: '2000-12-20',
 	}
 
 	const { email, first_name, last_name, username } = user === null ? tempEmpty : user
@@ -119,10 +119,11 @@ const EditBasicInformation = () => {
 													</div>
 													<div className='col-lg-6'>
 														<FormField
-															title={values.dob}
+															title='Date of Birth'
 															name='dob'
 															type='date'
 															place=''
+															defaultValue='2000-12-20'
 															change={handleChange}
 															value={values.dob}
 															touch={touched.dob}
