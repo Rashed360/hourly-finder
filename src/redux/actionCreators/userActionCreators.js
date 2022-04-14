@@ -80,9 +80,49 @@ export const profileFetch = (type, id) => async dispatch => {
 	}
 }
 
-export const profileUpdate = (data, image) => async dispatch => {
-	console.log('Update Profile', data, image)
+export const profileUpdate = (type, id, userData, profileData) => async dispatch => {
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		if (type && id) {
+			let link = null
+			if (type === 1) {
+				link = `${url}/user/seeker/${id}/`
+			} else if (type === 2) {
+				link = `${url}/user/recruiter/${id}/`
+			} else return
+			// profile update
+			await axios
+				.patch(link, config, profileData)
+				.then(response => {
+					console.log(response.data)
+				})
+				.catch(error => {
+					console.log(error.response)
+				})
+			// user update
+			await axios
+				.patch(`${url}/auth/users/me/`, config, userData)
+				.then(response => {
+					console.log(response.data)
+				})
+				.catch(error => {
+					console.log(error.response)
+				})
+		}
+	} else {
+		dispatch({
+			type: USER_LOAD_FAILED,
+		})
+	}
 }
+
 export const profileAddressUpdate = data => async dispatch => {
 	console.log('Update Address', data)
 }

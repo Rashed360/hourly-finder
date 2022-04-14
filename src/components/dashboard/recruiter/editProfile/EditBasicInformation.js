@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Form, Formik, Field } from 'formik'
 import { useSelector, useDispatch } from 'react-redux'
-import FormField from '../../../../commonComponents/formik/FormField'
-import { profileUpdate } from '../../../../../redux/actionCreators/userActionCreators'
+import FormField from '../../../commonComponents/formik/FormField'
+import { profileUpdate } from '../../../../redux/actionCreators/userActionCreators'
 
 const EditBasicInformation = () => {
 	const dispatch = useDispatch()
@@ -49,7 +49,9 @@ const EditBasicInformation = () => {
 	}
 
 	const onSubmitHandle = async values => {
-		dispatch(profileUpdate(values, image))
+		const userData = {}
+
+		dispatch(profileUpdate(type, id, userData, profileData))
 	}
 
 	const validateHandle = values => {
