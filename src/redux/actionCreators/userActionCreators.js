@@ -80,7 +80,7 @@ export const profileFetch = (type, id) => async dispatch => {
 	}
 }
 
-export const profileUpdate = (type, id, userData, profileData) => async dispatch => {
+export const profileUpdate = (type, id, userData, profileData, image) => async dispatch => {
 	const token = localStorage.getItem('token')
 	if (token) {
 		const config = {
@@ -112,6 +112,25 @@ export const profileUpdate = (type, id, userData, profileData) => async dispatch
 			if (Object.keys(userData).length !== 0) {
 				await axios
 					.patch(`${url}/auth/users/me/`, userData, config)
+					.then(response => {
+						console.log(response.data)
+					})
+					.catch(error => {
+						console.log(error.response)
+					})
+			}
+			// image update
+			if (image !== null) {
+				let form_data = new FormData()
+				form_data.append('picture', image, image.name)
+				const imageConfig = {
+					headers: {
+						'content-type': 'multipart/form-data',
+						Authorization: `JWT ${token}`,
+					},
+				}
+				await axios
+					.patch(link, form_data, imageConfig)
 					.then(response => {
 						console.log(response.data)
 					})

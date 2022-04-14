@@ -52,12 +52,12 @@ const EditBasicInformation = () => {
 		const userData = {}
 		const profileData = {}
 
-		if (values.firstName!==initialValues.firstName) userData.first_name=values.firstName
-		if (values.lastName!==initialValues.lastName) userData.last_name=values.lastName
-		if (values.phone!==initialValues.phone) profileData.phone=values.phone
-		if (values.dob!==initialValues.dob) profileData.dob=values.dob
+		if (values.firstName !== initialValues.firstName) userData.first_name = values.firstName
+		if (values.lastName !== initialValues.lastName) userData.last_name = values.lastName
+		if (values.phone !== initialValues.phone) profileData.phone = values.phone
+		if (values.dob !== initialValues.dob) profileData.dob = values.dob
 
-		dispatch(profileUpdate(user.user_type, profile.id, userData, profileData))
+		dispatch(profileUpdate(user.user_type, profile.id, userData, profileData, image))
 	}
 
 	const validateHandle = values => {
