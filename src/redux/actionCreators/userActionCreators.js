@@ -146,8 +146,41 @@ export const profileUpdate = (type, id, userData, profileData, image) => async d
 	}
 }
 
-export const profileAddressUpdate = data => async dispatch => {
-	console.log('Update Address', data)
+export const profileAddressUpdate = (type, id, address) => async dispatch => {
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		const addressData = {
+			address,
+		}
+		if (type && id) {
+			let link = null
+			if (type === 1) {
+				link = `${url}/user/seeker/${id}/`
+			} else if (type === 2) {
+				link = `${url}/user/recruiter/${id}/`
+			} else return
+			// address update
+			await axios
+				.patch(link, addressData, config)
+				.then(response => {
+					console.log(response.data)
+				})
+				.catch(error => {
+					console.log(error.response)
+				})
+		}
+	} else {
+		dispatch({
+			type: USER_LOAD_FAILED,
+		})
+	}
 }
 export const profileOrganizationUpdate = data => async dispatch => {
 	console.log('Update Organization', data)
