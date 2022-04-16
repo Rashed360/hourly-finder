@@ -66,7 +66,7 @@ const RecruiterDashboard = () => {
 			{
 				name: 'Manage Job',
 				icon: 'manage',
-				link: 'manage-job',
+				link: 'manage',
 				subMenu: null,
 			},
 			{
