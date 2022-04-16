@@ -8,6 +8,8 @@ import {
 	JOB_FETCH_ALL_FAILED,
 	JOB_PAGINATION_FETCH_ALL,
 	JOB_CREATE_SUCCESS,
+	JOB_FETCH_RECRUITER,
+	JOB_FETCH_RECRUITER_FAILED,
 } from '../actionTypes/jobActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
@@ -169,5 +171,29 @@ export const jobApply = (job, values, user) => async dispatch => {
 		})
 		.catch(error => {
 			console.log(error.response)
+		})
+}
+
+export const jobByRecruiter = recruiter => async dispatch => {
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	}
+	await axios
+		.get(`${url}/jobs/?id=${recruiter}`, config)
+		.then(response => {
+			const data = response.data
+			console.log(data)
+			dispatch({
+				type: JOB_FETCH_RECRUITER,
+				payload: data,
+			})
+		})
+		.catch(error => {
+			console.log(error.data)
+			dispatch({
+				type: JOB_FETCH_RECRUITER_FAILED,
+			})
 		})
 }

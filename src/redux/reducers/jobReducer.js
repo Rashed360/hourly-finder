@@ -8,6 +8,8 @@ import {
 	JOB_CREATE_RESET,
 	JOB_CREATE_SUCCESS,
 	JOB_CREATE_FAILED,
+	JOB_FETCH_RECRUITER,
+	JOB_FETCH_RECRUITER_FAILED,
 } from '../actionTypes/jobActionTypes'
 
 const jobInitialState = {
@@ -20,6 +22,8 @@ const jobInitialState = {
 	creatingJob: false,
 	createJobSuccess: false,
 	createJobFailed: false,
+	recruiterJobs: null,
+	recruiterJobsFailed: false,
 }
 
 const jobReducer = (state = jobInitialState, action) => {
@@ -76,6 +80,17 @@ const jobReducer = (state = jobInitialState, action) => {
 				creatingJob: false,
 				createJobSuccess: false,
 				createJobFailed: false,
+			}
+		case JOB_FETCH_RECRUITER:
+			return {
+				...state,
+				recruiterJobs: action.payload,
+				recruiterJobsFailed: false,
+			}
+		case JOB_FETCH_RECRUITER_FAILED:
+			return {
+				...state,
+				recruiterJobsFailed: true,
 			}
 		default:
 			return state

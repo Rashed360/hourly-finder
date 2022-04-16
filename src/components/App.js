@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { authCheck } from '../redux/actionCreators/authActionCreators'
 import About from './about/About'
@@ -25,7 +25,7 @@ import RecruiterMessage from './dashboard/recruiter/message/RecruiterMessage'
 import RecruiterOngoingJob from './dashboard/recruiter/ongoing/RecruiterOngoingJob'
 import RecruiterOverview from './dashboard/recruiter/overView/RecruiterOverview'
 import RecruiterPostJob from './dashboard/recruiter/postJob/RecruiterPostJob'
-import RecruiterDashboard from './dashboard/recruiter/RecruiterDashboard'
+import Dashboard from './dashboard/Dashboard'
 import Footer from './footer/Footer'
 import Header from './header/Header'
 import Home from './home/Home'
@@ -36,25 +36,13 @@ import SingleBlog from './singleBlog/SingleBlog'
 import SingleJob from './singleJob/SingleJob'
 import UserProfile from './userProfile/UserProfile'
 
-const mapDispatchToProps = dispatch => {
-	return {
-		authCheck: () => dispatch(authCheck()),
-	}
-}
-
-const mapStateToProps = state => {
-	return {
-		token: state.USER_TOKEN,
-	}
-}
-
-const App = props => {
+const App = () => {
+	const dispatch = useDispatch()
 	const { pathname } = useLocation()
-	const { authCheck } = props
 
 	useEffect(() => {
-		authCheck()
-	}, [authCheck])
+		dispatch(authCheck())
+	}, [dispatch])
 
 	return (
 		<>
@@ -87,7 +75,7 @@ const App = props => {
 					<Route path='user/:userId' element={<UserProfile />} />
 					{/* dashboard - start */}
 					<Route path='/dashboard' element={<PrivateOutlet />}>
-						<Route path='*' element={<RecruiterDashboard />}>
+						<Route path='*' element={<Dashboard />}>
 							<Route path='overview' element={<RecruiterOverview />} />
 							<Route path='message' element={<RecruiterMessage />} />
 							<Route path='edit-profile' element={<EditBasicInformation />} />
@@ -110,4 +98,4 @@ const App = props => {
 	)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App

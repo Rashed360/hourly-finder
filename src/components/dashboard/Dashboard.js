@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
-import DashboardNavigation from '../common/DashboardNavigation'
-import DashboradRightBar from '../common/DashboradRightBar'
+import DashboardNavigation from './common/DashboardNavigation'
+import DashboradRightBar from './common/DashboradRightBar'
 
-const RecruiterDashboard = () => {
+const Dashboard = () => {
 	const user = useSelector(state => state.user.user)
 	const profile = useSelector(state => state.user.profile)
 
@@ -158,4 +158,4 @@ const RecruiterDashboard = () => {
 	)
 }
 
-export default RecruiterDashboard
+export default Dashboard
