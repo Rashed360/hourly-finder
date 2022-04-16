@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
-import RecruiterPostedJob from './RecruiterPostedJob'
-import SeekerApplication from './SeekerApplication'
+import RecruiterPostedJob from './recruiterPosted/RecruiterPostedJob'
+import SeekerApplication from './seekerApplication/SeekerApplication'
 
 const Manage = () => {
 	const user = useSelector(state => state.user.user)
