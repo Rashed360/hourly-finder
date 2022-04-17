@@ -6,9 +6,16 @@ import {
 	PROFILE_LOAD_FAILED,
 	RECRUITER_ORG_LOAD,
 	RECRUITER_ORG_LOAD_FAILED,
+	USER_RESET,
 } from '../actionTypes/userActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
+
+export const userDataReset = () => {
+	return {
+		type: USER_RESET,
+	}
+}
 
 export const userFetch = () => async dispatch => {
 	const token = localStorage.getItem('token')

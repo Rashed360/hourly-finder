@@ -60,8 +60,12 @@ const authReducer = (state = authInitialState, action) => {
 			return {
 				...state,
 				isAuthenticated: false,
-				authFailedMsg: null,
 				token: null,
+				userId: null,
+				authLoading: false,
+				authFailedMsg: null,
+				authSuccessMsg: null,
+				activationSuccess: false,
 			}
 
 		case ACTIVATE_SUCCESS:

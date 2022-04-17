@@ -69,7 +69,12 @@ const AboutOrganization = () => {
 			<h3 className='dashboard-title'>Edit Organization</h3>
 			<div className='dashboard-content'>
 				<div className='edit-profile-area content'>
-					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
+					<Formik
+						enableReinitialize
+						initialValues={initialValues}
+						onSubmit={onSubmitHandle}
+						validate={validateHandle}
+					>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset} style={{ overflow: 'hidden' }}>
 								<div className='edit-organization-information'>

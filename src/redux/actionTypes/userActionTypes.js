@@ -1,3 +1,5 @@
+export const USER_RESET = "USER_RESET"
+
 export const USER_LOAD_SUCCESS = "USER_LOAD_SUCCESS"
 export const USER_LOAD_FAILED = "USER_LOAD_FAILED"
 

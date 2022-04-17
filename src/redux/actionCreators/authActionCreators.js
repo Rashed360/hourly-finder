@@ -9,7 +9,7 @@ import {
 	AUTH_REG_SUCCESS,
 	ACTIVATE_SUCCESS,
 } from '../actionTypes/authActionTypes'
-import { userFetch } from './userActionCreators'
+import { userDataReset, userFetch } from './userActionCreators'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
 
@@ -97,23 +97,24 @@ export const authLogin = (email, password) => async dispatch => {
 		})
 }
 
-export const authLogout = () => {
+export const authLogout = () => dispatch => {
 	localStorage.removeItem('token')
 	localStorage.removeItem('userId')
 	localStorage.removeItem('expiration')
-	return {
+	dispatch({
 		type: AUTH_LOGOUT,
-	}
+	})
+	dispatch(userDataReset())
 }
 
 export const authCheck = () => dispatch => {
 	const token = localStorage.getItem('token')
 	if (!token) {
-		dispatch(authLogout())
+		authLogout()
 	} else {
 		const expiration = new Date(localStorage.getItem('expiration'))
 		if (expiration <= new Date()) {
-			dispatch(authLogout())
+			authLogout()
 		} else {
 			const userId = localStorage.getItem('userId')
 			dispatch(authSuccess(token, userId))

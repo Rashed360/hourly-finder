@@ -1,4 +1,5 @@
 import {
+	USER_RESET,
 	USER_LOAD_SUCCESS,
 	USER_LOAD_FAILED,
 	PROFILE_LOAD_SUCCESS,
@@ -18,6 +19,15 @@ const userInitialState = {
 
 const userReducer = (state = userInitialState, action) => {
 	switch (action.type) {
+		case USER_RESET:
+			return {
+				user: null,
+				userLoadFailed: false,
+				profile: null,
+				profileLoadFailed: false,
+				company: null,
+				companyLoadFailed: false,
+			}
 		case USER_LOAD_SUCCESS:
 			return {
 				...state,
