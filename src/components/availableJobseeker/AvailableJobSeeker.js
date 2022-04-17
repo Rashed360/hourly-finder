@@ -1,13 +1,12 @@
-import AvailableSeekerSearch from "./availableJobseekerSearch/AvailableSeekerSearch"
-import AvailableSeekerContent from "./availableSeekerContent/AvailableSeekerContent"
-import AvailableSeekerFooter from "./availableSeekerFooter/AvailableSeekerFooter"
-import AvailableSeekerHeader from "./availableSeekerHeader/AvailableSeekerHeader"
+import SeekerSearchBar from "./elements/SeekerSearchBar"
+import AvailableSeekerContent from "./elements/AvailableSeekerContent"
+import AvailableSeekerFooter from "./elements/AvailableSeekerFooter"
+import AvailableSeekerHeader from "./elements/AvailableSeekerHeader"
 
 const AvailableJobSeeker = () => {
   return (
     <div className='avaiable-jobseeker-area mt-90 mb-30'>
-      <AvailableSeekerSearch />
-
+      <SeekerSearchBar />
       <div className='container mt-20'>
         <div className='row'>
           <div className='col-lg-12'>

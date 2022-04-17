@@ -1,6 +1,6 @@
 import React from "react"
 import { FaMapMarkerAlt, FaSearchLocation } from "react-icons/fa"
-const AvailableSeekerSearch = () => {
+const SeekerSearchBar = () => {
   return (
     <div className='all-job-area'>
       <div className='container'>
@@ -47,4 +47,4 @@ const AvailableSeekerSearch = () => {
   )
 }
 
-export default AvailableSeekerSearch
+export default SeekerSearchBar
