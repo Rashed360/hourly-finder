@@ -70,7 +70,12 @@ const EditBasicInformation = () => {
 			<h3 className='dashboard-title'>Edit Profile</h3>
 			<div className='dashboard-content'>
 				<div className='edit-profile-area content profile-area'>
-					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
+					<Formik
+						enableReinitialize
+						initialValues={initialValues}
+						onSubmit={onSubmitHandle}
+						validate={validateHandle}
+					>
 						{({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
 							<Form onSubmit={handleSubmit} onReset={handleReset} style={{ height: '300px' }}>
 								<div className='edit-basic-information'>
