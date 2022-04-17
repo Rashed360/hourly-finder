@@ -184,9 +184,9 @@ const ContactFormSection = () => {
 
               <div className='form-field message'>
                 <label htmlFor=''>Message</label>
-                <textarea
+                <Field
                   name='message'
-                  id=''
+                  as='textarea'
                   cols='10'
                   rows='3'
                   placeholder='Write Your Message'
@@ -199,7 +199,7 @@ const ContactFormSection = () => {
                         : "form-control is-valid"
                       : "form-control"
                   }
-                ></textarea>
+                />
                 {touched.message && errors.message ? (
                   <div className='invalid-feedback'>{errors.message}</div>
                 ) : (
