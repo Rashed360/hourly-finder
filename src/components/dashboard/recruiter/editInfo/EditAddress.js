@@ -36,7 +36,7 @@ const EditAddress = () => {
 
 	return (
 		<div className='dashboard-main'>
-			<h3 className='dashboard-title mt-30'>Edit Address</h3>
+			<h3 className='dashboard-title'>Edit Address</h3>
 			<div className='dashboard-content'>
 				<div className='edit-profile-area content'>
 					<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>

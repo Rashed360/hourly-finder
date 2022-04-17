@@ -185,3 +185,6 @@ export const profileAddressUpdate = (type, id, address) => async dispatch => {
 export const profileOrganizationUpdate = data => async dispatch => {
 	console.log('Update Organization', data)
 }
+export const profileAboutYouUpdate = data => async dispatch => {
+	console.log('Update Organization', data)
+}

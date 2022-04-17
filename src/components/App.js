@@ -17,7 +17,7 @@ import Contact from './contact/Contact'
 
 import EditAddress from './dashboard/recruiter/editInfo/EditAddress'
 import EditBasicInformation from './dashboard/recruiter/editInfo/EditBasicInformation'
-import EditOrganizationAbout from './dashboard/recruiter/editInfo/EditOrganizationAbout'
+import EditOrganizationAbout from './dashboard/recruiter/editInfo/EditAbout'
 
 import Manage from './dashboard/recruiter/manage/Manage'
 import ViewPostedJob from './dashboard/recruiter/manage/viewPostedJob/ViewPostedJob'

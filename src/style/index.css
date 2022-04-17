@@ -2222,9 +2222,9 @@ h2.contact-title,
 }
 
 .dashboard-navigation nav ul li a {
-	padding: 7px 25px;
+	padding: 6px 25px;
 	transition: 0.3s;
-	font-size: 18px;
+	font-size: 17px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -2241,6 +2241,7 @@ h2.contact-title,
 .dashboard-navigation nav ul li a.active {
 	background: #c2dce5;
 	color: #16395f;
+	font-weight: 500;
 }
 .dashboard-navigation nav ul li {
 	position: relative;
@@ -2259,7 +2260,8 @@ h2.contact-title,
 	background: transparent;
 	display: flex;
 	justify-content: flex-start;
-	padding: 9px 50px;
+	padding: 6px 50px;
+	font-size: 16px;
 }
 
 .dashboard-navigation nav ul li .sub-menu li a.active {
