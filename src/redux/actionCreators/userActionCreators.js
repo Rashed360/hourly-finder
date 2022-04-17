@@ -4,6 +4,8 @@ import {
 	USER_LOAD_FAILED,
 	PROFILE_LOAD_SUCCESS,
 	PROFILE_LOAD_FAILED,
+	RECRUITER_ORG_LOAD,
+	RECRUITER_ORG_LOAD_FAILED,
 } from '../actionTypes/userActionTypes'
 
 const url = process.env.REACT_APP_BACKEND_SERVER
@@ -93,13 +95,17 @@ export const organizationFetch = recruiter => async dispatch => {
 		await axios
 			.get(`${url}/jobs/company/?id=${recruiter}`, config)
 			.then(response => {
-				const data = response.data
-				console.log(data)
-				// dispatch({})
+				const data = response.data[0]
+				dispatch({
+					type: RECRUITER_ORG_LOAD,
+					payload: data,
+				})
 			})
 			.catch(error => {
 				console.log(error.response)
-				// dispatch({})
+				dispatch({
+					type: RECRUITER_ORG_LOAD_FAILED,
+				})
 			})
 	}
 }
@@ -206,9 +212,51 @@ export const profileAddressUpdate = (type, id, address) => async dispatch => {
 		})
 	}
 }
-export const profileOrganizationUpdate = data => async dispatch => {
-	console.log('Update Organization', data)
+export const profileOrganizationUpdate = (id, orgData, image) => async dispatch => {
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		if (id) {
+			// org update
+			if (Object.keys(orgData).length !== 0) {
+				await axios
+					.patch(`${url}/jobs/company/${id}/`, orgData, config)
+					.then(response => {
+						console.log(response.data)
+					})
+					.catch(error => {
+						console.log(error.response)
+					})
+			}
+			// image update
+			if (image !== null) {
+				let form_data = new FormData()
+				form_data.append('logo', image, image.name)
+				const imageConfig = {
+					headers: {
+						'content-type': 'multipart/form-data',
+						Authorization: `JWT ${token}`,
+					},
+				}
+				await axios
+					.patch(`${url}/jobs/company/${id}/`, form_data, imageConfig)
+					.then(response => {
+						console.log(response.data)
+					})
+					.catch(error => {
+						console.log(error.response)
+					})
+			}
+		}
+	}
 }
+
 export const profileAboutYouUpdate = data => async dispatch => {
 	console.log('Update Organization', data)
 }

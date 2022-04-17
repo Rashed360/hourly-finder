@@ -3,6 +3,8 @@ import {
 	USER_LOAD_FAILED,
 	PROFILE_LOAD_SUCCESS,
 	PROFILE_LOAD_FAILED,
+	RECRUITER_ORG_LOAD_FAILED,
+	RECRUITER_ORG_LOAD,
 } from '../actionTypes/userActionTypes'
 
 const userInitialState = {
@@ -37,6 +39,17 @@ const userReducer = (state = userInitialState, action) => {
 				...state,
 				profile: null,
 				profileLoadFailed: true,
+			}
+		case RECRUITER_ORG_LOAD:
+			return {
+				...state,
+				company: action.payload,
+				companyLoadFailed: false,
+			}
+		case RECRUITER_ORG_LOAD_FAILED:
+			return {
+				...state,
+				companyLoadFailed: true,
 			}
 		default:
 			return state

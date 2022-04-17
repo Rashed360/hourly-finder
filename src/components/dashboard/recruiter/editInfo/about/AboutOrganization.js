@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Formik, Form, Field } from 'formik'
 import FormField from 'components/commonComponents/formik/FormField'
-import {
-	organizationFetch,
-	profileOrganizationUpdate,
-} from 'redux/actionCreators/userActionCreators'
+import { organizationFetch, profileOrganizationUpdate } from 'redux/actionCreators/userActionCreators'
 
 const AboutOrganization = () => {
 	const dispatch = useDispatch()
@@ -41,14 +38,21 @@ const AboutOrganization = () => {
 	const { description, location, logo, moto, name } = company === null ? temporaryData : company
 
 	const initialValues = {
-		description: '',
-		location: '',
-		moto: '',
-		location: '',
+		description: description,
+		location: location,
+		moto: moto,
+		name: name,
 	}
 
 	const onSubmitHandle = async values => {
-		console.log('Edit Company', values)
+		const orgData = {}
+
+		if (values.description !== initialValues.description) orgData.description = values.description
+		if (values.location !== initialValues.location) orgData.location = values.location
+		if (values.moto !== initialValues.moto) orgData.moto = values.moto
+		if (values.name !== initialValues.name) orgData.name = values.name
+
+		dispatch(profileOrganizationUpdate(id, orgData, image))
 	}
 
 	const onImageChange = event => {
@@ -121,11 +125,11 @@ const AboutOrganization = () => {
 														<div className='form-field'>
 															<label htmlFor=''>Bio</label>
 															<Field
-																name='bio'
+																name='description'
 																as='textarea'
 																cols='5'
 																rows='3'
-																value={values.todo}
+																value={values.description}
 																onChange={handleChange}
 																placeholder='Description about your Organization'
 															/>
