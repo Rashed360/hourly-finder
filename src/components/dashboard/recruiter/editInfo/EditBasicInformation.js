@@ -172,10 +172,10 @@ const EditBasicInformation = () => {
 													</div>
 												</div>
 											</div>
-
 											<div className='col-lg-3'>
 												<div className='form-field edit-profile-picture'>
 													<label htmlFor=''>Profile Picture</label>
+
 													<div
 														className='profile-img-edit'
 														htmlFor='profile-pic'
@@ -185,6 +185,7 @@ const EditBasicInformation = () => {
 													>
 														<input type='file' id='profile-pic' accept='image/*' onChange={onImageChange} />
 													</div>
+
 													<p>Profile picture must be less than 1MB and 300x300px aspect ratio.</p>
 												</div>
 											</div>

@@ -80,6 +80,30 @@ export const profileFetch = (type, id) => async dispatch => {
 	}
 }
 
+export const organizationFetch = recruiter => async dispatch => {
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		await axios
+			.get(`${url}/jobs/company/?id=${recruiter}`, config)
+			.then(response => {
+				const data = response.data
+				console.log(data)
+				// dispatch({})
+			})
+			.catch(error => {
+				console.log(error.response)
+				// dispatch({})
+			})
+	}
+}
+
 export const profileUpdate = (type, id, userData, profileData, image) => async dispatch => {
 	const token = localStorage.getItem('token')
 	if (token) {

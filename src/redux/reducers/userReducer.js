@@ -10,6 +10,8 @@ const userInitialState = {
 	userLoadFailed: false,
 	profile: null,
 	profileLoadFailed: false,
+	company: null,
+	companyLoadFailed: false,
 }
 
 const userReducer = (state = userInitialState, action) => {

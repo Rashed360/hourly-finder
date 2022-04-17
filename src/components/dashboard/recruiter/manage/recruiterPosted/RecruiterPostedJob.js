@@ -12,25 +12,9 @@ const RecruiterPostedJob = () => {
 	useEffect(() => {
 		if (id !== null) {
 			dispatch(jobByRecruiter(id))
-		}
+		}		
 	}, [dispatch, id])
 
-	const jobData = [
-		{
-			title: 'Hiring Online English Teacher',
-			location: 'Dhanmondi',
-			type: 'Hourly',
-			status: 'Completed',
-			starting: '03-09-2021',
-		},
-		{
-			title: 'Hiring Online English Teacher',
-			location: 'Dhanmondi',
-			type: 'Hourly',
-			status: 'Completed',
-			starting: '03-09-2021',
-		},
-	]
 	return (
 		<>
 			<h3 className='dashboard-title'>Manage Posted Jobs</h3>
