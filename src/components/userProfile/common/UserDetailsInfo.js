@@ -1,13 +1,13 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
-import PreviousWork from './previousWork/PreviousWork'
+import PreviousWork from './PreviousWork'
 
-const UserDetailsInfo = () => {
+const UserDetailsInfo = ({ user, seeker, recruiter }) => {
 	return (
 		<div className='profile-view-information'>
 			<div className='row'>
 				<div className='col-lg-6'>
-					<h4 className='profile-category'>Job Seeker</h4>
+					<h4 className='profile-category'>{seeker ? 'Job Seeker' : 'Recruiter'}</h4>
 				</div>
 				<div className='col-lg-6'>
 					<div className='overall-rating'>
@@ -35,7 +35,7 @@ const UserDetailsInfo = () => {
 			<div className='row'>
 				<div className='col-lg-12'>
 					<div className='profile-title'>
-						<h5>About Sajeeb</h5>
+						<h5>About User</h5>
 					</div>
 					<div className='profile-bio'>
 						<h5>Bio</h5>

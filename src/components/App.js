@@ -72,7 +72,7 @@ const App = () => {
 					<Route path='/jobseeker' element={<AvailableJobSeeker />} />
 					{/*  */}
 					<Route path='apply/for/:job_id' element={<Apply />} />
-					<Route path='user/:userId' element={<UserProfile />} />
+					<Route path='user/:userName' element={<UserProfile />} />
 					{/* dashboard - start */}
 					<Route path='/dashboard' element={<PrivateOutlet />}>
 						<Route path='*' element={<Dashboard />}>
