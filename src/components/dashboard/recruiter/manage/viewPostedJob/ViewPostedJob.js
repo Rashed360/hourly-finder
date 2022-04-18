@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { FaRegEdit, FaTrash } from 'react-icons/fa'
+import { FaArrowLeft, FaRegEdit, FaTrash } from 'react-icons/fa'
 import BasicInfo from './commonPosted/BasicInfo'
 import ApplicantTable from './commonPosted/ApplicantTable'
+import { useNavigate } from 'react-router-dom'
 
 const ViewPostedJob = () => {
+	const navigate = useNavigate()
 	const [show, setShow] = useState(false)
 	const infoToggle = () => {
 		setShow(!show)
@@ -62,17 +64,21 @@ const ViewPostedJob = () => {
 					<div className='applicant-information-area'>
 						<div className='applicant-information-filter'>
 							<div className='show-all-applicant'>
-								<button onClick={infoToggle} className='btn applicant-info'>
+								<button onClick={infoToggle} className='btn btn-main'>
 									Show All Applicants
 								</button>
 
-								{show && (
+								{show ? (
 									<div className='display-page'>
 										<span>
 											<span className='iconify' data-icon='ic:baseline-list-alt'></span>
 										</span>{' '}
 										Showing 10 Per Page
 									</div>
+								) : (
+									<button className='btn btn-alt' onClick={() => navigate(-1)}>
+										<FaArrowLeft /> Go back
+									</button>
 								)}
 							</div>
 							{show && (

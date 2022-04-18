@@ -1,5 +1,3 @@
-import React from 'react';
-
 const RecruiterOngoingJob = () => {
     return (
         <div className="dashboard-main">

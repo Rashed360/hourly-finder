@@ -1,4 +1,4 @@
-import { FaBookmark, FaMapMarkerAlt, FaRegEye } from 'react-icons/fa'
+import { FaBookmark, FaMapMarkerAlt, FaRegEye, FaRegEdit } from 'react-icons/fa'
 import { useJobType } from '../../../../../hooks/useJobHook'
 import { Link } from 'react-router-dom'
 
@@ -26,9 +26,12 @@ const PostedJobBlock = ({ job }) => {
 			</td>
 			<td>{job.starting}</td>
 			<td>
-				<Link to='view' className='btn edit'>
+				<Link to='view' className='btn view'>
 					<FaRegEye />
 				</Link>
+				<button className='btn edit'>
+					<FaRegEdit />
+				</button>
 			</td>
 		</tr>
 	)

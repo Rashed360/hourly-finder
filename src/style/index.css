@@ -2635,13 +2635,11 @@ h3.right-bar-title {
 	font-size: 18px;
 	color: black;
 }
-
-.manage-job-table .btn.edit {
+.manage-job-table .btn.view {
 	background: #96bea4;
 }
-
-.manage-job-table .btn.delete {
-	background: #ee4d6e;
+.manage-job-table .btn.edit {
+	background: #ffbc3a;
 }
 .ongoing-job-area {
 	background: #fbfbfb;
@@ -2903,9 +2901,7 @@ h3.right-bar-title {
 	font-size: 14px;
 	color: #434343;
 }
-
 .show-all-applicant .btn {
-	background: #74cfe4;
 	font-size: 14px;
 	margin-right: 15px;
 }
