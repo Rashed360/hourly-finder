@@ -1,24 +1,7 @@
 import { FaCheckCircle, FaFilter, FaRegListAlt } from 'react-icons/fa'
 import AvailableJobseekerCard from './AvailableJobseekerCard'
 
-const AvailableSeekerContent = () => {
-	const jobseekers = [
-		{
-			name: 'Rashed Ahmed',
-			designation: 'Student',
-			image: 'http://localhost:8000/media/users/avater_Tr36uwW.jpg',
-		},
-		{
-			name: 'Sajeeb Debnath',
-			designation: 'Developer',
-			image: 'http://localhost:8000/media/users/avater_Tr36uwW.jpg',
-		},
-		{
-			name: 'Motalib Hossain',
-			designation: 'Designer',
-			image: 'http://localhost:8000/media/users/avater_Tr36uwW.jpg',
-		},
-	]
+const AvailableSeekerContent = ({ seeker }) => {
 	return (
 		<div className='avaiable-jobseeker-content'>
 			<div className='avaiable-jobseeker-filter'>
@@ -55,9 +38,9 @@ const AvailableSeekerContent = () => {
 			</div>
 			<div className='avaiable-jobseeker-cards-warapper'>
 				<div className='row'>
-					{jobseekers.map((user_data, idx) => (
+					{seeker.map((seeker_data, idx) => (
 						<div className='col-lg-4'>
-							<AvailableJobseekerCard key={idx} user={user_data} />
+							<AvailableJobseekerCard key={idx} seeker_data={seeker_data} />
 						</div>
 					))}
 				</div>
