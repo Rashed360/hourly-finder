@@ -35,7 +35,7 @@ const FeedbackSection = () => {
 			author_name: 'Sajibe Kanti',
 			position: 'Cyber Security Expert',
 			photo: '/images/homepage/users/user-5.jpg',
-			comments: '..highly secure web application, cant\'t find any bugs..',
+			comments: "..highly secure web application, cant't find any bugs..",
 		},
 	]
 
@@ -54,7 +54,7 @@ const FeedbackSection = () => {
 	return (
 		<div className='user-feedback-area section-padding'>
 			<div className='container'>
-				<SectionTitle title='User Feedback' subtitle='See more' link='#' />
+				<SectionTitle title='User Feedback' />
 				<div className='row pt-40'>
 					<Slide {...properties}>
 						{user_feedbacks.map((user, index) => {

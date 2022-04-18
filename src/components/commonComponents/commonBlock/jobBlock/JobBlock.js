@@ -36,7 +36,7 @@ const JobBlock = ({ job }) => {
 						<Link to={`/location/${location.split(',')[0]}`}> {location}</Link>
 					</span>
 				</div>
-				<Tags tags={keyword} />
+				<Tags tags={keyword} limit />
 			</div>
 		</div>
 	)

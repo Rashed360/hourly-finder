@@ -51,7 +51,9 @@ const App = () => {
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/jobs' element={<AllJobs />} />
-					<Route path='/jobs/by' element={<CityCategory />} />
+					<Route path='/category' element={<CityCategory />}>
+						<Route path=':id' element={<CityCategory scroll />} />
+					</Route>
 					<Route path='/blogs' element={<Blogs />} />
 					<Route path='about' element={<About />} />
 					<Route path='/contact' element={<Contact />} />

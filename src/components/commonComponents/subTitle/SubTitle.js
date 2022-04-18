@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SubTitle = ({sub_title}) => {
     return (
         <div className='row mb-30'>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Tags = ({ tags }) => {
+const Tags = ({ tags, limit }) => {
 	const tagList = Array.isArray(tags) ? tags : tags.split(',')
 	return (
 		<div className='blog-keyword'>
@@ -12,7 +12,7 @@ const Tags = ({ tags }) => {
 						</Link>
 					)
 				})
-			) : (
+			) : limit ? (
 				<>
 					{tagList[0] !== undefined && (
 						<Link to={'/jobs/?tag=' + tagList[0]} className='blog-tag'>
@@ -25,6 +25,14 @@ const Tags = ({ tags }) => {
 						</Link>
 					)}
 				</>
+			) : (
+				tagList.map((tag, i) => {
+					return (
+						<Link to={'/jobs/?tag=' + tag} className='blog-tag' key={i}>
+							<div style={{ backgroundColor: '#dff3fb' }}></div> {tag}
+						</Link>
+					)
+				})
 			)}
 		</div>
 	)

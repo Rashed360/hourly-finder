@@ -1,4 +1,5 @@
 import { useJobType, useJobLevel } from '../../../hooks/useJobHook'
+import Tags from 'components/commonComponents/tagElement/Tags'
 import { Link } from 'react-router-dom'
 import LeafletMap from '../../commonComponents/map/LeafletMap'
 
@@ -9,6 +10,7 @@ const JobDetails = props => {
 		salary,
 		duration,
 		language,
+		keyword,
 		vacancy,
 		level,
 		starting,
@@ -34,6 +36,7 @@ const JobDetails = props => {
 			<div className='jobs-details-information'>
 				<div className='single-job-title'>
 					<h2>{title}</h2>
+					<Tags tags={keyword} />
 					<p>
 						<Link to={`/user/${username}`} className='company'>
 							{name}

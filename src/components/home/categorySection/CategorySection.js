@@ -31,7 +31,7 @@ const CategorySection = () => {
   return (
     <div className='browse-jobs-categories section-padding'>
         <div className='container'>
-            <SectionTitle title="Browse Job Categories" subTitle="More Category" subLink="jobs/by" />
+            <SectionTitle title="Browse Job Categories" subTitle="More Category" subLink="category" />
             <div className='row pt-40'>
                 {
                   categorires.map(category => <CategoryBlock key={category.id} category={category} />)
