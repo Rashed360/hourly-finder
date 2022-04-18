@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import SectionTitle from '../commonHome/sectionTitle/SectionTitle'
 import LeafletMap from '../../commonComponents/map/LeafletMap'
 
@@ -16,7 +16,9 @@ const HowWorkSection = () => {
 								We use live location to map out jobs close to your home. We use live location to map out jobs
 								close to your home. We use live location to map out jobs close to your home.
 							</p>
-							<div className='btn btn-main'>Jobs Close to Your Location</div>
+							<Link to='/location/' className='btn btn-main'>
+								Jobs Close to Your Location
+							</Link>
 						</div>
 					</div>
 					<div className='col-lg-5'>

@@ -1,9 +1,18 @@
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import CategoryBlock from '../home/commonHome/blocks/CategoryBlock'
 import MostRecentJob from '../singleJob/mostRecentSection/MostRecentJob'
 import AreaCategory from './areaCategory/AreaCategory'
 
 const CityCategory = () => {
+	const { id } = useParams()
+	useEffect(() => {
+		if (id) {
+			window.scrollTo(0, 620)
+		}
+	}, [id])
+
 	const allJobs = useSelector(state => state.job.allJobs)
 	const areaBasedLocation = [
 		{
