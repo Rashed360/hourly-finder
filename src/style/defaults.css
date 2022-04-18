@@ -225,7 +225,11 @@ a {
 	text-decoration: none;
 	color: var(--textColor);
 }
-
+abbr[title] {
+	border-bottom: none !important;
+	cursor: inherit !important;
+	text-decoration: none !important;
+}
 .btn {
 	text-decoration: none;
 	font-size: var(--smallFont);

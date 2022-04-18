@@ -245,11 +245,14 @@ a.btn.join-us {
 }
 
 .recruiter-title {
-	font-size: var(--smallFont);
-	margin-left: 25px;
-	font-weight: 400;
+	font-size: 14px;
+	margin-left: 20px;
+	font-weight: 500;
 	margin-bottom: 0;
 	word-break: break-word;
+}
+.recruiter-title a {
+	font-size: 16px;
 }
 .recruiter-title-sk {
 	width: 145px;
@@ -309,7 +312,9 @@ a.btn.join-us {
 }
 .job-keyword .job-tag,
 .blog-keyword .blog-tag {
-	background: #e3e3e3;
+	background: #edfeff;
+	border: 1px solid #dff3fb;
+	color: var(--bgColor);
 	display: flex;
 	align-items: center;
 	font-size: 12px;
@@ -3119,6 +3124,7 @@ h3.right-bar-title {
 .avaible-jobseeker-card {
 	border: 1px solid #96bea4;
 	border-radius: 10px;
+	overflow: hidden;
 	background: white;
 	box-shadow: 1px 1px 0px 1px #96bea4;
 	margin: 10px 0;
@@ -3128,9 +3134,9 @@ h3.right-bar-title {
 	background: #d4ecdb;
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	border-top: 1px solid #96bea4;
-	padding: 10px 0;
+	padding: 10px 10px;
 }
 
 .avaiable-jobseeker-rating .rating svg {
@@ -3160,6 +3166,7 @@ h3.right-bar-title {
 	width: 60px;
 	height: 60px;
 	background: #d4ecdb;
+	border: 1px solid #d4ecdb;
 	border-radius: 100%;
 	background-size: cover;
 	background-position: center;

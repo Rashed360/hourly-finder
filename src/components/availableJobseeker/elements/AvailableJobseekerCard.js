@@ -16,13 +16,13 @@ const AvailableJobseekerCard = ({ seeker_data }) => {
 						}}
 					></div>
 					<div className='avaiable-jobseeker-info'>
-						<h4 className='name'>{first_name +' '+ last_name}</h4>
-						<p className='designation'>{expertise}</p>
+						<h4 className='name'>{first_name + ' ' + last_name}</h4>
+						<p className='designation'>{expertise !== '' ? expertise : 'No Skills'}</p>
 						<div className='avaiabele-status'>Avaialable for Work</div>
 					</div>
 				</div>
 				<div className='about-avaiable-jobseeker'>
-					<p>{bio}</p>
+					<p>{bio !== '' ? bio : 'Job-seeker has no bio.'}</p>
 				</div>
 			</div>
 			<div className='avaiable-jobseeker-card-footer'>
