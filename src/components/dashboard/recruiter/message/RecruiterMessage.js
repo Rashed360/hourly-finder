@@ -1,3 +1,4 @@
+import { FaRegGrinAlt, FaSearch } from "react-icons/fa"
 import { Link } from "react-router-dom"
 const RecruiterMessage = () => {
   return (
@@ -14,7 +15,7 @@ const RecruiterMessage = () => {
                       <div className='form-field'>
                         <input type='text' name='search' placeholder='Search...' />
                         <span className='icon'>
-                          <span className='iconify' data-icon='charm:search'></span>
+                          <FaSearch />
                         </span>
                       </div>
                     </form>
@@ -39,7 +40,7 @@ const RecruiterMessage = () => {
                           className='contact-pic'
                           style={{
                             backgroundImage:
-                              "url(https://lh3.googleusercontent.com/tbJfKBLnH018OGRjudkgWq8qRCk-G5f6n8T-8SZwZmuRyLFaCkXX2sbb8JlsznXQUVge3CwwPrJZ9TCV-3xEKk5A5xxVdpqcuV5DmTbluBAWvrpca3ZOavwtk3OBXDHGaCiXo0hVtbMPIY53vUdZOZ6fK1Yiiu_CzQviFniFY4Xc_-l3cNxaQBJu2qcuZk5heFj3tU3H2iIdJZVoSn1SDWmM4c8jWF-Fhx_Krw9IBy-BFcTZA9-idwi_BE9Xfb2CNmZCZKseAif8m7Ma5vYjt2fliFLdb8kndiWJpUJnn3QXC9sbE1Y1aiyhi3IfeY2mPTzgczDWgvf_S5p8FSG3DGh-rd_TonRbbhL5MXpQdxVih5X8UKNOpvgA-Gj4S6q1ENFMEHHktX4prfn3jGjnpfd-E-6wuXQ14dJ17Ca2oyr8Rt-uCiUBJsdFZkS9Ogp1JGRkgmrfRJh7vkjC5hFqA0SlD7ynNHyZ7naQIaa8LUUiwRgW-DKewpPjSHqmd5F94kkolm-zFkhxTjUAUI8HP14SzNXslHs4o3WhC58q6sT3k4HkXxUlict2qjO3h7rl-21e7lyKIDktEtIjFn3bwYByBrbDUd0B5PskT9YKKG4tEOJgTChEc9p0IYWjm3hrOndfjTtqiRmkdi5nE7NmzhROTodkg4Gj9kiP893ofh1spIpVYo4Vl1T-awq2cgsf9kotaoFFZMreUcSSX0YQPkiY9qWarN0g3Xs20wizbxALm9XK7iYCT75HBsnocNEhnXLOngedGRogC_DBqa3GeUn6c19_78bYd2QcdV19It9qRz-8yoWilc_fYOyJehkf8Lp6aES7L_0RLEwBb5OF9bof4eT5fbm4spZ6TASBfH0S7HmgvblbXe_aaO7TBY-aDdgeLMvU5A=w493-h657-no?authuser=1)",
+                              "url(https://cdnb.artstation.com/p/assets/images/images/009/836/467/medium/maria-bo-schatzis-stream-profilpicture.jpg?1521139318)",
                           }}
                         ></div>
                         <div className='contact-info'>
@@ -124,7 +125,7 @@ const RecruiterMessage = () => {
                     <div className='files-area'>
                       <div className='emoji-field'>
                         <span>
-                          <span className='iconify' data-icon='fluent:emoji-48-filled'></span>
+                          <FaRegGrinAlt />
                         </span>
                       </div>
                       <div className='file-field'>

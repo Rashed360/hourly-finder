@@ -31,6 +31,12 @@ const Dashboard = () => {
         subMenu: null,
       },
       {
+        name: "Message",
+        icon: "message",
+        link: "message",
+        subMenu: null,
+      },
+      {
         name: "Find Jobseeker",
         icon: "find",
         link: "/jobseeker",
@@ -88,6 +94,12 @@ const Dashboard = () => {
         name: "Dashboard",
         icon: "home",
         link: "overview",
+        subMenu: null,
+      },
+      {
+        name: "Message",
+        icon: "message",
+        link: "message",
         subMenu: null,
       },
       {
