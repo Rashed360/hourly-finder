@@ -7,6 +7,7 @@ const Dashboard = () => {
   const user = useSelector((state) => state.user.user)
   const profile = useSelector((state) => state.user.profile)
   const { pathname } = useLocation()
+  const messagePagePath = "/dashboard/message"
 
   const tempEmpty = {
     id: 0,
@@ -161,10 +162,10 @@ const Dashboard = () => {
       <div className='left'>
         <DashboardNavigation navigations={DashboardInformation} user={DashboardInformation.userInfo} />
       </div>
-      <div className='mid dashScroll'>
+      <div className={pathname === messagePagePath ? "full dashScroll" : "mid dashScroll"}>
         <Outlet />
       </div>
-      {pathname === "/dashboard/message" ? null : (
+      {pathname === messagePagePath ? null : (
         <div className='right'>
           <DashboradRightBar />
         </div>

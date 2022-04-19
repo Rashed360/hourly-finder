@@ -2184,6 +2184,12 @@ h2.contact-title,
   height: calc(100vh - 70px);
   overflow-y: scroll;
 }
+.dashboard-all .full {
+  background-color: #fafafa;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  width: 1080px;
+}
 .dashboard-all .right {
   height: calc(100vh - 70px);
   width: 242px;
