@@ -8,7 +8,10 @@
 ```
 
 #### 📰: Sample UI
-![image](https://user-images.githubusercontent.com/29564029/152134566-60511c7d-a049-4ba0-8187-ece13c9eaf12.png)
+  Hompage Hero Section :
+![Sample Hero Image](https://user-images.githubusercontent.com/29564029/164260401-4b8ca356-f2cc-434d-a48f-ce750ea43c07.png)
+  Recruiter Dashboard :
+![image](https://user-images.githubusercontent.com/29564029/164261288-715f56a0-0fda-4f8f-942e-34e6284c7431.png)
 
 #### 📀: Dependencies List
 ```json

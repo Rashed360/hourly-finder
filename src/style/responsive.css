@@ -1,0 +1,6 @@
+@media screen and (max-width: 500px) {
+	.dashboard-all .left,
+	.dashboard-all .right {
+		display: none;
+	}
+}

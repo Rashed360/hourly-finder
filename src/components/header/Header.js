@@ -2,15 +2,18 @@ import { useEffect, useState } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { FaBell } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Image from '../../assets/images/user.svg'
 import Logo from '../../assets/logos/logo.svg'
 import useHeaderColor from '../../hooks/useHeaderColor'
 import Animate from './animate/Animate'
 import { userFetch } from '../../redux/actionCreators/userActionCreators'
+import ModalYesNo from 'components/commonComponents/modals/ModalYesNo'
 
 const Header = () => {
+	const [logoutModal, setLogoutModal] = useState(false)
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	const token = useSelector(state => state.auth.token)
 	const user = useSelector(state => state.user.user)
 	const profile = useSelector(state => state.user.profile)
@@ -45,6 +48,9 @@ const Header = () => {
 	}
 	const scrollToZero = () => {
 		window.scrollTo(0, 0)
+	}
+	const logoutAction = () => {
+		navigate('/logout')
 	}
 	window.addEventListener('scroll', changeNavbar)
 
@@ -105,7 +111,9 @@ const Header = () => {
 											<Link to='/dashboard'>Dashboard</Link>
 											{user?.user_type === 2 && <Link to='/jobseeker'>Jobseeker</Link>}
 											<Link to='/dashboard/message'>Message</Link>
-											<Link to='/logout'>Logout</Link>
+											<Link to='#' onClick={() => setLogoutModal(true)}>
+												Logout
+											</Link>
 										</Dropdown.Menu>
 									</Dropdown>
 								</div>
@@ -114,6 +122,18 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
+			<ModalYesNo
+				open={logoutModal}
+				onClose={() => setLogoutModal(false)}
+				onAccept={logoutAction}
+				data={{
+					title: 'Are you sure to Logout?',
+					subTitle: 'Private data will be unaccessible.',
+					body: 'Logout from authentication session',
+					footer: '* You have to login again to access private data!',
+					yesText: 'Logout',
+				}}
+			/>
 		</div>
 	)
 }
