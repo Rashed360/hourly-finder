@@ -73,6 +73,32 @@ const RecruiterMessage = () => {
                         <p>I saw your resume...</p>
                       </div>
                     </div>
+                    <div className='single-contact-item'>
+                      <div
+                        className='contact-pic'
+                        style={{
+                          backgroundImage:
+                            "url(https://image.shutterstock.com/image-vector/man-character-face-avatar-glasses-260nw-562077406.jpg)",
+                        }}
+                      ></div>
+                      <div className='contact-info unread'>
+                        <h6>Himel Saha</h6>
+                        <p>Thank you very much...</p>
+                      </div>
+                    </div>
+                    <div className='single-contact-item'>
+                      <div
+                        className='contact-pic'
+                        style={{
+                          backgroundImage:
+                            "url(https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg)",
+                        }}
+                      ></div>
+                      <div className='contact-info'>
+                        <h6>Jisan Hossain</h6>
+                        <p>sir, i can do this..</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -134,7 +160,20 @@ const RecruiterMessage = () => {
                   <div className='msg-field form-field'>
                     <input type='text' placeholder='Write message..' />
                     <button type='submit'>
-                      <span className='iconify' data-icon='zondicons:send'></span>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        aria-hidden='true'
+                        role='img'
+                        width='1em'
+                        height='1em'
+                        preserveAspectRatio='xMidYMid meet'
+                        viewBox='0 0 28 28'
+                      >
+                        <path
+                          fill='currentColor'
+                          d='M3.79 2.773L24.86 12.85a1.25 1.25 0 0 1 0 2.256L3.79 25.183a1.25 1.25 0 0 1-1.746-1.456l2.108-7.728a.5.5 0 0 1 .415-.364l10.21-1.387a.25.25 0 0 0 .195-.15l.018-.062a.25.25 0 0 0-.157-.268l-.055-.015l-10.2-1.387a.5.5 0 0 1-.414-.364L2.044 4.23A1.25 1.25 0 0 1 3.79 2.773Z'
+                        />
+                      </svg>
                     </button>
                   </div>
                 </div>
