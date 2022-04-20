@@ -246,6 +246,18 @@ abbr[title] {
 	background: #358fb2;
 	border: none;
 }
+.btn-warn {
+	background: #F9CA70;
+	border: none;
+}
+.btn-positive {
+	background: #96BEA4;
+	border: none;
+}
+.btn-negative {
+	background: #EE4D6E;
+	border: none;
+}
 .btn-alt {
 	background: #dcdcdc;
 	color: #464646;
@@ -260,6 +272,18 @@ abbr[title] {
 .btn-alt:hover {
 	background: #cacaca;
 	color: #3a3a3a;
+}
+.btn-warn:hover {
+	background: #e2b665;
+	border: none;
+}
+.btn-positive:hover {
+	background: #7ea78c;
+	border: none;
+}
+.btn-negative:hover {
+	background: #cc435e;
+	border: none;
 }
 @keyframes flash {
 	0%,
