@@ -35,5 +35,7 @@
   }
 ```
 #### 🚀: Deployment
-- [![Hourly Finder](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://hourly-finder.herokuapp.com/)
-- Warning: Deployed App has no Backend Connected!
+[![Hourly Finder](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://hourly-finder.herokuapp.com/)
+```
+NB: App first launch might take a long time to load and can show a "Application Error" at first. Wait for sometime and reload. As Heroku automatically kills the App process to save resources for free dynos. Also, backend might not be upto date as its developped and deployed separately.
+```
