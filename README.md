@@ -8,7 +8,7 @@
 ```
 
 #### 📰: Sample UI
-![image](https://user-images.githubusercontent.com/29564029/152134566-60511c7d-a049-4ba0-8187-ece13c9eaf12.png)
+![Sample Hero Image](https://user-images.githubusercontent.com/29564029/164260401-4b8ca356-f2cc-434d-a48f-ce750ea43c07.png)
 
 #### 📀: Dependencies List
 ```json
