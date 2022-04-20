@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { jobByRecruiter } from '../../../../../redux/actionCreators/jobActionCreators'
 
 const RecruiterPostedJob = () => {
+	document.title = 'HourlyFinder | Manage Jobs'
+
 	const dispatch = useDispatch()
 	const profile = useSelector(state => state.user.profile)
 	const recruiterJobs = useSelector(state => state.job.recruiterJobs)

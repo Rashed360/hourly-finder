@@ -1,6 +1,7 @@
 import { FaRegGrinAlt, FaSearch } from "react-icons/fa"
 import { Link } from "react-router-dom"
 const RecruiterMessage = () => {
+	document.title = 'HourlyFinder | Messages'
   return (
     <div className='dashboard-main'>
       <h3 className='dashboard-title'>Messages</h3>

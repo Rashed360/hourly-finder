@@ -8,6 +8,8 @@ import AvailableSeekerHeader from './elements/AvailableSeekerHeader'
 const url = process.env.REACT_APP_BACKEND_SERVER
 
 const AvailableJobSeeker = () => {
+	document.title = 'HourlyFinder | Find Jobseekers'
+
 	const [seekerData, setSeekerData] = useState()
 	useEffect(() => {
 		const availableSeekerFetch = async () => {

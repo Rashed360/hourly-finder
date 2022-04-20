@@ -1,6 +1,8 @@
 import { FaBookmark, FaMapMarkerAlt, FaRegEye } from "react-icons/fa"
 import { Link } from "react-router-dom"
 const SeekerApplication = () => {
+	document.title = 'HourlyFinder | Applications'
+
   return (
     <>
       <h3 className='dashboard-title'>Applications</h3>

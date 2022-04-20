@@ -8,6 +8,8 @@ import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/f
 import Spinner from '../../../commonComponents/spinner/Spinner'
 
 const RecruiterPostJob = () => {
+	document.title = 'HourlyFinder | Post Job'
+
 	const [image, setImage] = useState(null)
 	const [preview, setPreview] = useState(null)
 	const navigate = useNavigate()

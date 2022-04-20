@@ -5,6 +5,8 @@ import { profileUpdate } from "../../../../redux/actionCreators/userActionCreato
 import FormField from "../../../commonComponents/formik/FormField"
 
 const EditBasicInformation = () => {
+	document.title = 'HourlyFinder | Edit Profile'
+
   const dispatch = useDispatch()
   const user = useSelector((state) => state.user.user)
   const profile = useSelector((state) => state.user.profile)

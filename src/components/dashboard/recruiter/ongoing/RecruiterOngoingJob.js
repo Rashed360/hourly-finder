@@ -1,4 +1,6 @@
 const RecruiterOngoingJob = () => {
+	document.title = 'HourlyFinder | Ongoing Jobs'
+
     return (
         <div className="dashboard-main">
             <h3 className="dashboard-title">Ongoing Jobs</h3>
