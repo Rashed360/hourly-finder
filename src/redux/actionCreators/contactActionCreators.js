@@ -1,5 +1,7 @@
 import axios from "axios"
 import {
+  CLEAR_CONTACT_ERRORS,
+  CLEAR_SUBSCRIBE_ERRORS,
   CONTACT_QUERY_CREATE,
   CONTACT_QUERY_FAILED,
   CONTACT_QUERY_SUCCESS,
@@ -25,23 +27,6 @@ export const contactSuccess = () => {
 export const contactFailed = () => {
   return {
     type: CONTACT_QUERY_FAILED,
-  }
-}
-
-export const subscribingNewsletter = () => {
-  return {
-    type: SUBSCRIBING_NEWSLETTER,
-  }
-}
-export const subscribingNewsletterSucess = () => {
-  return {
-    type: SUBSCRIBING_NEWSLETTER_SUCCESS,
-  }
-}
-export const subscribingNewsletterFailed = (error) => {
-  return {
-    type: SUBSCRIBING_NEWSLETTER_FAILED,
-    payload: error,
   }
 }
 
@@ -73,6 +58,30 @@ export const contactQueryCreate =
       })
   }
 
+export const clearContactErrors = () => {
+  return {
+    type: CLEAR_CONTACT_ERRORS,
+  }
+}
+
+// Email Subscription Action Creators
+export const subscribingNewsletter = () => {
+  return {
+    type: SUBSCRIBING_NEWSLETTER,
+  }
+}
+export const subscribingNewsletterSucess = () => {
+  return {
+    type: SUBSCRIBING_NEWSLETTER_SUCCESS,
+  }
+}
+export const subscribingNewsletterFailed = (error) => {
+  return {
+    type: SUBSCRIBING_NEWSLETTER_FAILED,
+    payload: error,
+  }
+}
+
 export const subscribeNewsletter = (email) => async (dispatch) => {
   dispatch(subscribingNewsletter())
 
@@ -90,4 +99,10 @@ export const subscribeNewsletter = (email) => async (dispatch) => {
       const key = Object.keys(error.response.data)[0]
       dispatch(subscribingNewsletterFailed(error.response.data[key][0]))
     })
+}
+
+export const clearSubscribeErrors = () => {
+  return {
+    type: CLEAR_SUBSCRIBE_ERRORS,
+  }
 }

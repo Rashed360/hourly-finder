@@ -594,6 +594,13 @@ a.btn.join-us {
 .newsletter-form p.okk {
   color: green;
 }
+.newsletter-notification .msg_notify,
+.newsletter-notification .msg_notify.error {
+  border: none;
+  background: transparent;
+  text-transform: capitalize;
+  padding: 0;
+}
 /* -------------------------Newsletter Section CSS End --------------------- */
 
 /* -------------------------Footer Section CSS Start --------------------- */

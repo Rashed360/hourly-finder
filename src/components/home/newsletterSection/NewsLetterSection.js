@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik"
 import { FaEnvelope, FaRegKissWinkHeart, FaRegLaugh, FaRegTired } from "react-icons/fa"
 import { useDispatch, useSelector } from "react-redux"
-import { subscribeNewsletter } from "redux/actionCreators/contactActionCreators"
+import { clearSubscribeErrors, subscribeNewsletter } from "redux/actionCreators/contactActionCreators"
 
 const NewsLetterSection = () => {
   const subscribingNewsletter = useSelector((state) => state.contact.subscribingNewsletter)
@@ -23,6 +23,11 @@ const NewsLetterSection = () => {
     const { newsletterEmail } = values
     dispatch(subscribeNewsletter(newsletterEmail))
     resetForm(initialValues)
+
+    let timer = setTimeout(() => {
+      dispatch(clearSubscribeErrors())
+    }, 5000)
+    clearTimeout(timer)
   }
 
   const validateHandle = (values) => {
@@ -44,53 +49,57 @@ const NewsLetterSection = () => {
             <div className='newsletter-content'>
               <h4>{newletterContent.textContent.title}</h4>
               {subscribingNewsletterSucess ? (
-                <div className='job-success'>
+                <div className='newsletter-notification'>
                   <p className='msg_notify'>Newsletter Subscribe Successfully!</p>
                 </div>
               ) : null}
               {newsletterFailedMsg ? (
-                <div className='job-success'>
+                <div className='newsletter-notification'>
                   <p className='msg_notify error'>{newsletterFailedMsg}</p>
                 </div>
               ) : null}
-              <Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
-                {({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
-                  <Form onSubmit={handleSubmit} onReset={handleReset} className='newsletter-form'>
-                    <Field
-                      name='newsletterEmail'
-                      type='text'
-                      className={
-                        touched.newsletterEmail
-                          ? errors.newsletterEmail
-                            ? "form-control newsletter-email is-invalid"
-                            : "form-control newsletter-email is-valid"
-                          : "form-control newsletter-email"
-                      }
-                      value={values.newsletterEmail}
-                      onChange={handleChange}
-                      placeholder='Your Email Address'
-                    />
-                    <FaEnvelope className='svg' />
-                    <input type='submit' value='Subscribe' className='btn btn-main newsletter' />
+              {subscribingNewsletter ? (
+                "Please Wait..."
+              ) : (
+                <Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
+                  {({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
+                    <Form onSubmit={handleSubmit} onReset={handleReset} className='newsletter-form'>
+                      <Field
+                        name='newsletterEmail'
+                        type='text'
+                        className={
+                          touched.newsletterEmail
+                            ? errors.newsletterEmail
+                              ? "form-control newsletter-email is-invalid"
+                              : "form-control newsletter-email is-valid"
+                            : "form-control newsletter-email"
+                        }
+                        value={values.newsletterEmail}
+                        onChange={handleChange}
+                        placeholder='Your Email Address'
+                      />
+                      <FaEnvelope className='svg' />
+                      <input type='submit' value='Subscribe' className='btn btn-main newsletter' />
 
-                    {touched.newsletterEmail ? (
-                      errors.newsletterEmail ? (
-                        <p className='err'>
-                          {errors.newsletterEmail} <FaRegTired />
-                        </p>
+                      {touched.newsletterEmail ? (
+                        errors.newsletterEmail ? (
+                          <p className='err'>
+                            {errors.newsletterEmail} <FaRegTired />
+                          </p>
+                        ) : (
+                          <p className='okk'>
+                            Looks Good! <FaRegKissWinkHeart />
+                          </p>
+                        )
                       ) : (
-                        <p className='okk'>
-                          Looks Good! <FaRegKissWinkHeart />
+                        <p>
+                          Dont worry we dont spam! <FaRegLaugh />
                         </p>
-                      )
-                    ) : (
-                      <p>
-                        Dont worry we dont spam! <FaRegLaugh />
-                      </p>
-                    )}
-                  </Form>
-                )}
-              </Formik>
+                      )}
+                    </Form>
+                  )}
+                </Formik>
+              )}
             </div>
           </div>
         </div>

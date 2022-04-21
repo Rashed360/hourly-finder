@@ -1,4 +1,6 @@
 import {
+  CLEAR_CONTACT_ERRORS,
+  CLEAR_SUBSCRIBE_ERRORS,
   CONTACT_QUERY_CREATE,
   CONTACT_QUERY_FAILED,
   CONTACT_QUERY_SUCCESS,
@@ -35,6 +37,13 @@ const contactReducer = (state = contactInitialState, action) => {
         creatingContact: false,
         createContactFailed: true,
       }
+    case CLEAR_CONTACT_ERRORS:
+      return {
+        ...state,
+        creatingContact: false,
+        createContactSuccess: false,
+        createContactFailed: false,
+      }
     case SUBSCRIBING_NEWSLETTER:
       return {
         ...state,
@@ -44,13 +53,22 @@ const contactReducer = (state = contactInitialState, action) => {
       return {
         ...state,
         subscribingNewsletter: false,
+        newsletterFailedMsg: null,
         subscribingNewsletterSucess: true,
       }
     case SUBSCRIBING_NEWSLETTER_FAILED:
       return {
         ...state,
         subscribingNewsletter: false,
+        subscribingNewsletterSucess: false,
         newsletterFailedMsg: action.payload,
+      }
+    case CLEAR_SUBSCRIBE_ERRORS:
+      return {
+        ...state,
+        subscribingNewsletter: false,
+        subscribingNewsletterSucess: false,
+        newsletterFailedMsg: null,
       }
     default:
       return state

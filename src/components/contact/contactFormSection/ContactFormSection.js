@@ -2,7 +2,7 @@ import Spinner from "components/commonComponents/spinner/Spinner"
 import { Field, Form, Formik } from "formik"
 import { FaInfoCircle } from "react-icons/fa"
 import { useDispatch, useSelector } from "react-redux"
-import { contactQueryCreate } from "../../../redux/actionCreators/contactActionCreators"
+import { clearContactErrors, contactQueryCreate } from "../../../redux/actionCreators/contactActionCreators"
 
 const ContactFormSection = () => {
   const creatingJob = useSelector((state) => state.contact.creatingContact)
@@ -53,6 +53,10 @@ const ContactFormSection = () => {
   const handleSubmit = (values) => {
     const { first_name, last_name, email, phone, profile_name, subject, message } = values
     dispatch(contactQueryCreate(first_name, last_name, email, phone, profile_name, subject, message))
+    let timer = setTimeout(() => {
+      dispatch(clearContactErrors())
+    }, 5000)
+    clearTimeout(timer)
   }
   return (
     <div className='contact-form-area'>
