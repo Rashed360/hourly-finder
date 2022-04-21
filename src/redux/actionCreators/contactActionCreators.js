@@ -3,6 +3,9 @@ import {
   CONTACT_QUERY_CREATE,
   CONTACT_QUERY_FAILED,
   CONTACT_QUERY_SUCCESS,
+  SUBSCRIBING_NEWSLETTER,
+  SUBSCRIBING_NEWSLETTER_FAILED,
+  SUBSCRIBING_NEWSLETTER_SUCCESS,
 } from "../actionTypes/contactActionTypes"
 
 const url = process.env.REACT_APP_BACKEND_SERVER
@@ -22,6 +25,23 @@ export const contactSuccess = () => {
 export const contactFailed = () => {
   return {
     type: CONTACT_QUERY_FAILED,
+  }
+}
+
+export const subscribingNewsletter = () => {
+  return {
+    type: SUBSCRIBING_NEWSLETTER,
+  }
+}
+export const subscribingNewsletterSucess = () => {
+  return {
+    type: SUBSCRIBING_NEWSLETTER_SUCCESS,
+  }
+}
+export const subscribingNewsletterFailed = (error) => {
+  return {
+    type: SUBSCRIBING_NEWSLETTER_FAILED,
+    payload: error,
   }
 }
 
@@ -52,3 +72,22 @@ export const contactQueryCreate =
         dispatch(contactFailed())
       })
   }
+
+export const subscribeNewsletter = (email) => async (dispatch) => {
+  dispatch(subscribingNewsletter())
+
+  const data = {
+    email: email,
+  }
+
+  await axios
+    .post(`${url}/contact/newsletter`, data)
+    .then((response) => {
+      console.log(response)
+      dispatch(subscribingNewsletterSucess())
+    })
+    .catch((error) => {
+      const key = Object.keys(error.response.data)[0]
+      dispatch(subscribingNewsletterFailed(error.response.data[key][0]))
+    })
+}

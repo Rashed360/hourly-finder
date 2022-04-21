@@ -1,7 +1,14 @@
 import { Field, Form, Formik } from "formik"
 import { FaEnvelope, FaRegKissWinkHeart, FaRegLaugh, FaRegTired } from "react-icons/fa"
+import { useDispatch, useSelector } from "react-redux"
+import { subscribeNewsletter } from "redux/actionCreators/contactActionCreators"
 
 const NewsLetterSection = () => {
+  const subscribingNewsletter = useSelector((state) => state.contact.subscribingNewsletter)
+  const subscribingNewsletterSucess = useSelector((state) => state.contact.subscribingNewsletterSucess)
+  const newsletterFailedMsg = useSelector((state) => state.contact.newsletterFailedMsg)
+  const dispatch = useDispatch()
+
   const newletterContent = {
     textContent: {
       title: "Subscribe to receive our weekly blog",
@@ -13,7 +20,8 @@ const NewsLetterSection = () => {
   }
 
   const onSubmitHandle = (values, { resetForm }) => {
-    console.log("Subscribed:", values.newsletterEmail)
+    const { newsletterEmail } = values
+    dispatch(subscribeNewsletter(newsletterEmail))
     resetForm(initialValues)
   }
 
@@ -35,6 +43,16 @@ const NewsLetterSection = () => {
           <div className='col-lg-6 offset-lg-3'>
             <div className='newsletter-content'>
               <h4>{newletterContent.textContent.title}</h4>
+              {subscribingNewsletterSucess ? (
+                <div className='job-success'>
+                  <p className='msg_notify'>Newsletter Subscribe Successfully!</p>
+                </div>
+              ) : null}
+              {newsletterFailedMsg ? (
+                <div className='job-success'>
+                  <p className='msg_notify error'>{newsletterFailedMsg}</p>
+                </div>
+              ) : null}
               <Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
                 {({ values, errors, touched, handleChange, handleSubmit, handleReset }) => (
                   <Form onSubmit={handleSubmit} onReset={handleReset} className='newsletter-form'>
