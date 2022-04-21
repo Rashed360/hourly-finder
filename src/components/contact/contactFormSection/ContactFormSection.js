@@ -36,10 +36,8 @@ const ContactFormSection = () => {
     }
     if (!values.phone) {
       errors.phone = "Phone Number Required"
-    } else if (!/^(0|[1-9]\d*)$/.test(values.phone)) {
+    } else if (!/^(?:\+88|88)?(01[3-9]\d{8})$/.test(values.phone)) {
       errors.phone = "Invalid Phone Number"
-    } else if (values.phone <= 11) {
-      errors.phone = "Must be 11 digit"
     }
 
     if (!values.subject) {
