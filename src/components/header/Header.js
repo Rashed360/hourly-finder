@@ -80,6 +80,9 @@ const Header = () => {
 										<NavLink to='/jobs'>Jobs</NavLink>
 									</li>
 									<li>
+										<NavLink to='/jobseeker'>Hire</NavLink>
+									</li>
+									<li>
 										<NavLink to='/blogs'>Blog</NavLink>
 									</li>
 									<li>

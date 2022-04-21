@@ -28,6 +28,7 @@ const NewsLetterSection = () => {
       dispatch(clearSubscribeErrors())
     }, 5000)
     clearTimeout(timer)
+    console.log(newsletterFailedMsg)
   }
 
   const validateHandle = (values) => {
@@ -53,7 +54,7 @@ const NewsLetterSection = () => {
                   <p className='msg_notify'>Newsletter Subscribe Successfully!</p>
                 </div>
               ) : null}
-              {newsletterFailedMsg ? (
+              {newsletterFailedMsg !== null ? (
                 <div className='newsletter-notification'>
                   <p className='msg_notify error'>{newsletterFailedMsg}</p>
                 </div>
