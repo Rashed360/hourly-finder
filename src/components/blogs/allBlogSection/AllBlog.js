@@ -34,7 +34,7 @@ const AllBlog = () => {
   return (
     <div className='col-lg-9'>
       <div className='blog-contents'>
-        <SubTitle sub_title='Special Blog For You' />
+        <SubTitle sub_title='Weekly Blog For You' />
 
         <BlogSlider />
 
