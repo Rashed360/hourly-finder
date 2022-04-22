@@ -1,281 +1,49 @@
-import React, { useState } from 'react'
-import 'react-pagination-bar/dist/index.css'
-import BlogSlider from '../blogSliderSection/BlogSlider'
-import BlogBlock from '../../commonComponents/commonBlock/blogBlock/BlogBlock'
-import BlogPagination from '../pagination/BlogPagination'
-import SubTitle from '../../commonComponents/subTitle/SubTitle'
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchAllPagniationBlog } from "../../../redux/actionCreators/blogActionCreators"
+import BlogBlock from "../../commonComponents/commonBlock/blogBlock/BlogBlock"
+import JobBlockSkeleton from "../../commonComponents/skeletons/JobBlockSkeleton"
+import SubTitle from "../../commonComponents/subTitle/SubTitle"
+import BlogSlider from "../blogSliderSection/BlogSlider"
+import BlogPagination from "../pagination/BlogPagination"
 
 const AllBlog = () => {
-  const blogContents = [
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '1',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '2',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '3',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '3',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Sajeeb Debnath',
-      author_id: '3',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-    {
-      id: 1,
-      author: 'Rashed Ahmed',
-      author_id: '4',
-      title: 'How House Painting Services Works...',
-      description: 'House pantings? Learn from professionals...',
-      time: '25 min ago',
-      tags: [
-        {
-          name: 'House',
-          color: 'house',
-        },
-        {
-          name: 'Painting',
-          color: 'painting',
-        },
-      ],
-    },
-  ]
+  const dispatch = useDispatch()
+  const allPagniationBlog = useSelector((state) => state.blog.allBlogPagination)
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const pageBlogLimit = 6
+  useEffect(() => {
+    dispatch(fetchAllPagniationBlog(6))
+  }, [dispatch])
+
+  const blogs = allPagniationBlog?.results.map((blog, index) => {
+    return (
+      <div className='col-lg-4' key={index}>
+        <BlogBlock blog={blog} />
+      </div>
+    )
+  })
+
+  const blogSkletons = [1, 2, 3, 4, 5, 6].map((index) => {
+    return (
+      <div className='col-lg-4' key={index}>
+        <JobBlockSkeleton />
+      </div>
+    )
+  })
 
   return (
-    <div className="col-lg-9">
-      <div className="blog-contents">
-        <SubTitle sub_title="Weekly Blog For You" />
+    <div className='col-lg-9'>
+      <div className='blog-contents'>
+        <SubTitle sub_title='Special Blog For You' />
 
         <BlogSlider />
 
-        <div className="row mt-70 ">
-          {/* All Blog Start  */}
-          {blogContents
-            .slice(
-              (currentPage - 1) * pageBlogLimit,
-              currentPage * pageBlogLimit,
-            )
-            .map((blog, index) => {
-              return (
-                <div className="col-lg-4" key={index}>
-                  <BlogBlock blog={blog} />
-                </div>
-              )
-            })}
-          {/* All Blog End  */}
+        <div className='row mt-70 '>
+          {allPagniationBlog === null && blogSkletons}
+          {allPagniationBlog !== null && blogs}
         </div>
 
-        <BlogPagination
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          pageBlogLimit={pageBlogLimit}
-          blogContents={blogContents}
-        />
+        <BlogPagination />
       </div>
     </div>
   )

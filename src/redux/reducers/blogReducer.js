@@ -21,10 +21,13 @@ const blogReducer = (state = blogInitialState, action) => {
       return {
         ...state,
         allBlog: action.payload,
+        allBlogFailed: false,
       }
     case BLOG_PAGINATION_FETCH_ALL:
       return {
         ...state,
+        allBlogPagination: action.payload,
+        allBlogFailed: false,
       }
     case BLOG_FETCH_ALL_FAILED:
       return {
