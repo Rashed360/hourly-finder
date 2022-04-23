@@ -25,16 +25,22 @@ const BlogDetailsSection = ({ blog }) => {
 
         <Tags tags={keyword} tagName='blogs' />
 
-        <p className='blog-text'>{description.slice(0, 1000)}</p>
-        <div className='row'>
-          <div className='col-lg-6'>
-            <div className='blog-sub-bg' style={{ backgroundImage: `url(${image_one})` }}></div>
-          </div>
-          <div className='col-lg-6'>
-            <p className='blog-text'>{description.slice(1001, 1500)}</p>
-          </div>
-        </div>
-        <p className='blog-text'>{description.slice(1501)}</p>
+        {image_one !== null ? (
+          <>
+            <p className='blog-text'>{description.slice(0, 1000)}</p>
+            <div className='row'>
+              <div className='col-lg-6'>
+                <div className='blog-sub-bg' style={{ backgroundImage: `url(${image_one})` }}></div>
+              </div>
+              <div className='col-lg-6'>
+                <p className='blog-text'>{description.slice(1001, 1500)}</p>
+              </div>
+            </div>
+            <p className='blog-text'>{description.slice(1501)}</p>
+          </>
+        ) : (
+          <p>{description}</p>
+        )}
       </div>
     </div>
   )
