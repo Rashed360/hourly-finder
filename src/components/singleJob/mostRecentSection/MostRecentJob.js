@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { jobAllFetch } from "redux/actionCreators/jobActionCreators"
 import JobBlock from "../../commonComponents/commonBlock/jobBlock/JobBlock"
 import JobBlockSkeleton from "../../commonComponents/skeletons/JobBlockSkeleton"
 import SectionTitle from "../../home/commonHome/sectionTitle/SectionTitle"
 
-const MostRecentJob = ({ jobList }) => {
+const MostRecentJob = () => {
   const dispatch = useDispatch()
   const allJobs = useSelector((state) => state.job.allJobs)
 
