@@ -1,7 +1,7 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
-const BlogPagination = (props) => {
+const BlogPagination = () => {
   return (
     <div className='row'>
       <div className='col-lg-8 offset-lg-2'>
@@ -11,19 +11,19 @@ const BlogPagination = (props) => {
             Prev
           </Link>
 
-          <Link to='' className='link'>
+          <Link to='#' className='link'>
             1
           </Link>
 
-          <Link to='' className='link'>
+          <Link to='#' className='link'>
             2
           </Link>
 
-          <Link to='' className='link'>
+          <Link to='#' className='link'>
             3
           </Link>
 
-          <Link to='' className='page next'>
+          <Link to='#' className='page next'>
             Next
             <FaArrowRight />
           </Link>

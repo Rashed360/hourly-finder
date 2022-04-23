@@ -1,5 +1,5 @@
 import axios from "axios"
-import { BLOG_FETCH_ALL, BLOG_PAGINATION_FETCH_ALL } from "../actionTypes/blogActionTypes"
+import { BLOG_FETCH_ALL, BLOG_FETCH_SINGLE, BLOG_PAGINATION_FETCH_ALL } from "../actionTypes/blogActionTypes"
 const url = process.env.REACT_APP_BACKEND_SERVER
 
 export const fetchAllBlog = () => async (dispatch) => {
@@ -44,3 +44,25 @@ export const fetchAllPagniationBlog =
         console.log(error.response)
       })
   }
+
+export const fetchSingleBlog = (blog_slug) => async (dispatch) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }
+
+  await axios
+    .get(`${url}/blogs/${blog_slug}`, config)
+    .then((response) => {
+      const data = response.data
+      console.log(data)
+      dispatch({
+        type: BLOG_FETCH_SINGLE,
+        payload: data,
+      })
+    })
+    .catch((error) => {
+      console.log(error.response)
+    })
+}
