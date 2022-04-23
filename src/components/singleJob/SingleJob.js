@@ -11,7 +11,6 @@ import MostRecentJob from "./mostRecentSection/MostRecentJob"
 const SingleJob = () => {
   const dispatch = useDispatch()
   const singleJob = useSelector((state) => state.job.singleJob)
-  const allJobs = useSelector((state) => state.job.allJobs)
   const { job_slug } = useParams()
 
   useEffect(() => {
@@ -34,7 +33,7 @@ const SingleJob = () => {
           </div>
         </div>
       </div>
-      <MostRecentJob jobList={allJobs} />
+      <MostRecentJob />
     </>
   )
 }

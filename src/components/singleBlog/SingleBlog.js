@@ -9,6 +9,7 @@ import RelatedBlogSection from "./relatedBlogSection/RelatedBlogSection"
 const SingleBlog = () => {
   const dispatch = useDispatch()
   const singleBlogData = useSelector((state) => state.blog.singleBlog)
+
   const { blog_slug } = useParams()
 
   console.log(singleBlogData)
