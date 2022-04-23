@@ -14,7 +14,7 @@ const BlogSlider = () => {
   }, [dispatch])
 
   const data = allPagniationBlog ? allPagniationBlog?.results : []
-  const randomBlog = data.sort(() => 0.5 - Math.random())
+  const randomBlog = [...data].sort(() => 0.5 - Math.random())
 
   const blogsSlider = randomBlog.slice(0, 3).map((blog, index) => <BlogSlide key={index} blog={blog} />)
   const blogSliderSkeleton = [1, 2, 3].map((index) => {

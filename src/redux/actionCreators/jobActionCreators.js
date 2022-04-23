@@ -5,10 +5,10 @@ import {
   JOB_CREATE_RESET,
   JOB_CREATE_SUCCESS,
   JOB_FETCH_ALL,
-  JOB_FETCH_ALL_FAILED,
   JOB_FETCH_RECRUITER,
   JOB_FETCH_RECRUITER_FAILED,
   JOB_FETCH_SINGLE,
+  JOB_FETCH_SINGLE_FAILED,
   JOB_PAGINATION_FETCH_ALL,
 } from "../actionTypes/jobActionTypes"
 
@@ -75,10 +75,10 @@ export const jobAllPaginationNavigate = (curPage) => async (dispatch) => {
         })
       })
       .catch((error) => {
-        console.log("Pagination Fetch error", error.response)
+        console.log("Job Pagination Fetch error", error.response)
       })
   } else {
-    console.log("Pagination Paginate error")
+    console.log("Job Pagination Paginate error")
   }
 }
 
@@ -101,7 +101,7 @@ export const jobSingleFetch = (slug) => async (dispatch) => {
     .catch((error) => {
       console.log(error.response)
       dispatch({
-        type: JOB_FETCH_ALL_FAILED,
+        type: JOB_FETCH_SINGLE_FAILED,
       })
     })
 }

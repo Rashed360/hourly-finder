@@ -6,12 +6,12 @@ import { jobAllPaginationNavigate } from "../../../redux/actionCreators/jobActio
 const Pagination = () => {
   const dispatch = useDispatch()
   const [searchParams, setSearchParams] = useSearchParams()
+  console.log(searchParams)
 
   const allJobsPagination = useSelector((state) => state.job.allJobsPagination)
   const previous = allJobsPagination?.previous
   const next = allJobsPagination?.next
   const page = searchParams.get("page")
-  console.log(next)
 
   const paginate = (curPage) => {
     if (curPage === 1) {
