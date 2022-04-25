@@ -1289,6 +1289,7 @@ h2.contact-title,
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: lightgray;
 }
 .blog-slide.owl-carousel {
   position: relative;
@@ -3665,22 +3666,26 @@ h3.right-bar-title {
 /* -------------------------Dashboard Messenger CSS  End--------------------- */
 
 /* -------------------------Skeleton CSS Start--------------------- */
-.blog-item.sk {
+.blog-item.sk,
+.blog-slider-sk {
   animation: skeleton 1.5s linear infinite alternate;
 }
-.blog-author-time.sk {
+.blog-author-time.sk,
+.author-time.sk {
   background: #e1e1e1;
   padding: 12px 0;
   border-radius: 5px;
 }
 
-.blog-title-sk {
+.blog-title-sk,
+.blog-title.sk {
   background: #f2f2f2;
   padding: 20px 0;
   border-radius: 9px;
 }
 
-.blog-description-sk {
+.blog-description-sk,
+.blog-description.sk {
   background: lightgrey;
   padding: 10px 0;
   border-radius: 5px;

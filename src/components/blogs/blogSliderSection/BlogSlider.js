@@ -1,3 +1,4 @@
+import BlogSilderSkeleton from "components/commonComponents/skeletons/BlogSilderSkeleton"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Slide } from "react-slideshow-image"
@@ -18,7 +19,7 @@ const BlogSlider = () => {
 
   const blogsSlider = randomBlog.slice(0, 3).map((blog, index) => <BlogSlide key={index} blog={blog} />)
   const blogSliderSkeleton = [1, 2, 3].map((index) => {
-    return <p key={index}>Loading</p>
+    return <BlogSilderSkeleton key={index} />
   })
 
   const properties = {
