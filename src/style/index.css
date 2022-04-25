@@ -1825,6 +1825,7 @@ h2.contact-title,
   background-position: center;
   background-repeat: no-repeat;
   margin: auto;
+  background-color: gainsboro;
 }
 .profile-view-bar .profile-name-title {
   text-align: center;
@@ -3169,7 +3170,8 @@ h3.right-bar-title {
 
 .avaiable-jobseeker-rating span {
   font-size: 15px;
-  margin-left: 6px;
+  margin-left: 10px;
+  margin-top: 8px;
 }
 
 .avaiable-jobseeker-rating {
@@ -3669,7 +3671,9 @@ h3.right-bar-title {
 .blog-item.sk,
 .blog-slider-sk,
 .small-job-card.sk,
-.single-blog-content-wrapper.sk {
+.single-blog-content-wrapper.sk,
+.profile-view-bar.sk,
+.profile-view-information.sk {
   animation: skeleton 1.5s linear infinite alternate;
 }
 .blog-author-time.sk,
@@ -3790,4 +3794,87 @@ h3.right-bar-title {
   border-radius: 5px;
   margin: 5px 0;
   width: 30%;
+}
+
+.profile-name-title.sk .name {
+  background: lightgray;
+  padding: 15px 0;
+  border-radius: 5px;
+  width: 70%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.profile-name-title.sk .name:nth-child(2) {
+  width: 45%;
+}
+
+.contact-details li.contact-info-sk {
+  display: flex;
+  gap: 25px;
+}
+
+.contact-details li.contact-info-sk span {
+  padding: 12px;
+  background: lightgrey;
+  border-radius: 5px;
+}
+
+.contact-details li.contact-info-sk .contact-info-li {
+  padding: 12px;
+  background: #d3d3d3e0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.important-links.sk .btn-main {
+  background: #d7d7d7;
+  padding: 20px;
+  border-radius: 30px;
+  width: 84%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.profile-category.sk,
+.overall-rating.sk {
+  padding: 20px;
+  background: #e3e3e3;
+  border-radius: 15px;
+  width: 70%;
+}
+
+.overall-rating.sk {
+  margin-left: auto;
+}
+
+.profile-view-information .profile-title.sk {
+  padding: 14px;
+  background: #d3d3d39c;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.bio-title.sk {
+  background: #e3e3e3;
+  padding: 10px;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.sk .bio-description {
+  border-radius: 10px;
+  background: #e3e3e3;
+  padding: 5px 0;
+  margin-top: 10px;
+}
+
+.skills-tag.sk .skills.sk {
+  padding: 0px 40px;
+}
+
+.previous-work.sk {
+  padding: 20px 0;
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }

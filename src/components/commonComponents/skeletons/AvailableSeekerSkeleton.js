@@ -1,4 +1,4 @@
-import { FaRegStar, FaStar } from "react-icons/fa"
+import { FaRegStar } from "react-icons/fa"
 
 const AvailableSeekerSkeleton = () => {
   return (
@@ -17,9 +17,9 @@ const AvailableSeekerSkeleton = () => {
       <div className='avaiable-jobseeker-card-footer sk'>
         <div className='avaiable-jobseeker-rating sk'>
           <div className='rating'>
-            <FaStar />
-            <FaStar />
-            <FaStar />
+            <FaRegStar />
+            <FaRegStar />
+            <FaRegStar />
             <FaRegStar />
             <FaRegStar />
           </div>
