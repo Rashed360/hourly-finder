@@ -1,4 +1,4 @@
-import JobBlockSkeleton from "components/commonComponents/skeletons/JobBlockSkeleton"
+import BlogBlockSkeleton from "components/commonComponents/skeletons/BlogBlockSkeleton"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchAllBlog } from "redux/actionCreators/blogActionCreators"
@@ -16,7 +16,7 @@ const RelatedBlogSection = () => {
   const blogSkeleton = [1, 2, 3, 4].map((index) => {
     return (
       <div key={index} className='col-lg-3'>
-        <JobBlockSkeleton />
+        <BlogBlockSkeleton />
       </div>
     )
   })

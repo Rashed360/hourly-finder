@@ -502,7 +502,7 @@ a.btn.join-us {
   left: 0;
   top: 0;
   overflow: hidden;
-  background-color: #bbb; /* temporary */
+  background-color: lightgrey; /* temporary */
   background-size: cover;
   background-position: center;
   border-radius: 9px 9px 0px 0px;
@@ -3662,4 +3662,27 @@ h3.right-bar-title {
   font-size: 12px;
   font-weight: 600;
 }
-/* -------------------------Dashboard Messenger menu CSS  End--------------------- */
+/* -------------------------Dashboard Messenger CSS  End--------------------- */
+
+/* -------------------------Skeleton CSS Start--------------------- */
+.blog-item.sk {
+  animation: skeleton 1.5s linear infinite alternate;
+}
+.blog-author-time.sk {
+  background: #e1e1e1;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+
+.blog-title-sk {
+  background: #f2f2f2;
+  padding: 20px 0;
+  border-radius: 9px;
+}
+
+.blog-description-sk {
+  background: lightgrey;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin: 10px 0;
+}
