@@ -3667,7 +3667,8 @@ h3.right-bar-title {
 
 /* -------------------------Skeleton CSS Start--------------------- */
 .blog-item.sk,
-.blog-slider-sk {
+.blog-slider-sk,
+.small-job-card.sk {
   animation: skeleton 1.5s linear infinite alternate;
 }
 .blog-author-time.sk,
@@ -3690,4 +3691,83 @@ h3.right-bar-title {
   padding: 10px 0;
   border-radius: 5px;
   margin: 10px 0;
+}
+
+.recruiter-logo-sk {
+  background: #d3d3d3a6;
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 5px;
+}
+
+.job-title.sk {
+  background: #d3d3d3c7;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.small-job-bottom.sk {
+  background: lightgray;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.avaiable-jobseeker-info .name.sk {
+  width: 90%;
+  background: lightgray;
+  padding: 12px 0;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.sk .avaiable-jobseeker-info {
+  width: 60%;
+}
+
+.avaiable-jobseeker-info .designation.sk {
+  background: lightgray;
+  padding: 8px;
+  border-radius: 4px;
+  width: 60%;
+}
+
+.avaiable-jobseeker-info .avaiabele-status.sk {
+  background: lightgray;
+  padding: 12px 0;
+  width: 72%;
+  margin-top: 7px;
+}
+
+.about-avaiable-jobseeker.sk {
+  padding: 5px 0;
+  background: lightgray;
+  border-radius: 5px;
+}
+
+.avaible-jobseeker-card.sk {
+  border-color: #808080a8;
+  box-shadow: 1px 1px 0px 1px lightgray;
+  animation: skeleton 1.5s linear infinite alternate;
+}
+
+.btn.jobseeker-profile.sk {
+  background: lightgray;
+  padding: 15px 0;
+  width: 43%;
+  border: none;
+  border-radius: 15px;
+  box-shadow: none;
+}
+
+.avaiable-jobseeker-card-footer.sk {
+  background: #d3d3d35e;
+}
+
+.sk .avaiable-jobseeker-rating .rating svg {
+  color: #80808099;
+}
+
+.avaiable-jobseeker-dp.sk {
+  background: lightgray;
 }

@@ -1,3 +1,4 @@
+import MiniJobBlockSkeleton from "components/commonComponents/skeletons/MiniJobBlockSkeleton"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { jobAllFetch } from "redux/actionCreators/jobActionCreators"
@@ -11,12 +12,18 @@ const BlogSidebarSection = () => {
     dispatch(jobAllFetch())
   }, [dispatch])
 
+  const miniJobSkeleton = [1, 2, 3, 4].map((index) => {
+    return <MiniJobBlockSkeleton key={index} />
+  })
+
   return (
     <div className='side-bar-right'>
       <SubTitle sub_title='Most Recent Jobs' />
 
       <div className='job-cards'>
-        {allJobs === null ? "Loading" : allJobs.map((job, index) => <MiniJobBlock key={index} job={job} />)}
+        {allJobs === null
+          ? miniJobSkeleton
+          : allJobs.map((job, index) => <MiniJobBlock key={index} job={job} />)}
       </div>
 
       <SubTitle sub_title='Advertizement' />
