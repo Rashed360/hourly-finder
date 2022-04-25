@@ -1,3 +1,4 @@
+import BlogDetailSkeleton from "components/commonComponents/skeletons/BlogDetailSkeleton"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
@@ -25,7 +26,7 @@ const SingleBlog = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-lg-9'>
-            {singleBlogData === null && "Loading"}
+            {singleBlogData === null && <BlogDetailSkeleton />}
             {singleBlogData !== null && <BlogDetailsSection blog={singleBlogData}></BlogDetailsSection>}
           </div>
           <div className='col-lg-3'>

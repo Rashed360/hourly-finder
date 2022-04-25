@@ -3668,7 +3668,8 @@ h3.right-bar-title {
 /* -------------------------Skeleton CSS Start--------------------- */
 .blog-item.sk,
 .blog-slider-sk,
-.small-job-card.sk {
+.small-job-card.sk,
+.single-blog-content-wrapper.sk {
   animation: skeleton 1.5s linear infinite alternate;
 }
 .blog-author-time.sk,
@@ -3770,4 +3771,23 @@ h3.right-bar-title {
 
 .avaiable-jobseeker-dp.sk {
   background: lightgray;
+}
+
+.blog-title.sk {
+  background: lightgray;
+}
+
+.blog-sub-title.sk {
+  background: lightgray;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+.published-time-sk {
+  background: lightgray;
+  padding: 8px 0;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 30%;
 }
