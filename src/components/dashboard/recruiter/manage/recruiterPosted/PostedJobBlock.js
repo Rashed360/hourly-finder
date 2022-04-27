@@ -26,12 +26,12 @@ const PostedJobBlock = ({ job }) => {
 			</td>
 			<td>{job.starting}</td>
 			<td>
-				<Link to='view' className='btn view'>
+				<Link to={'view/' + job.slug} className='btn view'>
 					<FaRegEye />
 				</Link>
-				<button className='btn edit'>
+				<Link to={'edit/' + job.slug} className='btn edit'>
 					<FaRegEdit />
-				</button>
+				</Link>
 			</td>
 		</tr>
 	)

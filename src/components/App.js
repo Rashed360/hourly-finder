@@ -85,7 +85,8 @@ const App = () => {
 							<Route path='edit-address' element={<EditAddress />} />
 							<Route path='post-job' element={<RecruiterPostJob />} />
 							<Route path='manage' element={<Manage />} />
-							<Route path='manage/view' element={<ViewPostedJob />} />
+							<Route path='manage/view/:job_slug' element={<ViewPostedJob />} />
+							<Route path='manage/edit/:job_slug' element={<RecruiterPostJob />} />
 							<Route path='ongoing-job' element={<RecruiterOngoingJob />} />
 							<Route path='*' element={<Navigate to='/dashboard/overview' />} />
 						</Route>

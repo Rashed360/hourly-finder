@@ -10,7 +10,7 @@ const BasicInfo = ({ job }) => {
 				<Info type='salary' info={job.salary} />
 				<Info type='duration' info={job.duration} />
 				<Info type='starting date' info={job.starting} />
-				<Info type='work location' info={job.location} />
+				<Info type='work location' info={'Location'} />
 				<Info type='language' info={job.language} />
 			</div>
 		</div>
