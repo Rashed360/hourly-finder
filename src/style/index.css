@@ -502,7 +502,7 @@ a.btn.join-us {
   left: 0;
   top: 0;
   overflow: hidden;
-  background-color: #bbb; /* temporary */
+  background-color: lightgrey; /* temporary */
   background-size: cover;
   background-position: center;
   border-radius: 9px 9px 0px 0px;
@@ -1289,6 +1289,7 @@ h2.contact-title,
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: lightgray;
 }
 .blog-slide.owl-carousel {
   position: relative;
@@ -1824,6 +1825,7 @@ h2.contact-title,
   background-position: center;
   background-repeat: no-repeat;
   margin: auto;
+  background-color: gainsboro;
 }
 .profile-view-bar .profile-name-title {
   text-align: center;
@@ -3168,7 +3170,8 @@ h3.right-bar-title {
 
 .avaiable-jobseeker-rating span {
   font-size: 15px;
-  margin-left: 6px;
+  margin-left: 10px;
+  margin-top: 8px;
 }
 
 .avaiable-jobseeker-rating {
@@ -3501,6 +3504,7 @@ h3.right-bar-title {
   border-radius: 10px;
   width: 70%;
   text-align: right;
+  word-break: break-all;
 }
 
 .conversation-text .text .msg {
@@ -3661,4 +3665,216 @@ h3.right-bar-title {
   font-size: 12px;
   font-weight: 600;
 }
-/* -------------------------Dashboard Messenger menu CSS  End--------------------- */
+/* -------------------------Dashboard Messenger CSS  End--------------------- */
+
+/* -------------------------Skeleton CSS Start--------------------- */
+.blog-item.sk,
+.blog-slider-sk,
+.small-job-card.sk,
+.single-blog-content-wrapper.sk,
+.profile-view-bar.sk,
+.profile-view-information.sk {
+  animation: skeleton 1.5s linear infinite alternate;
+}
+.blog-author-time.sk,
+.author-time.sk {
+  background: #e1e1e1;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+
+.blog-title-sk,
+.blog-title.sk {
+  background: #f2f2f2;
+  padding: 20px 0;
+  border-radius: 9px;
+}
+
+.blog-description-sk,
+.blog-description.sk {
+  background: lightgrey;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.recruiter-logo-sk {
+  background: #d3d3d3a6;
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 5px;
+}
+
+.job-title.sk {
+  background: #d3d3d3c7;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.small-job-bottom.sk {
+  background: lightgray;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.avaiable-jobseeker-info .name.sk {
+  width: 90%;
+  background: lightgray;
+  padding: 12px 0;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.sk .avaiable-jobseeker-info {
+  width: 60%;
+}
+
+.avaiable-jobseeker-info .designation.sk {
+  background: lightgray;
+  padding: 8px;
+  border-radius: 4px;
+  width: 60%;
+}
+
+.avaiable-jobseeker-info .avaiabele-status.sk {
+  background: lightgray;
+  padding: 12px 0;
+  width: 72%;
+  margin-top: 7px;
+}
+
+.about-avaiable-jobseeker.sk {
+  padding: 5px 0;
+  background: lightgray;
+  border-radius: 5px;
+}
+
+.avaible-jobseeker-card.sk {
+  border-color: #808080a8;
+  box-shadow: 1px 1px 0px 1px lightgray;
+  animation: skeleton 1.5s linear infinite alternate;
+}
+
+.btn.jobseeker-profile.sk {
+  background: lightgray;
+  padding: 15px 0;
+  width: 43%;
+  border: none;
+  border-radius: 15px;
+  box-shadow: none;
+}
+
+.avaiable-jobseeker-card-footer.sk {
+  background: #d3d3d35e;
+}
+
+.sk .avaiable-jobseeker-rating .rating svg {
+  color: #80808099;
+}
+
+.avaiable-jobseeker-dp.sk {
+  background: lightgray;
+}
+
+.blog-title.sk {
+  background: lightgray;
+}
+
+.blog-sub-title.sk {
+  background: lightgray;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+.published-time-sk {
+  background: lightgray;
+  padding: 8px 0;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 30%;
+}
+
+.profile-name-title.sk .name {
+  background: lightgray;
+  padding: 15px 0;
+  border-radius: 5px;
+  width: 70%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.profile-name-title.sk .name:nth-child(2) {
+  width: 45%;
+}
+
+.contact-details li.contact-info-sk {
+  display: flex;
+  gap: 25px;
+}
+
+.contact-details li.contact-info-sk span {
+  padding: 12px;
+  background: lightgrey;
+  border-radius: 5px;
+}
+
+.contact-details li.contact-info-sk .contact-info-li {
+  padding: 12px;
+  background: #d3d3d3e0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.important-links.sk .btn-main {
+  background: #d7d7d7;
+  padding: 20px;
+  border-radius: 30px;
+  width: 84%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.profile-category.sk,
+.overall-rating.sk {
+  padding: 20px;
+  background: #e3e3e3;
+  border-radius: 15px;
+  width: 70%;
+}
+
+.overall-rating.sk {
+  margin-left: auto;
+}
+
+.profile-view-information .profile-title.sk {
+  padding: 14px;
+  background: #d3d3d39c;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.bio-title.sk {
+  background: #e3e3e3;
+  padding: 10px;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.sk .bio-description {
+  border-radius: 10px;
+  background: #e3e3e3;
+  padding: 5px 0;
+  margin-top: 10px;
+}
+
+.skills-tag.sk .skills.sk {
+  padding: 0px 40px;
+}
+
+.previous-work.sk {
+  padding: 20px 0;
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

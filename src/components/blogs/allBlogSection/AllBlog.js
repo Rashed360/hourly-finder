@@ -1,8 +1,8 @@
+import BlogBlockSkeleton from "components/commonComponents/skeletons/BlogBlockSkeleton"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchAllPagniationBlog } from "../../../redux/actionCreators/blogActionCreators"
 import BlogBlock from "../../commonComponents/commonBlock/blogBlock/BlogBlock"
-import JobBlockSkeleton from "../../commonComponents/skeletons/JobBlockSkeleton"
 import SubTitle from "../../commonComponents/subTitle/SubTitle"
 import BlogSlider from "../blogSliderSection/BlogSlider"
 import BlogPagination from "../pagination/BlogPagination"
@@ -26,7 +26,7 @@ const AllBlog = () => {
   const blogSkletons = [1, 2, 3, 4, 5, 6].map((index) => {
     return (
       <div className='col-lg-4' key={index}>
-        <JobBlockSkeleton />
+        <BlogBlockSkeleton />
       </div>
     )
   })
@@ -34,7 +34,7 @@ const AllBlog = () => {
   return (
     <div className='col-lg-9'>
       <div className='blog-contents'>
-        <SubTitle sub_title='Special Blog For You' />
+        <SubTitle sub_title='Weekly Blog For You' />
 
         <BlogSlider />
 

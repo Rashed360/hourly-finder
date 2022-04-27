@@ -1,18 +1,11 @@
 import { Link } from "react-router-dom"
 
 const Tags = ({ tags, limit, tagName }) => {
-  const tagList = Array.isArray(tags) ? tags : tags.split(",")
+  const tagsData = tags || "DemoTags"
+  const tagList = tagsData.split(",")
   return (
     <div className='blog-keyword'>
-      {Array.isArray(tags) ? (
-        tagList.map((tag, i) => {
-          return (
-            <Link to={`/${tagName}/?tag=` + tag} className='blog-tag' key={i}>
-              <div style={{ backgroundColor: tag.color }}></div> {tag.name}
-            </Link>
-          )
-        })
-      ) : limit ? (
+      {limit ? (
         <>
           {tagList[0] !== undefined && (
             <Link to={`/${tagName}/?tag=` + tagList[0]} className='blog-tag'>

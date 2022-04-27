@@ -32,14 +32,19 @@ const blogReducer = (state = blogInitialState, action) => {
     case BLOG_FETCH_ALL_FAILED:
       return {
         ...state,
+        allBlogFailed: true,
       }
     case BLOG_FETCH_SINGLE:
       return {
         ...state,
+        singleBlog: action.payload,
+        singleBlogFailed: false,
       }
     case BLOG_FETCH_SINGLE_FAILED:
       return {
         ...state,
+        singleBlogFailed: true,
+        singleBlogLoading: false,
       }
     default:
       return state
