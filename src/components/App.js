@@ -42,63 +42,6 @@ const App = () => {
     dispatch(authCheck())
   }, [dispatch])
 
-<<<<<<< HEAD
-	return (
-		<>
-			<Header />
-			<div className='app'>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/jobs' element={<AllJobs />} />
-					<Route path='/category' element={<CityCategory />}>
-						<Route path=':id' element={<CityCategory />} />
-					</Route>
-					<Route path='/blogs' element={<Blogs />} />
-					<Route path='about' element={<About />} />
-					<Route path='/contact' element={<Contact />} />
-					<Route path='/location' element={<LocationPage />}>
-						<Route path=':cityName' element={<LocationPage />} />
-					</Route>
-					{/*  */}
-					<Route path='/login' element={<Login />} />
-					<Route path='/register' element={<Register />} />
-					<Route path='/logout' element={<Logout />} />
-					<Route path='/activate/:uid/:token' element={<AccountActivate />} />
-					<Route path='/password-reset' element={<PasswordReset />} />
-					<Route path='/password-reset/:uid/:token' element={<PasswordReset />} />
-					{/*  */}
-					<Route path='/job/:job_slug' element={<SingleJob />} />
-					<Route path='/blog/:blog_id' element={<SingleBlog />} />
-					{/*  */}
-					<Route path='/jobseeker' element={<AvailableJobSeeker />} />
-					{/*  */}
-					<Route path='apply/for/:job_id' element={<Apply />} />
-					<Route path='user/:userName' element={<UserProfile />} />
-					{/* dashboard - start */}
-					<Route path='/dashboard' element={<PrivateOutlet />}>
-						<Route path='*' element={<Dashboard />}>
-							<Route path='overview' element={<RecruiterOverview />} />
-							<Route path='message' element={<RecruiterMessage />} />
-							<Route path='edit-profile' element={<EditBasicInformation />} />
-							<Route path='edit-details' element={<EditOrganizationAbout />} />
-							<Route path='edit-address' element={<EditAddress />} />
-							<Route path='post-job' element={<RecruiterPostJob />} />
-							<Route path='manage' element={<Manage />} />
-							<Route path='manage/view/:job_slug' element={<ViewPostedJob />} />
-							<Route path='manage/edit/:job_slug' element={<RecruiterPostJob />} />
-							<Route path='ongoing-job' element={<RecruiterOngoingJob />} />
-							<Route path='*' element={<Navigate to='/dashboard/overview' />} />
-						</Route>
-					</Route>
-					{/* dashboard - end */}
-					<Route path='*' element={<NoMatch />} />
-				</Routes>
-			</div>
-			{pathname.includes('/dashboard') ? null : <Footer />}
-			{/* <AlertShort /> */}
-		</>
-	)
-=======
   return (
     <>
       <Header />
@@ -153,7 +96,6 @@ const App = () => {
       {/* <AlertShort /> */}
     </>
   )
->>>>>>> 0f0bd2bbe2ee9668dbb488cd79a85130dd3f1b50
 }
 
 export default App
