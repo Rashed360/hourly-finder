@@ -65,8 +65,10 @@
 .menu-area nav {
   display: inline-block;
 }
+.menu-area nav ul {
+  display: flex;
+}
 .menu-area nav ul li {
-  display: inline-block;
   padding: 0px 15px;
 }
 .menu-area nav ul li a {
@@ -3877,4 +3879,36 @@ h3.right-bar-title {
   background: #e0e0e0;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+/* Menu Temporary CSS */
+.navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navigation .menu-area {
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+.menu-trigger {
+  border: none;
+  background: #16395f;
+  color: white;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  line-height: 0px;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+  margin-left: auto;
+  margin-right: 25px;
+  border-radius: 50%;
+  display: none;
+}
+.menu-trigger svg {
+  width: 23px;
+  height: 23px;
 }

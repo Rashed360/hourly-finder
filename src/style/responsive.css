@@ -1,6 +1,37 @@
 @media screen and (max-width: 500px) {
-	.dashboard-all .left,
-	.dashboard-all .right {
-		display: none;
-	}
+  .dashboard-all .left,
+  .dashboard-all .right {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navigation .menu-area {
+    display: none;
+  }
+  .menu-trigger {
+    display: block;
+  }
+  .navigation .menu-area.expand {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 57px;
+    left: 0;
+    background: white;
+    height: calc(100vh - 60px);
+    text-align: center;
+  }
+
+  .navigation .menu-area.expand ul {
+    display: block;
+  }
+
+  .menu-area.expand .join-us {
+    margin: 0;
+  }
+
+  .menu-area.expand nav {
+    display: block;
+  }
 }
