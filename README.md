@@ -25,7 +25,6 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-leaflet": "^3.2.5",
-    "react-pagination-bar": "^1.0.8",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
