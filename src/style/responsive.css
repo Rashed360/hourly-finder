@@ -6,32 +6,71 @@
 }
 
 @media screen and (max-width: 900px) {
+  .header-top-area .logo {
+    margin-left: 25px;
+  }
   .navigation .menu-area {
     display: none;
+    transform: translateX(-1000%);
+    transition: transform 1s ease;
   }
   .menu-trigger {
     display: block;
   }
   .navigation .menu-area.expand {
     display: block;
+    transform: translateX(0%);
     width: 100%;
     position: absolute;
     top: 57px;
     left: 0;
-    background: white;
+    background: linear-gradient(148.31deg, rgba(255, 255, 255, 0.165) 0%, rgba(255, 255, 255, 0.3) 100%);
+    backdrop-filter: blur(10px);
     height: calc(100vh - 60px);
     text-align: center;
   }
 
   .navigation .menu-area.expand ul {
+    transition: transform 1s ease;
     display: block;
   }
 
   .menu-area.expand .join-us {
     margin: 0;
+    margin-top: 20px;
+    font-size: 16px;
   }
 
   .menu-area.expand nav {
     display: block;
+    transition: transform 1s ease;
+  }
+  .navigation .menu-area.expand ul li {
+    padding: 0;
+  }
+
+  .navigation .menu-area.expand ul li a {
+    display: block;
+    padding: 10px 0;
+    color: #16395f;
+    font-size: 16px;
+    transition: all 0.5s ease-in-out;
+  }
+  .navigation .menu-area.expand ul li:hover a {
+    background: #16395f8c;
+    color: white;
+  }
+  .navigation .menu-area.expand ul li a.active {
+    background: #16395f8c;
+    color: white;
+  }
+  .header-icon {
+    justify-content: center;
+    margin: 0;
+    margin-top: 15px;
+    margin-left: -8px;
+  }
+  .header-icon span svg {
+    display: none;
   }
 }
