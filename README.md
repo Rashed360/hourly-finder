@@ -19,10 +19,12 @@
     "axios": "^0.25.0",
     "bootstrap": "^5.0.2",
     "formik": "^2.2.9",
+    "jwt-decode": "^3.1.2",
     "leaflet": "^1.7.1",
-    "react": "^17.0.2",
+    "luxon": "^2.3.1",
+    "react": "^18.0.0",
     "react-bootstrap": "^2.1.2",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "react-leaflet": "^3.2.5",
     "react-redux": "^7.2.6",
@@ -30,7 +32,8 @@
     "react-scripts": "4.0.3",
     "react-slideshow-image": "^3.7.0",
     "redux": "^4.1.2",
-    "redux-thunk": "^2.4.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1"
   }
 ```
 #### 🚀: Deployment
