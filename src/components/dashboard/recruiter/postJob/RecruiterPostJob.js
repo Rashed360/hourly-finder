@@ -3,9 +3,9 @@ import { Formik, Field, Form } from 'formik'
 import { FaInfoCircle } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { jobCreate, jobCreateReset } from '../../../../redux/actionCreators/jobActionCreators'
+import { jobCreate, jobCreateReset } from 'redux/actionCreators/jobActionCreators'
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa'
-import Spinner from '../../../commonComponents/spinner/Spinner'
+import Spinner from 'components/commonComponents/spinner/Spinner'
 
 const RecruiterPostJob = () => {
 	document.title = 'HourlyFinder | Post Job'
@@ -32,8 +32,8 @@ const RecruiterPostJob = () => {
 		}
 	}, [image])
 
-	const resetJobCreation = async () => {
-		await dispatch(jobCreateReset())
+	const resetJobCreation = () => {
+		dispatch(jobCreateReset())
 	}
 
 	const stepHandle = value => {

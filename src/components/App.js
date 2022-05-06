@@ -19,6 +19,7 @@ import Dashboard from './dashboard/Dashboard'
 import EditOrganizationAbout from './dashboard/recruiter/editInfo/EditAbout'
 import EditAddress from './dashboard/recruiter/editInfo/EditAddress'
 import EditBasicInformation from './dashboard/recruiter/editInfo/EditBasicInformation'
+import EditPostedJob from './dashboard/recruiter/manage/editPostedJob/EditPostedJob'
 import Manage from './dashboard/recruiter/manage/Manage'
 import ViewPostedJob from './dashboard/recruiter/manage/viewPostedJob/ViewPostedJob'
 import RecruiterMessage from './dashboard/recruiter/message/RecruiterMessage'
@@ -84,7 +85,7 @@ const App = () => {
 							<Route path='post-job' element={<RecruiterPostJob />} />
 							<Route path='manage' element={<Manage />} />
 							<Route path='manage/view/:job_slug' element={<ViewPostedJob />} />
-							<Route path='manage/edit/:job_slug' element={<RecruiterPostJob />} />
+							<Route path='manage/edit/:job_slug' element={<EditPostedJob />} />
 							<Route path='ongoing-job' element={<RecruiterOngoingJob />} />
 							<Route path='*' element={<Navigate to='/dashboard/overview' />} />
 						</Route>
