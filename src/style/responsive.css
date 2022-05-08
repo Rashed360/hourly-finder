@@ -5,6 +5,7 @@
   }
 }
 
+/* Mobile Menu */
 @media screen and (max-width: 900px) {
   .header-top-area .logo {
     margin-left: 25px;
@@ -73,4 +74,24 @@
   .header-icon span svg {
     display: none;
   }
+}
+
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+
+/*  MD Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
 }
