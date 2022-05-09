@@ -15,7 +15,7 @@ const MostRecentJob = () => {
 
   const jobs = [1, 2, 3, 4].map((index) => {
     return (
-      <div className='col-lg-3' key={index}>
+      <div className='col-lg-3 col-md-6 col-sm-6' key={index}>
         <JobBlockSkeleton />
       </div>
     )
@@ -30,7 +30,7 @@ const MostRecentJob = () => {
             ? jobs
             : allJobs.map((job, index) => {
                 return (
-                  <div key={index} className='col-lg-3'>
+                  <div key={index} className='col-lg-3 col-md-6 col-sm-6'>
                     <JobBlock job={job}></JobBlock>
                   </div>
                 )
