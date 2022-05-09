@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react"
+import { Link } from "react-router-dom"
 
 const FooterMenu = ({ menu }) => {
   const footerMenuList = menu.lists.map((list, index) => (
@@ -9,12 +9,12 @@ const FooterMenu = ({ menu }) => {
   ))
 
   return (
-    <div className="col-lg-3">
-      <div className="footer-menu-wrapper">
-        <div className="footer-menu-title">
+    <div className='col-lg-3 col-md-6 col-sm-6'>
+      <div className='footer-menu-wrapper'>
+        <div className='footer-menu-title'>
           <h3>{menu.title}</h3>
         </div>
-        <div className="footer-menu">
+        <div className='footer-menu'>
           <nav>
             <ul>{footerMenuList}</ul>
           </nav>

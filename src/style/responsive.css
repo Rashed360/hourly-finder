@@ -1,10 +1,3 @@
-@media screen and (max-width: 500px) {
-  .dashboard-all .left,
-  .dashboard-all .right {
-    display: none;
-  }
-}
-
 /* Mobile Menu */
 @media screen and (max-width: 900px) {
   .header-top-area .logo {
@@ -78,18 +71,70 @@
 
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
+  .category-icon {
+    text-align: right;
+  }
+  .category-item {
+    text-align: left;
+  }
+
+  .location-based-jobs {
+    margin-bottom: 0;
+  }
+  .footer-copyright-area {
+    text-align: left;
+  }
 }
 
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1200px) {
+  .location-based-jobs {
+    margin-bottom: 0;
+  }
+  .footer-copyright-area {
+    text-align: left;
+  }
 }
 
 /*  MD Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+  .how-works-content {
+    margin-bottom: 25px;
+  }
+  .footer-menu-wrapper {
+    margin-bottom: 50px;
+  }
 }
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
+  .header-top-area .logo object {
+    height: 25px;
+  }
+  .header-top-area .logo img {
+    width: 180px;
+  }
+  .hero-text h1 {
+    font-size: 35px;
+  }
+  .search-bar button {
+    font-size: 12px;
+    padding: 10px 5px;
+  }
+  .how-works-content {
+    margin-bottom: 25px;
+  }
+  .link-title {
+    display: none;
+  }
+  .newsletter-content h4 {
+    font-size: 16px;
+  }
+  .footer-menu-wrapper {
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+  }
 }
 
 /* Large Mobile :480px. */

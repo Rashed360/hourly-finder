@@ -15,7 +15,7 @@ const BlogSection = () => {
 
   const blogs = allBlogs?.map((blog, index) => {
     return (
-      <div className='col-lg-3' key={index}>
+      <div className='col-xl-3 col-lg-6 col-md-6' key={index}>
         <BlogBlock blog={blog} />
       </div>
     )
@@ -23,7 +23,7 @@ const BlogSection = () => {
 
   const blogsSkleton = [1, 2, 3, 4].map((index) => {
     return (
-      <div className='col-lg-3' key={index}>
+      <div className='col-xl-3 col-lg-6 col-md-6' key={index}>
         <BlogBlockSkeleton />
       </div>
     )

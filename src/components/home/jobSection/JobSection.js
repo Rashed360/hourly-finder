@@ -14,7 +14,7 @@ const JobSection = () => {
 
   const jobs = allJobs?.map((job, index) => {
     return (
-      <div className='col-lg-3' key={index}>
+      <div className='col-lg-3 col-md-6 col-sm-6' key={index}>
         <JobBlock job={job} />
       </div>
     )
@@ -22,7 +22,7 @@ const JobSection = () => {
 
   const jobsSkeleton = [1, 2, 3, 4].map((index) => {
     return (
-      <div className='col-lg-3' key={index}>
+      <div className='col-lg-3 col-md-6 col-sm-6' key={index}>
         <JobBlockSkeleton />
       </div>
     )
