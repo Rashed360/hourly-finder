@@ -101,13 +101,25 @@
   .how-works-content {
     margin-bottom: 25px;
   }
+  .story-content.order-first {
+    padding-top: 40px;
+    text-align: left;
+  }
   .footer-menu-wrapper {
     margin-bottom: 50px;
+  }
+  .filter-area {
+    display: none;
+  }
+  .search-by input {
+    border: none;
+    border-bottom: 1px solid #dadada;
   }
 }
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
+  /* Home Page */
   .header-top-area .logo object {
     height: 25px;
   }
@@ -134,6 +146,57 @@
     margin: auto;
     margin-bottom: 50px;
     text-align: center;
+  }
+
+  /* All Job Page */
+  .filter-area {
+    display: none;
+  }
+  .grid-header {
+    display: block !important;
+  }
+  .filter-header.right span:nth-child(1) {
+    padding: 0;
+  }
+
+  /* Jobseeker Page */
+  .search-by input {
+    border: none;
+    border-bottom: 1px solid #dadada;
+  }
+  .avaiable-jobseeker-filter,
+  .show-all-applicant {
+    display: block;
+  }
+  .display-page {
+    margin: 15px 0;
+  }
+
+  /* About Page */
+  .story-content.order-first {
+    padding-top: 40px;
+    text-align: left;
+  }
+  .intro-text p {
+    font-size: 16px;
+    word-break: break-word;
+  }
+  .roadmap-cards {
+    width: auto;
+  }
+  .story-image img {
+    width: 100%;
+  }
+  .team-card img {
+    object-fit: contain;
+  }
+
+  /* Contact Page */
+  .form-field .first-name,
+  .form-field .last-name,
+  .form-field .contact-phone,
+  .form-field .profile {
+    width: 100%;
   }
 }
 

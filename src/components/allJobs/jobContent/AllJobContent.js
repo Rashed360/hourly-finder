@@ -17,7 +17,7 @@ const AllJobContent = () => {
 
   const jobs = allJobsPagination?.results.map((job, index) => {
     return (
-      <div className='col-lg-4' key={index}>
+      <div className='col-lg-4 col-md-4 col-sm-6' key={index}>
         <JobBlock job={job} />
       </div>
     )
@@ -25,7 +25,7 @@ const AllJobContent = () => {
 
   const jobsSkeleton = [1, 2, 3, 4, 5, 6].map((index) => {
     return (
-      <div className='col-lg-4' key={index}>
+      <div className='col-lg-4 col-md-4 col-sm-6' key={index}>
         <JobBlockSkeleton />
       </div>
     )

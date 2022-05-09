@@ -1,6 +1,6 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useSearchParams } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 import { jobAllPaginationNavigate } from "../../../redux/actionCreators/jobActionCreators"
 
 const Pagination = () => {
@@ -31,18 +31,6 @@ const Pagination = () => {
         <FaArrowLeft />
         Prev
       </a>
-
-      <Link to='' className='link'>
-        1
-      </Link>
-
-      <Link to='' className='link'>
-        2
-      </Link>
-
-      <Link to='' className='link'>
-        3
-      </Link>
 
       <a onClick={() => paginate(1)} className={next === null ? "page next disabled" : "page next"}>
         Next

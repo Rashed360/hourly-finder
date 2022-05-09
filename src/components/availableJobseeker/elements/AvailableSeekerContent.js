@@ -5,7 +5,7 @@ import AvailableJobseekerCard from "./AvailableJobseekerCard"
 const AvailableSeekerContent = ({ seeker }) => {
   const avaialableSeekerSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
     return (
-      <div className='col-lg-4' key={index}>
+      <div className='col-lg-4 col-md-6' key={index}>
         <AvailableSeekerSkeleton />
       </div>
     )
@@ -49,7 +49,7 @@ const AvailableSeekerContent = ({ seeker }) => {
           {seeker === undefined
             ? avaialableSeekerSkeleton
             : seeker.map((seeker_data, idx) => (
-                <div className='col-lg-4'>
+                <div className='col-lg-4 col-md-6'>
                   <AvailableJobseekerCard key={idx} seeker_data={seeker_data} />
                 </div>
               ))}

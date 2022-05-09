@@ -721,7 +721,6 @@ a.btn.join-us {
 .intro-text p {
   font-family: sans-serif;
   font-size: 25px;
-  width: 400px;
   margin-bottom: 30px;
   margin-top: 20px;
 }
@@ -770,13 +769,10 @@ a.btn.join-us {
 
 /* -------------------------Team Section CSS End --------------------- */
 .team-area {
-  height: 400px;
+  height: auto;
   background-color: #fafafa;
-}
-.team-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 .team-heading::after {
   content: "";
@@ -790,6 +786,10 @@ a.btn.join-us {
   font-size: var(--mediumFont);
   font-weight: 600;
   color: var(--textColor);
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 .team-content p {
   width: 400px;
@@ -797,21 +797,20 @@ a.btn.join-us {
   margin-bottom: 20px;
   margin-top: 30px;
 }
-.team-cards {
-  display: flex;
-  justify-content: space-around;
-}
+
 .team-card {
   background-color: #ffffff;
   border: 1px solid #bbbbbb;
-  width: 170px;
   height: 250px;
-  margin: 20px;
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
+  margin-bottom: 40px;
 }
 .team-card img {
   width: 100%;
+  max-height: 190px;
+  object-fit: cover;
 }
 .team-card-title {
   display: flex;
@@ -1023,19 +1022,21 @@ h2.contact-title,
 .form-field .is-invalid {
   border-color: #dc354550;
 }
-
+.faq-area {
+  overflow: hidden;
+}
 .faq-title {
   position: relative;
-  display: block;
+  display: inline-block;
   margin-bottom: 25px;
 }
 
 .faq-title::after {
   position: absolute;
   content: "";
-  width: 90%;
+  width: 1000%;
   height: 2px;
-  right: 0;
+  left: 120%;
   top: 50%;
   background: #737171;
 }
@@ -1838,6 +1839,7 @@ h2.contact-title,
 .small-job-title h3 {
   font-size: 16px;
   font-weight: 400;
+  word-break: break-all;
 }
 
 .small-job-bottom {
@@ -2042,8 +2044,9 @@ h2.contact-title,
   padding: 30px 0;
 }
 .filter-header-area {
-  width: 1348px;
+  width: 100%;
   display: flex;
+  overflow: hidden;
 }
 .search-bar-all {
   background: white;

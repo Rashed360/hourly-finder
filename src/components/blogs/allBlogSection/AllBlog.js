@@ -17,7 +17,7 @@ const AllBlog = () => {
 
   const blogs = allPagniationBlog?.results.map((blog, index) => {
     return (
-      <div className='col-lg-4' key={index}>
+      <div className='col-xl-4 col-lg-6 col-md-6 col-sm-6' key={index}>
         <BlogBlock blog={blog} />
       </div>
     )
@@ -25,7 +25,7 @@ const AllBlog = () => {
 
   const blogSkletons = [1, 2, 3, 4, 5, 6].map((index) => {
     return (
-      <div className='col-lg-4' key={index}>
+      <div className='col-xl-4 col-lg-6 col-md-6 col-sm-6' key={index}>
         <BlogBlockSkeleton />
       </div>
     )
