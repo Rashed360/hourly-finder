@@ -2274,22 +2274,21 @@ h2.contact-title,
 .dashboard-all .left {
   height: calc(100vh - 70px);
   width: 280px;
+  transition: 0.3s;
 }
-.dashboard-all .mid {
-  background-color: #fafafa;
-  width: 838px;
-  height: calc(100vh - 70px);
-  overflow-y: scroll;
-}
+.dashboard-all .mid,
 .dashboard-all .full {
   background-color: #fafafa;
+  width: calc(100% - 280px);
   height: calc(100vh - 70px);
   overflow-y: scroll;
-  width: 1080px;
+  position: absolute;
+  left: 280px;
 }
 .dashboard-all .right {
   height: calc(100vh - 70px);
   width: 242px;
+  display: none;
 }
 
 .dashboard-sidebar .user {
@@ -2297,7 +2296,20 @@ h2.contact-title,
   text-align: center;
   border-bottom: 1px solid #8888;
 }
+.dashboard-toggle {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+}
 
+.dashboard-sidebar {
+  position: relative;
+}
+
+.dashboard-toggle svg {
+  font-size: 22px;
+}
 .dashboard-sidebar .user-photo {
   width: 90px;
   height: 90px;
@@ -2307,6 +2319,7 @@ h2.contact-title,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
 }
 
 .dashboard-main {
@@ -2386,6 +2399,36 @@ h2.contact-title,
 .dashboard-navigation nav ul li.showMenu .dropdown-icon {
   transform: rotate(180deg);
 }
+
+/* Toggle Dashboard */
+.dashboard-all .left.active {
+  width: 80px;
+}
+
+.dashboard-all .mid.active,
+.dashboard-all .full.active {
+  left: 80px;
+  width: calc(100% - 80px);
+}
+.dashboard-all .left.active .user-photo {
+  width: 50px;
+  height: 50px;
+  margin-top: 35px;
+}
+
+.dashboard-all .left.active .user-info {
+  display: none;
+}
+
+.left.active .dashboard-navigation nav ul li a div {
+  display: flex;
+}
+
+.left.active .dashboard-navigation nav ul li a span {
+  padding-right: 100px;
+  font-size: 20px;
+}
+/* Toggle Dashboard */
 
 h3.dashboard-title {
   font-size: 24px;
@@ -2554,13 +2597,15 @@ h3.right-bar-title {
 .post-job-area,
 .manage-job-area {
   position: relative;
-  overflow: hidden;
   background: #f9f9f9;
   border-radius: 5px;
   border: 1px solid #8888884a;
 }
 .profile-area {
-  height: 545px;
+  height: 100%;
+}
+.edit-profile-area form {
+  overflow: hidden;
 }
 .content {
   padding: 20px;
@@ -2674,6 +2719,9 @@ h3.right-bar-title {
 
 .job-view-filter {
   margin-bottom: 20px;
+}
+.manage-job-table {
+  overflow-x: scroll;
 }
 .manage-job-table table th {
   background: #e7eff1;

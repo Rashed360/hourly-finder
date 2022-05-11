@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useSelector } from "react-redux"
 import { Outlet, useLocation } from "react-router-dom"
 import DashboardNavigation from "./common/DashboardNavigation"
@@ -6,6 +7,7 @@ import DashboradRightBar from "./common/DashboradRightBar"
 const Dashboard = () => {
   const user = useSelector((state) => state.user.user)
   const profile = useSelector((state) => state.user.profile)
+  const [dashboardToggle, setDashboardToggle] = useState(true)
   const { pathname } = useLocation()
   const messagePagePath = "/dashboard/message"
 
@@ -149,10 +151,25 @@ const Dashboard = () => {
   }
   return (
     <div className='dashboard-all'>
-      <div className='left'>
-        <DashboardNavigation navigations={DashboardInformation} user={DashboardInformation.userInfo} />
+      <div className={dashboardToggle ? "left active" : "left"}>
+        <DashboardNavigation
+          navigations={DashboardInformation}
+          user={DashboardInformation.userInfo}
+          dashboardToggle={dashboardToggle}
+          setDashboardToggle={setDashboardToggle}
+        />
       </div>
-      <div className={pathname === messagePagePath ? "full dashScroll" : "mid dashScroll"}>
+      <div
+        className={
+          pathname === messagePagePath
+            ? dashboardToggle
+              ? "full dashScroll active"
+              : "full dashboard"
+            : dashboardToggle
+            ? "mid dashScroll active"
+            : "mid dashScroll"
+        }
+      >
         <Outlet />
       </div>
       {pathname === messagePagePath ? null : (
