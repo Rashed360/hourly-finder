@@ -2191,10 +2191,12 @@ h2.contact-title,
   justify-content: right;
   align-items: center;
 }
-.header-icon .dropdown-toggle::after {
+.header-icon .dropdown-toggle::after,
+.applicant-action .dropdown-toggle::after {
   border: none;
 }
-.header-icon .dropdown-menu.show a {
+.header-icon .dropdown-menu.show a,
+.applicant-action .dropdown-menu.show a {
   display: block;
   padding: 8px 15px;
   background: transparent;
@@ -3068,6 +3070,24 @@ h3.right-bar-title {
 
 .applicant-information-table td .status.hired {
   background: #c6e1cd;
+}
+.applicant-action .dropdown-menu.show a {
+  font-size: 12px;
+  text-align: center;
+}
+.action-status.dropdown-menu.show a.hire:hover {
+  background: #c6e1cd;
+  color: black;
+}
+
+.action-status.dropdown-menu.show a.reject:hover {
+  background: #ee4d6e;
+  color: white;
+}
+
+.action-status.dropdown-menu.show a.shortlist:hover {
+  background: #ffbc3a;
+  color: black;
 }
 /* -------------------------Recruiter Posted JOb Page CSS  End--------------------- */
 
