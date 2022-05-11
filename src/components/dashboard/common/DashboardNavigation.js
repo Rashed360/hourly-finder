@@ -3,6 +3,7 @@ import { useState } from "react"
 import {
   FaAddressBook,
   FaAngleDown,
+  FaBars,
   FaEnvelope,
   FaFacebookMessenger,
   FaIdCardAlt,
@@ -18,7 +19,7 @@ import {
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import Image from "../../../assets/images/user.svg"
 
-const DashboardNavigation = ({ navigations, user }) => {
+const DashboardNavigation = ({ navigations, user, dashboardToggle, setDashboardToggle }) => {
   const [logoutModal, setLogoutModal] = useState(false)
   const { id, name, type, photo, username } = user
   const { recruiterNavigation, seekerNavigation } = navigations
@@ -64,6 +65,10 @@ const DashboardNavigation = ({ navigations, user }) => {
   return (
     <>
       <div className='dashboard-sidebar'>
+        <div className='dashboard-toggle' onClick={() => setDashboardToggle(!dashboardToggle)}>
+          <FaBars />
+        </div>
+
         <div className='user'>
           <div
             className='user-photo'
@@ -102,7 +107,7 @@ const DashboardNavigation = ({ navigations, user }) => {
                             <li key={index}>
                               <NavLink to={item.link} className='link-name'>
                                 <span>{iconFinder(item.icon)}</span>
-                                {item.name}
+                                <span className='text'>{item.name}</span>
                               </NavLink>
                             </li>
                           )
@@ -118,7 +123,7 @@ const DashboardNavigation = ({ navigations, user }) => {
                     <span>
                       <FaSignOutAlt />
                     </span>
-                    Logout
+                    <span className='text'>Logout</span>
                   </div>
                 </Link>
               </li>

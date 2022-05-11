@@ -132,10 +132,22 @@
   .registration-box {
     height: 620px;
   }
+  .overview-item {
+    margin-bottom: 20px;
+  }
+
+  .activity-item {
+    margin-bottom: 25px;
+  }
 }
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
+  /* Modal */
+  .modal_footer {
+    flex-direction: column;
+  }
+
   /* Home Page */
   .header-top-area .logo object {
     height: 25px;
@@ -259,6 +271,23 @@
   .form-field .contact-phone,
   .form-field .profile {
     width: 100%;
+  }
+
+  /* Dashborad Page */
+  .dashboard-all .left {
+    width: 100%;
+  }
+  .dashboard-all .mid,
+  .dashboard-all .full {
+    left: 100%;
+    width: calc(100% - 100%);
+  }
+  .overview-item {
+    margin-bottom: 20px;
+  }
+
+  .activity-item {
+    margin-bottom: 25px;
   }
 }
 
