@@ -1786,6 +1786,16 @@ h2.contact-title,
 .job-application-title {
   margin: 15px 0;
 }
+.form-field.agree {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.form-field.agree input,
+.form-field.agree label {
+  margin-bottom: 0;
+}
 /* -------------------------Apply Page CSS  End--------------------- */
 
 /* -------------------------Single Blog Page CSS  Start--------------------- */

@@ -94,6 +94,12 @@
   .footer-copyright-area {
     text-align: left;
   }
+  .registration-left-text h2 {
+    font-size: 30px;
+  }
+  .application-box {
+    height: 620px;
+  }
 }
 
 /*  MD Tablet desktop :768px. */
@@ -115,12 +121,16 @@
     border: none;
     border-bottom: 1px solid #dadada;
   }
+
   .registration-left-content {
-    width: 90%;
-    height: 90%;
-    backdrop-filter: blur(35px);
-    left: 45%;
-    top: 37%;
+    top: 40%;
+  }
+  .registration-left-text h2 {
+    font-size: 25px;
+  }
+  .application-box,
+  .registration-box {
+    height: 620px;
   }
 }
 
@@ -168,6 +178,36 @@
   }
   .auth.mobile-view-link {
     display: block;
+  }
+
+  /* Apply Page */
+  .jobs-application-area {
+    height: auto;
+    margin-top: 70px;
+  }
+
+  .application-box {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 70px;
+  }
+
+  .apply-form {
+    float: none;
+    width: 100%;
+    order: 2;
+    display: block;
+  }
+
+  .job-application-info {
+    width: 100%;
+    border-radius: 30px 30px 0px 0px;
+    float: none;
+    display: block;
+  }
+  .job-application-title h2 {
+    font-size: 20px;
   }
 
   /* All Job Page */
