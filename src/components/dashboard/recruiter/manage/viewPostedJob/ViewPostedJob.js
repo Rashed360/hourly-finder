@@ -29,8 +29,8 @@ const ViewPostedJob = () => {
 		setShow(!show)
 	}
 
-	const logoutAction = () => {
-		navigate('/logout')
+	const deleteAction = () => {
+		navigate('/dashboard')
 	}
 
 	return (
@@ -119,13 +119,13 @@ const ViewPostedJob = () => {
 			<ModalYesNo
 				open={logoutModal}
 				onClose={() => setLogoutModal(false)}
-				onAccept={logoutAction}
+				onAccept={deleteAction}
 				data={{
-					title: 'Are you sure to Logout?',
-					subTitle: 'Private data will be unaccessible.',
-					body: 'Logout from authentication session',
-					footer: '* You have to login again to access private data!',
-					yesText: 'Logout',
+					title: 'Are you sure to Delete this job?',
+					subTitle: 'Job data will be lost forever.',
+					body: 'Permanently delete selected job',
+					footer: '* Once deleted job data can not be recovered!',
+					yesText: 'Delete',
 				}}
 			/>
 		</>
