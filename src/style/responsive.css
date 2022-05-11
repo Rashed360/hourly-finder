@@ -139,6 +139,13 @@
   .activity-item {
     margin-bottom: 25px;
   }
+  .jobs-details-information.dashboard {
+    display: none;
+  }
+
+  .job-details-image {
+    display: none;
+  }
 }
 
 /* small mobile :320px. */
@@ -288,6 +295,37 @@
 
   .activity-item {
     margin-bottom: 25px;
+  }
+  .jobs-details-information.dashboard {
+    display: none;
+  }
+
+  .job-details-image {
+    display: none;
+  }
+  .see-posted-job-header {
+    flex-direction: column;
+  }
+  .applicant-information-filter {
+    flex-direction: column;
+  }
+  .ongoing-job-cards {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+  .ongoing-job-progress {
+    width: 4px;
+    height: 90%;
+
+    margin-top: -20px;
+    top: 10%;
+    left: 50%;
+    margin-left: -2px;
+  }
+  .ongoing-card p {
+    margin-top: 50px;
+    margin-left: -50px;
   }
 }
 

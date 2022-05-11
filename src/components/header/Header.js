@@ -161,9 +161,17 @@ const Header = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Link to='/dashboard'>Dashboard</Link>
-                  {user?.user_type === 2 && <Link to='/jobseeker'>Jobseeker</Link>}
-                  <Link to='/dashboard/message'>Message</Link>
+                  <Link to='/dashboard' onClick={() => setIsNavExpan(!isNavExpan)}>
+                    Dashboard
+                  </Link>
+                  {user?.user_type === 2 && (
+                    <Link to='/jobseeker' onClick={() => setIsNavExpan(!isNavExpan)}>
+                      Jobseeker
+                    </Link>
+                  )}
+                  <Link to='/dashboard/message' onClick={() => setIsNavExpan(!isNavExpan)}>
+                    Message
+                  </Link>
                   <Link to='#' onClick={() => setLogoutModal(true)}>
                     Logout
                   </Link>

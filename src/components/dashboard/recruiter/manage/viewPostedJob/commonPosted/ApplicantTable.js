@@ -27,21 +27,23 @@ const ApplicantTable = () => {
   ]
   return (
     <>
-      <table className='applicant-information-table'>
-        <tr>
-          <th>Picture</th>
-          <th className='name'>Full Name</th>
-          <th>Ocapassion</th>
-          <th className='message'>Message about Job</th>
-          <th className='status'>Status</th>
-          <th>Action</th>
-        </tr>
-        <tbody>
-          {applicantsInfo.map((applicant, index) => {
-            return <SingleApplicantInfo key={index} applicant={applicant} />
-          })}
-        </tbody>
-      </table>
+      <div className='applicant-scroll'>
+        <table className='applicant-information-table'>
+          <tr>
+            <th>Picture</th>
+            <th className='name'>Full Name</th>
+            <th>Ocapassion</th>
+            <th className='message'>Message about Job</th>
+            <th className='status'>Status</th>
+            <th>Action</th>
+          </tr>
+          <tbody>
+            {applicantsInfo.map((applicant, index) => {
+              return <SingleApplicantInfo key={index} applicant={applicant} />
+            })}
+          </tbody>
+        </table>
+      </div>
 
       {/* controls */}
 

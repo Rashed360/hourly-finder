@@ -2428,6 +2428,9 @@ h2.contact-title,
   padding-right: 100px;
   font-size: 20px;
 }
+.left.active .dashboard-toggle {
+  right: 27px;
+}
 /* Toggle Dashboard */
 
 h3.dashboard-title {
@@ -3064,7 +3067,9 @@ h3.right-bar-title {
   font-size: 24px;
   margin-right: 5px;
 }
-
+.applicant-scroll {
+  overflow-x: scroll;
+}
 .applicant-information-filter .display-page {
   display: flex;
   align-items: center;
