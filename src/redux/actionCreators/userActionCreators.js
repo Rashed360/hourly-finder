@@ -219,6 +219,7 @@ export const profileAddressUpdate = (type, id, address) => async dispatch => {
 		})
 	}
 }
+
 export const profileOrganizationUpdate = (id, orgData, image) => async dispatch => {
 	const token = localStorage.getItem('token')
 	if (token) {

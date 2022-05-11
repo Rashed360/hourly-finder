@@ -12,7 +12,7 @@ const PostedJobBlock = ({ job }) => {
 					<p>
 						<span className='me-1'>
 							<FaMapMarkerAlt className='me-1' />
-							{job.location || 'None'}
+							{job.location}
 						</span>
 						<span>
 							<FaBookmark className='me-1' />

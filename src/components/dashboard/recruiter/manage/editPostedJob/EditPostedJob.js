@@ -3,7 +3,7 @@ import { Formik, Field, Form } from 'formik'
 import { FaInfoCircle } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import { jobCreate } from 'redux/actionCreators/jobActionCreators'
+import { jobUpdate } from 'redux/actionCreators/jobActionCreators'
 import Spinner from 'components/commonComponents/spinner/Spinner'
 import axios from 'axios'
 const url = process.env.REACT_APP_BACKEND_SERVER
@@ -16,7 +16,6 @@ const EditPostedJob = () => {
 	const [image, setImage] = useState(null)
 	const [preview, setPreview] = useState(null)
 	const { job_slug } = useParams()
-	const job = useSelector(state => state.job.singleJob)
 	const creatingJob = useSelector(state => state.job.creatingJob)
 	const createJobSuccess = useSelector(state => state.job.createJobSuccess)
 	const createJobFailed = useSelector(state => state.job.createJobFailed)
@@ -74,7 +73,7 @@ const EditPostedJob = () => {
 		map,
 		overview,
 		todo,
-	} = job === null ? temporaryValues : job
+	} = jobData === null ? temporaryValues : jobData.job
 
 	const initialValues = {
 		title: title,
@@ -98,7 +97,24 @@ const EditPostedJob = () => {
 	}
 
 	const onSubmitHandle = values => {
-		// dispatch(jobCreate(values, image, recruiterId))
+		const updatedData = {}
+
+		if (values.title !== initialValues.title) updatedData.title = values.title
+		if (values.type !== initialValues.type) updatedData.type = values.type
+		if (values.salary !== initialValues.salary) updatedData.salary = values.salary
+		if (values.level !== initialValues.level) updatedData.level = values.level
+		if (values.vacancy !== initialValues.vacancy) updatedData.vacancy = values.vacancy
+		if (values.starting !== initialValues.starting) updatedData.starting = values.starting
+		if (values.duration !== initialValues.duration) updatedData.duration = values.duration
+		if (values.language !== initialValues.language) updatedData.language = values.language
+		if (values.skill !== initialValues.skill) updatedData.skill = values.skill
+		if (values.keyword !== initialValues.keyword) updatedData.keyword = values.keyword
+		if (values.location !== initialValues.location) updatedData.location = values.location
+		if (values.map !== initialValues.map) updatedData.map = values.map
+		if (values.overview !== initialValues.overview) updatedData.overview = values.overview
+		if (values.todo !== initialValues.todo) updatedData.todo = values.todo
+
+		dispatch(jobUpdate(jobData.job.id, updatedData, image))
 	}
 
 	const validateHandle = values => {
@@ -169,10 +185,22 @@ const EditPostedJob = () => {
 								</div>
 							</div>
 						) : (
-							<Formik initialValues={initialValues} onSubmit={onSubmitHandle} validate={validateHandle}>
+							<Formik
+								enableReinitialize
+								initialValues={initialValues}
+								onSubmit={onSubmitHandle}
+								validate={validateHandle}
+							>
 								{({ values, errors, touched, handleChange, handleSubmit, handleReset, setFieldValue }) => (
 									<Form onSubmit={handleSubmit} onReset={handleReset} encType='multipart/form-data'>
-										<div className='job-details-image' style={{ backgroundImage: `url(${preview})` }}></div>
+										<div
+											className='job-details-image'
+											style={{
+												backgroundImage: `url(${
+													preview !== null ? preview : jobData !== null ? url + jobData.job.image : null
+												})`,
+											}}
+										></div>
 										<div className='jobs-details-information dashboard'>
 											<div className='single-job-title'>
 												<h3>{values.title || 'Your Job Title'}</h3>
@@ -183,11 +211,11 @@ const EditPostedJob = () => {
 														<div className='basic-info'>
 															<p>EMPOWERMENT</p>
 															<h5>
-																{values.type === '1'
+																{values.type === 1
 																	? 'Hourly'
-																	: values.type === '2'
+																	: values.type === 2
 																	? 'Part Time'
-																	: values.type === '3'
+																	: values.type === 3
 																	? 'Project Based'
 																	: '---'}
 															</h5>
