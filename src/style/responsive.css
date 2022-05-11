@@ -327,6 +327,11 @@
     margin-top: 50px;
     margin-left: -50px;
   }
+  .ongoing-job-header {
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: center;
+  }
 }
 
 /* Large Mobile :480px. */
