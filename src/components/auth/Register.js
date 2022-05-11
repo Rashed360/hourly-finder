@@ -12,6 +12,7 @@ import {
   FaUserTie,
 } from "react-icons/fa"
 import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 import { authSignUp, clearAuthErrors } from "../../redux/actionCreators/authActionCreators"
 import FormField from "../commonComponents/formik/FormField"
 import Spinner from "../commonComponents/spinner/Spinner"
@@ -285,6 +286,12 @@ const Register = () => {
                       <span onClick={() => stepHandle(1)}>
                         Next <FaRegArrowAltCircleRight />
                       </span>
+                    </div>
+                    <div className='auth mobile-view-link register'>
+                      <p>
+                        Already have an account?
+                        <Link to='/login'>Sign in </Link>
+                      </p>
                     </div>
                   </Form>
                 )}

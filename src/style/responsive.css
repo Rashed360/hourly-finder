@@ -115,6 +115,13 @@
     border: none;
     border-bottom: 1px solid #dadada;
   }
+  .registration-left-content {
+    width: 90%;
+    height: 90%;
+    backdrop-filter: blur(35px);
+    left: 45%;
+    top: 37%;
+  }
 }
 
 /* small mobile :320px. */
@@ -146,6 +153,21 @@
     margin: auto;
     margin-bottom: 50px;
     text-align: center;
+  }
+
+  /* Login, Register and Apply Page */
+  .registration-left {
+    display: none;
+  }
+  .registration-form {
+    width: 100%;
+    float: none;
+  }
+  .btn_group {
+    bottom: 20px;
+  }
+  .auth.mobile-view-link {
+    display: block;
   }
 
   /* All Job Page */

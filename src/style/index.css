@@ -1320,6 +1320,26 @@ h2.contact-title,
   background: #16395f;
   color: white;
 }
+.auth.mobile-view-link p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.auth.mobile-view-link {
+  margin-top: 10px;
+  display: none;
+}
+.auth.mobile-view-link.register {
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  width: 100%;
+}
+
+.auth.mobile-view-link a {
+  font-weight: bold;
+  color: #16395f;
+}
 /* -------------------------Registration Page CSS  End--------------------- */
 
 /* -------------------------All Blog Page CSS  Start--------------------- */
