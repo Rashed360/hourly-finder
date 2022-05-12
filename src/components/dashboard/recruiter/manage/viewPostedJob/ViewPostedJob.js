@@ -25,6 +25,10 @@ const ViewPostedJob = () => {
 		fetchPostedJob(job_slug)
 	}, [job_slug])
 
+	const jobStartAction = () => {
+		console.log('Job Started')
+	}
+
 	const infoToggle = () => {
 		setShow(!show)
 	}
@@ -75,15 +79,20 @@ const ViewPostedJob = () => {
 							<div className='applicant-information-area'>
 								<div className='applicant-information-filter'>
 									<div className='show-all-applicant'>
-										<button onClick={infoToggle} className='btn btn-main'>
+										<button onClick={jobStartAction} className='btn btn-main'>
 											Show All Applicants
 										</button>
 
 										{show ? (
-											<div className='display-page'>
-												<FaList />
-												Showing 10 Per Page
-											</div>
+											<>
+												<button onClick={infoToggle} className='btn btn-warn'>
+													Start Job
+												</button>
+												<div className='display-page'>
+													<FaList />
+													Showing 10 Per Page
+												</div>
+											</>
 										) : (
 											<button className='btn btn-alt' onClick={() => navigate(-1)}>
 												<FaArrowLeft /> Go back

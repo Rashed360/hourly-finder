@@ -38,7 +38,17 @@ const SingleApplicantInfo = ({ applicant }) => {
 			<td>{expertise}</td>
 			<td className='message'>{message}</td>
 			<td className='applicant-staus'>
-				<div className={status === 4 ? 'status hired' : status === 2 ? 'status rejected' : 'status pending'}>
+				<div
+					className={
+						status === 4
+							? 'status hired'
+							: status === 3
+							? 'status short'
+							: status === 2
+							? 'status rejected'
+							: 'status pending'
+					}
+				>
 					{statusData()}
 				</div>
 			</td>
