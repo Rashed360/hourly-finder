@@ -1,6 +1,6 @@
 import { FaBriefcase, FaMapMarkerAlt, FaSearchLocation } from "react-icons/fa"
 
-const JobSearchBar = () => {
+const JobSearchBar = ({ changeJobSearch, searchKeyword, handleJobSearch }) => {
   return (
     <div className='all-job-area'>
       <div className='container'>
@@ -8,11 +8,17 @@ const JobSearchBar = () => {
           <div className='row'>
             <div className='col-lg'>
               <div className='search-bar-all'>
-                <form action=''>
+                <form onSubmit={handleJobSearch}>
                   <div className='g-0 row align-items-center'>
                     <div className='col-lg-5'>
                       <div className='search-by'>
-                        <input type='text' placeholder='Job Name' />
+                        <input
+                          type='text'
+                          name='title'
+                          placeholder='Job Name'
+                          onChange={changeJobSearch}
+                          value={searchKeyword.title}
+                        />
                         <span>
                           <FaSearchLocation />
                         </span>
@@ -20,7 +26,13 @@ const JobSearchBar = () => {
                     </div>
                     <div className='col-lg-3'>
                       <div className='search-by'>
-                        <input type='text' placeholder='Location' />
+                        <input
+                          type='text'
+                          name='location'
+                          placeholder='Location'
+                          onChange={changeJobSearch}
+                          value={searchKeyword.location}
+                        />
                         <span>
                           <FaMapMarkerAlt />
                         </span>
@@ -28,7 +40,13 @@ const JobSearchBar = () => {
                     </div>
                     <div className='col-lg-2'>
                       <div className='search-by'>
-                        <input type='text' placeholder='Type' />
+                        <input
+                          type='text'
+                          placeholder='Type'
+                          name='type'
+                          onChange={changeJobSearch}
+                          value={searchKeyword.type}
+                        />
                         <span>
                           <FaBriefcase />
                         </span>
@@ -36,7 +54,7 @@ const JobSearchBar = () => {
                     </div>
                     <div className='col-lg-2'>
                       <div className='search-by search-btn'>
-                        <input type='button' value='Search' className='all-search' />
+                        <input type='submit' value='Search' className='all-search' />
                       </div>
                     </div>
                   </div>
