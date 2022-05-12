@@ -3,14 +3,14 @@ import { FaEllipsisV } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const SingleApplicantInfo = ({ applicant }) => {
-	const { image, fullName, message, status, ocapassion } = applicant
+	const { message, status } = applicant
 	return (
 		<tr className='data-row'>
 			<td className='img'>
-				<img src={image} alt='' />
+				<img src={null} alt='' />
 			</td>
-			<td className='name'>{fullName}</td>
-			<td>{ocapassion}</td>
+			<td className='name'>{'fullName'}</td>
+			<td>{'ocapassion'}</td>
 			<td className='message'>{message}</td>
 			<td className='applicant-staus'>
 				<div

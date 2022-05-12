@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { FaArrowLeft, FaRegEdit, FaTrash } from 'react-icons/fa'
+import { FaArrowLeft, FaRegEdit, FaTrash, FaList, FaFilter } from 'react-icons/fa'
 import BasicInfoBlock from 'components/commonComponents/commonBlock/basicInfoBlock/BasicInfoBlock'
 import ApplicantTable from './commonPosted/ApplicantTable'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -81,9 +81,7 @@ const ViewPostedJob = () => {
 
 										{show ? (
 											<div className='display-page'>
-												<span>
-													<span className='iconify' data-icon='ic:baseline-list-alt'></span>
-												</span>{' '}
+												<FaList />
 												Showing 10 Per Page
 											</div>
 										) : (
@@ -95,9 +93,7 @@ const ViewPostedJob = () => {
 									{show && (
 										<div className='applicant-filter'>
 											<div className='filter-meta'>
-												<span>
-													<span className='iconify' data-icon='ep:filter'></span>
-												</span>
+												<FaFilter />
 												<span className='filter-header-text'>Filter by:</span>
 											</div>
 											<div className='form-field'>
@@ -110,7 +106,7 @@ const ViewPostedJob = () => {
 										</div>
 									)}
 								</div>
-								{show && <ApplicantTable />}
+								{show && <ApplicantTable job_id={postedJob.job.id} />}
 							</div>
 						</div>
 					)}
