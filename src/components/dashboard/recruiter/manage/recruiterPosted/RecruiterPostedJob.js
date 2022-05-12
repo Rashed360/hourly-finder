@@ -2,11 +2,10 @@ import { useEffect } from 'react'
 import PostedJobFilterBar from './PostedJobFilterBar'
 import PostedJobBlock from './PostedJobBlock'
 import { useSelector, useDispatch } from 'react-redux'
-import { jobByRecruiter } from '../../../../../redux/actionCreators/jobActionCreators'
+import { jobByRecruiter } from 'redux/actionCreators/jobActionCreators'
 
 const RecruiterPostedJob = () => {
 	document.title = 'HourlyFinder | Manage Jobs'
-
 	const dispatch = useDispatch()
 	const profile = useSelector(state => state.user.profile)
 	const recruiterJobs = useSelector(state => state.job.recruiterJobs)
@@ -14,7 +13,7 @@ const RecruiterPostedJob = () => {
 	useEffect(() => {
 		if (id !== null) {
 			dispatch(jobByRecruiter(id))
-		}		
+		}
 	}, [dispatch, id])
 
 	return (
