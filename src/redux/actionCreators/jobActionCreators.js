@@ -152,9 +152,8 @@ export const jobCreate = (values, image, recruiter) => async dispatch => {
 }
 
 export const jobApply = (job, values, user) => async dispatch => {
-	let msg = values.name + ',' + values.phone + ',' + values.address + ',' + values.message
 	const applyData = {
-		message: msg,
+		message: values.message,
 		job: job,
 		seeker: user,
 	}
