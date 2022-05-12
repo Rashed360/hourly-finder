@@ -23,7 +23,7 @@ import EditPostedJob from './dashboard/recruiter/manage/editPostedJob/EditPosted
 import Manage from './dashboard/recruiter/manage/Manage'
 import ViewPostedJob from './dashboard/recruiter/manage/viewPostedJob/ViewPostedJob'
 import RecruiterMessage from './dashboard/recruiter/message/RecruiterMessage'
-import RecruiterOngoingJob from './dashboard/recruiter/ongoing/RecruiterOngoingJob'
+import OngoingJob from './dashboard/recruiter/ongoing/OngoingJob'
 import RecruiterOverview from './dashboard/recruiter/overView/RecruiterOverview'
 import RecruiterPostJob from './dashboard/recruiter/postJob/RecruiterPostJob'
 import Footer from './footer/Footer'
@@ -86,7 +86,7 @@ const App = () => {
 							<Route path='manage' element={<Manage />} />
 							<Route path='manage/view/:job_slug' element={<ViewPostedJob />} />
 							<Route path='manage/edit/:job_slug' element={<EditPostedJob />} />
-							<Route path='ongoing-job' element={<RecruiterOngoingJob />} />
+							<Route path='ongoing-job' element={<OngoingJob />} />
 							<Route path='*' element={<Navigate to='/dashboard/overview' />} />
 						</Route>
 					</Route>

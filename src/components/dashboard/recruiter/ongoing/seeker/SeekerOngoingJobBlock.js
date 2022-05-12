@@ -1,27 +1,12 @@
-import { Link } from 'react-router-dom'
 import { DateTime } from 'luxon'
 import { FaBookmark, FaMapMarkerAlt } from 'react-icons/fa'
 import { useJobType, useTimeSince } from 'hooks/useJobHook'
-import { useState } from 'react'
 
-const OngoingJobBlock = ({ work }) => {
-	const [curProgress, setCurProgress] = useState('')
-	const { created, status, job, seeker } = work
+const SeekerOngoingJobBlock = ({ work }) => {
+	const { created, status, job } = work
 	const { title, location, type } = job
-	const { picture, expertise, user } = seeker
-	const { username, first_name, last_name } = user
 	const jobType = useJobType(type)
 	const timeSince = useTimeSince(DateTime.fromISO(created))
-
-	const progressReport = () => {
-		if (curProgress !== '') {
-			console.log(curProgress)
-		}
-	}
-
-	const progressChange = e => {
-		setCurProgress(e.target.value)
-	}
 
 	return (
 		<div className='ongoing-job-item'>
@@ -57,27 +42,10 @@ const OngoingJobBlock = ({ work }) => {
 				</div>
 			</div>
 			<div className='ongoing-job-footer'>
-				<img src={picture} alt='' width='40px' />
-				<p>
-					Seeker:
-					<Link to={`/user/${username}`}> {first_name + ' ' + last_name}</Link>({expertise})
-				</p>
 				<p>Started: {timeSince}</p>
-			</div>
-			<div className='ongoing-job-footer'>
-				<label for='cars'>Update Job Progress:</label>
-				<select value={curProgress} onChange={progressChange}>
-					<option value=''>-Select-</option>
-					<option value='1'>Accept</option>
-					<option value='2'>Prepare</option>
-					<option value='3'>Complete</option>
-					<option value='4'>Review</option>
-					<option value='5'>Done</option>
-				</select>
-				<button onClick={progressReport}>Update</button>
 			</div>
 		</div>
 	)
 }
 
-export default OngoingJobBlock
+export default SeekerOngoingJobBlock
