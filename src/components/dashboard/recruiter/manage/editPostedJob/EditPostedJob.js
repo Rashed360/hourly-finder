@@ -4,8 +4,10 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { jobUpdate } from 'redux/actionCreators/jobActionCreators'
-import Spinner from 'components/commonComponents/spinner/Spinner'
 import axios from 'axios'
+import Spinner from 'components/commonComponents/spinner/Spinner'
+import InfoBlock from 'components/commonComponents/commonBlock/basicInfoBlock/InfoBlock'
+
 const url = process.env.REACT_APP_BACKEND_SERVER
 
 const EditPostedJob = () => {
@@ -207,62 +209,14 @@ const EditPostedJob = () => {
 											</div>
 											<div className='single-job-basic-info'>
 												<div className='row d-flex justify-content-around'>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>EMPOWERMENT</p>
-															<h5>
-																{values.type === 1
-																	? 'Hourly'
-																	: values.type === 2
-																	? 'Part Time'
-																	: values.type === 3
-																	? 'Project Based'
-																	: '---'}
-															</h5>
-														</div>
-													</div>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>SALARY</p>
-															<h5>{values.salary || '---'} BDT</h5>
-														</div>
-													</div>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>LEVEL</p>
-															<h5>{values.level || '---'}</h5>
-														</div>
-													</div>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>vancey</p>
-															<h5>{values.vacancy || '---'}</h5>
-														</div>
-													</div>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>STARTING DATE</p>
-															<h5>{values.starting || '---'}</h5>
-														</div>
-													</div>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>DURATION</p>
-															<h5>{values.duration || '---'}</h5>
-														</div>
-													</div>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>WORK LOCATION</p>
-															<h5>{values.location || '---'}</h5>
-														</div>
-													</div>
-													<div className='col-lg-3'>
-														<div className='basic-info'>
-															<p>LANGUAGE</p>
-															<h5>{values.language || '---'}</h5>
-														</div>
-													</div>
+													<InfoBlock type='empowerment' info={values.type} />
+													<InfoBlock type='salary' info={values.salary} />
+													<InfoBlock type='level' info={values.level} />
+													<InfoBlock type='vacancy' info={values.vacancy} />
+													<InfoBlock type='starting date' info={values.starting} />
+													<InfoBlock type='duration' info={values.duration} />
+													<InfoBlock type='work location' info={values.location} />
+													<InfoBlock type='language' info={values.language} />
 												</div>
 											</div>
 										</div>
