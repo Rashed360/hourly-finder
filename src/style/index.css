@@ -3106,12 +3106,12 @@ h3.right-bar-title {
 .applicant-information-table th.name {
   width: 20%;
 }
-.applicant-information-table td.img .img {
+.applicant-information-table td.img img {
   width: 40px;
   height: 40px;
   background: #b8e2f1;
   margin: auto;
-  border-radius: 100%;
+  border-radius: 50%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

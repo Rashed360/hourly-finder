@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { FaArrowLeft, FaRegEdit, FaTrash } from 'react-icons/fa'
-import BasicInfo from './commonPosted/BasicInfo'
+import BasicInfoBlock from 'components/commonComponents/commonBlock/basicInfoBlock/BasicInfoBlock'
 import ApplicantTable from './commonPosted/ApplicantTable'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
@@ -69,7 +69,7 @@ const ViewPostedJob = () => {
 							</div>
 
 							<div className='see-posted-job-content'>
-								<BasicInfo job={postedJob.job} />
+								<BasicInfoBlock job={postedJob.job} />
 							</div>
 
 							<div className='applicant-information-area'>

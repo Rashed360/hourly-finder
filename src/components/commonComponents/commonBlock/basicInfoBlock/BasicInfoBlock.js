@@ -1,6 +1,6 @@
-import InfoBlock from 'components/commonComponents/commonBlock/basicInfoBlock/InfoBlock'
+import InfoBlock from './InfoBlock'
 
-const BasicInfo = ({ job }) => {
+const BasicInfoBlock = ({ job }) => {
 	return (
 		<div className='single-job-basic-info'>
 			<div className='row d-flex justify-content-between'>
@@ -17,4 +17,4 @@ const BasicInfo = ({ job }) => {
 	)
 }
 
-export default BasicInfo
+export default BasicInfoBlock

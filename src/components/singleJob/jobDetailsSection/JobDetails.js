@@ -1,32 +1,16 @@
 import Tags from 'components/commonComponents/tagElement/Tags'
 import { Link } from 'react-router-dom'
-import { useJobLevel, useJobType } from '../../../hooks/useJobHook'
-import LeafletMap from '../../commonComponents/map/LeafletMap'
+import { useJobType } from 'hooks/useJobHook'
+import LeafletMap from 'components/commonComponents/map/LeafletMap'
+import BasicInfoBlock from 'components/commonComponents/commonBlock/basicInfoBlock/BasicInfoBlock'
 
 const JobDetails = ({ data }) => {
-	const {
-		title,
-		image,
-		salary,
-		duration,
-		language,
-		keyword,
-		vacancy,
-		level,
-		starting,
-		latlng,
-		location,
-		overview,
-		todo,
-		skill,
-		type,
-	} = data.job
+	const { title, image, keyword, level, latlng, location, overview, todo, skill, type } = data.job
 	const { name, logo } = data.company
 	const { username } = data.user
 	const imagePath = process.env.REACT_APP_BACKEND_SERVER
 
 	const jobType = useJobType(type)
-	const jobLevel = useJobLevel(level)
 	const mapData = latlng.split(',')
 
 	return (
@@ -48,58 +32,9 @@ const JobDetails = ({ data }) => {
 						</Link>
 					</p>
 				</div>
-				<div className='single-job-basic-info'>
-					<div className='row d-flex justify-content-around'>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>vancey</p>
-								<h5>{vacancy}</h5>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>LEVEL</p>
-								<h5>{jobLevel}</h5>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>EMPOWERMENT</p>
-								<h5>{jobType}</h5>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>SALARY</p>
-								<h5>{salary} BDT</h5>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>DURATION</p>
-								<h5>{duration}</h5>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>STARTING DATE</p>
-								<h5>{starting}</h5>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>WORK LOCATION</p>
-								<h5>{location}</h5>
-							</div>
-						</div>
-						<div className='col-lg-3'>
-							<div className='basic-info'>
-								<p>LANGUAGE</p>
-								<h5>{language}</h5>
-							</div>
-						</div>
-					</div>
-				</div>
+
+				<BasicInfoBlock job={data.job} />
+
 				<div className='single-job-details'>
 					<h3>Overview</h3>
 					<p>{overview}</p>
