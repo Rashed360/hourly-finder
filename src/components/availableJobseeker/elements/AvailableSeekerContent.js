@@ -3,6 +3,7 @@ import { FaCheckCircle, FaFilter, FaRegListAlt } from "react-icons/fa"
 import AvailableJobseekerCard from "./AvailableJobseekerCard"
 
 const AvailableSeekerContent = ({ seeker }) => {
+  console.log(seeker)
   const avaialableSeekerSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
     return (
       <div className='col-lg-4 col-md-6' key={index}>
@@ -18,7 +19,7 @@ const AvailableSeekerContent = ({ seeker }) => {
             <span>
               <FaCheckCircle />
             </span>
-            Available : 1649 Job Seekers
+            Available : {seeker !== undefined ? seeker.length : "0"} Job Seekers
           </p>
           <div className='display-page'>
             <span>

@@ -17,7 +17,7 @@ const SeekerProfile = ({ user }) => {
         <div className='profile-view-information'>
           <UserProfileHeading type='Job Seeker' />
           <UserBio bio={user.seeker?.bio} />
-          <UserSkills />
+          <UserSkills skills={user.seeker?.expertise} />
           <UserPreviousJob title='Previous Works' />
           <UserReviews />
         </div>
