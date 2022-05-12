@@ -173,11 +173,11 @@ const Login = (props) => {
               <p className='msg_notify'>
                 <FaInfoCircle /> Signed In completed Successfully!
               </p>
-              <p className='mt-30'>
+              <p className='mt-30 confirmation-text'>
                 Your profile is not completed. In order to post or apply for a job, you have to complete your
                 profile creation. Go to Dashboard and Edit your Profile.
               </p>
-              <div className='btn_group'>
+              <div className='btn_group confirmation'>
                 <span onClick={() => navigate("/")}>Go to Home</span>
                 <span onClick={() => navigate("/dashboard")}>Go to Dashboard</span>
               </div>

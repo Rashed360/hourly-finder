@@ -339,12 +339,35 @@
     margin-bottom: 20px;
     align-items: center;
   }
+  .post-job-area .save-all-change span {
+    display: inline-block;
+    width: 140px;
+  }
+
+  .save-all-change {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .save-all-change span:nth-child(1) {
+    order: 3;
+  }
+  .save-all-change .action {
+    width: auto;
+  }
   .profile-view-information .overall-rating {
     justify-content: space-between;
     margin-top: 20px;
   }
   .profile-view-information {
     margin-top: 30px;
+  }
+  .registration-form .confirmation-text {
+    font-size: 14px;
+  }
+
+  .registration-form .confirmation {
+    bottom: -10px;
   }
 }
 
