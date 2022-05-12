@@ -9,7 +9,7 @@ const CategoryBlock = ({ category }) => {
       <div className='category-item'>
         <div className='category-icon'>{icon === "" ? <FaShoppingCart /> : ""}</div>
         <div className='category-name'>
-          <Link to={`category/${id}`}>
+          <Link to={`/jobs/?tag=` + name}>
             <h3>{name}</h3>
           </Link>
         </div>

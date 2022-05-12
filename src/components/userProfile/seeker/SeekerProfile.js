@@ -6,7 +6,8 @@ import UserReviews from "../common/UserReviews"
 import UserSkills from "../common/UserSkills"
 
 const SeekerProfile = ({ user }) => {
-  console.log(user.seeker)
+  console.log("seeker", user.seeker)
+
   return (
     <div className='row'>
       <div className='col-lg-4'>

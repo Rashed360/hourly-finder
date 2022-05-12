@@ -4,6 +4,7 @@ import UserPreviousJob from "../common/UserPreviousJob"
 import UserProfileHeading from "../common/UserProfileHeading"
 
 const RecruiterProfile = ({ user }) => {
+  console.log("recruiter", user.recruiter)
   return (
     <div className='row'>
       <div className='col-lg-4'>

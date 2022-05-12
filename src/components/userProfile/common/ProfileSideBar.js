@@ -67,7 +67,7 @@ const ProfileSideBar = ({ user, seeker, recruiter }) => {
             Hire Me
           </Link>
         )}
-        <Link to='' className='btn btn-alt'>
+        <Link to='/dashboard/message' className='btn btn-alt'>
           Message
         </Link>
       </div>
