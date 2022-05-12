@@ -1,11 +1,31 @@
 import { Dropdown } from 'react-bootstrap'
 import { FaEllipsisV } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { jobApplicationStatus } from 'redux/actionCreators/jobActionCreators'
 
 const SingleApplicantInfo = ({ applicant }) => {
-	const { message, status, seeker } = applicant
+	const { id, message, status, seeker } = applicant
 	const { picture, expertise, user } = seeker
 	const { first_name, last_name, username } = user
+	const dispatch = useDispatch()
+
+	const statusData = () => {
+		if (status === 1) return 'Pending'
+		else if (status === 2) return 'Rejected'
+		else if (status === 3) return 'Short-listed'
+		else if (status === 4) return 'Hired'
+		else return 'Invalid'
+	}
+
+	const recruiterAction = action => {
+		if (action !== status) {
+			const statusData = {
+				status: action,
+			}
+			dispatch(jobApplicationStatus(id, statusData))
+		}
+	}
 
 	return (
 		<tr className='data-row'>
@@ -18,12 +38,8 @@ const SingleApplicantInfo = ({ applicant }) => {
 			<td>{expertise}</td>
 			<td className='message'>{message}</td>
 			<td className='applicant-staus'>
-				<div
-					className={
-						status === 'hired' ? 'status hired' : status === 'rejected' ? 'status rejected' : 'status pending'
-					}
-				>
-					{status === 'hired' ? 'Hired' : status === 'rejected' ? 'Rejected' : 'Pending'}
+				<div className={status === 4 ? 'status hired' : status === 2 ? 'status rejected' : 'status pending'}>
+					{statusData()}
 				</div>
 			</td>
 			<td>
@@ -34,15 +50,18 @@ const SingleApplicantInfo = ({ applicant }) => {
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu className='action-status'>
-							<Link to='#' className='hire'>
+							<button onClick={() => recruiterAction(4)} className='hire'>
 								Hire
-							</Link>
-							<Link to='#' className='shortlist'>
+							</button>
+							<button onClick={() => recruiterAction(3)} className='shortlist'>
 								Shortlist
-							</Link>
-							<Link to='#' className='reject'>
+							</button>
+							<button onClick={() => recruiterAction(2)} className='reject'>
 								Reject
-							</Link>
+							</button>
+							<button onClick={() => recruiterAction(1)} className='reject'>
+								Pending
+							</button>
 						</Dropdown.Menu>
 					</Dropdown>
 				</span>

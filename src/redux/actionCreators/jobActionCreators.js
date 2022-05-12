@@ -173,6 +173,25 @@ export const jobApply = (job, values, user) => async dispatch => {
 		})
 }
 
+export const jobApplicationStatus = (id, statusData) => async dispatch => {
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		if (id && statusData.status) {
+			await axios
+				.patch(`${url}/jobs/apply/${id}/`, statusData, config)
+				.then(response => console.log(response.data))
+				.catch(error => console.log(error.response))
+		}
+	}
+}
+
 export const jobByRecruiter = recruiter => async dispatch => {
 	const config = {
 		headers: {

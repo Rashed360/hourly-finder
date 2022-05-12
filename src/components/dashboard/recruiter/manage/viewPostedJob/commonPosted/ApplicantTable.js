@@ -12,10 +12,20 @@ const ApplicantTable = ({ job_id }) => {
 
 	useEffect(() => {
 		const fetchApplicantList = async id => {
-			await axios
-				.get(`${url}/jobs/apply/?id=${id}`)
-				.then(response => setApplicants(response.data))
-				.catch(error => console.log(error.response))
+			const token = localStorage.getItem('token')
+			if (token) {
+				const config = {
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `JWT ${token}`,
+						Accept: 'application/json',
+					},
+				}
+				await axios
+					.get(`${url}/jobs/apply/?id=${id}`, config)
+					.then(response => setApplicants(response.data))
+					.catch(error => console.log(error.response))
+			}
 		}
 		fetchApplicantList(job_id)
 	}, [job_id])
