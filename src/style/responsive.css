@@ -146,6 +146,13 @@
   .job-details-image {
     display: none;
   }
+  .profile-view-information .overall-rating {
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .profile-view-information {
+    margin-top: 30px;
+  }
 }
 
 /* small mobile :320px. */
@@ -331,6 +338,13 @@
     flex-direction: column;
     margin-bottom: 20px;
     align-items: center;
+  }
+  .profile-view-information .overall-rating {
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .profile-view-information {
+    margin-top: 30px;
   }
 }
 

@@ -1987,6 +1987,7 @@ h2.contact-title,
   background: white;
   border-radius: 10px;
   padding: 20px 30px;
+  word-break: break-all;
 }
 
 .profile-view-information .profile-bio h5 {
@@ -2005,6 +2006,8 @@ h2.contact-title,
   border-radius: 10px;
   color: #565454;
   margin-right: 15px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 .work-title p {
   display: inline-block;
