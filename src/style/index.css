@@ -1933,6 +1933,7 @@ h2.contact-title,
   padding: 30px;
   border-radius: 10px;
   margin-bottom: 20px;
+  height: 100%;
 }
 
 .profile-view-information .profile-category {
@@ -2066,6 +2067,11 @@ h2.contact-title,
 
 .review-item .rating {
   margin: 7px 0;
+}
+.no-item-wrap p {
+  color: #00000094;
+  text-align: center;
+  font-size: 16px;
 }
 /* -------------------------Job Seeker Profile Page CSS  End--------------------- */
 

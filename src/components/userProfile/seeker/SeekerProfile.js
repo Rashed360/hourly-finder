@@ -1,17 +1,28 @@
-import UserDetailsInfo from '../common/UserDetailsInfo'
-import ProfileSideBar from '../common/ProfileSideBar'
+import ProfileSideBar from "../common/ProfileSideBar"
+import UserBio from "../common/UserBio"
+import UserPreviousJob from "../common/UserPreviousJob"
+import UserProfileHeading from "../common/UserProfileHeading"
+import UserReviews from "../common/UserReviews"
+import UserSkills from "../common/UserSkills"
 
 const SeekerProfile = ({ user }) => {
-	return (
-		<div className='row'>
-			<div className='col-lg-4'>
-				<ProfileSideBar user={user.user} seeker={user.seeker} />
-			</div>
-			<div className='col-lg-8'>
-				<UserDetailsInfo user={user.user} seeker={user.seeker} />
-			</div>
-		</div>
-	)
+  console.log(user.seeker)
+  return (
+    <div className='row'>
+      <div className='col-lg-4'>
+        <ProfileSideBar user={user.user} seeker={user.seeker} />
+      </div>
+      <div className='col-lg-8'>
+        <div className='profile-view-information'>
+          <UserProfileHeading type='Job Seeker' />
+          <UserBio bio={user.seeker?.bio} />
+          <UserSkills />
+          <UserPreviousJob title='Previous Works' />
+          <UserReviews />
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default SeekerProfile
