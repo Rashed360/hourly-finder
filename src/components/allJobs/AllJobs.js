@@ -31,7 +31,11 @@ const AllJobs = () => {
   const handleJobSearch = (event) => {
     event.preventDefault()
     console.log("Submitted")
-    setFinalSearch(searchKeyword)
+    setFinalSearch({
+      title: searchKeyword.title,
+      location: searchKeyword.location,
+      type: parseInt(searchKeyword.type),
+    })
   }
 
   return (

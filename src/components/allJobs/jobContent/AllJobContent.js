@@ -34,6 +34,13 @@ const AllJobContent = ({ finalSearch }) => {
         return job
       }
     })
+    .filter((job) => {
+      if (type === NaN || type === "") {
+        return job
+      } else if (job.type === type) {
+        return job
+      }
+    })
 
     .map((job, index) => {
       return (
@@ -73,7 +80,7 @@ const AllJobContent = ({ finalSearch }) => {
         <div className='row'>
           {allJobsPagination === null && jobsSkeleton}
           {allJobsPagination !== null && jobs}
-          {jobs.length === 0 && (
+          {jobs?.length === 0 && (
             <div className='col-lg-12'>
               <UserNoItems text='No Job Available' />
             </div>

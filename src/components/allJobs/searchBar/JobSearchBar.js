@@ -40,13 +40,17 @@ const JobSearchBar = ({ changeJobSearch, searchKeyword, handleJobSearch }) => {
                     </div>
                     <div className='col-lg-2'>
                       <div className='search-by'>
-                        <input
-                          type='text'
-                          placeholder='Type'
+                        <select
+                          className='job-type'
                           name='type'
                           onChange={changeJobSearch}
                           value={searchKeyword.type}
-                        />
+                        >
+                          <option value='1'>Hourly</option>
+                          <option value='2'>Full Time</option>
+                          <option value='3'>Part Time</option>
+                        </select>
+
                         <span>
                           <FaBriefcase />
                         </span>
