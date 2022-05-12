@@ -2768,7 +2768,7 @@ h3.right-bar-title {
 	font-size: 14px;
 }
 .manage-job-table td .job-status {
-	background: #a6e5bc;
+	background: #9e9d9a;
 	color: white;
 	font-size: 13px;
 	padding: 2px 5px;
@@ -2776,6 +2776,9 @@ h3.right-bar-title {
 	text-align: center;
 }
 
+.manage-job-table td .job-status.complete {
+	background: #96bea4;
+}
 .manage-job-table td .job-status.pending {
 	background: #ffbc3a;
 }
@@ -2870,18 +2873,19 @@ h3.right-bar-title {
 	left: 10%;
 	z-index: 1;
 }
-
+.ongoing-job-progress .bar {
+	background: gray;
+	height: 4px;
+	width: 20%;
+	z-index: 2;
+}
 .ongoing-job-content {
 	position: relative;
 }
-
-.ongoing-job-progress::before {
-	content: '';
-	position: absolute;
-	background: gray;
-	height: 4px;
-	width: 50%;
-	z-index: 2;
+.ongoing-job-footer {
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
 }
 .ongoing-card.active {
 	background: gray;

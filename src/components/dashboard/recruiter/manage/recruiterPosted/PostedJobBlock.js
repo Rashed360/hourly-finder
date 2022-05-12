@@ -1,9 +1,10 @@
 import { FaBookmark, FaMapMarkerAlt, FaRegEye, FaRegEdit } from 'react-icons/fa'
-import { useJobType } from '../../../../../hooks/useJobHook'
+import { useJobType, useJobStatus } from 'hooks/useJobHook'
 import { Link } from 'react-router-dom'
 
 const PostedJobBlock = ({ job }) => {
 	const type = useJobType(job.type)
+	const status = useJobStatus(job.status)
 	return (
 		<tr className='data mb-20'>
 			<td>
@@ -22,7 +23,13 @@ const PostedJobBlock = ({ job }) => {
 				</div>
 			</td>
 			<td>
-				<div className='job-status'>{job.status || 'Pending'}</div>
+				<div
+					className={
+						job.status === 1 ? 'job-status pending' : job.status === 3 ? 'job-status complete' : 'job-status'
+					}
+				>
+					{status}
+				</div>
 			</td>
 			<td>{job.starting}</td>
 			<td>

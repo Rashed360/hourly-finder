@@ -79,14 +79,14 @@ const ViewPostedJob = () => {
 							<div className='applicant-information-area'>
 								<div className='applicant-information-filter'>
 									<div className='show-all-applicant'>
-										<button onClick={jobStartAction} className='btn btn-main'>
+										<button onClick={infoToggle} className='btn btn-main'>
 											Show All Applicants
 										</button>
 
 										{show ? (
 											<>
-												<button onClick={infoToggle} className='btn btn-warn'>
-													Start Job
+												<button onClick={jobStartAction} className='btn btn-warn'>
+													Start Work from Job
 												</button>
 												<div className='display-page'>
 													<FaList />

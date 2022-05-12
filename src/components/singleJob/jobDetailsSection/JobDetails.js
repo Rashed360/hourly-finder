@@ -5,7 +5,7 @@ import LeafletMap from 'components/commonComponents/map/LeafletMap'
 import BasicInfoBlock from 'components/commonComponents/commonBlock/basicInfoBlock/BasicInfoBlock'
 
 const JobDetails = ({ data }) => {
-	const { title, image, keyword, level, latlng, location, overview, todo, skill, type } = data.job
+	const { title, image, keyword, latlng, location, overview, todo, skill, type } = data.job
 	const { name, logo } = data.company
 	const { username } = data.user
 	const imagePath = process.env.REACT_APP_BACKEND_SERVER
