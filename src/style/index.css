@@ -2812,6 +2812,9 @@ h3.right-bar-title {
 .manage-job-table td .job-status.complete {
   background: #96bea4;
 }
+.manage-job-table td .job-status.rejected {
+	background: #ee4d6e;
+}
 .manage-job-table td .job-status.pending {
   background: #ffbc3a;
 }

@@ -32,6 +32,7 @@ import Header from './header/Header'
 import Home from './home/Home'
 import LocationPage from './locationPage/LocationPage'
 import NoMatch from './noMatch/NoMatch'
+import Offer from './offerJob/Offer'
 import SingleBlog from './singleBlog/SingleBlog'
 import SingleJob from './singleJob/SingleJob'
 import UserProfile from './userProfile/UserProfile'
@@ -73,7 +74,8 @@ const App = () => {
 					{/*  */}
 					<Route path='/jobseeker' element={<AvailableJobSeeker />} />
 					{/*  */}
-					<Route path='apply/for/:job_id' element={<Apply />} />
+					<Route path='apply/:job_id' element={<Apply />} />
+					<Route path='offer/:username' element={<Offer />} />
 					<Route path='user/:userName' element={<UserProfile />} />
 					{/* dashboard - start */}
 					<Route path='/dashboard' element={<PrivateOutlet />}>

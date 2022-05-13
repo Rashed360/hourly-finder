@@ -1,14 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import RecruiterOngoingJobBlock from "./RecruiterOngoingJobBlock"
 const url = process.env.REACT_APP_BACKEND_SERVER
 
 const RecruiterOngoingJob = () => {
   document.title = "HourlyFinder | Ongoing Jobs"
   const [ongoingJobs, setOngoingJobs] = useState(null)
-  const dispatch = useDispatch()
   const profile = useSelector((state) => state.user.profile)
   const { id } = profile || { id: null }
 
@@ -33,7 +32,7 @@ const RecruiterOngoingJob = () => {
     if (id !== null) {
       fetchOngoingJobs()
     }
-  }, [dispatch, id])
+  }, [id])
 
   return (
     <div className='dashboard-main'>

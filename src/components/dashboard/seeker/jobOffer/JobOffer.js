@@ -1,8 +1,28 @@
-import { FaBookmark, FaMapMarkerAlt, FaCheck, FaTimes } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { useSelector } from 'react-redux'
+import OfferedJobBlock from './OfferedJobBlock'
+import { Spinner } from 'react-bootstrap'
+const url = process.env.REACT_APP_BACKEND_SERVER
 
 const JobOffer = () => {
 	document.title = 'HourlyFinder | Job Offer'
+	const [jobOffers, setJobOffers] = useState(null)
+	const profile = useSelector(state => state.user.profile)
+	const { id } = profile || { id: null }
+
+	const fetchJobOffer = async () => {
+		await axios
+			.get(`${url}/jobs/offer/?id=${id}`)
+			.then(response => setJobOffers(response.data))
+			.catch(error => console.log(error.response))
+	}
+
+	useEffect(() => {
+		if (id !== null) {
+			fetchJobOffer()
+		}
+	}, [id])
 
 	return (
 		<div className='dashboard-main'>
@@ -13,42 +33,27 @@ const JobOffer = () => {
 						<table width='100%'>
 							<thead>
 								<tr>
-									<th className='title'>Job Title</th>
+									<th className='title' style={{ width: '40%' }}>
+										Job Title
+									</th>
+									<th className='title' style={{ width: '30%' }}>
+										Message
+									</th>
 									<th className='status'>Status</th>
-									<th className='date'>Date</th>
+									<th className='date' style={{ width: '12%' }}>
+										Date
+									</th>
 									<th className='action'>Action</th>
 								</tr>
 							</thead>
 							<tbody className='job-data'>
-								<tr className='data mb-20'>
-									<td>
-										<div className='job-title'>
-											<h5>Hiring Online English Teacher</h5>
-											<p>
-												<span>
-													<FaMapMarkerAlt />
-												</span>
-												Dhanmondi
-												<span className='px-1'>
-													<FaBookmark />
-												</span>
-												Hourly
-											</p>
-										</div>
-									</td>
-									<td>
-										<div className='job-status pending'>Pending</div>
-									</td>
-									<td>03-09-2021</td>
-									<td>
-										<button to='view' className='btn view'>
-											<FaCheck />
-										</button>
-										<button to='view' className='btn delete'>
-											<FaTimes />
-										</button>
-									</td>
-								</tr>
+								{jobOffers === null ? (
+									<Spinner />
+								) : jobOffers.length === 0 ? (
+									<p>No Job Offers</p>
+								) : (
+									jobOffers.map(offer => <OfferedJobBlock offer={offer} fetch={fetchJobOffer} />)
+								)}
 							</tbody>
 						</table>
 					</div>

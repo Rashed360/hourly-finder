@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import RecruiterOngoingJob from './recruiter/RecruiterOngoingJob'
-import SeekerOngoingJob from './seeker/SeekerOngoingJob'
+import SeekerOngoingJob from '../../seeker/ongoingJob/SeekerOngoingJob'
 
 const OngoingJob = () => {
 	const user = useSelector(state => state.user.user)
