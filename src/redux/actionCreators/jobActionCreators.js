@@ -173,6 +173,34 @@ export const jobApply = (job, values, user) => async dispatch => {
 		})
 }
 
+export const jobOffer = (recruiter, seeker, values) => async dispatch => {
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		const offerData = {
+			message: values.message,
+			title: values.title,
+			location: values.location,
+			starting: values.starting,
+			type: values.type,
+			recruiter,
+			seeker,
+		}
+		if (recruiter && seeker) {
+			await axios
+				.post(`${url}/jobs/offer/`, offerData, config)
+				.then(response => console.log(response.data))
+				.catch(error => console.log(error.response))
+		}
+	}
+}
+
 export const jobOfferStatus = (id, statusData) => async dispatch => {
 	const token = localStorage.getItem('token')
 	if (token) {
