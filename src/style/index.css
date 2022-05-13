@@ -2914,12 +2914,10 @@ h3.right-bar-title {
   position: relative;
 }
 
-.ongoing-job-progress::before {
-  content: "";
-  position: absolute;
+.ongoing-job-progress .bar {
   background: gray;
   height: 4px;
-  width: 50%;
+  width: 20%;
   z-index: 2;
 }
 .ongoing-job-content {
