@@ -6,11 +6,14 @@ import ApplicantTable from './commonPosted/ApplicantTable'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
 import ModalYesNo from 'components/commonComponents/modals/ModalYesNo'
+import { useDispatch } from 'react-redux'
+import { jobAsWork } from 'redux/actionCreators/jobActionCreators'
 const url = process.env.REACT_APP_BACKEND_SERVER
 
 const ViewPostedJob = () => {
 	const [logoutModal, setLogoutModal] = useState(false)
 	const navigate = useNavigate()
+	const dispatch = useDispatch()
 	const { job_slug } = useParams()
 	const [postedJob, setPostedJob] = useState()
 	const [show, setShow] = useState(false)
@@ -26,7 +29,8 @@ const ViewPostedJob = () => {
 	}, [job_slug])
 
 	const jobStartAction = () => {
-		console.log('Job Started')
+		dispatch(jobAsWork(postedJob.job.id))
+		console.log('Job Started as Work')
 	}
 
 	const infoToggle = () => {
