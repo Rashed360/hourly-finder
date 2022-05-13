@@ -1,7 +1,39 @@
-import { FaBookmark, FaMapMarkerAlt, FaRegEye } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import ApplicationBlock from './ApplicationBlock'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import axios from 'axios'
+import Spinner from 'components/commonComponents/spinner/Spinner'
+const url = process.env.REACT_APP_BACKEND_SERVER
+
+
 const SeekerApplication = () => {
 	document.title = 'HourlyFinder | Applications'
+	const [applications, setApplications] = useState(null)
+	const profile = useSelector(state => state.user.profile)
+	const { id } = profile || { id: null }
+
+	const fetchApplications = async () => {
+		const token = localStorage.getItem('token')
+		if (token) {
+			const config = {
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `JWT ${token}`,
+					Accept: 'application/json',
+				},
+			}
+			await axios
+				.get(`${url}/jobs/apply/?seeker=${id}`, config)
+				.then(response => setApplications(response.data))
+				.catch(error => console.log(error.response))
+		}
+	}
+
+	useEffect(() => {
+		if (id !== null) {
+			fetchApplications()
+		}
+	}, [id])
 
 	return (
 		<div className='dashboard-main'>
@@ -48,33 +80,13 @@ const SeekerApplication = () => {
 								</tr>
 							</thead>
 							<tbody className='job-data'>
-								<tr className='data mb-20'>
-									<td>
-										<div className='job-title'>
-											<h5>Hiring Online English Teacher</h5>
-											<p>
-												{' '}
-												<span>
-													<FaMapMarkerAlt />{' '}
-												</span>{' '}
-												Dhanmondi{' '}
-												<span className='px-1'>
-													<FaBookmark />
-												</span>
-												Hourly
-											</p>
-										</div>
-									</td>
-									<td>
-										<div className='job-status'>Completed</div>
-									</td>
-									<td>03-09-2021</td>
-									<td>
-										<Link to='view' className='btn edit'>
-											<FaRegEye />
-										</Link>
-									</td>
-								</tr>
+								{applications === null ? (
+									<Spinner />
+								) : applications.length === 0 ? (
+									<p>You haven't applied to any jobs</p>
+								) : (
+									applications.map(application => <ApplicationBlock apply={application} />)
+								)}
 							</tbody>
 						</table>
 					</div>
