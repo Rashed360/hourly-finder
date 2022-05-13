@@ -43,6 +43,19 @@ export const useJobStatus = status => {
 	}
 }
 
+export const useOfferStatus = status => {
+	switch (status) {
+		case 1:
+			return 'Pending'
+		case 2:
+			return 'Rejected'
+		case 3:
+			return 'Accepted'
+		default:
+			return 'Invalid'
+	}
+}
+
 export const useTimeSince = date => {
 	var seconds = Math.floor((new Date() - date) / 1000)
 

@@ -17,7 +17,7 @@ const RecruiterPostedJob = () => {
 	}, [dispatch, id])
 
 	return (
-		<>
+		<div className='dashboard-main'>
 			<h3 className='dashboard-title'>Manage Posted Jobs</h3>
 			<div className='dashboard-content'>
 				<div className='manage-job-area content'>
@@ -49,7 +49,7 @@ const RecruiterPostedJob = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

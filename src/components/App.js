@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import { authCheck } from '../redux/actionCreators/authActionCreators'
+import { authCheck } from 'redux/actionCreators/authActionCreators'
 import About from './about/About'
 import AllJobs from './allJobs/AllJobs'
 import Apply from './apply/Apply'
@@ -26,6 +26,7 @@ import RecruiterMessage from './dashboard/recruiter/message/RecruiterMessage'
 import OngoingJob from './dashboard/recruiter/ongoing/OngoingJob'
 import RecruiterOverview from './dashboard/recruiter/overView/RecruiterOverview'
 import RecruiterPostJob from './dashboard/recruiter/postJob/RecruiterPostJob'
+import JobOffer from './dashboard/seeker/jobOffer/JobOffer'
 import Footer from './footer/Footer'
 import Header from './header/Header'
 import Home from './home/Home'
@@ -84,6 +85,7 @@ const App = () => {
 							<Route path='edit-address' element={<EditAddress />} />
 							<Route path='post-job' element={<RecruiterPostJob />} />
 							<Route path='manage' element={<Manage />} />
+							<Route path='offer' element={<JobOffer />} />
 							<Route path='manage/view/:job_slug' element={<ViewPostedJob />} />
 							<Route path='manage/edit/:job_slug' element={<EditPostedJob />} />
 							<Route path='ongoing-job' element={<OngoingJob />} />

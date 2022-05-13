@@ -4,7 +4,7 @@ const SeekerApplication = () => {
 	document.title = 'HourlyFinder | Applications'
 
 	return (
-		<>
+		<div className='dashboard-main'>
 			<h3 className='dashboard-title'>Applications</h3>
 			<div className='dashboard-content'>
 				<div className='manage-job-area content'>
@@ -80,7 +80,7 @@ const SeekerApplication = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

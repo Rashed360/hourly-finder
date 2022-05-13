@@ -4,11 +4,10 @@ import SeekerApplication from './seekerApplication/SeekerApplication'
 
 const Manage = () => {
 	const user = useSelector(state => state.user.user)
-	return (
-		<div className='dashboard-main'>
-			{user?.user_type === 2 ? <RecruiterPostedJob /> : <SeekerApplication />}
-		</div>
-	)
+
+	if (user.user_type === 2) return <RecruiterPostedJob />
+	else if (user.user_type === 1) return <SeekerApplication />
+	else return <p>Invalid User</p>
 }
 
 export default Manage
