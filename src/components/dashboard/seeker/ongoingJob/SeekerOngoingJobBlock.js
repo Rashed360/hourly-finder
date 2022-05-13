@@ -59,7 +59,7 @@ const SeekerOngoingJobBlock = ({ work }) => {
           </div>
         </div>
         <div className='ongoing-job-update-tracker'>
-          <p>Job Created {timeSince}</p>
+          <p>Job Started {timeSince}</p>
         </div>
       </div>
     </div>
