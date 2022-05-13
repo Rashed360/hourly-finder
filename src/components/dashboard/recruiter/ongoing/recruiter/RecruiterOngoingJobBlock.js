@@ -10,7 +10,7 @@ const RecruiterOngoingJobBlock = ({ work, fetch }) => {
   const [curProgress, setCurProgress] = useState("")
   const { id, created, status, job, seeker } = work
   const { title, location, type } = job
-  const { picture, expertise, user } = seeker
+  const { picture, user } = seeker
   const { username, first_name, last_name } = user
   const jobType = useJobType(type)
   const timeSince = useTimeSince(DateTime.fromISO(created))
