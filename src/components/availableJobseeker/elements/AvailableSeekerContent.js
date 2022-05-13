@@ -2,8 +2,9 @@ import AvailableSeekerSkeleton from "components/commonComponents/skeletons/Avail
 import { FaCheckCircle, FaFilter, FaRegListAlt } from "react-icons/fa"
 import AvailableJobseekerCard from "./AvailableJobseekerCard"
 
-const AvailableSeekerContent = ({ seeker }) => {
-  console.log(seeker)
+const AvailableSeekerContent = ({ seeker, finalSearch }) => {
+  const { name, location } = finalSearch ? finalSearch : []
+
   const avaialableSeekerSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
     return (
       <div className='col-lg-4 col-md-6' key={index}>
@@ -49,11 +50,26 @@ const AvailableSeekerContent = ({ seeker }) => {
         <div className='row'>
           {seeker === undefined
             ? avaialableSeekerSkeleton
-            : seeker.map((seeker_data, idx) => (
-                <div className='col-lg-4 col-md-6'>
-                  <AvailableJobseekerCard key={idx} seeker_data={seeker_data} />
-                </div>
-              ))}
+            : seeker
+                .filter((seeker_data) => {
+                  if (name === "") {
+                    return seeker_data
+                  } else if (seeker_data?.user.first_name?.toLocaleLowerCase().includes(name)) {
+                    return seeker_data
+                  }
+                })
+                .filter((seeker_data) => {
+                  if (location === "") {
+                    return seeker_data
+                  } else if (seeker_data.address.toLocaleLowerCase().includes(location)) {
+                    return seeker_data
+                  }
+                })
+                .map((seeker_data, idx) => (
+                  <div className='col-lg-4 col-md-6'>
+                    <AvailableJobseekerCard key={idx} seeker_data={seeker_data} />
+                  </div>
+                ))}
         </div>
       </div>
     </div>
