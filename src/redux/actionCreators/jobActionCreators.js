@@ -331,10 +331,10 @@ export const jobAsWork = id => async dispatch => {
 				.then(response => console.log(response.data))
 				.catch(error => console.log(error.response))
 			// create work
-			await axios
-				.post(`${url}/jobs/work/`, workData, config)
-				.then(response => console.log(response.data))
-				.catch(error => console.log(error.response))
+			// await axios
+			// 	.post(`${url}/jobs/work/`, workData, config)
+			// 	.then(response => console.log(response.data))
+			// 	.catch(error => console.log(error.response))
 		}
 	}
 }
