@@ -44,7 +44,9 @@ const RecruiterOngoingJob = () => {
           ) : ongoingJobs.length === 0 ? (
             <p>No Ongoing Jobs</p>
           ) : (
-            ongoingJobs.map((job) => <RecruiterOngoingJobBlock work={job} fetch={fetchOngoingJobs} />)
+            ongoingJobs.map((job, index) => (
+              <RecruiterOngoingJobBlock work={job} fetch={fetchOngoingJobs} key={index} />
+            ))
           )}
         </div>
       </div>

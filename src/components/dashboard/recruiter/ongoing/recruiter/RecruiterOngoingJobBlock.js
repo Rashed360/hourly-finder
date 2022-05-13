@@ -6,14 +6,31 @@ import { FaBookmark, FaMapMarkerAlt } from "react-icons/fa"
 import { Link } from "react-router-dom"
 const url = process.env.REACT_APP_BACKEND_SERVER
 
-const RecruiterOngoingJobBlock = ({ work, fetch }) => {
+const RecruiterOngoingJobBlock = ({ work, fetch, key }) => {
   const [curProgress, setCurProgress] = useState("")
   const { id, created, status, job, seeker } = work
+  console.log(job)
   const { title, location, type } = job
-  const { picture, user } = seeker
+  const { picture, user, occupation } = seeker
   const { username, first_name, last_name } = user
   const jobType = useJobType(type)
   const timeSince = useTimeSince(DateTime.fromISO(created))
+
+  let procesStatus = ""
+  const processMatcher = (process) => {
+    if (process === 1) {
+      return (procesStatus = "Accept")
+    } else if (process === 2) {
+      return (procesStatus = "Prepare")
+    } else if (process === 3) {
+      return (procesStatus = "Complete")
+    } else if (process === 4) {
+      return (procesStatus = "Review")
+    } else if (process === 5) {
+      return (procesStatus = "Done")
+    }
+    return procesStatus
+  }
 
   const progressReport = async () => {
     if (curProgress !== "") {
@@ -67,14 +84,14 @@ const RecruiterOngoingJobBlock = ({ work, fetch }) => {
                   <h5 className='title-data'>
                     <Link to={`/user/${username}`}> {first_name + " " + last_name}</Link>
                   </h5>
-                  <p className='title'>Web Developer</p>
+                  <p className='title'>{occupation ? occupation : "Not Provided"}</p>
                 </div>
               </div>
             </div>
           </div>
           <div className='information-cell'>
             <p className='title'>Progress</p>
-            <h5 className='title-data'>Started</h5>
+            <h5 className='title-data'>{processMatcher(status)}</h5>
           </div>
           <div className='information-cell'>
             <p className='title'>Work Started</p>
