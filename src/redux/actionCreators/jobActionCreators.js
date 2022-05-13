@@ -260,3 +260,34 @@ export const jobUpdate = (id, jobData, image) => async dispatch => {
 		}
 	}
 }
+
+export const jobAsWork = id => async dispatch => {
+	const statusData = {
+		status: 3,
+	}
+	const workData = {
+		job: id,
+	}
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		if (id) {
+			// update status
+			await axios
+				.patch(`${url}/jobs/job/${id}/`, statusData, config)
+				.then(response => console.log(response.data))
+				.catch(error => console.log(error.response))
+			// create work
+			await axios
+				.post(`${url}/jobs/work/`, workData, config)
+				.then(response => console.log(response.data))
+				.catch(error => console.log(error.response))
+		}
+	}
+}
