@@ -369,6 +369,9 @@
   .registration-form .confirmation {
     bottom: -10px;
   }
+  .applicant-scroll {
+    overflow-x: scroll;
+  }
 }
 
 /* Large Mobile :480px. */
