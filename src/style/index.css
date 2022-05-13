@@ -1890,45 +1890,45 @@ h2.contact-title,
 }
 
 .profile-bg {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: auto;
-  background-color: gainsboro;
-  position: relative;
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: auto;
+	background-color: gainsboro;
+	position: relative;
 }
 .profile-view-bar .active-status {
-  position: absolute;
-  left: 87%;
-  bottom: 6px;
-  background: #16395fd6;
-  border-radius: 25px;
-  font-size: 10px;
-  color: white;
-  overflow: hidden;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 10px;
-  width: 25px;
-  transition: 0.4s;
-  border: 1px solid #16395f;
+	position: absolute;
+	left: 87%;
+	bottom: 6px;
+	background: #16395fd6;
+	border-radius: 25px;
+	font-size: 10px;
+	color: white;
+	overflow: hidden;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 10px;
+	width: 25px;
+	transition: 0.4s;
+	border: 1px solid #16395f;
 }
 
 .profile-view-bar .active-status .icon {
-  padding-left: 6px;
-  margin-top: -3px;
-  font-size: 12px;
+	padding-left: 6px;
+	margin-top: -3px;
+	font-size: 12px;
 }
 .profile-view-bar .active-status .text {
-  padding-right: 10px;
+	padding-right: 10px;
 }
 .profile-view-bar .active-status:hover {
-  width: auto;
+	width: auto;
 }
 .profile-view-bar .profile-name-title {
 	text-align: center;
@@ -2100,10 +2100,10 @@ h2.contact-title,
 	margin: 7px 0;
 }
 .no-item-wrap p {
-  color: #00000094;
-  text-align: center;
-  font-size: 16px;
-  word-break: break-word;
+	color: #00000094;
+	text-align: center;
+	font-size: 16px;
+	word-break: break-word;
 }
 /* -------------------------Job Seeker Profile Page CSS  End--------------------- */
 
@@ -2914,12 +2914,10 @@ h3.right-bar-title {
 	position: relative;
 }
 
-.ongoing-job-progress::before {
-	content: '';
-	position: absolute;
+.ongoing-job-progress .bar {
 	background: gray;
 	height: 4px;
-	width: 50%;
+	width: 20%;
 	z-index: 2;
 }
 .ongoing-job-content {
