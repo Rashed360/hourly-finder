@@ -1,13 +1,36 @@
 import { Field, Form, Formik } from 'formik'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { jobApply } from '../../../redux/actionCreators/jobActionCreators'
+import { jobOffer } from 'redux/actionCreators/jobActionCreators'
+const url = process.env.REACT_APP_BACKEND_SERVER
 
 const OfferForm = () => {
 	const { username } = useParams()
+	const [seekerId, setSeekerId] = useState(null)
 	const dispatch = useDispatch()
 	const userType = useSelector(state => state.user.user?.user_type)
-	// const userId = useSelector(state => state.user.profile?.id)
+	const userId = useSelector(state => state.user.profile?.id)
+
+	const getIdFromUsername = async username => {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+		}
+		await axios
+			.get(`${url}/user/profile/${username}`, config)
+			.then(response => setSeekerId(response.data.seeker.id))
+			.catch(error => console.log(error.response))
+	}
+
+	useEffect(() => {
+		if (username !== null) {
+			getIdFromUsername(username)
+		}
+	}, [username])
 
 	const initialValues = {
 		title: '',
@@ -18,12 +41,11 @@ const OfferForm = () => {
 	}
 
 	const onSubmitHandle = values => {
-		console.log('Job Offered')
-		// if (userType === 1) {
-		// 	dispatch(jobApply(id, values, userId))
-		// } else {
-		// 	console.log('Only Seeker can apply')
-		// }
+		if (userType === 2) {
+			dispatch(jobOffer(userId, seekerId, values))
+		} else {
+			console.log('Only Recruiter can offer')
+		}
 	}
 
 	const validateHandle = values => {
