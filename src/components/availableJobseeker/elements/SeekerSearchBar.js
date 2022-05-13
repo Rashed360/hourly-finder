@@ -1,6 +1,6 @@
 import React from "react"
 import { FaMapMarkerAlt, FaSearchLocation } from "react-icons/fa"
-const SeekerSearchBar = () => {
+const SeekerSearchBar = ({ changeSeekerSearch, searchKeyword, handleSeekerSearch }) => {
   return (
     <div className='all-job-area'>
       <div className='container'>
@@ -8,11 +8,17 @@ const SeekerSearchBar = () => {
           <div className='row'>
             <div className='col-lg-8 offset-lg-2'>
               <div className='search-bar-all'>
-                <form action=''>
+                <form onSubmit={handleSeekerSearch}>
                   <div className='g-0 row align-items-center'>
                     <div className='col-lg-6'>
                       <div className='search-by'>
-                        <input type='text' placeholder='Job Seeker Name' />
+                        <input
+                          type='text'
+                          placeholder='Job Seeker Name'
+                          name='name'
+                          onChange={changeSeekerSearch}
+                          value={searchKeyword.name}
+                        />
                         <span>
                           <FaSearchLocation />
                         </span>
@@ -20,7 +26,13 @@ const SeekerSearchBar = () => {
                     </div>
                     <div className='col-lg-4'>
                       <div className='search-by'>
-                        <input type='text' placeholder='Location' />
+                        <input
+                          type='text'
+                          placeholder='Location'
+                          name='location'
+                          onChange={changeSeekerSearch}
+                          value={searchKeyword.location}
+                        />
                         <span>
                           <FaMapMarkerAlt />
                         </span>
@@ -29,7 +41,7 @@ const SeekerSearchBar = () => {
                     <div className='col-lg-2'>
                       <div className='search-by search-btn'>
                         <input
-                          type='button'
+                          type='submit'
                           value='Search'
                           className='all-search'
                           style={{ background: "#4c9566" }}

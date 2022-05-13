@@ -12,7 +12,14 @@ const ProfileSideBar = ({ user, seeker, recruiter }) => {
           style={{
             backgroundImage: `url(${url + seeker.picture})`,
           }}
-        ></div>
+        >
+          <div className='active-status'>
+            <span className='icon'>
+              <FaBriefcaseMedical />
+            </span>
+            <span className='text'>{seeker.status === 1 ? "Free" : "Busy"}</span>
+          </div>
+        </div>
       ) : (
         <div
           className='profile-bg'
