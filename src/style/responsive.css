@@ -323,12 +323,11 @@
   }
   .ongoing-job-progress {
     width: 4px;
-    height: 90%;
-
+    height: 60%;
     margin-top: -20px;
-    top: 10%;
     left: 50%;
     margin-left: -2px;
+    bottom: 40px;
   }
   .ongoing-card p {
     margin-top: 50px;
@@ -371,6 +370,20 @@
   }
   .applicant-scroll {
     overflow-x: scroll;
+  }
+  .ongoing-job-progress .bar {
+    margin-left: 0px;
+    width: 4px;
+  }
+  .ongoing-job-details-information,
+  .ongoing-job-header,
+  .ongoing-job-update-tracker,
+  .ongoing-job-footer,
+  .ongoing-job-header p {
+    flex-direction: column;
+  }
+  .ongoing-job-progress .bar.mobile-view {
+    display: block;
   }
 }
 

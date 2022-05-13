@@ -2854,18 +2854,18 @@ h3.right-bar-title {
 }
 
 .ongoing-job-item {
-  background: #f4f4f4;
-  padding: 15px;
+  background: #d4ecdb;
   border-radius: 7px;
-  border: 0.5px solid #88888817;
+  border: 0.5px solid #22533033;
   align-items: center;
-  padding-bottom: 50px;
+  padding: 25px 0;
   margin-bottom: 15px;
 }
 
 .ongoing-job-header {
   display: flex;
   justify-content: space-between;
+  padding: 15px;
 }
 
 .ongoing-job-header h5 {
@@ -2876,12 +2876,14 @@ h3.right-bar-title {
 .ongoing-job-header p {
   color: #737171;
   font-size: 14px;
+  display: flex;
+  gap: 20px;
 }
 
 .ongoing-job-cards .ongoing-card {
   width: 40px;
   height: 40px;
-  background: #c4c4c4;
+  background: white;
   border-radius: 50%;
 }
 
@@ -2902,7 +2904,7 @@ h3.right-bar-title {
 .ongoing-job-progress {
   width: 80%;
   height: 4px;
-  background: #c4c4c494;
+  background: white;
   position: absolute;
   margin: auto;
   margin-top: -20px;
@@ -2915,7 +2917,7 @@ h3.right-bar-title {
 }
 
 .ongoing-job-progress .bar {
-  background: gray;
+  background: #4c9566;
   height: 4px;
   width: 20%;
   z-index: 2;
@@ -2924,12 +2926,13 @@ h3.right-bar-title {
   position: relative;
 }
 .ongoing-job-footer {
-  margin-top: 40px;
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
+  padding: 0 15px;
 }
 .ongoing-card.active {
-  background: gray;
+  background: #4c9566;
 }
 .event-wrapper {
   background: #add1dd61;
@@ -2967,6 +2970,96 @@ h3.right-bar-title {
 
 .event-title span {
   color: black;
+}
+.ongoing-job-details-information {
+  display: flex;
+  width: 100%;
+}
+
+.ongoing-job-details-information .information-cell {
+  padding: 10px;
+  border: 1px solid #4c9566;
+  width: 100%;
+  text-align: center;
+}
+
+.information-cell .title {
+  font-size: 12px;
+  color: #626262;
+}
+
+.information-cell .title-data {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.information-cell .seeker-profile-bg {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.seeker-profile div {
+  text-align: left;
+}
+
+.seeker-profile div .title-data {
+  margin-bottom: 0;
+}
+
+.information-cell .seeker-profile-bg img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.job-tracker-progress-wrapper {
+  background: #bedac8;
+  padding: 20px 0;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.review-remove-link .btn-group .btn {
+  font-size: 12px;
+  background: #358fb2;
+  border: none;
+  color: white;
+  border-radius: 7px !important;
+  padding: 7px 8px;
+  font-weight: 300;
+}
+
+.review-remove-link .btn-group {
+  display: flex;
+  gap: 20px;
+}
+
+.review-remove-link .btn-group .btn.remove {
+  background: #ffbc3a;
+}
+.ongoing-job-update-tracker {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.ongoing-job-update-tracker .btn {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 7px 17px;
+  background: #4c9566;
+  border: none;
+}
+
+.ongoing-job-update-tracker select {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid #dbdbdb;
+}
+.ongoing-job-progress .bar.mobile-view {
+  display: none;
 }
 /* -------------------------Recruiter Dashboard CSS  End--------------------- */
 
