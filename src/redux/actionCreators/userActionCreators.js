@@ -265,6 +265,28 @@ export const profileOrganizationUpdate = (id, orgData, image) => async dispatch 
 	}
 }
 
-export const profileAboutYouUpdate = data => async dispatch => {
-	console.log('Update Organization', data)
+export const profileAboutYouUpdate = (id, profileData) => async dispatch => {
+	const token = localStorage.getItem('token')
+	if (token) {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `JWT ${token}`,
+				Accept: 'application/json',
+			},
+		}
+		if (id) {
+			// about update
+			if (Object.keys(profileData).length !== 0) {
+				await axios
+					.patch(`${url}/user/seeker/${id}/`, profileData, config)
+					.then(response => {
+						console.log(response.data)
+					})
+					.catch(error => {
+						console.log(error.response)
+					})
+			}
+		}
+	}
 }
