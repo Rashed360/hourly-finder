@@ -1,6 +1,6 @@
 {
   "short_name": "Hourly Finder",
-  "name": "An Hourly Based Job Finder",
+  "name": "Find exciting hourly-based jobs nearby",
   "icons": [
     {
       "src": "logo256.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#358fb2",
+  "background_color": "#2b313f"
 }

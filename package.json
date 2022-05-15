@@ -1,7 +1,7 @@
 {
   "name": "hourly-finder",
   "version": "0.1.0",
-  "description": "student hourly based job tracker",
+  "description": "student hourly-based job tracker",
   "private": true,
   "repository": {
     "type": "git",
