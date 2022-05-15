@@ -1,4 +1,8 @@
 # Hourly-Finder
+#### 🚀: CI/CD
+[![Hourly Finder](https://vercelbadge.vercel.app/api/rashed360/hourly-finder?style=flat)](https://hourly-finder.vercel.app/)
+[![Hourly Finder Build](https://github.com/Rashed360/hourly-finder/actions/workflows/build-test.yml/badge.svg)](https://github.com/Rashed360/hourly-finder/actions/workflows/build-test.yml)
+
 #### 🌻: UI Files Project
 [UI Files](https://github.com/Sajeebdebnath/hourly-finder-design/)
 
@@ -35,9 +39,4 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1"
   }
-```
-#### 🚀: Deployment
-[![Hourly Finder](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://hourly-finder.herokuapp.com/)
-```
-NB: App first launch might take a long time to load and can show a "Application Error" at first. Wait for sometime and reload. As Heroku automatically kills the App process to save resources for free dynos. Also, backend might not be upto date as its developped and deployed separately.
 ```
