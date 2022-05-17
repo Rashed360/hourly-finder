@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { Spinner } from 'react-bootstrap'
+import NoItem from 'components/commonComponents/noItem/NoItem'
 const url = process.env.REACT_APP_BACKEND_SERVER
 
 const SeekerOngoingJob = () => {
@@ -43,7 +44,7 @@ const SeekerOngoingJob = () => {
 					{ongoingJobs === null ? (
 						<Spinner />
 					) : ongoingJobs.length === 0 ? (
-						<p>No Ongoing Jobs</p>
+						<NoItem text='No Ongoing Jobs Available' />
 					) : (
 						ongoingJobs.map(job => <SeekerOngoingJobBlock work={job} />)
 					)}

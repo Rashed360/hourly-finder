@@ -6,6 +6,7 @@ import { jobAllPaginationFetch } from "../../../redux/actionCreators/jobActionCr
 import JobBlock from "../../commonComponents/commonBlock/jobBlock/JobBlock"
 import JobBlockSkeleton from "../../commonComponents/skeletons/JobBlockSkeleton"
 import Pagination from "../pagination/Pagination"
+import NoItem from "components/commonComponents/noItem/NoItem"
 
 const AllJobContent = ({ finalSearch }) => {
   const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const AllJobContent = ({ finalSearch }) => {
   const { title, location, type } = finalSearch ? finalSearch : []
 
   useEffect(() => {
-    dispatch(jobAllPaginationFetch(12))
+    dispatch(jobAllPaginationFetch(9))
   }, [dispatch])
 
   const jobs = allJobsPagination?.results
@@ -79,7 +80,7 @@ const AllJobContent = ({ finalSearch }) => {
       <div className='all-filtered-job'>
         <div className='row'>
           {allJobsPagination === null && jobsSkeleton}
-          {allJobsPagination !== null && jobs}
+          {allJobsPagination !== null && allJobsPagination.length === 0 ? <NoItem text='No Jobs Posted Yet' /> : jobs}
           {jobs?.length === 0 && (
             <div className='col-lg-12'>
               <UserNoItems text='No Job Available' />
