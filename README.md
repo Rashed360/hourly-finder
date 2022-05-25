@@ -1,4 +1,6 @@
 # Hourly-Finder
+Hourly-Finder is a platform to find hourly-based jobs nearby.
+
 #### 🚀: CI/CD
 [![Hourly Finder](https://vercelbadge.vercel.app/api/rashed360/hourly-finder?style=flat)](https://hourly-finder.vercel.app/)
 [![Hourly Finder Build](https://github.com/Rashed360/hourly-finder/actions/workflows/build-test.yml/badge.svg)](https://github.com/Rashed360/hourly-finder/actions/workflows/build-test.yml)
